@@ -932,11 +932,410 @@
       background: var(--surface);
     }
 
+    /* Three-column comparison grid */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--rule);
+      margin-bottom: 3rem;
+    }
+
+    .comp-header {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 1rem 1.2rem;
+    }
+
+    .comp-header.col-market,
+    .comp-header.col-gap {
+      background: var(--black);
+      color: var(--muted);
+    }
+
+    .comp-header.col-mine {
+      background: var(--mid);
+      color: var(--accent);
+    }
+
+    .comp-cell {
+      padding: 1rem 1.2rem;
+      border-top: 1px solid var(--rule);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .comp-cell.col-market,
+    .comp-cell.col-gap {
+      background: var(--black);
+      color: var(--muted);
+    }
+
+    .comp-cell.col-mine {
+      background: var(--mid);
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    /* Accordion */
+    .accordion-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      display: block;
+      margin: 2.5rem 0 1rem;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid var(--rule);
+      cursor: pointer;
+      transition: background 0.2s, padding 0.2s;
+    }
+
+    .accordion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .accordion-item.open .accordion-header {
+      padding: 1rem 0;
+    }
+
+    .accordion-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--white);
+      transition: color 0.2s;
+    }
+
+    .accordion-icon {
+      font-family: 'DM Mono', monospace;
+      font-size: 1.1rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-left: 1rem;
+      line-height: 1;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .accordion-content p {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      padding-bottom: 1rem;
+    }
+
+    /* Open state */
+    .accordion-item.open {
+      background: var(--mid);
+      padding: 0 1rem;
+    }
+
+    .accordion-item.open .accordion-name {
+      color: var(--accent);
+    }
+
+    .accordion-item.open .accordion-content {
+      max-height: 300px;
+    }
+
+    /* ── Responsive ───────────── */
+    @media (max-width: 768px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+
     /* ============================================================
        SECTION 5 — BUILD
        ============================================================ */
     #build {
       background: var(--black);
+    }
+
+    /* Revenue blocks */
+    .revenue-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--rule);
+      margin-bottom: 1.5rem;
+    }
+
+    .revenue-cell {
+      background: var(--black);
+      padding: 2rem 1.5rem;
+    }
+
+    .revenue-cell--base    { border-top: 3px solid rgba(90, 90, 86, 0.6); }
+    .revenue-cell--upside  { border-top: 3px solid rgba(232, 200, 74, 0.35); }
+    .revenue-cell--practice{ border-top: 3px solid var(--accent); }
+
+    .revenue-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .revenue-fig {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .revenue-desc {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .revenue-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+      padding-top: 1rem;
+      margin: 0 0 2rem;
+      line-height: 1.6;
+    }
+
+    /* Sales evidence block */
+    .sales-evidence {
+      background: var(--mid);
+      border-left: 3px solid var(--accent);
+      padding: 1.8rem 2rem;
+      margin: 2rem 0;
+    }
+
+    .sales-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .sales-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .sales-table th {
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: left;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-weight: 400;
+    }
+
+    .sales-table td {
+      font-size: 13px;
+      color: var(--white);
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .sales-table tr:last-child td { border-bottom: none; }
+
+    .sales-note {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 0.8rem;
+    }
+
+    /* Target mandates block */
+    .target-block {
+      background: var(--surface);
+      border-left: 3px solid var(--rule);
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .target-block-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .target-intro {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .target-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--rule);
+      gap: 1.5rem;
+    }
+
+    .target-row:last-child { border-bottom: none; }
+
+    .target-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .target-mandate {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .target-entry {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--accent);
+      text-transform: uppercase;
+      flex-shrink: 0;
+      text-align: right;
+      max-width: 260px;
+      line-height: 1.5;
+    }
+
+    /* Three-phase activation timeline */
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--rule);
+      margin-bottom: 3rem;
+    }
+
+    .phase-cell {
+      background: var(--surface);
+      padding: 1.8rem 1.5rem;
+    }
+
+    .phase-label-text {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      display: block;
+    }
+
+    .phase-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: var(--white);
+      margin: 0.4rem 0 0.8rem;
+      letter-spacing: 0.03em;
+    }
+
+    .phase-item {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--muted);
+      padding-left: 12px;
+      border-left: 1px solid var(--rule);
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    /* Engagement bar chart */
+    .engagement-bars { margin-top: 0; }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .bar-row:last-child { border-bottom: none; }
+
+    .bar-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--white);
+      min-width: 260px;
+      flex-shrink: 0;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 2px;
+      background: var(--rule);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: var(--accent);
+      width: 0;
+      transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .bar-fee {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── Responsive ───────────── */
+    @media (max-width: 768px) {
+      .revenue-grid { grid-template-columns: 1fr; }
+      .phase-grid   { grid-template-columns: 1fr; }
+      .bar-label    { min-width: 0; flex: 1; font-size: 12px; }
+      .bar-fee      { display: none; }
+      .target-row   { flex-direction: column; gap: 0.4rem; }
+      .target-entry { text-align: left; max-width: none; }
     }
 
     /* ============================================================
@@ -1435,7 +1834,182 @@
        ============================================================ -->
   <section id="rare" data-section="rare">
     <div class="container">
-      <!-- Placeholder — content added next commit -->
+
+      <span class="section-eyebrow reveal">The competitive gap</span>
+
+      <h2 class="section-headline reveal">
+        The market has strategists.<br>
+        The market has implementers.<br>
+        It does not have both.<br>
+        This profile does.
+      </h2>
+
+      <!-- Three-column comparison grid -->
+      <div class="comparison-grid reveal">
+        <!-- Header row -->
+        <div class="comp-header col-market">What the market has</div>
+        <div class="comp-header col-gap">What the market cannot find</div>
+        <div class="comp-header col-mine">What I provide</div>
+
+        <!-- Row 1 -->
+        <div class="comp-cell col-market">PMIS strategy advisors who recommend Oracle but have
+        never configured a cost sheet</div>
+        <div class="comp-cell col-gap">Architects who know why a P6/SAP interface produces
+        mismatched cost data — and can fix the data model</div>
+        <div class="comp-cell col-mine">Oracle Unifier cost sheet design, P6 EPS architecture,
+        SAP data mapping — personally deployed on live
+        sovereign programmes</div>
+
+        <!-- Row 2 -->
+        <div class="comp-cell col-market">Digital Twin consultants who reference ISO 19650
+        in presentations</div>
+        <div class="comp-cell col-gap">Information managers who have authored a BEP, governed
+        a CDE, and linked it to a live programme cost and
+        schedule layer</div>
+        <div class="comp-cell col-mine">ISO 19650 BEP authorship, CDE design, 4D/5D linkage
+        — delivered on KSA and Qatar sovereign programmes</div>
+
+        <!-- Row 3 -->
+        <div class="comp-cell col-market">Technology partners who demo Nvidia Omniverse
+        to clients</div>
+        <div class="comp-cell col-gap">Advisors who have deployed Omniverse on live programme
+        data with real integration to PMIS and BIM layers</div>
+        <div class="comp-cell col-mine">Nvidia Omniverse POC on live KSA sovereign programme
+        — real programme data, not a demo environment</div>
+
+        <!-- Row 4 -->
+        <div class="comp-cell col-market">IoT platform vendors who describe operational twins</div>
+        <div class="comp-cell col-gap">Practitioners who have governed the data architecture
+        that makes IoT telemetry trustworthy enough to inform
+        operational decisions</div>
+        <div class="comp-cell col-mine">IoT sensor integration into live operational twin
+        — end-to-end data governance, not platform deployment</div>
+      </div>
+
+      <!-- Accordion label -->
+      <span class="accordion-eyebrow reveal">Full technical stack — click any layer to expand</span>
+
+      <!-- Eight accordion rows -->
+      <div class="accordion-list reveal">
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">Oracle Unifier</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Cost sheet design, CBS/WBS alignment, workflow
+            configuration, UDR (user-defined reports), business
+            process design, cost module integration with schedule
+            and risk data. Configuration at programme level —
+            not system administration.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">Oracle P6</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>EPS structure design, schedule baseline governance,
+            resource loading architecture, schedule health
+            assessment, P6 data model alignment with Unifier
+            cost hierarchy. Ability to assess schedule integrity
+            — not just read Gantt charts.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">Oracle Aconex</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Document control workflow design, transmittal logic,
+            revision control, register configuration, integration
+            with PMIS cost and schedule layers. Document management
+            as a data governance discipline, not a filing system.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">SAP / ERP Integration</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Data mapping between SAP cost modules (PS, MM, FI)
+            and Oracle Unifier cost sheet. API design, middleware
+            selection, data reconciliation logic. The integration
+            layer where data trust is won or lost — and the layer
+            most advisors cannot operate at.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">ISO 19650 / BIM Governance</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>BEP authorship defining information requirements,
+            delivery milestones, naming conventions, and model
+            maturity levels (LOI/LOD). CDE architecture: folder
+            structure, state management (WIP/Shared/Published/
+            Archived), access control, approval workflows.
+            Without this governance layer, a Digital Twin
+            is architecturally indefensible.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">4D / 5D Integration</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>P6 activity IDs linked to BIM object classification
+            for time-based construction simulation (4D). Oracle
+            Unifier cost data integrated with BIM model for
+            quantity-driven cost forecasting (5D). Requires
+            CBS/WBS alignment between Unifier and BIM hierarchy
+            — the taxonomy discipline most 4D projects fail on.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">Nvidia Omniverse</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Deployed as real-time simulation and visualisation
+            layer on a KSA sovereign giga-programme — connecting
+            structured asset data from PMIS and BIM layers into
+            a physics-accurate operational environment. Not a
+            proof of concept built in isolation. Built on live
+            programme data with real governance requirements.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">Sovereign Cloud</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>OCI, Azure, AWS, GCP architecture across regulated
+            and data-residency environments including in-country
+            KSA sovereign cloud models. Led MENA go-to-market
+            hybrid-cloud offering with HPE. Commercial and
+            financial shaping of cloud deals including TCO,
+            pricing, margin, and risk positioning.</p>
+          </div>
+        </div>
+
+      </div><!-- /.accordion-list -->
+
     </div>
   </section>
 
@@ -1444,7 +2018,209 @@
        ============================================================ -->
   <section id="build" data-section="build">
     <div class="container">
-      <!-- Placeholder — content added next commit -->
+
+      <span class="section-eyebrow reveal">The commercial case</span>
+
+      <h2 class="section-headline reveal">
+        Not a hire.<br>
+        A practice.<br>
+        Built bottom-up.
+      </h2>
+
+      <!-- Three revenue blocks -->
+      <div class="revenue-grid reveal">
+
+        <div class="revenue-cell revenue-cell--base">
+          <span class="revenue-year">Year 1 · Base case</span>
+          <div class="revenue-fig">$2M</div>
+          <p class="revenue-desc">2 anchor engagements + 2 shorter projects.
+          Activated through EY's existing sovereign client
+          relationships in UAE and KSA. Every engagement
+          mapped to a specific client category and
+          conversion path.</p>
+        </div>
+
+        <div class="revenue-cell revenue-cell--upside">
+          <span class="revenue-year">Year 1 · Upside</span>
+          <div class="revenue-fig">$4M</div>
+          <p class="revenue-desc">Base case + one further KSA Royal Commission
+          governance engagement. Activated through programme
+          credibility and the sovereign network built over
+          a decade of GCC delivery.</p>
+        </div>
+
+        <div class="revenue-cell revenue-cell--practice">
+          <span class="revenue-year">Year 3 · Practice revenue</span>
+          <div class="revenue-fig">$10M+</div>
+          <p class="revenue-desc">Initial engagements converted to multi-year
+          advisory retainers. Digital Twin advisory as
+          a recurring revenue stream. 8–10 FTE team.
+          Full P&amp;L accountability from year one.</p>
+        </div>
+
+      </div>
+
+      <p class="revenue-note">Year 1 target represents less than 1% of the
+      addressable premium sub-segment. The ambition is
+      not market share. It is anchored client relationships
+      that compound into a multi-year practice.</p>
+
+      <!-- Sales evidence block -->
+      <div class="sales-evidence reveal">
+        <span class="sales-label">Commercial track record · Accenture 2022–2025</span>
+        <table class="sales-table">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Revenue Delivered</th>
+              <th>TCV Originated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>FY 2022–23</td><td>$[X]M</td><td>$[X]M</td></tr>
+            <tr><td>FY 2023–24</td><td>$[X]M</td><td>$[X]M</td></tr>
+            <tr><td>FY 2024–25</td><td>$[X]M</td><td>$[X]M</td></tr>
+          </tbody>
+        </table>
+        <p class="sales-note">[Replace figures before sharing —
+        data verified from Accenture engagement records]</p>
+      </div>
+
+      <!-- Target mandates -->
+      <div class="target-block reveal">
+        <span class="target-block-label">Priority mandate targets · Year 1 activation</span>
+        <p class="target-intro">These are not speculative targets. They are sovereign
+        programmes with live governance and digital advisory
+        requirements — directly aligned with this practice's
+        core offering — where EY's existing relationships
+        or the established GCC programme network provides
+        a credible activation path.</p>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">FIFA World Cup 2034 Authority · KSA</div>
+            <div class="target-mandate">Programme governance architecture · PMIS strategy</div>
+          </div>
+          <div class="target-entry">EY audit relationship · KSA Royal Commission entry</div>
+        </div>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">Diriyah Gate Development Authority · KSA</div>
+            <div class="target-mandate">Digital Twin readiness · BIM value realisation</div>
+          </div>
+          <div class="target-entry">Sovereign programme network · existing EY presence</div>
+        </div>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">New Murabba Development Company · KSA</div>
+            <div class="target-mandate">Capital programme controls · PMIS architecture</div>
+          </div>
+          <div class="target-entry">PIF-affiliated · EY KSA platform entry</div>
+        </div>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">Abu Dhabi Master Developers (Aldar · Miral · MODON)</div>
+            <div class="target-mandate">Oracle PMIS governance · Digital Twin lifecycle advisory</div>
+          </div>
+          <div class="target-entry">EY existing audit and advisory relationships · UAE</div>
+        </div>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">DEWA · Dubai</div>
+            <div class="target-mandate">Utility capital programme governance · asset management
+            integration · Digital Twin energy infrastructure</div>
+          </div>
+          <div class="target-entry">EY existing client relationship · UAE</div>
+        </div>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">Ashghal · Qatar</div>
+            <div class="target-mandate">Post-2022 infrastructure programme continuation ·
+            programme governance · schedule intelligence</div>
+          </div>
+          <div class="target-entry">Established Qatar programme network entry</div>
+        </div>
+
+      </div><!-- /.target-block -->
+
+      <!-- Three-phase activation timeline -->
+      <div class="phase-grid reveal">
+
+        <div class="phase-cell">
+          <span class="phase-label-text">Month 1–3</span>
+          <div class="phase-title">Orientation and pipeline</div>
+          <div class="phase-item">Map EY sovereign client relationships to programme opportunity</div>
+          <div class="phase-item">Identify 5–8 entry points across UAE, KSA, Qatar</div>
+          <div class="phase-item">Develop 2–3 targeted proposals</div>
+          <div class="phase-item">Establish go-to-market position within EY Capital Projects</div>
+        </div>
+
+        <div class="phase-cell">
+          <span class="phase-label-text">Month 4–6</span>
+          <div class="phase-title">First engagement live</div>
+          <div class="phase-item">Launch first engagement — deploy programme credibility</div>
+          <div class="phase-item">Build delivery team: 1 manager, 2–3 consultants</div>
+          <div class="phase-item">Originate second engagement from own network</div>
+          <div class="phase-item">Begin converting audit/risk relationships to advisory mandates</div>
+        </div>
+
+        <div class="phase-cell">
+          <span class="phase-label-text">Month 7–12</span>
+          <div class="phase-title">Scale and anchor</div>
+          <div class="phase-item">Convert first engagement to multi-year retainer</div>
+          <div class="phase-item">Activate 2nd and 3rd engagements</div>
+          <div class="phase-item">Target: $2M base / $4M upside in delivery</div>
+          <div class="phase-item">Practice team at 6 FTE, Year 2 plan in place</div>
+        </div>
+
+      </div>
+
+      <!-- Engagement type bar chart -->
+      <div class="engagement-bars reveal" id="engagement-bars">
+
+        <div class="bar-row">
+          <span class="bar-label">Capital Programme Governance Architecture</span>
+          <div class="bar-track"><div class="bar-fill" data-width="88%"></div></div>
+          <span class="bar-fee">$600K – $1.5M → $2M pa</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">PMIS Strategy and Business Case</span>
+          <div class="bar-track"><div class="bar-fill" data-width="62%"></div></div>
+          <span class="bar-fee">$400K – $1M</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">Digital Twin Strategy and Roadmap</span>
+          <div class="bar-track"><div class="bar-fill" data-width="52%"></div></div>
+          <span class="bar-fee">$300K – $700K → $1–3M</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">Programme Recovery and Restart</span>
+          <div class="bar-track"><div class="bar-fill" data-width="88%"></div></div>
+          <span class="bar-fee">$600K – $2M</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">Smart City / iCCC Strategy</span>
+          <div class="bar-track"><div class="bar-fill" data-width="100%"></div></div>
+          <span class="bar-fee">$700K – $2.5M</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">BIM Value Realisation</span>
+          <div class="bar-track"><div class="bar-fill" data-width="62%"></div></div>
+          <span class="bar-fee">$400K – $900K</span>
+        </div>
+
+      </div><!-- /.engagement-bars -->
+
     </div>
   </section>
 
