@@ -482,6 +482,11 @@
       border-radius: 2px;
     }
 
+    /* Mobile profile circle — hidden on desktop */
+    .hero-mobile-photo {
+      display: none;
+    }
+
     /* Scroll cue */
     .scroll-cue {
       position: absolute;
@@ -1466,14 +1471,44 @@
       .t-hero-name, .hero-name { font-size: 3.5rem; }
       .t-section-headline, .section-headline { font-size: 2.5rem; }
 
-      /* Photo and gradient unchanged — keeps same right-side framing as desktop */
+      /* Mobile hero: dark bg with overlay, circular profile photo, text at bottom */
+      .hero::before {
+        inset: 0;
+        background-position: center 15%;
+        opacity: 0.15;           /* heavily dimmed — just a dark bg texture */
+      }
 
-      /* Text stays at top-left; narrower max-width to stay in the dark zone */
+      .hero::after {
+        background: linear-gradient(
+          to top,
+          rgba(10,10,10,0.98) 0%,
+          rgba(10,10,10,0.85) 40%,
+          rgba(10,10,10,0.65) 70%,
+          rgba(10,10,10,0.4) 100%
+        );
+      }
+
+      /* Show circular profile photo above the name */
+      .hero-mobile-photo {
+        display: block;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-image: url('assets/ivan-pironi.png');
+        background-size: cover;
+        background-position: center 15%;
+        filter: grayscale(15%) contrast(1.05);
+        border: 2px solid rgba(232, 200, 74, 0.4);
+        margin-bottom: 1.2rem;
+      }
+
+      /* Text block anchored to bottom */
       .hero-text {
-        top: 5rem;
+        top: auto;
+        bottom: 3rem;
         left: 2rem;
-        right: auto;
-        max-width: 44%;
+        right: 2rem;
+        max-width: none;
       }
 
       .header-nav { display: none; }
@@ -1535,6 +1570,9 @@
   <section class="hero" id="hero" aria-label="Hero">
     <div class="hero-text">
       <span class="section-eyebrow">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</span>
+
+      <!-- Profile circle — mobile only -->
+      <div class="hero-mobile-photo" aria-hidden="true"></div>
 
       <span class="hero-name">Ivan</span>
       <span class="hero-name">Pironi</span>
