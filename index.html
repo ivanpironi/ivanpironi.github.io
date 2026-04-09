@@ -1345,6 +1345,98 @@
       background: var(--surface);
     }
 
+    .qa-block {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .qa-block:last-of-type {
+      border-bottom: none;
+      padding-bottom: 3rem;
+    }
+
+    .qa-question {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 0.95;
+    }
+
+    .qa-answer {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.85;
+    }
+
+    /* Closing statement */
+    .closing {
+      padding-top: 4rem;
+    }
+
+    .closing-line1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5.5rem;
+      color: var(--white);
+      line-height: 0.88;
+      display: block;
+    }
+
+    .closing-line2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5.5rem;
+      color: var(--accent);
+      line-height: 0.88;
+      display: block;
+    }
+
+    .closing-sub {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 1.5rem;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* Contact strip */
+    .contact-strip {
+      border-top: 1px solid var(--rule);
+      padding: 2rem 0;
+      margin-top: 3rem;
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .contact-item {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: color 0.15s;
+    }
+
+    a.contact-item:hover,
+    a.contact-item:focus {
+      color: var(--white);
+      text-decoration: underline;
+      outline: none;
+    }
+
+    /* ── Responsive ───────────── */
+    @media (max-width: 768px) {
+      .closing-line1,
+      .closing-line2 { font-size: 3rem; }
+      .contact-strip  { gap: 1.5rem; }
+    }
+
     /* ============================================================
        FOOTER
        ============================================================ */
@@ -2229,7 +2321,72 @@
        ============================================================ -->
   <section id="decision" data-section="decision">
     <div class="container">
-      <!-- Placeholder — content added next commit -->
+
+      <span class="section-eyebrow reveal">For EY Capital Projects leadership</span>
+
+      <!-- Three Q&A blocks -->
+      <div class="qa-block reveal">
+        <div class="qa-question">Is the market real and large enough?</div>
+        <p class="qa-answer">Yes. $8.3 billion at 12% growth — twice the rate
+        of North America. $1.65 trillion Saudi sovereign
+        programme pipeline. Hard political deadlines that
+        make governance advisory non-discretionary spend.
+        KSA sovereign clients raising the bar on advisory
+        relationships — independence, delivery authority,
+        and technical credibility now qualifying criteria.
+        The market is not the risk. The market is the
+        opportunity.</p>
+      </div>
+
+      <div class="qa-block reveal">
+        <div class="qa-question">Is the Year 1 revenue case credible?</div>
+        <p class="qa-answer">Yes. Built bottom-up from specific engagement types,
+        fee ranges, and named client targets with defined
+        activation paths. Not market-share speculation.
+        A client-by-client revenue build. The $2M base
+        case requires two anchor engagements and two shorter
+        projects — each mapped to a sovereign programme
+        where EY's existing relationships or the established
+        GCC network provides the entry. The $4M upside adds
+        one further KSA governance engagement. Every line
+        is traceable.</p>
+      </div>
+
+      <div class="qa-block reveal">
+        <div class="qa-question">Is this profile genuinely rare — and is there proof?</div>
+        <p class="qa-answer">Yes. The full Oracle PMIS stack — Unifier, P6,
+        Aconex, SAP integration — personally deployed on
+        sovereign programmes. The full Digital Twin chain
+        — ISO 19650 through CDE through 4D/5D through
+        Nvidia Omniverse — delivered on live sovereign
+        programme data. Ten continuous years across UAE,
+        KSA, and Qatar. Professional services commercial
+        experience — P&amp;L management, team leverage,
+        advisory practice economics — to convert it into
+        EY revenue from day one. The Qiddiya engagement
+        is the proof. Not a framework. A delivered outcome
+        on a live KSA sovereign giga-programme.</p>
+      </div>
+
+      <!-- Closing statement -->
+      <div class="closing reveal">
+        <span class="closing-line1">The window to lead<br>GCC capital advisory</span>
+        <span class="closing-line2">is open now.</span>
+        <p class="closing-sub">The next 12–18 months determine whether EY leads
+        this market or reacts to it once the positioning
+        has been captured. The capability to lead it
+        is available today.</p>
+      </div>
+
+      <!-- Contact strip -->
+      <div class="contact-strip reveal">
+        <span class="contact-item">Ivan Pironi</span>
+        <a class="contact-item" href="mailto:ivan.pironi@gmail.com">ivan.pironi@gmail.com</a>
+        <span class="contact-item">+971 54 583 1119</span>
+        <a class="contact-item" href="https://linkedin.com/in/ivanpironi" target="_blank" rel="noopener">linkedin.com/in/ivanpironi</a>
+        <span class="contact-item">Dubai &nbsp;·&nbsp; UAE &nbsp;·&nbsp; February 2026</span>
+      </div>
+
     </div>
   </section>
 
