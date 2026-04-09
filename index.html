@@ -414,7 +414,7 @@
       inset: 0;
       background-image: url('assets/ivan-pironi.png');
       background-size: cover;
-      background-position: center top;
+      background-position: center 22%;   /* face centred, not hair-to-nose */
       filter: grayscale(15%) contrast(1.05);
       z-index: 0;
     }
@@ -433,20 +433,6 @@
       );
       z-index: 1;
       pointer-events: none;
-    }
-
-    .hero-placeholder-label {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--muted);
-      text-align: center;
-      z-index: 2;
-      pointer-events: none;
-      white-space: nowrap;
     }
 
     .hero-text {
@@ -1480,13 +1466,24 @@
     @media (max-width: 768px) {
       section { padding: 4rem 0; }
 
-      .t-hero-name, .hero-name { font-size: 5rem; }
+      .t-hero-name, .hero-name { font-size: 3.5rem; }
       .t-section-headline, .section-headline { font-size: 2.5rem; }
 
       .hero-text {
         bottom: 3rem;
         left: 2rem;
         right: 2rem;
+      }
+
+      /* Stronger gradient on mobile so face shows above text zone */
+      .hero::after {
+        background: linear-gradient(
+          to top,
+          rgba(10,10,10,0.98) 0%,
+          rgba(10,10,10,0.90) 40%,
+          rgba(10,10,10,0.55) 65%,
+          transparent 100%
+        );
       }
 
       .header-nav { display: none; }
@@ -1546,8 +1543,6 @@
        HERO — Section 0
        ============================================================ -->
   <section class="hero" id="hero" aria-label="Hero">
-    <div class="hero-placeholder-label">[ Replace with Ivan's photo — background-image in .hero CSS ]</div>
-
     <div class="hero-text">
       <span class="section-eyebrow">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</span>
 
