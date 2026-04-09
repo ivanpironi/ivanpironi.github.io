@@ -433,10 +433,17 @@
       max-width: 620px;
     }
 
-    /* Hero-specific eyebrow overrides */
-    .hero .section-eyebrow {
+    /* Eyebrow — pinned to top of hero, independent of name block */
+    .hero-eyebrow {
+      position: absolute;
+      top: 5rem;
+      left: 6rem;
+      z-index: 3;
+      font-family: 'DM Mono', monospace;
       font-size: 14px;
-      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
     }
 
     .hero-name {
@@ -1472,18 +1479,25 @@
         min-height: 1065px;
       }
 
+      /* Eyebrow stays at top with tighter left margin on mobile */
+      .hero-eyebrow {
+        top: 5rem;
+        left: 2rem;
+      }
+
       /* On narrow screens, photo spans full width — reset the desktop left offset */
       .hero::before {
         inset: 0;
         background-position: center 18%;
       }
 
-      /* Text drops to bottom on narrow screens — face shows at top */
+      /* Name block stays at bottom */
       .hero-text {
         top: auto;
         bottom: 3rem;
         left: 2rem;
         right: 2rem;
+        max-width: none;
       }
 
       /* Strong vertical gradient — face visible top, text legible bottom */
@@ -1554,9 +1568,10 @@
        HERO — Section 0
        ============================================================ -->
   <section class="hero" id="hero" aria-label="Hero">
-    <div class="hero-text">
-      <span class="section-eyebrow">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</span>
+    <!-- Eyebrow pinned to top independently of name block -->
+    <span class="hero-eyebrow">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</span>
 
+    <div class="hero-text">
       <span class="hero-name">Ivan</span>
       <span class="hero-name">Pironi</span>
 
