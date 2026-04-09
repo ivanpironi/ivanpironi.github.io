@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ivan Pironi — Capital Programme Advisory. Partner-level value proposition for EY Middle East Capital Projects.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ivan Pironi · Capital Projects Advisory · EY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+
+    /* ============================================================
+       CUSTOM PROPERTIES
+       ============================================================ */
+    :root {
+      --black:   #0A0A0A;
+      --white:   #F5F4F0;
+      --accent:  #E8C84A;
+      --surface: #111110;
+      --mid:     #1E1E1C;
+      --muted:   #5A5A56;
+      --rule:    rgba(245, 244, 240, 0.07);
+    }
+
+    /* ============================================================
+       RESET
+       ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
+    ul, ol { list-style: none; }
+
+    /* ============================================================
+       TYPOGRAPHY SCALE
+       ============================================================ */
+
+    /* Hero name — Bebas Neue 10rem / 5rem mobile, lh 0.88 */
+    .t-hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 10rem;
+      line-height: 0.88;
+      color: var(--white);
+    }
+
+    /* Section headline — Bebas Neue 4rem / 2.5rem mobile, lh 0.92 */
+    .t-section-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      line-height: 0.92;
+      color: var(--white);
+    }
+
+    /* Pull quote — Bebas Neue 2.8rem */
+    .t-pull-quote {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      line-height: 1.0;
+      color: var(--white);
+    }
+
+    /* Large stat — Bebas Neue 3rem, accent */
+    .t-stat {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    /* Subheading — Barlow Condensed 600, 1.1rem, uppercase */
+    .t-subheading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Eyebrow — DM Mono 10px, uppercase, accent */
+    .t-eyebrow, .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      display: block;
+    }
+
+    /* Body — Barlow 300, 16px, lh 1.8 */
+    .t-body {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* Small body — Barlow 400, 13px, muted */
+    .t-small {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    /* Label — DM Mono 11px, uppercase */
+    .t-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    /* ============================================================
+       LAYOUT
+       ============================================================ */
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 6rem 0;
+    }
+
+    section[data-section] {
+      scroll-margin-top: 80px;
+    }
+
+    /* Grid gutter technique — set bg on parent, bg on children */
+    .grid-gap {
+      background: var(--rule);
+      gap: 2px;
+    }
+
+    /* ============================================================
+       SCROLL REVEAL
+       ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    /* Child stagger within revealed blocks */
+    .reveal.revealed > *:nth-child(1) { transition-delay: 0ms; }
+    .reveal.revealed > *:nth-child(2) { transition-delay: 80ms; }
+    .reveal.revealed > *:nth-child(3) { transition-delay: 160ms; }
+    .reveal.revealed > *:nth-child(4) { transition-delay: 240ms; }
+    .reveal.revealed > *:nth-child(5) { transition-delay: 320ms; }
+
+    /* ============================================================
+       HEADER
+       ============================================================ */
+    #site-header {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.5rem 2rem;
+    }
+
+    /* State 1: eyebrow only */
+    .h-state1 {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+    }
+
+    /* State 2: full header — hidden until scrolled */
+    .h-state2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 0 2rem;
+      opacity: 0;
+      transform: translateY(-8px);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+    }
+
+    /* Scrolled state */
+    #site-header.scrolled {
+      position: fixed;
+      background: rgba(10, 10, 10, 0.97);
+      border-bottom: 1px solid var(--rule);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 0;
+    }
+
+    #site-header.scrolled .h-state1 {
+      display: none;
+    }
+
+    #site-header.scrolled .h-state2 {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      position: relative;
+    }
+
+    /* Header identity block */
+    .header-identity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-left: 2rem;
+    }
+
+    .header-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #141412;
+      /* PHOTO: same src as hero */
+      background-size: cover;
+      background-position: center top;
+      flex-shrink: 0;
+    }
+
+    .identity-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .identity-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--white);
+    }
+
+    .identity-role {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* Desktop nav */
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding-right: 2rem;
+    }
+
+    .header-nav a {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      transition: color 0.15s;
+      padding-bottom: 2px;
+    }
+
+    .header-nav a:hover,
+    .header-nav a:focus {
+      color: var(--white);
+      outline: none;
+    }
+
+    .header-nav a.active {
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 6px;
+      margin-right: 2rem;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--white);
+      transition: opacity 0.2s;
+    }
+
+    .hamburger:hover span,
+    .hamburger:focus span {
+      opacity: 0.7;
+    }
+
+    /* ============================================================
+       MOBILE NAV OVERLAY
+       ============================================================ */
+    .mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .mobile-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .overlay-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 1.5rem;
+      color: var(--white);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.15s;
+    }
+
+    .overlay-close:hover,
+    .overlay-close:focus {
+      color: var(--accent);
+      outline: none;
+    }
+
+    .overlay-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .overlay-nav a {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--white);
+      transition: color 0.15s;
+      line-height: 1;
+    }
+
+    .overlay-nav a:hover,
+    .overlay-nav a:focus {
+      color: var(--accent);
+      outline: none;
+    }
+
+    .overlay-nav a.active {
+      color: var(--accent);
+    }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+
+    /* PHOTO: replace url('placeholder') with Ivan's actual photo */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      background-color: #141412;
+      background-image: url('placeholder');
+      background-size: cover;
+      background-position: center top;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    /* Gradient overlay — bottom 60% of hero */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        #0A0A0A 0%,
+        rgba(10, 10, 10, 0.85) 30%,
+        rgba(10, 10, 10, 0.3) 60%,
+        transparent 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-placeholder-label {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      z-index: 2;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .hero-text {
+      position: absolute;
+      bottom: 4rem;
+      left: 4rem;
+      z-index: 3;
+      max-width: 700px;
+    }
+
+    .hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 10rem;
+      line-height: 0.88;
+      color: var(--white);
+      display: block;
+    }
+
+    .hero-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--accent);
+      margin: 1.2rem 0;
+    }
+
+    .hero-statement {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 300;
+      font-size: 1.25rem;
+      color: rgba(245, 244, 240, 0.7);
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 1.5rem;
+    }
+
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 5px 12px;
+      border: 1px solid rgba(232, 200, 74, 0.3);
+      color: rgba(232, 200, 74, 0.7);
+      border-radius: 2px;
+    }
+
+    /* Scroll cue */
+    .scroll-cue {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      animation: pulse-cue 2s infinite ease-in-out;
+      transition: opacity 0.4s;
+      cursor: default;
+    }
+
+    .scroll-cue.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes pulse-cue {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ============================================================
+       SHARED SECTION ELEMENTS
+       ============================================================ */
+    .section-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      line-height: 0.92;
+      color: var(--white);
+      margin-bottom: 2.5rem;
+    }
+
+    /* Callout / verdict block */
+    .callout {
+      background: var(--mid);
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 2rem;
+    }
+
+    .callout-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    /* ============================================================
+       SECTION 1 — MARKET
+       ============================================================ */
+    #market {
+      background: var(--black);
+    }
+
+    /* ============================================================
+       SECTION 2 — WHY EY
+       ============================================================ */
+    #whyey {
+      background: var(--surface);
+    }
+
+    /* ============================================================
+       SECTION 3 — PROOF
+       ============================================================ */
+    #proof {
+      background: var(--black);
+    }
+
+    /* ============================================================
+       SECTION 4 — WHY RARE
+       ============================================================ */
+    #rare {
+      background: var(--surface);
+    }
+
+    /* ============================================================
+       SECTION 5 — BUILD
+       ============================================================ */
+    #build {
+      background: var(--black);
+    }
+
+    /* ============================================================
+       SECTION 6 — DECISION
+       ============================================================ */
+    #decision {
+      background: var(--surface);
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    footer {
+      background: var(--black);
+      border-top: 1px solid var(--rule);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer span {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* ============================================================
+       BORDERS AND DECORATION
+       ============================================================ */
+    hr.rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 768px) {
+      section { padding: 4rem 0; }
+
+      .t-hero-name, .hero-name { font-size: 5rem; }
+      .t-section-headline, .section-headline { font-size: 2.5rem; }
+
+      .hero-text {
+        bottom: 3rem;
+        left: 2rem;
+        right: 2rem;
+      }
+
+      .header-nav { display: none; }
+      .hamburger { display: flex; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header id="site-header">
+    <!-- State 1: eyebrow only (visible over hero) -->
+    <div class="h-state1">Capital Programme Advisory &nbsp;·&nbsp; EY Middle East &nbsp;·&nbsp; 2026</div>
+
+    <!-- State 2: full header (visible when scrolled) -->
+    <div class="h-state2">
+      <div class="header-identity">
+        <div class="header-avatar" aria-hidden="true"></div>
+        <div class="identity-text">
+          <span class="identity-name">Ivan Pironi</span>
+          <span class="identity-role">Capital Projects · EY</span>
+        </div>
+      </div>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="#market"   data-nav="market">The Market</a>
+        <a href="#whyey"    data-nav="whyey">Why EY</a>
+        <a href="#proof"    data-nav="proof">Proof</a>
+        <a href="#rare"     data-nav="rare">Why Rare</a>
+        <a href="#build"    data-nav="build">Build</a>
+        <a href="#decision" data-nav="decision">Decision</a>
+      </nav>
+      <button class="hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MOBILE NAV OVERLAY
+       ============================================================ -->
+  <div class="mobile-overlay" id="mobile-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
+    <button class="overlay-close" id="overlay-close" aria-label="Close navigation">×</button>
+    <nav class="overlay-nav">
+      <a href="#market"   data-nav="market">The Market</a>
+      <a href="#whyey"    data-nav="whyey">Why EY</a>
+      <a href="#proof"    data-nav="proof">Proof</a>
+      <a href="#rare"     data-nav="rare">Why Rare</a>
+      <a href="#build"    data-nav="build">Build</a>
+      <a href="#decision" data-nav="decision">Decision</a>
+    </nav>
+  </div>
+
+  <!-- ============================================================
+       HERO — Section 0
+       ============================================================ -->
+  <section class="hero" id="hero" aria-label="Hero">
+    <div class="hero-placeholder-label">[ Replace with Ivan's photo — background-image in .hero CSS ]</div>
+
+    <div class="hero-text">
+      <!-- Placeholder — content added next commit -->
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="scroll-cue" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 9L12 15L18 9" stroke="#E8C84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 1 — THE MARKET
+       ============================================================ -->
+  <section id="market" data-section="market">
+    <div class="container">
+      <!-- Placeholder — content added next commit -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2 — WHY EY
+       ============================================================ -->
+  <section id="whyey" data-section="whyey">
+    <div class="container">
+      <!-- Placeholder — content added next commit -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3 — PROOF POINT
+       ============================================================ -->
+  <section id="proof" data-section="proof">
+    <div class="container">
+      <!-- Placeholder — content added next commit -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4 — WHY RARE
+       ============================================================ -->
+  <section id="rare" data-section="rare">
+    <div class="container">
+      <!-- Placeholder — content added next commit -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5 — WHAT I BUILD
+       ============================================================ -->
+  <section id="build" data-section="build">
+    <div class="container">
+      <!-- Placeholder — content added next commit -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 6 — THE DECISION
+       ============================================================ -->
+  <section id="decision" data-section="decision">
+    <div class="container">
+      <!-- Placeholder — content added next commit -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <span>Ivan Pironi · Capital Projects Advisory · 2026</span>
+    <span>Confidential — prepared for EY Capital Projects Leadership</span>
+  </footer>
+
+  <script>
+    // JavaScript — added in subsequent commits
+  </script>
+
+</body>
+</html>
