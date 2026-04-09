@@ -235,6 +235,8 @@
       align-items: center;
       gap: 12px;
       padding-left: 2rem;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     .header-avatar {
@@ -248,6 +250,12 @@
       flex-shrink: 0;
       filter: grayscale(15%) contrast(1.05);
       border: 1px solid var(--accent);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .header-identity:hover .header-avatar {
+      transform: scale(1.07);
+      box-shadow: 0 0 0 3px rgba(232, 200, 74, 0.35);
     }
 
     .identity-text {
@@ -261,6 +269,11 @@
       font-weight: 500;
       font-size: 17px;
       color: var(--white);
+      transition: color 0.15s;
+    }
+
+    .header-identity:hover .identity-name {
+      color: var(--accent);
     }
 
     .identity-role {
@@ -1861,13 +1874,13 @@
 
     <!-- State 2: full header (visible when scrolled) -->
     <div class="h-state2">
-      <div class="header-identity">
+      <a class="header-identity" href="#" aria-label="Back to top">
         <div class="header-avatar" aria-hidden="true"></div>
         <div class="identity-text">
           <span class="identity-name">Ivan Pironi</span>
           <span class="identity-role">Capital Projects Advisory</span>
         </div>
-      </div>
+      </a>
       <nav class="header-nav" aria-label="Main navigation">
         <a href="#journey"  data-nav="journey">Journey</a>
         <a href="#market"   data-nav="market">The Market</a>
