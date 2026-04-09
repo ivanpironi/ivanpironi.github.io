@@ -1441,20 +1441,92 @@
        FOOTER
        ============================================================ */
     footer {
-      background: var(--black);
+      background: var(--surface);
+      border-top: 2px solid var(--accent);
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      color: var(--white);
+      line-height: 1;
+      display: block;
+    }
+
+    .footer-role {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      display: block;
+      margin-top: 0.4rem;
+    }
+
+    .footer-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: flex-end;
+    }
+
+    .footer-contact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: rgba(245, 244, 240, 0.75);
+      transition: color 0.15s;
+    }
+
+    a.footer-contact:hover,
+    a.footer-contact:focus {
+      color: var(--white);
+      outline: none;
+    }
+
+    .footer-contact svg {
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      padding: 1.5rem 4rem 0;
       border-top: 1px solid var(--rule);
-      padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.5rem;
     }
 
-    footer span {
+    .footer-bottom span {
       font-family: 'DM Mono', monospace;
-      font-size: 12px;
+      font-size: 11px;
       color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    @media (max-width: 768px) {
+      .footer-inner { padding: 0 2rem; }
+      .footer-contacts { align-items: flex-start; }
+      .footer-bottom { padding: 1.5rem 2rem 0; }
     }
 
     /* ============================================================
@@ -2428,7 +2500,7 @@
         <a class="contact-item" href="mailto:ivan.pironi@gmail.com">ivan.pironi@gmail.com</a>
         <span class="contact-item">+971 54 583 1119</span>
         <a class="contact-item" href="https://linkedin.com/in/ivanpironi" target="_blank" rel="noopener">linkedin.com/in/ivanpironi</a>
-        <span class="contact-item">Dubai &nbsp;·&nbsp; UAE &nbsp;·&nbsp; February 2026</span>
+        <span class="contact-item">Dubai &nbsp;·&nbsp; UAE &nbsp;·&nbsp; April 2026</span>
       </div>
 
     </div>
@@ -2438,8 +2510,56 @@
        FOOTER
        ============================================================ -->
   <footer>
-    <span>Ivan Pironi · Capital Projects Advisory · 2026</span>
-    <span>Confidential — prepared for EY Capital Projects Leadership</span>
+    <div class="footer-inner">
+
+      <!-- Identity -->
+      <div>
+        <span class="footer-name">Ivan Pironi</span>
+        <span class="footer-role">Capital Projects Advisory</span>
+      </div>
+
+      <!-- Contact details -->
+      <div class="footer-contacts">
+
+        <a class="footer-contact" href="mailto:ivan.pironi@gmail.com">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M22 7l-10 7L2 7"/>
+          </svg>
+          ivan.pironi@gmail.com
+        </a>
+
+        <a class="footer-contact" href="tel:+971545831119">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          +971 54 583 1119
+        </a>
+
+        <a class="footer-contact" href="https://linkedin.com/in/ivanpironi" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          linkedin.com/in/ivanpironi
+        </a>
+
+        <span class="footer-contact">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+            <circle cx="12" cy="9" r="2"/>
+          </svg>
+          Dubai &nbsp;·&nbsp; UAE &nbsp;·&nbsp; April 2026
+        </span>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Ivan Pironi &nbsp;·&nbsp; Capital Projects Advisory &nbsp;·&nbsp; 2026</span>
+      <span>Confidential — prepared for EY Capital Projects Leadership</span>
+    </div>
   </footer>
 
   <script>
