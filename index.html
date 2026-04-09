@@ -695,7 +695,27 @@
     <div class="hero-placeholder-label">[ Replace with Ivan's photo — background-image in .hero CSS ]</div>
 
     <div class="hero-text">
-      <!-- Placeholder — content added next commit -->
+      <span class="section-eyebrow">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</span>
+
+      <span class="hero-name">Ivan</span>
+      <span class="hero-name">Pironi</span>
+
+      <div class="hero-rule" aria-hidden="true"></div>
+
+      <p class="hero-statement">
+        Sovereign programmes don't fail on ambition.<br>
+        They fail on governance.<br>
+        I fix governance.
+      </p>
+
+      <div class="hero-tags">
+        <span class="hero-tag">PMP®</span>
+        <span class="hero-tag">PRINCE2®</span>
+        <span class="hero-tag">MSc Politecnico di Milano</span>
+        <span class="hero-tag">Oracle PMIS</span>
+        <span class="hero-tag">ISO 19650</span>
+        <span class="hero-tag">Nvidia Omniverse</span>
+      </div>
     </div>
 
     <!-- Scroll cue -->
@@ -769,7 +789,57 @@
   </footer>
 
   <script>
-    // JavaScript — added in subsequent commits
+    'use strict';
+
+    /* ============================================================
+       headerTransition
+       Observes .hero — adds .scrolled to header when hero
+       exits viewport, removes it when hero re-enters.
+       ============================================================ */
+    function headerTransition() {
+      var header = document.getElementById('site-header');
+      var hero   = document.querySelector('.hero');
+      if (!header || !hero) return;
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            header.classList.remove('scrolled');
+          } else {
+            header.classList.add('scrolled');
+          }
+        });
+      }, { threshold: 0 });
+
+      observer.observe(hero);
+    }
+
+    /* ============================================================
+       scrollCueHide
+       Hides the scroll-cue chevron after 120px of scroll.
+       Removes listener once hidden.
+       ============================================================ */
+    function scrollCueHide() {
+      var cue = document.querySelector('.scroll-cue');
+      if (!cue) return;
+
+      function onScroll() {
+        if (window.scrollY > 120) {
+          cue.classList.add('hidden');
+          window.removeEventListener('scroll', onScroll);
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    /* ============================================================
+       Init
+       ============================================================ */
+    document.addEventListener('DOMContentLoaded', function() {
+      headerTransition();
+      scrollCueHide();
+    });
   </script>
 
 </body>
