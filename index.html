@@ -427,15 +427,21 @@
 
     .hero-text {
       position: absolute;
-      top: 7rem;
+      top: 5rem;
       left: 6rem;
       z-index: 3;
       max-width: 620px;
     }
 
+    /* Hero-specific eyebrow overrides */
+    .hero .section-eyebrow {
+      font-size: 14px;
+      margin-bottom: 0.6rem;
+    }
+
     .hero-name {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 10rem;
+      font-size: 9.9rem;
       line-height: 0.88;
       color: var(--white);
       display: block;
@@ -470,8 +476,9 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       padding: 5px 12px;
-      border: 1px solid rgba(232, 200, 74, 0.3);
-      color: rgba(232, 200, 74, 0.7);
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      color: var(--black);
       border-radius: 2px;
     }
 
