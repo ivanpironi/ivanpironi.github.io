@@ -540,60 +540,84 @@
 
     .journey-body p + p { margin-top: 1.4rem; }
 
-    /* Timeline strip */
+    /* ── Timeline: alternating above/below connector line ── */
     .timeline-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
       position: relative;
-      display: flex;
+      height: 440px;
       margin: 0 0 3rem;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
     }
 
-    /* Horizontal connector line through the dots */
+    /* Horizontal connector line at vertical centre */
     .timeline-strip::before {
       content: '';
       position: absolute;
-      top: 2.4rem; /* aligns with dot centre */
-      left: 0;
-      right: 0;
+      left: 0; right: 0;
+      top: 50%;
       height: 1px;
-      background: linear-gradient(to right, var(--accent), rgba(232,200,74,0.15));
+      background: linear-gradient(
+        to right,
+        rgba(232,200,74,0.08),
+        var(--accent) 15%,
+        var(--accent) 85%,
+        rgba(232,200,74,0.08)
+      );
       pointer-events: none;
+      z-index: 0;
     }
 
     .timeline-stop {
-      flex: 1;
-      min-width: 180px;
-      padding-right: 1.5rem;
+      display: grid;
+      grid-template-rows: 1fr auto 1fr;
+      padding: 0 1.2rem;
       position: relative;
+      cursor: default;
+      transition: background 0.25s ease;
+      border-radius: 2px;
     }
 
-    .timeline-stop:last-child { padding-right: 0; }
+    .timeline-stop:hover { background: rgba(232,200,74,0.04); }
 
-    .timeline-year {
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      color: var(--accent);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 0.55rem;
+    /* Content zone — odd stops sit ABOVE the line */
+    .timeline-content {
+      grid-row: 1;
+      align-self: end;
+      padding-bottom: 1.4rem;
+    }
+
+    /* Even stops: content drops BELOW the line */
+    .timeline-stop:nth-child(even) .timeline-content {
+      grid-row: 3;
+      align-self: start;
+      padding-bottom: 0;
+      padding-top: 1.4rem;
     }
 
     .timeline-dot {
-      width: 9px;
-      height: 9px;
+      grid-row: 2;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: var(--accent);
-      margin-bottom: 0.8rem;
       position: relative;
       z-index: 1;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .timeline-stop:hover .timeline-dot {
-      transform: scale(1.5);
-      box-shadow: 0 0 10px rgba(232,200,74,0.5);
+      transform: scale(1.6);
+      box-shadow: 0 0 14px rgba(232,200,74,0.55);
+    }
+
+    .timeline-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
     }
 
     .timeline-city {
@@ -602,7 +626,7 @@
       font-size: 16px;
       color: var(--white);
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.45rem;
     }
 
     .timeline-role {
@@ -628,8 +652,37 @@
 
     @media (max-width: 768px) {
       .journey-headline { font-size: 3rem; }
-      .timeline-strip { gap: 0; padding-bottom: 1rem; }
-      .timeline-stop { min-width: 160px; }
+
+      /* Vertical timeline on mobile */
+      .timeline-strip {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin-left: 0.8rem;
+        border-left: 1px solid rgba(232,200,74,0.35);
+        padding-bottom: 0.5rem;
+      }
+      .timeline-strip::before { display: none; }
+
+      .timeline-stop {
+        display: block;
+        padding: 0 0 2.5rem 1.8rem;
+        position: relative;
+        background: none !important;
+      }
+      .timeline-stop:last-child { padding-bottom: 0; }
+
+      .timeline-dot {
+        position: absolute;
+        left: -5.5px;
+        top: 0.25rem;
+      }
+      .timeline-content,
+      .timeline-stop:nth-child(even) .timeline-content {
+        grid-row: auto;
+        align-self: auto;
+        padding: 0;
+      }
     }
 
     /* ============================================================
@@ -1896,38 +1949,48 @@
       <div class="timeline-strip reveal">
 
         <div class="timeline-stop">
-          <span class="timeline-year">2002–2011</span>
+          <div class="timeline-content">
+            <span class="timeline-year">2002–2011</span>
+            <span class="timeline-city">Milan &amp; Perth</span>
+            <p class="timeline-role">MSc Engineering · Politecnico di Milano · First enterprise delivery roles across Italy &amp; Australia</p>
+          </div>
           <div class="timeline-dot"></div>
-          <span class="timeline-city">Milan &amp; Perth</span>
-          <p class="timeline-role">MSc Engineering · Politecnico di Milano · First enterprise delivery roles across Italy &amp; Australia</p>
         </div>
 
         <div class="timeline-stop">
-          <span class="timeline-year">2011–2015</span>
+          <div class="timeline-content">
+            <span class="timeline-year">2011–2015</span>
+            <span class="timeline-city">Accenture MENA</span>
+            <p class="timeline-role">IT Strategy &amp; Enterprise Architecture · Utilities &amp; Public Sector · Middle East</p>
+          </div>
           <div class="timeline-dot"></div>
-          <span class="timeline-city">Accenture MENA</span>
-          <p class="timeline-role">IT Strategy &amp; Enterprise Architecture · Utilities &amp; Public Sector · Middle East</p>
         </div>
 
         <div class="timeline-stop">
-          <span class="timeline-year">2015–2017</span>
+          <div class="timeline-content">
+            <span class="timeline-year">2015–2017</span>
+            <span class="timeline-city">Deloitte Australia</span>
+            <p class="timeline-role">Capital Project Governance · Public Sector &amp; Resources</p>
+          </div>
           <div class="timeline-dot"></div>
-          <span class="timeline-city">Deloitte Australia</span>
-          <p class="timeline-role">Capital Project Governance · Public Sector &amp; Resources</p>
         </div>
 
         <div class="timeline-stop">
-          <span class="timeline-year">2018–2022</span>
+          <div class="timeline-content">
+            <span class="timeline-year">2018–2022</span>
+            <span class="timeline-city">Accenture MENA</span>
+            <p class="timeline-role">Sovereign Cloud &amp; Hyperscaler Architecture · Regulated Environments · MENA &amp; APAC</p>
+          </div>
           <div class="timeline-dot"></div>
-          <span class="timeline-city">Accenture MENA</span>
-          <p class="timeline-role">Sovereign Cloud &amp; Hyperscaler Architecture · Regulated Environments · MENA &amp; APAC</p>
         </div>
 
         <div class="timeline-stop">
-          <span class="timeline-year">2022–Now</span>
+          <div class="timeline-content">
+            <span class="timeline-year">2022–Now</span>
+            <span class="timeline-city">Accenture Industry X</span>
+            <p class="timeline-role">Smart Cities · Capital PMO · Digital Twin · KSA Giga-Programmes</p>
+          </div>
           <div class="timeline-dot"></div>
-          <span class="timeline-city">Accenture Industry X</span>
-          <p class="timeline-role">Smart Cities · Capital PMO · Digital Twin · KSA Giga-Programmes</p>
         </div>
 
       </div>
