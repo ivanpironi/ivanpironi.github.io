@@ -2403,31 +2403,170 @@
 
     /* ============================================================
        headerTransition
-       Observes .hero — adds .scrolled to header when hero
-       exits viewport, removes it when hero re-enters.
+       Observes .hero — adds .scrolled to header when hero exits
+       viewport; removes it when hero re-enters.
        ============================================================ */
     function headerTransition() {
       var header = document.getElementById('site-header');
       var hero   = document.querySelector('.hero');
       if (!header || !hero) return;
 
-      var observer = new IntersectionObserver(function(entries) {
+      new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          header.classList.toggle('scrolled', !entry.isIntersecting);
+        });
+      }, { threshold: 0 }).observe(hero);
+    }
+
+    /* ============================================================
+       navActiveState
+       Tracks which section[data-section] is in the centre band.
+       Sets .active on the matching [data-nav] link in both the
+       desktop header nav and mobile overlay nav.
+       ============================================================ */
+    function navActiveState() {
+      var sections = document.querySelectorAll('section[data-section]');
+      var allLinks = document.querySelectorAll('[data-nav]');
+      if (!sections.length || !allLinks.length) return;
+
+      function setActive(id) {
+        allLinks.forEach(function(link) {
+          link.classList.toggle('active', link.dataset.nav === id);
+        });
+      }
+
+      var navObs = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
-            header.classList.remove('scrolled');
-          } else {
-            header.classList.add('scrolled');
+            setActive(entry.target.dataset.section);
           }
         });
-      }, { threshold: 0 });
+      }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
 
-      observer.observe(hero);
+      sections.forEach(function(s) { navObs.observe(s); });
+    }
+
+    /* ============================================================
+       scrollReveal
+       Adds .revealed to every .reveal element on entry.
+       Unobserves immediately — no re-animation on scroll back.
+       Hero has no .reveal so is unaffected.
+       ============================================================ */
+    function scrollReveal() {
+      var items = document.querySelectorAll('.reveal');
+      if (!items.length) return;
+
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      items.forEach(function(el) { obs.observe(el); });
+    }
+
+    /* ============================================================
+       timelineReveal
+       Staggered left-to-right reveal for .proof-card elements.
+       Observes the timeline container; fires once on entry.
+       ============================================================ */
+    function timelineReveal() {
+      var timeline = document.getElementById('proof-timeline');
+      if (!timeline) return;
+
+      var cards = timeline.querySelectorAll('.proof-card');
+
+      var obs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          cards.forEach(function(card, i) {
+            setTimeout(function() {
+              card.classList.add('revealed');
+            }, i * 150);
+          });
+          obs.unobserve(timeline);
+        }
+      }, { threshold: 0.1 });
+
+      obs.observe(timeline);
+    }
+
+    /* ============================================================
+       accordionInit
+       One accordion open at a time. Toggles .open class,
+       swaps icon + ↔ ×, animates max-height via CSS.
+       ============================================================ */
+    function accordionInit() {
+      var items = document.querySelectorAll('.accordion-item');
+      if (!items.length) return;
+
+      items.forEach(function(item) {
+        var header  = item.querySelector('.accordion-header');
+        var icon    = item.querySelector('.accordion-icon');
+        var content = item.querySelector('.accordion-content');
+        if (!header) return;
+
+        header.addEventListener('click', function() {
+          var isOpen = item.classList.contains('open');
+
+          // close all
+          items.forEach(function(other) {
+            other.classList.remove('open');
+            var otherIcon = other.querySelector('.accordion-icon');
+            if (otherIcon) otherIcon.textContent = '+';
+          });
+
+          // open clicked item if it was closed
+          if (!isOpen) {
+            item.classList.add('open');
+            if (icon) icon.textContent = '×';
+          }
+        });
+
+        // keyboard: Enter / Space on header
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('role', 'button');
+        header.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            header.click();
+          }
+        });
+      });
+    }
+
+    /* ============================================================
+       barAnimation
+       On entry of #engagement-bars, sets each .bar-fill width
+       to its data-width value with staggered setTimeout delays.
+       Width animation is the explicit spec exception to the
+       transform/opacity-only rule.
+       ============================================================ */
+    function barAnimation() {
+      var container = document.getElementById('engagement-bars');
+      if (!container) return;
+
+      var bars = container.querySelectorAll('.bar-fill');
+
+      var obs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          bars.forEach(function(bar, i) {
+            setTimeout(function() {
+              bar.style.width = bar.dataset.width || '0%';
+            }, i * 100);
+          });
+          obs.unobserve(container);
+        }
+      }, { threshold: 0.3 });
+
+      obs.observe(container);
     }
 
     /* ============================================================
        scrollCueHide
-       Hides the scroll-cue chevron after 120px of scroll.
-       Removes listener once hidden.
+       Hides chevron after 120px scroll; removes listener once done.
        ============================================================ */
     function scrollCueHide() {
       var cue = document.querySelector('.scroll-cue');
@@ -2444,12 +2583,71 @@
     }
 
     /* ============================================================
-       Init
+       mobileMenu
+       Hamburger → full-screen overlay. Body scroll locked when
+       open. Closed by: close button, link tap, ESC key,
+       or tap outside any link (handled via overlay click).
+       ============================================================ */
+    function mobileMenu() {
+      var hamburger = document.getElementById('hamburger-btn');
+      var overlay   = document.getElementById('mobile-overlay');
+      var closeBtn  = document.getElementById('overlay-close');
+      if (!hamburger || !overlay) return;
+
+      function openMenu() {
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        hamburger.setAttribute('aria-expanded', 'true');
+        if (closeBtn) closeBtn.focus();
+      }
+
+      function closeMenu() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+      }
+
+      hamburger.addEventListener('click', openMenu);
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeMenu);
+      }
+
+      // Tapping a nav link closes overlay and scrolls to section
+      overlay.querySelectorAll('a[data-nav]').forEach(function(link) {
+        link.addEventListener('click', function() {
+          closeMenu();
+        });
+      });
+
+      // Tap on overlay backdrop (not on a link) closes menu
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeMenu();
+      });
+
+      // ESC closes menu
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) {
+          closeMenu();
+        }
+      });
+    }
+
+    /* ============================================================
+       Init — DOMContentLoaded
        ============================================================ */
     document.addEventListener('DOMContentLoaded', function() {
       headerTransition();
+      navActiveState();
+      scrollReveal();
+      timelineReveal();
+      accordionInit();
+      barAnimation();
       scrollCueHide();
+      mobileMenu();
     });
+
   </script>
 
 </body>
