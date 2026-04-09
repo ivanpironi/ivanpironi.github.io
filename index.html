@@ -238,8 +238,8 @@
     }
 
     .header-avatar {
-      width: 40px;
-      height: 40px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
       background-color: #141412;
       background-image: url('assets/ivan-pironi.png');
@@ -258,13 +258,13 @@
     .identity-name {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 500;
-      font-size: 16px;
+      font-size: 17px;
       color: var(--white);
     }
 
     .identity-role {
       font-family: 'DM Mono', monospace;
-      font-size: 12px;
+      font-size: 14px;
       color: var(--muted);
     }
 
@@ -1513,6 +1513,14 @@
 
       .header-nav { display: none; }
       .hamburger { display: flex; }
+
+      /* Spread avatar and hamburger to full width on mobile */
+      .h-state2 {
+        padding: 0 1.5rem;
+      }
+      .header-identity {
+        padding-left: 0;
+      }
     }
 
   </style>
@@ -1532,7 +1540,7 @@
         <div class="header-avatar" aria-hidden="true"></div>
         <div class="identity-text">
           <span class="identity-name">Ivan Pironi</span>
-          <span class="identity-role">Capital Projects · EY</span>
+          <span class="identity-role">Capital Projects Advisory</span>
         </div>
       </div>
       <nav class="header-nav" aria-label="Main navigation">
