@@ -460,7 +460,12 @@
       height: 1px;
       background: var(--accent);
       margin: 1.2rem 0;
+      transform: scaleX(0);
+      transform-origin: left center;
+      animation: rule-draw 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
     }
+
+    @keyframes rule-draw { to { transform: scaleX(1); } }
 
     .hero-statement {
       font-family: 'Barlow Condensed', sans-serif;
@@ -597,6 +602,13 @@
     .stat-cell {
       background: var(--black);
       padding: 1.8rem 1.4rem;
+      transition: background 0.25s ease, transform 0.25s ease;
+      cursor: default;
+    }
+
+    .stat-cell:hover {
+      background: var(--surface);
+      transform: translateY(-5px);
     }
 
     .stat-num {
@@ -825,6 +837,11 @@
       opacity: 1;
       transform: translateY(0);
       border-top-color: var(--accent);
+    }
+
+    .proof-card.revealed:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.4);
     }
 
     .card-stage {
@@ -1438,6 +1455,38 @@
     }
 
     /* ============================================================
+       ICON + INTERACTION ENHANCEMENTS
+       ============================================================ */
+
+    /* Section eyebrow icon */
+    .eyebrow-icon {
+      display: inline-block;
+      vertical-align: -2px;
+      margin-right: 9px;
+      opacity: 0.85;
+    }
+
+    /* Footer contact icon hover */
+    .footer-contact svg {
+      transition: transform 0.2s ease;
+    }
+    a.footer-contact:hover svg {
+      transform: scale(1.25);
+    }
+
+    /* Accordion icon smooth rotation: + flips to × */
+    .accordion-icon {
+      transition: transform 0.25s ease, color 0.2s;
+    }
+    .accordion-item.open .accordion-icon {
+      transform: rotate(45deg);
+    }
+
+    /* Reveal items in grids get a slight stagger via inline style set in JS */
+    .stat-cell { will-change: transform; }
+    .proof-card { will-change: transform, opacity; }
+
+    /* ============================================================
        FOOTER
        ============================================================ */
     footer {
@@ -1694,7 +1743,7 @@
   <section id="market" data-section="market">
     <div class="container">
 
-      <span class="section-eyebrow reveal">The market</span>
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>The market</span>
 
       <!-- Pull quote + body copy -->
       <div class="market-cols reveal">
@@ -1729,12 +1778,12 @@
       <!-- Four-stat strip -->
       <div class="stat-strip reveal">
         <div class="stat-cell">
-          <div class="stat-num">$8.3B</div>
+          <div class="stat-num" data-counter data-val="8.3" data-prefix="$" data-suffix="B">$8.3B</div>
           <div class="stat-label">GCC consulting market · 2025</div>
           <div class="stat-sub">12% growth p.a. — twice the US rate</div>
         </div>
         <div class="stat-cell">
-          <div class="stat-num">$1.65T</div>
+          <div class="stat-num" data-counter data-val="1.65" data-prefix="$" data-suffix="T">$1.65T</div>
           <div class="stat-label">Saudi sovereign programme pipeline</div>
           <div class="stat-sub">2030 Expo · 2034 FIFA World Cup · hard deadlines</div>
         </div>
@@ -1817,7 +1866,7 @@
   <section id="whyey" data-section="whyey">
     <div class="container">
 
-      <span class="section-eyebrow reveal">Why EY — specifically</span>
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Why EY — specifically</span>
 
       <h2 class="section-headline reveal">
         Not a Big Four argument.<br>
@@ -1910,7 +1959,7 @@
   <section id="proof" data-section="proof">
     <div class="container">
 
-      <span class="section-eyebrow reveal">Qiddiya &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Giga-Programme &nbsp;·&nbsp; Delivered through Accenture</span>
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Qiddiya &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Giga-Programme &nbsp;·&nbsp; Delivered through Accenture</span>
 
       <h2 class="section-headline reveal">
         One engagement.<br>
@@ -2044,7 +2093,7 @@
   <section id="rare" data-section="rare">
     <div class="container">
 
-      <span class="section-eyebrow reveal">The competitive gap</span>
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>The competitive gap</span>
 
       <h2 class="section-headline reveal">
         The market has strategists.<br>
@@ -2228,7 +2277,7 @@
   <section id="build" data-section="build">
     <div class="container">
 
-      <span class="section-eyebrow reveal">The commercial case</span>
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>The commercial case</span>
 
       <h2 class="section-headline reveal">
         Not a hire.<br>
@@ -2438,7 +2487,7 @@
   <section id="decision" data-section="decision">
     <div class="container">
 
-      <span class="section-eyebrow reveal">For EY Capital Projects leadership</span>
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>For EY Capital Projects leadership</span>
 
       <!-- Three Q&A blocks -->
       <div class="qa-block reveal">
@@ -2789,6 +2838,47 @@
     }
 
     /* ============================================================
+       countUp
+       Animates [data-counter] stat numbers from 0 to their value
+       using requestAnimationFrame, triggered by IntersectionObserver.
+       ============================================================ */
+    function countUp() {
+      var els = document.querySelectorAll('[data-counter]');
+      if (!els.length) return;
+
+      function animateEl(el) {
+        var target  = parseFloat(el.dataset.val);
+        var prefix  = el.dataset.prefix  || '';
+        var suffix  = el.dataset.suffix  || '';
+        var dec     = (el.dataset.val.split('.')[1] || '').length;
+        var duration = 1400;
+        var start   = null;
+
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          // ease-out cubic
+          var ease = 1 - Math.pow(1 - progress, 3);
+          var val = (ease * target).toFixed(dec);
+          el.textContent = prefix + val + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateEl(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      els.forEach(function(el) { obs.observe(el); });
+    }
+
+    /* ============================================================
        Init — DOMContentLoaded
        ============================================================ */
     document.addEventListener('DOMContentLoaded', function() {
@@ -2798,6 +2888,7 @@
       timelineReveal();
       accordionInit();
       barAnimation();
+      countUp();
       scrollCueHide();
       mobileMenu();
     });
