@@ -565,7 +565,13 @@
       );
       pointer-events: none;
       z-index: 0;
+      /* Line draw animation — triggered by .tl-animate */
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
+    .timeline-strip.tl-animate::before { transform: scaleX(1); }
 
     .timeline-stop {
       display: grid;
@@ -573,8 +579,18 @@
       padding: 0 1.2rem;
       position: relative;
       cursor: default;
-      transition: background 0.25s ease;
       border-radius: 2px;
+      /* Start hidden — odd slides from above, even from below */
+      opacity: 0;
+      transition: opacity 0.45s ease, transform 0.45s ease, background 0.25s ease;
+    }
+
+    .timeline-stop:nth-child(odd)  { transform: translateY(-14px); }
+    .timeline-stop:nth-child(even) { transform: translateY(14px); }
+
+    .timeline-stop.tl-revealed {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .timeline-stop:hover { background: rgba(232,200,74,0.04); }
@@ -602,12 +618,25 @@
       background: var(--accent);
       position: relative;
       z-index: 1;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transform: scale(0);
+      transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
     }
+
+    .timeline-stop.tl-revealed .timeline-dot { transform: scale(1); }
 
     .timeline-stop:hover .timeline-dot {
       transform: scale(1.6);
       box-shadow: 0 0 14px rgba(232,200,74,0.55);
+    }
+
+    /* Pulse on the "now" stop — only after reveal */
+    .timeline-stop:last-child.tl-revealed .timeline-dot {
+      animation: dot-pulse 2.5s ease-in-out 1.2s infinite;
+    }
+
+    @keyframes dot-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(232,200,74,0.55); }
+      50%       { box-shadow: 0 0 0 7px rgba(232,200,74,0); }
     }
 
     .timeline-year {
@@ -1946,7 +1975,7 @@
       </div>
 
       <!-- Five-stop timeline -->
-      <div class="timeline-strip reveal">
+      <div class="timeline-strip">
 
         <div class="timeline-stop">
           <div class="timeline-content">
@@ -3145,6 +3174,26 @@
     }
 
     /* ============================================================
+       timelineAnimate
+       Staggered reveal for the career journey timeline strip.
+       Line draws left→right, stops fade+slide in, dots spring-bounce.
+       ============================================================ */
+    function timelineAnimate() {
+      var strip = document.querySelector('.timeline-strip');
+      if (!strip) return;
+      var stops = strip.querySelectorAll('.timeline-stop');
+      var obs = new IntersectionObserver(function(entries) {
+        if (!entries[0].isIntersecting) return;
+        strip.classList.add('tl-animate');
+        stops.forEach(function(stop, i) {
+          setTimeout(function() { stop.classList.add('tl-revealed'); }, 200 + i * 150);
+        });
+        obs.unobserve(strip);
+      }, { threshold: 0.2 });
+      obs.observe(strip);
+    }
+
+    /* ============================================================
        Init — DOMContentLoaded
        ============================================================ */
     document.addEventListener('DOMContentLoaded', function() {
@@ -3152,6 +3201,7 @@
       navActiveState();
       scrollReveal();
       timelineReveal();
+      timelineAnimate();
       accordionInit();
       barAnimation();
       countUp();
