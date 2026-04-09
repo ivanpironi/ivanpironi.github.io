@@ -1466,6 +1466,12 @@
       .t-hero-name, .hero-name { font-size: 3.5rem; }
       .t-section-headline, .section-headline { font-size: 2.5rem; }
 
+      /* Hero height set to match target device viewport height (1065px) */
+      .hero {
+        height: 1065px;
+        min-height: 1065px;
+      }
+
       /* On narrow screens, photo spans full width — reset the desktop left offset */
       .hero::before {
         inset: 0;
