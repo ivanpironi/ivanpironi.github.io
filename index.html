@@ -243,8 +243,8 @@
       border-radius: 50%;
       background-color: #141412;
       background-image: url('assets/ivan-pironi.png');
-      background-size: cover;
-      background-position: center top;
+      background-size: 160%;
+      background-position: center 8%;
       flex-shrink: 0;
       filter: grayscale(15%) contrast(1.05);
     }
@@ -265,7 +265,7 @@
     .identity-role {
       font-family: 'DM Mono', monospace;
       font-size: 14px;
-      color: var(--muted);
+      color: rgba(245, 244, 240, 0.55);
     }
 
     /* Desktop nav */
@@ -278,7 +278,7 @@
 
     .header-nav a {
       font-family: 'DM Mono', monospace;
-      font-size: 12px;
+      font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
@@ -305,7 +305,7 @@
       background: none;
       border: none;
       padding: 6px;
-      margin-right: 2rem;
+      margin-right: 0;
       cursor: pointer;
     }
 
@@ -1516,10 +1516,14 @@
 
       /* Spread avatar and hamburger to full width on mobile */
       .h-state2 {
-        padding: 0 1.5rem;
+        padding: 0 1rem;
       }
       .header-identity {
         padding-left: 0;
+      }
+      /* Hide the role line on mobile — too long at this width */
+      .identity-role {
+        display: none;
       }
     }
 
