@@ -246,10 +246,11 @@
       height: 40px;
       border-radius: 50%;
       background-color: #141412;
-      /* PHOTO: same src as hero */
+      background-image: url('assets/ivan-pironi.jpg');
       background-size: cover;
       background-position: center top;
       flex-shrink: 0;
+      filter: grayscale(15%) contrast(1.05);
     }
 
     .identity-text {
@@ -396,18 +397,26 @@
        HERO
        ============================================================ */
 
-    /* PHOTO: replace url('placeholder') with Ivan's actual photo */
     .hero {
       position: relative;
       height: 100vh;
       min-height: 600px;
       background-color: #141412;
-      background-image: url('placeholder');
-      background-size: cover;
-      background-position: center top;
       overflow: hidden;
       display: flex;
       align-items: flex-end;
+    }
+
+    /* Photo layer — filter isolated here so typography is unaffected */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/ivan-pironi.jpg');
+      background-size: cover;
+      background-position: center top;
+      filter: grayscale(15%) contrast(1.05);
+      z-index: 0;
     }
 
     /* Gradient overlay — bottom 60% of hero */
