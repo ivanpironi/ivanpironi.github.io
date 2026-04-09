@@ -557,11 +557,224 @@
       background: var(--black);
     }
 
+    /* Two-column intro: 55 / 45 */
+    .market-cols {
+      display: grid;
+      grid-template-columns: 55fr 45fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    .pull-quote {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      line-height: 1.0;
+      color: var(--white);
+    }
+
+    .pull-quote .accent { color: var(--accent); }
+
+    .market-body {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .market-body p + p { margin-top: 1.2rem; }
+
+    /* Four-stat strip */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--rule);
+      margin-bottom: 4rem;
+    }
+
+    .stat-cell {
+      background: var(--black);
+      padding: 1.8rem 1.4rem;
+    }
+
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .stat-sub {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    /* Five market forces */
+    .market-forces { margin-top: 0; }
+
+    .force {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: flex-start;
+    }
+
+    .force:last-child { border-bottom: none; }
+
+    .force-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--accent);
+      min-width: 52px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .force-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .force-body {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
     /* ============================================================
        SECTION 2 — WHY EY
        ============================================================ */
     #whyey {
       background: var(--surface);
+    }
+
+    .whyey-intro {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      color: var(--white);
+      max-width: 700px;
+      line-height: 1.85;
+      margin-bottom: 3rem;
+    }
+
+    .whyey-intro p + p { margin-top: 1.2rem; }
+
+    /* Three conversion-path cells */
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--rule);
+      margin-bottom: 2px;
+    }
+
+    .path-cell {
+      background: var(--black);
+      padding: 1.8rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .path-from {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+    }
+
+    .path-arrow {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      color: var(--rule);
+      margin: 0.3rem 0;
+      line-height: 1;
+    }
+
+    .path-to {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+      line-height: 1.2;
+    }
+
+    .path-body {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .path-fee {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--rule);
+      line-height: 1.5;
+    }
+
+    /* Multiplier callout */
+    .multiplier {
+      background: var(--mid);
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 2rem;
+    }
+
+    .multiplier-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .multiplier-body {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--white);
+      line-height: 1.75;
+      max-width: 800px;
+    }
+
+    /* ── Responsive ────────────────────────── */
+    @media (max-width: 768px) {
+      .market-cols { grid-template-columns: 1fr; gap: 2.5rem; }
+      .stat-strip  { grid-template-columns: repeat(2, 1fr); }
+      .path-grid   { grid-template-columns: 1fr; }
     }
 
     /* ============================================================
@@ -731,7 +944,121 @@
        ============================================================ -->
   <section id="market" data-section="market">
     <div class="container">
-      <!-- Placeholder — content added next commit -->
+
+      <span class="section-eyebrow reveal">The market</span>
+
+      <!-- Pull quote + body copy -->
+      <div class="market-cols reveal">
+        <div class="pull-quote">
+          EY already has<br>
+          the clients.<br>
+          It is missing<br>
+          the conversation.<br>
+          <span class="accent">That is what<br>I change.</span>
+        </div>
+        <div class="market-body">
+          <p>The GCC consulting market is the fastest-growing advisory
+          market in the world — $8.3 billion in 2025, expanding at
+          12% per annum, twice the rate of North America.</p>
+          <p>Capital projects advisory sits at its centre. Saudi Arabia's
+          $1.65 trillion sovereign programme pipeline. The UAE's
+          $875 billion infrastructure agenda. Hard political deadlines
+          — 2030 Expo, 2034 FIFA World Cup — that make governance
+          advisory non-discretionary spend, not a line item to defer.</p>
+          <p>The premium sub-segment — programme governance, PMIS
+          strategy, Digital Twin readiness, lifecycle intelligence
+          — is worth $400 to $700 million per annum. It is the
+          fastest-growing sub-segment in GCC consulting. And no
+          Big Four firm owns it at the technical-advisory
+          intersection where sovereign clients are currently
+          spending.</p>
+          <p>That is the market. EY has the platform to lead it.
+          This is the profile that activates the capability.</p>
+        </div>
+      </div>
+
+      <!-- Four-stat strip -->
+      <div class="stat-strip reveal">
+        <div class="stat-cell">
+          <div class="stat-num">$8.3B</div>
+          <div class="stat-label">GCC consulting market · 2025</div>
+          <div class="stat-sub">12% growth p.a. — twice the US rate</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">$1.65T</div>
+          <div class="stat-label">Saudi sovereign programme pipeline</div>
+          <div class="stat-sub">2030 Expo · 2034 FIFA World Cup · hard deadlines</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">$400–700M</div>
+          <div class="stat-label">Addressable premium sub-segment p.a.</div>
+          <div class="stat-sub">Programme governance · PMIS · Digital Twin</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">&lt;1%</div>
+          <div class="stat-label">Year 1 target vs addressable market</div>
+          <div class="stat-sub">The ambition is anchored relationships, not share</div>
+        </div>
+      </div>
+
+      <!-- Five market forces -->
+      <div class="market-forces reveal">
+        <div class="force">
+          <span class="force-num">01</span>
+          <div>
+            <div class="force-title">Saudi Arabia's maturity shift</div>
+            <p class="force-body">Sovereign clients are no longer buying ambition. They are
+            buying proof of return. Governance and delivery intelligence
+            advisory is now the highest-value spend in the KSA
+            consulting market — not a discretionary cost.</p>
+          </div>
+        </div>
+        <div class="force">
+          <span class="force-num">02</span>
+          <div>
+            <div class="force-title">Hard political deadlines that cannot move</div>
+            <p class="force-body">2030 Expo. 2034 FIFA World Cup. These are not commercial
+            deadlines. They are national commitments. Programme
+            governance advisory on these programmes is
+            mission-critical, non-deferrable sovereign spend.</p>
+          </div>
+        </div>
+        <div class="force">
+          <span class="force-num">03</span>
+          <div>
+            <div class="force-title">The raised bar for advisory independence</div>
+            <p class="force-body">KSA Royal Commissions and PIF-affiliated entities now
+            require demonstrated independence from EPC and vendor
+            agendas, and verifiable delivery authority. These are
+            qualifying criteria, not differentiators. The advisor
+            who cannot meet them does not get the conversation.</p>
+          </div>
+        </div>
+        <div class="force">
+          <span class="force-num">04</span>
+          <div>
+            <div class="force-title">Digital Twin and PMIS intelligence as budget priority</div>
+            <p class="force-body">Two thirds of GCC organisations plan to allocate over
+            30% of consulting budgets to AI adoption and digital
+            transformation in 2025. That spend intersects directly
+            with PMIS intelligence, Digital Twin strategy, and
+            cloud-enabled delivery governance — this practice's
+            core offering.</p>
+          </div>
+        </div>
+        <div class="force">
+          <span class="force-num">05</span>
+          <div>
+            <div class="force-title">A structural pipeline, not a cyclical one</div>
+            <p class="force-body">$1.1 trillion in funded GCC infrastructure investment
+            beyond 2030. The advisory pipeline that follows is
+            not dependent on an oil cycle or a single programme
+            generation. It is structural, multi-decade, and
+            expanding.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -740,7 +1067,91 @@
        ============================================================ -->
   <section id="whyey" data-section="whyey">
     <div class="container">
-      <!-- Placeholder — content added next commit -->
+
+      <span class="section-eyebrow reveal">Why EY — specifically</span>
+
+      <h2 class="section-headline reveal">
+        Not a Big Four argument.<br>
+        A platform argument.
+      </h2>
+
+      <!-- Intro block -->
+      <div class="whyey-intro reveal">
+        <p>EY's Capital Projects practice in the Middle East is at
+        an inflection point. The audit and risk relationships
+        with UAE sovereign developers, KSA Royal Commissions,
+        and PIF-affiliated entities are established. The client
+        trust is there.</p>
+        <p>What is not yet there — at the required depth — is the
+        strategic advisory capability to convert that trust into
+        capital programme mandates. Governance model design.
+        PMIS business case. Digital Twin use case definition.
+        The full chain from strategy to delivery oversight.</p>
+        <p>EY recently made a deliberate investment in Capital
+        Projects advisory leadership in the region. That signal
+        is clear: the intent to build is there. What this
+        profile adds is the day-one capability to execute
+        against it — before the window closes.</p>
+      </div>
+
+      <!-- Three conversion paths -->
+      <div class="path-grid reveal">
+
+        <div class="path-cell">
+          <span class="path-from">Audit relationship</span>
+          <div class="path-arrow">→</div>
+          <div class="path-to">Governance advisory mandate</div>
+          <p class="path-body">EY surfaces programme governance weakness or cost
+          control failures in a sovereign client audit. That
+          is the entry point for a $600K–$1.5M governance
+          model redesign or PMIS strategy engagement. The
+          trust already exists. This profile provides the
+          technical credibility to lead the advisory work.</p>
+          <div class="path-fee">$600K – $1.5M initial → $800K – $2M pa retainer</div>
+        </div>
+
+        <div class="path-cell">
+          <span class="path-from">Risk and assurance</span>
+          <div class="path-arrow">→</div>
+          <div class="path-to">Programme recovery mandate</div>
+          <p class="path-body">EY's risk team identifies programme distress —
+          cost overruns, schedule failures, data integrity
+          breakdown. That creates the entry for a $600K–$2M
+          programme recovery advisory engagement. Highest
+          trust-building velocity of any engagement type.
+          Clients remember who helped them when it mattered.</p>
+          <div class="path-fee">$600K – $2M over 3–6 months</div>
+        </div>
+
+        <div class="path-cell">
+          <span class="path-from">Technology consulting</span>
+          <div class="path-arrow">→</div>
+          <div class="path-to">Capital advisory mandate</div>
+          <p class="path-body">EY's cloud or digital transformation engagement
+          creates a natural entry for Digital Twin strategy
+          or PMIS architecture advisory. The client
+          relationship is live. This profile provides the
+          capability to lead the strategic business case
+          and use case definition — the work pure technology
+          consultants cannot credibly lead.</p>
+          <div class="path-fee">$300K – $700K initial → $1M – $3M roadmap</div>
+        </div>
+
+      </div>
+
+      <!-- Multiplier callout -->
+      <div class="multiplier reveal">
+        <span class="multiplier-label">The multiplier effect</span>
+        <p class="multiplier-body">A capital programme governance engagement anchored in
+        EY's existing audit relationship generates pull-through
+        across risk controls, technology consulting, and tax
+        structuring on capital structure. A single $600K advisory
+        mandate, correctly positioned, activates EY's full
+        multi-service line capability. Competitors operating in
+        siloed practices cannot replicate this. EY can — with
+        the right advisory anchor in Capital Projects.</p>
+      </div>
+
     </div>
   </section>
 
