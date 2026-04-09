@@ -784,6 +784,147 @@
       background: var(--black);
     }
 
+    .proof-intro {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 660px;
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+    }
+
+    .proof-intro p + p { margin-top: 1.1rem; }
+
+    /* Horizontal scroll timeline */
+    .timeline {
+      display: flex;
+      gap: 2px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .timeline::-webkit-scrollbar { display: none; }
+
+    /* Each card starts invisible; timelineReveal() adds .revealed */
+    .proof-card {
+      min-width: 300px;
+      flex-shrink: 0;
+      background: var(--surface);
+      padding: 2rem 1.5rem;
+      border-top: 3px solid var(--rule);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease,
+                  border-top-color 0.4s ease;
+    }
+
+    .proof-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+      border-top-color: var(--accent);
+    }
+
+    .card-stage {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+
+    .card-desc {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .card-divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 1rem 0;
+    }
+
+    .card-outcome {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      line-height: 1.5;
+    }
+
+    .card-sowhat {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--rule);
+      line-height: 1.6;
+    }
+
+    /* Verdict block */
+    .verdict {
+      background: var(--mid);
+      border-left: 3px solid var(--accent);
+      padding: 2rem 2.5rem;
+      max-width: 720px;
+    }
+
+    .verdict-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .verdict-body {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--white);
+      line-height: 1.9;
+    }
+
+    .verdict-body p + p { margin-top: 0.4rem; }
+
+    .verdict-close {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--rule);
+      letter-spacing: 0.04em;
+    }
+
+    /* Mobile: stack timeline vertically */
+    @media (max-width: 768px) {
+      .timeline { flex-direction: column; overflow-x: visible; }
+      .proof-card { min-width: unset; width: 100%; }
+    }
+
     /* ============================================================
        SECTION 4 — WHY RARE
        ============================================================ */
@@ -1160,7 +1301,132 @@
        ============================================================ -->
   <section id="proof" data-section="proof">
     <div class="container">
-      <!-- Placeholder — content added next commit -->
+
+      <span class="section-eyebrow reveal">Qiddiya &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Giga-Programme &nbsp;·&nbsp; Delivered through Accenture</span>
+
+      <h2 class="section-headline reveal">
+        One engagement.<br>
+        The full chain.<br>
+        Every question<br>
+        answered.
+      </h2>
+
+      <div class="proof-intro reveal">
+        <p>A sovereign KSA entertainment and tourism giga-programme
+        with a capital development schedule extending to 2050.
+        No reliable single source of truth across the delivery
+        enterprise. Irreconcilable cost data between SAP and the
+        cost control layer. Schedule status in P6 untrustworthy
+        at programme level. No confident view of where a
+        multi-billion dollar programme stood.</p>
+        <p>This was not a technology implementation role.
+        It was a senior advisory mandate — from digital needs
+        assessment through platform selection through RFP
+        governance through Nvidia Omniverse deployment.
+        In a single engagement trajectory. On a live programme.</p>
+      </div>
+
+      <!-- Five-card horizontal timeline -->
+      <div class="timeline" id="proof-timeline">
+
+        <div class="proof-card">
+          <div class="card-stage">01</div>
+          <div class="card-title">Digital Needs Assessment</div>
+          <p class="card-desc">Mapped the full engineering and programme data landscape
+          across the enterprise. Identified root causes of data
+          distrust: misaligned cost hierarchies between SAP and
+          the cost control layer, no governed schedule baseline,
+          fragmented document control with no audit trail.</p>
+          <hr class="card-divider">
+          <div class="card-outcome">Defined the information architecture requirements
+          for a functioning PMIS.</div>
+          <p class="card-sowhat">Before anyone could fix the system, someone had to
+          diagnose why the data could not be trusted.
+          That is strategic work, not technical work.</p>
+        </div>
+
+        <div class="proof-card">
+          <div class="card-stage">02</div>
+          <div class="card-title">Platform-Agnostic Evaluation</div>
+          <p class="card-desc">Scored Oracle Unifier, Aconex, and competing PMIS
+          platforms against the client's operating model —
+          with no commercial agenda. Recommended Oracle on
+          ERP integration capability, P6 schedule linkage,
+          and Aconex document control depth.</p>
+          <hr class="card-divider">
+          <div class="card-outcome">Justified the selection in terms the client's
+          board could understand and defend.</div>
+          <p class="card-sowhat">Any vendor can recommend their own platform.
+          An advisor with no agenda and the technical depth
+          to evaluate honestly is a fundamentally different
+          proposition.</p>
+        </div>
+
+        <div class="proof-card">
+          <div class="card-stage">03</div>
+          <div class="card-title">RFP Authorship · Deliberate Budget Exclusion</div>
+          <p class="card-desc">Authored the full PMIS RFP — scope, functional
+          requirements, integration specifications, evaluation
+          criteria, commercial structure. Deliberately excluded
+          from budget definition to preserve complete advisory
+          integrity before responding competitively in Stage 04.</p>
+          <hr class="card-divider">
+          <div class="card-outcome">Owner-side independence.
+          Sovereign clients remember this.</div>
+          <p class="card-sowhat">EY's advisory positioning requires exactly this
+          integrity. It is not a process decision. It is a
+          signal of professional character that sovereign
+          clients test for and rarely find.</p>
+        </div>
+
+        <div class="proof-card">
+          <div class="card-stage">04</div>
+          <div class="card-title">Competitive Response and Award</div>
+          <p class="card-desc">Responded through Accenture. Won the implementation
+          mandate on the basis of technical and delivery
+          approach — having personally defined the standard
+          the market was measured against.</p>
+          <hr class="card-divider">
+          <div class="card-outcome">Advisory credibility converted directly
+          to commercial mandate.</div>
+          <p class="card-sowhat">The advisor who defined the standard won the right
+          to deliver it. That is not a coincidence. That is
+          proof the strategy was deployable, not theoretical.</p>
+        </div>
+
+        <div class="proof-card">
+          <div class="card-stage">05</div>
+          <div class="card-title">BIM Governance and Nvidia Omniverse POC</div>
+          <p class="card-desc">Extended scope into BIM data taxonomy definition
+          aligned to ISO 19650 and a proof-of-concept for
+          Nvidia Omniverse — integrating structured PMIS and
+          BIM asset data into a real-time operational
+          simulation environment. On live programme data.
+          Not a vendor demo. A delivered outcome.</p>
+          <hr class="card-divider">
+          <div class="card-outcome">Strategy extended to Digital Twin
+          before the client asked.</div>
+          <p class="card-sowhat">Sovereign clients with genuine Digital Twin
+          ambitions distinguish immediately between someone
+          who has deployed Omniverse on live programme data
+          and someone who has attended the vendor briefing.
+          This is the former.</p>
+        </div>
+
+      </div><!-- /.timeline -->
+
+      <!-- Verdict block -->
+      <div class="verdict reveal">
+        <span class="verdict-label">This engagement answers every question EY will ask</span>
+        <div class="verdict-body">
+          <p>Can you lead strategic mandates — not just deliver technically? &nbsp;Yes — Stage 01 and 02.</p>
+          <p>Can you maintain owner-side independence under commercial pressure? &nbsp;Yes — Stage 03.</p>
+          <p>Can you convert advisory credibility into revenue? &nbsp;Yes — Stage 04.</p>
+          <p>Can you extend a relationship before the client thinks to ask? &nbsp;Yes — Stage 05.</p>
+        </div>
+        <span class="verdict-close">One engagement. Five stages. No gaps.</span>
+      </div>
+
     </div>
   </section>
 
