@@ -518,6 +518,121 @@
     }
 
     /* ============================================================
+       THE JOURNEY SECTION
+       ============================================================ */
+    .journey-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4.5rem;
+      line-height: 0.92;
+      color: var(--white);
+      margin-bottom: 2.5rem;
+    }
+
+    .journey-body {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.85;
+      color: rgba(245, 244, 240, 0.75);
+      max-width: 680px;
+      margin-bottom: 3.5rem;
+    }
+
+    .journey-body p + p { margin-top: 1.4rem; }
+
+    /* Timeline strip */
+    .timeline-strip {
+      position: relative;
+      display: flex;
+      margin: 0 0 3rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Horizontal connector line through the dots */
+    .timeline-strip::before {
+      content: '';
+      position: absolute;
+      top: 2.4rem; /* aligns with dot centre */
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, var(--accent), rgba(232,200,74,0.15));
+      pointer-events: none;
+    }
+
+    .timeline-stop {
+      flex: 1;
+      min-width: 180px;
+      padding-right: 1.5rem;
+      position: relative;
+    }
+
+    .timeline-stop:last-child { padding-right: 0; }
+
+    .timeline-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.55rem;
+    }
+
+    .timeline-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .timeline-stop:hover .timeline-dot {
+      transform: scale(1.5);
+      box-shadow: 0 0 10px rgba(232,200,74,0.5);
+    }
+
+    .timeline-city {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--white);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-role {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: rgba(245, 244, 240, 0.6);
+      line-height: 1.6;
+    }
+
+    .journey-closing {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1.5;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.2rem;
+      max-width: 680px;
+    }
+
+    @media (max-width: 768px) {
+      .journey-headline { font-size: 3rem; }
+      .timeline-strip { gap: 0; padding-bottom: 1rem; }
+      .timeline-stop { min-width: 160px; }
+    }
+
+    /* ============================================================
        SHARED SECTION ELEMENTS
        ============================================================ */
     .section-eyebrow {
@@ -1672,6 +1787,7 @@
         </div>
       </div>
       <nav class="header-nav" aria-label="Main navigation">
+        <a href="#journey"  data-nav="journey">Journey</a>
         <a href="#market"   data-nav="market">The Market</a>
         <a href="#whyey"    data-nav="whyey">Why EY</a>
         <a href="#proof"    data-nav="proof">Proof</a>
@@ -1691,6 +1807,7 @@
   <div class="mobile-overlay" id="mobile-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
     <button class="overlay-close" id="overlay-close" aria-label="Close navigation">×</button>
     <nav class="overlay-nav">
+      <a href="#journey"  data-nav="journey">Journey</a>
       <a href="#market"   data-nav="market">The Market</a>
       <a href="#whyey"    data-nav="whyey">Why EY</a>
       <a href="#proof"    data-nav="proof">Proof</a>
@@ -1734,6 +1851,92 @@
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 9L12 15L18 9" stroke="#E8C84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 0b — THE JOURNEY
+       ============================================================ -->
+  <section id="journey" data-section="journey">
+    <div class="container">
+
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>Milan &nbsp;·&nbsp; Perth &nbsp;·&nbsp; Dubai &nbsp;·&nbsp; 24 years &nbsp;·&nbsp; one direction</span>
+
+      <h2 class="journey-headline reveal">
+        From Milan to the<br>
+        GCC's most complex<br>
+        sovereign programmes.
+      </h2>
+
+      <div class="journey-body reveal">
+        <p>I started as a management engineer at Politecnico di Milano
+        — one of Europe's most rigorous technical universities.
+        My first decade was spent building the foundations:
+        enterprise software, ERP systems, digital operations
+        across Italy and Australia.</p>
+
+        <p>The move to consulting was deliberate. Deloitte in Perth,
+        then Accenture in the Middle East — progressively larger
+        programmes, progressively more complex governance
+        environments. By 2018 I was architecting sovereign cloud
+        solutions for regulated government clients across MENA.</p>
+
+        <p>The shift into capital projects was the moment everything
+        converged. The technical depth. The governance experience.
+        The GCC market context. For the past four years, inside
+        Accenture Industry X, I have been doing the work this
+        site describes — on live sovereign programmes, with real
+        consequences, for clients who cannot afford to fail.</p>
+
+        <p>That trajectory is not accidental. It is the reason
+        this profile exists at this moment.</p>
+      </div>
+
+      <!-- Five-stop timeline -->
+      <div class="timeline-strip reveal">
+
+        <div class="timeline-stop">
+          <span class="timeline-year">2002–2011</span>
+          <div class="timeline-dot"></div>
+          <span class="timeline-city">Milan &amp; Perth</span>
+          <p class="timeline-role">MSc Engineering · Politecnico di Milano · First enterprise delivery roles across Italy &amp; Australia</p>
+        </div>
+
+        <div class="timeline-stop">
+          <span class="timeline-year">2011–2015</span>
+          <div class="timeline-dot"></div>
+          <span class="timeline-city">Accenture MENA</span>
+          <p class="timeline-role">IT Strategy &amp; Enterprise Architecture · Utilities &amp; Public Sector · Middle East</p>
+        </div>
+
+        <div class="timeline-stop">
+          <span class="timeline-year">2015–2017</span>
+          <div class="timeline-dot"></div>
+          <span class="timeline-city">Deloitte Australia</span>
+          <p class="timeline-role">Capital Project Governance · Public Sector &amp; Resources</p>
+        </div>
+
+        <div class="timeline-stop">
+          <span class="timeline-year">2018–2022</span>
+          <div class="timeline-dot"></div>
+          <span class="timeline-city">Accenture MENA</span>
+          <p class="timeline-role">Sovereign Cloud &amp; Hyperscaler Architecture · Regulated Environments · MENA &amp; APAC</p>
+        </div>
+
+        <div class="timeline-stop">
+          <span class="timeline-year">2022–Now</span>
+          <div class="timeline-dot"></div>
+          <span class="timeline-city">Accenture Industry X</span>
+          <p class="timeline-role">Smart Cities · Capital PMO · Digital Twin · KSA Giga-Programmes</p>
+        </div>
+
+      </div>
+
+      <p class="journey-closing reveal">
+        Based in Dubai. Operating across UAE, KSA, and Qatar.<br>
+        Available to build EY's Capital Projects practice from day one.
+      </p>
+
     </div>
   </section>
 
