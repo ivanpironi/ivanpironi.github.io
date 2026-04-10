@@ -1006,22 +1006,16 @@
 
     .proof-intro p + p { margin-top: 1.1rem; }
 
-    /* Horizontal scroll timeline */
+    /* Grid timeline — 3 columns desktop, 1 column mobile */
     .timeline {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      padding-bottom: 1rem;
       margin-bottom: 2rem;
     }
 
-    .timeline::-webkit-scrollbar { display: none; }
-
     /* Each card starts invisible; timelineReveal() adds .revealed */
     .proof-card {
-      min-width: 300px;
-      flex-shrink: 0;
       background: var(--surface);
       padding: 2rem 1.5rem;
       border-top: 3px solid var(--rule);
@@ -1136,8 +1130,8 @@
 
     /* Mobile: stack timeline vertically */
     @media (max-width: 768px) {
-      .timeline { flex-direction: column; overflow-x: visible; }
-      .proof-card { min-width: unset; width: 100%; }
+      .timeline { grid-template-columns: 1fr; }
+      .proof-card { width: 100%; }
     }
 
     /* ============================================================
