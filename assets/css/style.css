@@ -1841,7 +1841,7 @@
 
     .tl-item {
       padding: 1rem 0 1rem 1.2rem;
-      border-left: 2px solid var(--rule);
+      border-left: 2px solid var(--accent);
       position: relative;
       transition: border-color 0.2s;
       /* Entrance animation */
@@ -1866,12 +1866,9 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--rule);
+      background: var(--accent);
       transition: background 0.2s;
     }
-
-    .tl-item:hover::before,
-    .tl-item:first-child::before { background: var(--accent); }
 
     .tl-period {
       font-family: 'DM Mono', monospace;
