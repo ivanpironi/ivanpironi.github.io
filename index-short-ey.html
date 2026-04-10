@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ivan Pironi — Capital Programme Advisory. Partner-level value proposition for EY Middle East Capital Projects.">
   <meta name="robots" content="noindex, nofollow">
-  <title>Ivan Pironi · Capital Projects Advisory</title>
+  <title>Ivan Pironi · Capital Projects Advisory · EY · Short</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -283,58 +283,43 @@
 
     /* ============================================================
        headerTransition
-       Observes .hero — adds .scrolled to header when hero exits
-       viewport; removes it when hero re-enters.
        ============================================================ */
     function headerTransition() {
       var header = document.getElementById('site-header');
       if (!header) return;
-
       function onScroll() {
         header.classList.toggle('scrolled', window.scrollY > 100);
       }
-
       window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll(); // set correct state on initial load
+      onScroll();
     }
 
     /* ============================================================
        navActiveState
-       Tracks which section[data-section] is in the centre band.
-       Sets .active on the matching [data-nav] link in both the
-       desktop header nav and mobile overlay nav.
        ============================================================ */
     function navActiveState() {
       var sections = document.querySelectorAll('section[data-section]');
       var allLinks = document.querySelectorAll('[data-nav]');
       if (!sections.length || !allLinks.length) return;
-
       function setActive(id) {
         allLinks.forEach(function(link) {
           link.classList.toggle('active', link.dataset.nav === id);
         });
       }
-
       var navObs = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            setActive(entry.target.dataset.section);
-          }
+          if (entry.isIntersecting) { setActive(entry.target.dataset.section); }
         });
       }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
-
       sections.forEach(function(s) { navObs.observe(s); });
     }
 
     /* ============================================================
        scrollReveal
-       Adds .revealed to every .reveal element on entry.
-       Unobserves immediately — no re-animation on scroll back.
        ============================================================ */
     function scrollReveal() {
       var items = document.querySelectorAll('.reveal');
       if (!items.length) return;
-
       var obs = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
@@ -343,77 +328,144 @@
           }
         });
       }, { threshold: 0.12 });
-
       items.forEach(function(el) { obs.observe(el); });
     }
 
     /* ============================================================
+       timelineReveal — no-op if #proof-timeline absent
+       ============================================================ */
+    function timelineReveal() {
+      var timeline = document.getElementById('proof-timeline');
+      if (!timeline) return;
+      var cards = timeline.querySelectorAll('.proof-card');
+      var obs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          cards.forEach(function(card, i) {
+            setTimeout(function() { card.classList.add('revealed'); }, i * 150);
+          });
+          obs.unobserve(timeline);
+        }
+      }, { threshold: 0.1 });
+      obs.observe(timeline);
+    }
+
+    /* ============================================================
+       accordionInit — no-op if no .accordion-item present
+       ============================================================ */
+    function accordionInit() {
+      var items = document.querySelectorAll('.accordion-item');
+      if (!items.length) return;
+      items.forEach(function(item) {
+        var hdr  = item.querySelector('.accordion-header');
+        var icon = item.querySelector('.accordion-icon');
+        if (!hdr) return;
+        hdr.addEventListener('click', function() {
+          var isOpen = item.classList.contains('open');
+          items.forEach(function(other) {
+            other.classList.remove('open');
+            var oi = other.querySelector('.accordion-icon');
+            if (oi) oi.textContent = '+';
+          });
+          if (!isOpen) { item.classList.add('open'); if (icon) icon.textContent = '×'; }
+        });
+        hdr.setAttribute('tabindex', '0');
+        hdr.setAttribute('role', 'button');
+        hdr.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hdr.click(); }
+        });
+      });
+    }
+
+    /* ============================================================
+       barAnimation — no-op if #engagement-bars absent
+       ============================================================ */
+    function barAnimation() {
+      var container = document.getElementById('engagement-bars');
+      if (!container) return;
+      var bars = container.querySelectorAll('.bar-fill');
+      var obs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          bars.forEach(function(bar, i) {
+            setTimeout(function() { bar.style.width = bar.dataset.width || '0%'; }, i * 100);
+          });
+          obs.unobserve(container);
+        }
+      }, { threshold: 0.3 });
+      obs.observe(container);
+    }
+
+    /* ============================================================
        scrollCueHide
-       Hides chevron after 120px scroll; removes listener once done.
        ============================================================ */
     function scrollCueHide() {
       var cue = document.querySelector('.scroll-cue');
       if (!cue) return;
-
       function onScroll() {
         if (window.scrollY > 120) {
           cue.classList.add('hidden');
           window.removeEventListener('scroll', onScroll);
         }
       }
-
       window.addEventListener('scroll', onScroll, { passive: true });
     }
 
     /* ============================================================
+       countUp — no-op if no [data-counter] present
+       ============================================================ */
+    function countUp() {
+      var els = document.querySelectorAll('[data-counter]');
+      if (!els.length) return;
+      function animateEl(el) {
+        var target = parseFloat(el.dataset.val);
+        var prefix = el.dataset.prefix || '';
+        var suffix = el.dataset.suffix || '';
+        var dec    = (el.dataset.val.split('.')[1] || '').length;
+        var duration = 1400; var start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = prefix + (ease * target).toFixed(dec) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { animateEl(entry.target); obs.unobserve(entry.target); }
+        });
+      }, { threshold: 0.5 });
+      els.forEach(function(el) { obs.observe(el); });
+    }
+
+    /* ============================================================
        mobileMenu
-       Hamburger → full-screen overlay. Body scroll locked when
-       open. Closed by: close button, link tap, ESC key,
-       or tap outside any link (handled via overlay click).
        ============================================================ */
     function mobileMenu() {
       var hamburger = document.getElementById('hamburger-btn');
       var overlay   = document.getElementById('mobile-overlay');
       var closeBtn  = document.getElementById('overlay-close');
       if (!hamburger || !overlay) return;
-
       function openMenu() {
         overlay.classList.add('open');
         document.body.style.overflow = 'hidden';
         hamburger.setAttribute('aria-expanded', 'true');
         if (closeBtn) closeBtn.focus();
       }
-
       function closeMenu() {
         overlay.classList.remove('open');
         document.body.style.overflow = '';
         hamburger.setAttribute('aria-expanded', 'false');
         hamburger.focus();
       }
-
       hamburger.addEventListener('click', openMenu);
-
-      if (closeBtn) {
-        closeBtn.addEventListener('click', closeMenu);
-      }
-
-      // Tapping a nav link closes overlay and scrolls to section
+      if (closeBtn) { closeBtn.addEventListener('click', closeMenu); }
       overlay.querySelectorAll('a[data-nav]').forEach(function(link) {
-        link.addEventListener('click', function() {
-          closeMenu();
-        });
+        link.addEventListener('click', function() { closeMenu(); });
       });
-
-      // Tap on overlay backdrop (not on a link) closes menu
-      overlay.addEventListener('click', function(e) {
-        if (e.target === overlay) closeMenu();
-      });
-
-      // ESC closes menu
+      overlay.addEventListener('click', function(e) { if (e.target === overlay) closeMenu(); });
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && overlay.classList.contains('open')) {
-          closeMenu();
-        }
+        if (e.key === 'Escape' && overlay.classList.contains('open')) { closeMenu(); }
       });
     }
 
@@ -424,6 +476,10 @@
       headerTransition();
       navActiveState();
       scrollReveal();
+      timelineReveal();
+      accordionInit();
+      barAnimation();
+      countUp();
       scrollCueHide();
       mobileMenu();
     });
