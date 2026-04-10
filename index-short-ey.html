@@ -138,7 +138,7 @@
         <!-- Right: vertical timeline -->
         <div class="col-timeline">
 
-          <div class="tl-item reveal">
+          <div class="tl-item">
             <span class="tl-period">2022 – Present</span>
             <span class="tl-role">Director, Industry X</span>
             <span class="tl-org">Accenture · Dubai</span>
@@ -149,7 +149,7 @@
             </div>
           </div>
 
-          <div class="tl-item reveal">
+          <div class="tl-item">
             <span class="tl-period">2018 – 2022</span>
             <span class="tl-role">Senior Manager, Cloud &amp; Hybrid Architecture</span>
             <span class="tl-org">Accenture · Dubai</span>
@@ -163,7 +163,7 @@
             </div>
           </div>
 
-          <div class="tl-item reveal">
+          <div class="tl-item">
             <span class="tl-period">2015 – 2017</span>
             <span class="tl-role">Senior Technology Advisor</span>
             <span class="tl-org">Deloitte Australia · Perth</span>
@@ -175,7 +175,7 @@
             </div>
           </div>
 
-          <div class="tl-item reveal">
+          <div class="tl-item">
             <span class="tl-period">2011 – 2015</span>
             <span class="tl-role">Manager, IT Strategy &amp; Enterprise Architecture</span>
             <span class="tl-org">Accenture · Dubai &amp; Perth</span>
@@ -576,22 +576,22 @@
 
     /* ============================================================
        timelineItemsAnimate
-       Staggered slide-in for .tl-item elements on scroll entry.
+       Observes the timeline column container; once it enters view
+       staggers all .tl-item children with tl-visible.
        ============================================================ */
     function timelineItemsAnimate() {
-      var items = document.querySelectorAll('.tl-item');
+      var container = document.querySelector('.col-timeline');
+      if (!container) return;
+      var items = container.querySelectorAll('.tl-item');
       if (!items.length) return;
       var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            var item = entry.target;
-            var idx  = Array.prototype.indexOf.call(items, item);
-            setTimeout(function() { item.classList.add('tl-visible'); }, idx * 120);
-            obs.unobserve(item);
-          }
+        if (!entries[0].isIntersecting) return;
+        items.forEach(function(item, i) {
+          setTimeout(function() { item.classList.add('tl-visible'); }, i * 140);
         });
-      }, { threshold: 0.15 });
-      items.forEach(function(el) { obs.observe(el); });
+        obs.unobserve(container);
+      }, { threshold: 0.1 });
+      obs.observe(container);
     }
 
     /* ============================================================
