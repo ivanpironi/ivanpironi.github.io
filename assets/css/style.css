@@ -1012,36 +1012,64 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
       margin-bottom: 2rem;
+      align-items: start;
     }
 
-    /* Each card starts invisible; timelineReveal() adds .revealed */
+    /* ── Card flip system ───────────────────────────────── */
     .proof-card {
-      background: var(--surface);
-      padding: 2rem 1.5rem;
+      perspective: 1200px;
+      overflow: hidden;
+      max-height: 110px;
       border-top: 3px solid var(--rule);
+      cursor: pointer;
       opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.5s ease, transform 0.5s ease,
-                  border-top-color 0.4s ease;
+      transition: opacity 0.5s ease,
+                  max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                  border-top-color 0.3s ease;
     }
 
-    .proof-card.revealed {
-      opacity: 1;
-      transform: translateY(0);
+    .proof-card.revealed { opacity: 1; }
+
+    .proof-card.flipped {
+      max-height: 800px;
       border-top-color: var(--accent);
     }
 
-    .proof-card.revealed:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+    .card-inner {
+      display: grid;
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
     }
 
+    .proof-card.flipped .card-inner { transform: rotateY(180deg); }
+
+    .card-front,
+    .card-back {
+      grid-area: 1 / 1;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      padding: 1.5rem;
+      background: var(--surface);
+    }
+
+    .card-back { transform: rotateY(180deg); }
+
+    /* Front: mono eyebrow + condensed title */
     .card-stage {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 5rem;
+      font-size: 4rem;
       color: var(--accent);
       line-height: 1;
       margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    .card-front .card-stage {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
     }
 
     .card-title {
@@ -1052,6 +1080,13 @@
       letter-spacing: 0.06em;
       color: var(--white);
       margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .card-front .card-title {
+      font-size: 1rem;
+      line-height: 1.2;
+      margin-bottom: 0;
     }
 
     .card-desc {
@@ -1128,10 +1163,13 @@
       letter-spacing: 0.04em;
     }
 
-    /* Mobile: stack timeline vertically */
+    /* Mobile: disable flip, show full card content */
     @media (max-width: 768px) {
       .timeline { grid-template-columns: 1fr; }
-      .proof-card { width: 100%; }
+      .card-front { display: none; }
+      .proof-card { max-height: none; overflow: visible; opacity: 1; border-top-color: var(--accent); }
+      .card-inner { display: block; transform: none !important; }
+      .card-back { transform: none; backface-visibility: visible; -webkit-backface-visibility: visible; }
     }
 
     /* ============================================================
