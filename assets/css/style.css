@@ -232,7 +232,7 @@
       height: 52px;
       border-radius: 50%;
       background-color: #141412;
-      background-image: url('../ivan-pironi.png');
+      background-image: url('/assets/ivan-pironi.png');
       background-size: 140%;
       background-position: center 8%;
       flex-shrink: 0;
@@ -410,7 +410,7 @@
       content: '';
       position: absolute;
       inset: 0 0 0 45%;   /* photo occupies right 55% */
-      background-image: url('../ivan-pironi.png');
+      background-image: url('/assets/ivan-pironi.png');
       background-size: cover;
       background-position: center 18%;
       filter: grayscale(15%) contrast(1.05);
