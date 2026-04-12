@@ -433,6 +433,40 @@
   <!-- ============================================================
        SECTION 3 — PROOF POINT
        ============================================================ -->
+  <style>
+  /* === Horizontal Timeline / Vertical Stepper (Proof section) === */
+  .ht-timeline { margin: 2.5rem 0 3rem; }
+  .ht-stages { display:flex; position:relative; align-items:flex-end; }
+  .ht-stages::after { content:''; position:absolute; bottom:19px; left:10%; right:10%; height:2px; background:linear-gradient(to right, var(--accent), var(--rule) 80%); z-index:0; }
+  .ht-stage { flex:1; display:flex; flex-direction:column; align-items:center; padding:0 4px; cursor:pointer; position:relative; transition:opacity 0.2s; }
+  @media (min-width:768px) { .ht-stage:not(.ht-active){opacity:0.5;} .ht-stage:not(.ht-active):hover{opacity:0.85;} }
+  .ht-content { display:flex; flex-direction:column; align-items:center; width:100%; }
+  .ht-info { display:flex; flex-direction:column; align-items:center; text-align:center; padding-bottom:1rem; }
+  .ht-num { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:0.3rem; }
+  .ht-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--white); display:block; margin-bottom:0.2rem; line-height:1.25; }
+  .ht-role { font-family:'DM Mono',monospace; font-size:8px; text-transform:uppercase; letter-spacing:0.13em; color:var(--muted); display:block; }
+  .ht-dot { width:38px; height:38px; border-radius:50%; border:2px solid rgba(245,244,240,0.12); background:var(--black); display:flex; align-items:center; justify-content:center; font-family:'DM Mono',monospace; font-size:11px; color:var(--muted); position:relative; z-index:2; flex-shrink:0; transition:background 0.25s,border-color 0.25s,color 0.25s,box-shadow 0.25s; }
+  .ht-stage.ht-active .ht-dot { background:var(--accent); border-color:var(--accent); color:var(--black); box-shadow:0 0 0 4px rgba(232,200,74,0.15); }
+  @media (min-width:768px) { .ht-mobile-card { display:none; } }
+  .ht-panel { margin-top:2rem; border-left:3px solid var(--accent); background:var(--surface); padding:1.5rem 2rem; min-height:110px; }
+  .ht-pane { display:none; }
+  .ht-pane.ht-pane-active { display:block; animation:htIn 0.3s ease both; }
+  @keyframes htIn { from{opacity:0;transform:translateY(5px);} to{opacity:1;transform:translateY(0);} }
+  .ht-detail { font-family:'Barlow',sans-serif; font-weight:300; font-size:15px; color:var(--muted); line-height:1.75; margin:0 0 0.9rem; }
+  .ht-arrow { font-family:'DM Mono',monospace; font-size:12px; color:var(--white); line-height:1.6; margin:0; }
+  .ht-arrow-icon { color:var(--accent); margin-right:0.3em; }
+  @media (max-width:767px) {
+    .ht-stages { flex-direction:column; align-items:stretch; }
+    .ht-stages::after { display:none; }
+    .ht-stage { flex-direction:row; align-items:flex-start; gap:1rem; padding:0 0 2rem 0; opacity:1 !important; }
+    .ht-stage:not(:last-child)::before { content:''; position:absolute; left:18px; top:40px; bottom:0; width:2px; background:var(--rule); }
+    .ht-dot { order:0; flex-shrink:0; margin-top:1px; }
+    .ht-content { align-items:flex-start; flex:1; order:1; }
+    .ht-info { align-items:flex-start; text-align:left; padding-bottom:0.4rem; }
+    .ht-mobile-card { display:block; margin-top:0.5rem; }
+    .ht-panel { display:none; }
+  }
+  </style>
   <section id="proof" data-section="proof">
     <div class="container">
 
@@ -463,142 +497,119 @@
         In a single engagement trajectory. On a live programme.</p>
       </div>
 
-      <!-- Five-card horizontal timeline -->
-      <div class="timeline" id="proof-timeline">
+      <!-- Horizontal timeline (desktop) / Vertical stepper (mobile) -->
+      <div class="ht-timeline" id="proof-timeline">
 
-        <div class="proof-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-stage">01</div>
-              <div class="card-title">Digital Needs Assessment</div>
+        <div class="ht-stages">
+
+          <div class="ht-stage ht-active" data-idx="0">
+            <div class="ht-content">
+              <div class="ht-info">
+                <span class="ht-num">Stage 01</span>
+                <span class="ht-title">Digital Needs Assessment</span>
+                <span class="ht-role">Advisory lead</span>
+              </div>
+              <div class="ht-mobile-card">
+                <p class="ht-detail">Mapped the engineering and programme data landscape across the enterprise. Identified the root causes of data distrust: misaligned cost hierarchies between SAP and the cost control layer, no governed schedule baseline, and fragmented document control with no audit trail. Defined the information architecture requirements for a functioning PMIS.</p>
+                <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Defined the information architecture requirements for a functioning PMIS. Before anyone could fix the system, someone had to diagnose why the data could not be trusted. That is strategic work, not technical work.</p>
+              </div>
             </div>
-            <div class="card-back">
-              <div class="card-stage">01</div>
-              <div class="card-title">Digital Needs Assessment</div>
-              <p class="card-desc">Mapped the engineering and programme data landscape
-              across the enterprise. Identified the root causes of
-              data distrust: misaligned cost hierarchies between SAP
-              and the cost control layer, no governed schedule
-              baseline, and fragmented document control with no
-              audit trail. Defined the information architecture
-              requirements for a functioning PMIS.</p>
-              <hr class="card-divider">
-              <div class="card-outcome">Defined the information architecture requirements
-              for a functioning PMIS.</div>
-              <p class="card-sowhat">Before anyone could fix the system, someone had to
-              diagnose why the data could not be trusted.
-              That is strategic work, not technical work.</p>
-            </div>
+            <div class="ht-dot">01</div>
           </div>
-        </div>
 
-        <div class="proof-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-stage">02</div>
-              <div class="card-title">PMIS Tool Scoring and Selection</div>
+          <div class="ht-stage" data-idx="1">
+            <div class="ht-content">
+              <div class="ht-info">
+                <span class="ht-num">Stage 02</span>
+                <span class="ht-title">PMIS Tool Scoring and Selection</span>
+                <span class="ht-role">Advisory lead</span>
+              </div>
+              <div class="ht-mobile-card">
+                <p class="ht-detail">Evaluated the market against defined functional, integration, and data-residency requirements. Scored Oracle Unifier, Oracle Aconex, and competing PMIS platforms against the client's specific operating model. Recommended and justified the Oracle suite selection on the basis of ERP integration capability, schedule linkage with P6, and document control depth in Aconex.</p>
+                <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Justified the Oracle suite selection on three specific criteria the client's board could defend. An advisor with no agenda and the technical depth to evaluate honestly — against defined functional, integration, and data-residency requirements — is a fundamentally different proposition.</p>
+              </div>
             </div>
-            <div class="card-back">
-              <div class="card-stage">02</div>
-              <div class="card-title">PMIS Tool Scoring and Selection</div>
-              <p class="card-desc">Evaluated the market against defined functional,
-              integration, and data-residency requirements. Scored
-              Oracle Unifier, Oracle Aconex, and competing PMIS
-              platforms against the client's specific operating model.
-              Recommended and justified the Oracle suite selection
-              on the basis of ERP integration capability, schedule
-              linkage with P6, and document control depth in Aconex.</p>
-              <hr class="card-divider">
-              <div class="card-outcome">Justified the Oracle suite selection on three
-              specific criteria the client's board could defend.</div>
-              <p class="card-sowhat">Any vendor can recommend their own platform.
-              An advisor with no agenda and the technical depth
-              to evaluate honestly — against defined functional,
-              integration, and data-residency requirements — is
-              a fundamentally different proposition.</p>
-            </div>
+            <div class="ht-dot">02</div>
           </div>
-        </div>
 
-        <div class="proof-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-stage">03</div>
-              <div class="card-title">RFP Authoring · Deliberate Budget Exclusion</div>
+          <div class="ht-stage" data-idx="2">
+            <div class="ht-content">
+              <div class="ht-info">
+                <span class="ht-num">Stage 03</span>
+                <span class="ht-title">RFP Authoring · Deliberate Budget Exclusion</span>
+                <span class="ht-role">Advisory lead · integrity preserved</span>
+              </div>
+              <div class="ht-mobile-card">
+                <p class="ht-detail">Authored the full PMIS RFP — scope definition, functional requirements, integration specifications, evaluation criteria, and commercial structure. Deliberately excluded from the budget definition process to preserve complete integrity and avoid any conflict of interest when responding to the RFP competitively in Stage 4.</p>
+                <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Complete integrity maintained. Owner-side independence. Sovereign clients remember this. EY's advisory positioning requires exactly this integrity — it is not a process decision, it is a signal of professional character that sovereign clients test for and rarely find.</p>
+              </div>
             </div>
-            <div class="card-back">
-              <div class="card-stage">03</div>
-              <div class="card-title">RFP Authoring · Deliberate Budget Exclusion</div>
-              <p class="card-desc">Authored the full PMIS RFP — scope definition,
-              functional requirements, integration specifications,
-              evaluation criteria, and commercial structure.
-              Deliberately excluded from the budget definition
-              process to preserve complete integrity and avoid any
-              conflict of interest when responding to the RFP
-              competitively in Stage 4.</p>
-              <hr class="card-divider">
-              <div class="card-outcome">Complete integrity maintained.
-              Owner-side independence. Sovereign clients
-              remember this.</div>
-              <p class="card-sowhat">EY's advisory positioning requires exactly this
-              integrity. It is not a process decision. It is a
-              signal of professional character that sovereign
-              clients test for and rarely find.</p>
-            </div>
+            <div class="ht-dot">03</div>
           </div>
-        </div>
 
-        <div class="proof-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-stage">04</div>
-              <div class="card-title">RFP Response and Award</div>
+          <div class="ht-stage" data-idx="3">
+            <div class="ht-content">
+              <div class="ht-info">
+                <span class="ht-num">Stage 04</span>
+                <span class="ht-title">RFP Response and Award</span>
+                <span class="ht-role">Delivery lead · via Accenture</span>
+              </div>
+              <div class="ht-mobile-card">
+                <p class="ht-detail">Responded competitively to the RFP through Accenture. Won the implementation mandate on the basis of the technical and delivery approach.</p>
+                <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Advisory credibility converted directly to commercial mandate. The advisor who defined the standard won the right to deliver it. That is not a coincidence — that is proof the strategy was deployable, not theoretical.</p>
+              </div>
             </div>
-            <div class="card-back">
-              <div class="card-stage">04</div>
-              <div class="card-title">RFP Response and Award</div>
-              <p class="card-desc">Responded competitively to the RFP through Accenture.
-              Won the implementation mandate on the basis of the
-              technical and delivery approach.</p>
-              <hr class="card-divider">
-              <div class="card-outcome">Advisory credibility converted directly
-              to commercial mandate.</div>
-              <p class="card-sowhat">The advisor who defined the standard won the right
-              to deliver it. That is not a coincidence. That is
-              proof the strategy was deployable, not theoretical.</p>
-            </div>
+            <div class="ht-dot">04</div>
           </div>
-        </div>
 
-        <div class="proof-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-stage">05</div>
-              <div class="card-title">Scope Extension into BIM and Digital Twin</div>
+          <div class="ht-stage" data-idx="4">
+            <div class="ht-content">
+              <div class="ht-info">
+                <span class="ht-num">Stage 05</span>
+                <span class="ht-title">BIM and Digital Twin Extension</span>
+                <span class="ht-role">Delivery lead · Nvidia Omniverse</span>
+              </div>
+              <div class="ht-mobile-card">
+                <p class="ht-detail">Extended the engagement scope into BIM data taxonomy definition — aligned to ISO 19650 information management standards — and a proof of concept for an Nvidia Omniverse-based Digital Twin, integrating the structured asset data from the PMIS and BIM layers into a real-time operational simulation environment.</p>
+                <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Strategy extended to Digital Twin before the client asked. Sovereign clients with genuine Digital Twin ambitions distinguish immediately between someone who has deployed Omniverse on live programme data and someone who has attended the vendor briefing. This is the former.</p>
+              </div>
             </div>
-            <div class="card-back">
-              <div class="card-stage">05</div>
-              <div class="card-title">Scope Extension into BIM and Digital Twin</div>
-              <p class="card-desc">Extended the engagement scope into BIM data taxonomy
-              definition — aligned to ISO 19650 information
-              management standards — and a proof of concept for
-              an Nvidia Omniverse-based Digital Twin, integrating
-              the structured asset data from the PMIS and BIM
-              layers into a real-time operational simulation
-              environment.</p>
-              <hr class="card-divider">
-              <div class="card-outcome">Strategy extended to Digital Twin
-              before the client asked.</div>
-              <p class="card-sowhat">Sovereign clients with genuine Digital Twin
-              ambitions distinguish immediately between someone
-              who has deployed Omniverse on live programme data
-              and someone who has attended the vendor briefing.
-              This is the former.</p>
-            </div>
+            <div class="ht-dot">05</div>
           </div>
-        </div>
 
-      </div><!-- /.timeline -->
+        </div><!-- /.ht-stages -->
+
+        <!-- Desktop detail panel -->
+        <div class="ht-panel">
+
+          <div class="ht-pane ht-pane-active" data-idx="0">
+            <p class="ht-detail">Mapped the engineering and programme data landscape across the enterprise. Identified the root causes of data distrust: misaligned cost hierarchies between SAP and the cost control layer, no governed schedule baseline, and fragmented document control with no audit trail. Defined the information architecture requirements for a functioning PMIS.</p>
+            <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Defined the information architecture requirements for a functioning PMIS. Before anyone could fix the system, someone had to diagnose why the data could not be trusted. That is strategic work, not technical work.</p>
+          </div>
+
+          <div class="ht-pane" data-idx="1">
+            <p class="ht-detail">Evaluated the market against defined functional, integration, and data-residency requirements. Scored Oracle Unifier, Oracle Aconex, and competing PMIS platforms against the client's specific operating model. Recommended and justified the Oracle suite selection on the basis of ERP integration capability, schedule linkage with P6, and document control depth in Aconex.</p>
+            <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Justified the Oracle suite selection on three specific criteria the client's board could defend. An advisor with no agenda and the technical depth to evaluate honestly — against defined functional, integration, and data-residency requirements — is a fundamentally different proposition.</p>
+          </div>
+
+          <div class="ht-pane" data-idx="2">
+            <p class="ht-detail">Authored the full PMIS RFP — scope definition, functional requirements, integration specifications, evaluation criteria, and commercial structure. Deliberately excluded from the budget definition process to preserve complete integrity and avoid any conflict of interest when responding to the RFP competitively in Stage 4.</p>
+            <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Complete integrity maintained. Owner-side independence. Sovereign clients remember this. EY's advisory positioning requires exactly this integrity — it is not a process decision, it is a signal of professional character that sovereign clients test for and rarely find.</p>
+          </div>
+
+          <div class="ht-pane" data-idx="3">
+            <p class="ht-detail">Responded competitively to the RFP through Accenture. Won the implementation mandate on the basis of the technical and delivery approach.</p>
+            <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Advisory credibility converted directly to commercial mandate. The advisor who defined the standard won the right to deliver it. That is not a coincidence. That is proof the strategy was deployable, not theoretical.</p>
+          </div>
+
+          <div class="ht-pane" data-idx="4">
+            <p class="ht-detail">Extended the engagement scope into BIM data taxonomy definition — aligned to ISO 19650 information management standards — and a proof of concept for an Nvidia Omniverse-based Digital Twin, integrating the structured asset data from the PMIS and BIM layers into a real-time operational simulation environment.</p>
+            <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Strategy extended to Digital Twin before the client asked. Sovereign clients with genuine Digital Twin ambitions distinguish immediately between someone who has deployed Omniverse on live programme data and someone who has attended the vendor briefing. This is the former.</p>
+          </div>
+
+        </div><!-- /.ht-panel -->
+
+      </div><!-- /.ht-timeline -->
 
       <div style="
   border-left: 3px solid var(--rule);
@@ -661,6 +672,25 @@
 
     </div>
   </section>
+  <script>
+  (function() {
+    function htInit() {
+      var tl = document.getElementById('proof-timeline');
+      if (!tl) return;
+      var stages = Array.from(tl.querySelectorAll('.ht-stage'));
+      var panes = Array.from(tl.querySelectorAll('.ht-pane'));
+      if (!stages.length) return;
+      function activate(idx) {
+        stages.forEach(function(s) { s.classList.toggle('ht-active', +s.dataset.idx === idx); });
+        panes.forEach(function(p) { p.classList.toggle('ht-pane-active', +p.dataset.idx === idx); });
+      }
+      stages.forEach(function(stage) { stage.addEventListener('mouseenter', function() { activate(+stage.dataset.idx); }); });
+      tl.addEventListener('mouseleave', function() { activate(0); });
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', htInit); }
+    else { htInit(); }
+  })();
+  </script>
 
   <!-- ============================================================
        SECTION 4 — WHY RARE
