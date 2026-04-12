@@ -1418,11 +1418,11 @@
 
     .sales-year {
       font-family: 'DM Mono', monospace;
-      font-size: 10px;
+      font-size: 13px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
-      flex: 0 0 110px;
+      flex: 0 0 130px;
       line-height: 1.4;
     }
 
