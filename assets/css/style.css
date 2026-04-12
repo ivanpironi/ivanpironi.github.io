@@ -1396,30 +1396,61 @@
     }
 
     .sales-table {
-      width: 100%;
-      border-collapse: collapse;
+      display: none; /* replaced by .sales-rows */
+    }
+
+    /* Stat-strip replacement for table */
+    .sales-rows {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.8rem;
+    }
+
+    .sales-row {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .sales-row:last-child { border-bottom: none; }
+
+    .sales-year {
       font-family: 'DM Mono', monospace;
-    }
-
-    .sales-table th {
-      font-size: 12px;
-      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      text-align: left;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--rule);
-      font-weight: 400;
+      color: var(--muted);
+      flex: 0 0 110px;
+      line-height: 1.4;
     }
 
-    .sales-table td {
-      font-size: 15px;
+    .sales-cols {
+      display: flex;
+      gap: 2rem;
+      flex: 1;
+    }
+
+    .sales-col { flex: 1; }
+
+    .sales-fig {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      line-height: 1;
       color: var(--white);
-      padding: 0.55rem 0;
-      border-bottom: 1px solid var(--rule);
+      margin-bottom: 0.25rem;
     }
 
-    .sales-table tr:last-child td { border-bottom: none; }
+    .sales-col--tcv .sales-fig { color: var(--accent); }
+
+    .sales-col-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
 
     .sales-note {
       font-family: 'Barlow', sans-serif;
@@ -1592,6 +1623,10 @@
       .bar-fee      { display: none; }
       .target-row   { flex-direction: column; gap: 0.4rem; }
       .target-entry { text-align: left; max-width: none; }
+      .sales-row    { flex-direction: column; align-items: flex-start; gap: 0.6rem; padding: 1.2rem 0; }
+      .sales-year   { flex: none; }
+      .sales-cols   { width: 100%; gap: 1.5rem; }
+      .sales-fig    { font-size: 1.9rem; }
     }
 
     /* ============================================================
