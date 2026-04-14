@@ -6,6 +6,7 @@
   <meta name="description" content="Ivan Pironi — Capital Programme Advisory. Partner-level value proposition for EY Middle East Capital Projects.">
   <meta name="robots" content="noindex, nofollow">
   <title>Ivan Pironi · Capital Projects Advisory</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a1a1a'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='700' fill='%23ffffff' letter-spacing='-0.5'>IP</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -22,9 +23,69 @@
 <body>
 
   <!-- ============================================================
-       HERO
+       HEADER
+       ============================================================ -->
+  <header id="site-header">
+    <!-- State 1: eyebrow only (visible over hero) -->
+    <div class="h-state1">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</div>
+
+    <!-- State 2: full header (visible when scrolled) -->
+    <div class="h-state2">
+      <a class="header-identity" href="#" aria-label="Back to top">
+        <div class="header-avatar" aria-hidden="true"></div>
+        <div class="identity-text">
+          <span class="identity-name">Ivan Pironi</span>
+          <span class="identity-role">Capital Projects Advisory</span>
+        </div>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="#journey"  data-nav="journey">Journey</a>
+        <a href="#market"   data-nav="market">The Market</a>
+        <a href="#proof"    data-nav="proof">Proof</a>
+        <a href="#whyey"    data-nav="whyey">Why EY</a>
+        <a href="#rare"     data-nav="rare">Why Rare</a>
+        <a href="#build"    data-nav="build">Build</a>
+        <a href="#decision" data-nav="decision">Decision</a>
+        <a href="index-short-ey.html" style="
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--rule);
+  margin-left: 0.5rem;
+  transition: color 0.15s;
+">← Executive summary</a>
+      </nav>
+      <button class="hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MOBILE NAV OVERLAY
+       ============================================================ -->
+  <div class="mobile-overlay" id="mobile-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
+    <button class="overlay-close" id="overlay-close" aria-label="Close navigation">×</button>
+    <nav class="overlay-nav">
+      <a href="#journey"  data-nav="journey">Journey</a>
+      <a href="#market"   data-nav="market">The Market</a>
+      <a href="#whyey"    data-nav="whyey">Why EY</a>
+      <a href="#proof"    data-nav="proof">Proof</a>
+      <a href="#rare"     data-nav="rare">Why Rare</a>
+      <a href="#build"    data-nav="build">Build</a>
+      <a href="#decision" data-nav="decision">Decision</a>
+    </nav>
+  </div>
+
+  <!-- ============================================================
+       HERO — Section 0
        ============================================================ -->
   <section class="hero" id="hero" aria-label="Hero">
+    <!-- Eyebrow pinned to top independently of name block -->
     <span class="hero-eyebrow">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</span>
 
     <div class="hero-text">
@@ -56,10 +117,1125 @@
       </div>
     </div>
 
+    <!-- Scroll cue -->
     <div class="scroll-cue" aria-hidden="true">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 9L12 15L18 9" stroke="#E8C84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 0b — THE JOURNEY
+       ============================================================ -->
+  <section id="journey" data-section="journey">
+    <div class="container">
+
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>Milan &nbsp;·&nbsp; Perth &nbsp;·&nbsp; Dubai &nbsp;·&nbsp; 24 years &nbsp;·&nbsp; one direction</span>
+
+      <h2 class="journey-headline reveal">
+        From Milan to the<br>
+        GCC's <em>most complex<br>
+        sovereign programmes.</em>
+      </h2>
+
+      <div class="journey-body reveal">
+        <p>After graduating with an MSc from Politecnico di Milano —
+        one of Europe's most rigorous engineering universities —
+        I built the foundations from inside IT departments:
+        enterprise software, ERP systems, and digital operations
+        across Italy and Australia.</p>
+
+        <p>The move to consulting was deliberate. Accenture in Perth
+        in 2011, then Accenture Middle East in 2014 — mastering
+        project management and capital projects delivery across
+        the region. In 2015 I returned to Australia to join
+        Deloitte in Perth, taking on progressively larger
+        programmes and more complex governance environments
+        before returning to the Middle East in 2018 — this time
+        architecting sovereign cloud solutions for regulated
+        government clients across MENA.</p>
+
+        <p>The shift into capital projects and smart cities full-time
+        was the moment everything converged. The technical depth.
+        The governance experience. The GCC market context. For
+        the past four years, inside Accenture Industry X, I have
+        led the work this site describes — on live sovereign
+        programmes, with real consequences, for clients who
+        cannot afford to fail.</p>
+
+        <p>That trajectory is not accidental.<br>
+        It is the reason I am here at this moment.</p>
+      </div>
+
+      <!-- Five-stop timeline -->
+      <div class="timeline-strip">
+
+        <div class="timeline-stop">
+          <div class="timeline-content">
+            <span class="timeline-year">2002–2011</span>
+            <span class="timeline-city">Italy &amp; Australia</span>
+            <p class="timeline-role">MSc Politecnico di Milano · Enterprise IT · ERP · digital operations</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-stop">
+          <div class="timeline-content">
+            <span class="timeline-year">2011–2014</span>
+            <span class="timeline-city">Accenture Australia</span>
+            <p class="timeline-role">First consulting engagements · project delivery · governance foundations</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-stop">
+          <div class="timeline-content">
+            <span class="timeline-year">2014–2018</span>
+            <span class="timeline-city">Accenture Middle East &amp; Deloitte Australia</span>
+            <p class="timeline-role">Capital Projects &amp; PM practice · utilities &amp; public sector · Middle East</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-stop">
+          <div class="timeline-content">
+            <span class="timeline-year">2018–2022</span>
+            <span class="timeline-city">Accenture Middle East</span>
+            <p class="timeline-role">Infrastructure governance · public sector · sovereign cloud MENA</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-stop">
+          <div class="timeline-content">
+            <span class="timeline-year">2022–Now</span>
+            <span class="timeline-city">Accenture Middle East · Industry X</span>
+            <p class="timeline-role">Smart Cities · Capital PMO · Digital Twin · KSA sovereign programmes</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+      </div>
+
+      <p class="journey-closing reveal">
+        Based in Dubai. Operating across UAE, KSA, and Qatar.<br>
+        Available to build EY's Capital Projects practice from day one.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 1 — THE MARKET
+       ============================================================ -->
+  <section id="market" data-section="market">
+    <div class="container">
+
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>The market</span>
+
+      <!-- Pull quote + body copy -->
+      <div class="market-cols reveal">
+        <div class="pull-quote">
+          Two pipelines. <em>One practice.</em>
+        </div>
+        <div class="market-body">
+          <p>The GCC consulting market is the fastest-growing advisory
+          market in the world — $8.3 billion in 2025, expanding at
+          12% per annum, twice the rate of North America.</p>
+          <p>Capital projects advisory sits at its centre. Saudi Arabia's
+          $1.65 trillion sovereign programme pipeline. The UAE's
+          $875 billion infrastructure agenda. Hard political deadlines
+          — 2030 Expo, 2034 FIFA World Cup — that make governance
+          advisory non-discretionary spend, not a line item to defer.</p>
+          <p>The premium sub-segment — programme governance, PMIS
+          strategy, Digital Twin readiness, lifecycle intelligence
+          — is worth $400 to $700 million per annum. It is the
+          fastest-growing sub-segment in GCC consulting. And no
+          Big Four firm owns it at the technical-advisory
+          intersection where sovereign clients are currently
+          spending.</p>
+          <p>That is the market. EY has the platform. I bring the capability and a parallel origination path. Together, we lead it.</p>
+        </div>
+      </div>
+
+      <!-- Four-stat strip -->
+      <div class="stat-strip reveal">
+        <div class="stat-cell">
+          <div class="stat-num" data-counter data-val="8.3" data-prefix="$" data-suffix="B">$8.3B</div>
+          <div class="stat-label">GCC consulting market · 2025</div>
+          <div class="stat-sub">12% growth p.a. — twice the US rate</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" data-counter data-val="1.65" data-prefix="$" data-suffix="T">$1.65T</div>
+          <div class="stat-label">Saudi sovereign programme pipeline</div>
+          <div class="stat-sub">2030 Expo · 2034 FIFA World Cup · hard deadlines</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">$400–700M</div>
+          <div class="stat-label">Addressable premium sub-segment p.a.</div>
+          <div class="stat-sub">Programme governance · PMIS · Digital Twin</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">&lt;1%</div>
+          <div class="stat-label">Year 1 target vs addressable market</div>
+          <div class="stat-sub">The ambition is anchored relationships, not share</div>
+        </div>
+      </div>
+
+      <!-- Five market forces -->
+      <div class="market-forces reveal">
+        <div class="force">
+          <span class="force-num">01</span>
+          <div>
+            <div class="force-title">Saudi Arabia's maturity shift</div>
+            <p class="force-body">Sovereign clients are no longer buying ambition. They are
+            buying proof of return. Governance and delivery intelligence
+            advisory is now the highest-value spend in the KSA
+            consulting market — not a discretionary cost.</p>
+          </div>
+        </div>
+        <div class="force">
+          <span class="force-num">02</span>
+          <div>
+            <div class="force-title">Hard political deadlines that cannot move</div>
+            <p class="force-body">2030 Expo. 2034 FIFA World Cup. These are not commercial
+            deadlines. They are national commitments. Programme
+            governance advisory on these programmes is
+            mission-critical, non-deferrable sovereign spend.</p>
+          </div>
+        </div>
+        <div class="force">
+          <span class="force-num">03</span>
+          <div>
+            <div class="force-title">The raised bar for advisory independence</div>
+            <p class="force-body">KSA Royal Commissions and PIF-affiliated entities now
+            require demonstrated independence from EPC and vendor
+            agendas, and verifiable delivery authority. These are
+            qualifying criteria, not differentiators. The advisor
+            who cannot meet them does not get the conversation.</p>
+          </div>
+        </div>
+        <div class="force">
+          <span class="force-num">04</span>
+          <div>
+            <div class="force-title">Digital Twin and PMIS intelligence as budget priority</div>
+            <p class="force-body">Two thirds of GCC organisations plan to allocate over
+            30% of consulting budgets to AI adoption and digital
+            transformation in 2025. That spend intersects directly
+            with PMIS intelligence, Digital Twin strategy, and
+            cloud-enabled delivery governance — this practice's
+            core offering.</p>
+          </div>
+        </div>
+        <div class="force">
+          <span class="force-num">05</span>
+          <div>
+            <div class="force-title">A structural pipeline, not a cyclical one</div>
+            <p class="force-body">$1.1 trillion in funded GCC infrastructure investment
+            beyond 2030. The advisory pipeline that follows is
+            not dependent on an oil cycle or a single programme
+            generation. It is structural, multi-decade, and
+            expanding.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2 — PROOF POINT
+       ============================================================ -->
+  <style>
+  /* === Horizontal Timeline / Vertical Stepper (Proof section) === */
+  .ht-timeline { margin: 2.5rem 0 3rem; }
+  .ht-stages { display:flex; position:relative; align-items:flex-end; }
+  .ht-stages::after { content:''; position:absolute; bottom:19px; left:10%; right:10%; height:2px; background:linear-gradient(to right, var(--accent), var(--rule) 80%); z-index:0; }
+  .ht-stage { flex:1; display:flex; flex-direction:column; align-items:center; padding:0 4px; cursor:pointer; position:relative; transition:opacity 0.2s; }
+  @media (min-width:768px) { .ht-stage:not(.ht-active){opacity:0.5;} .ht-stage:not(.ht-active):hover{opacity:0.85;} }
+  .ht-content { display:flex; flex-direction:column; align-items:center; width:100%; }
+  .ht-info { display:flex; flex-direction:column; align-items:center; text-align:center; padding-bottom:1rem; }
+  .ht-num { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:0.3rem; }
+  .ht-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--white); display:block; margin-bottom:0.2rem; line-height:1.25; }
+  .ht-role { font-family:'DM Mono',monospace; font-size:8px; text-transform:uppercase; letter-spacing:0.13em; color:var(--muted); display:block; }
+  .ht-dot { width:38px; height:38px; border-radius:50%; border:2px solid rgba(245,244,240,0.12); background:var(--black); display:flex; align-items:center; justify-content:center; font-family:'DM Mono',monospace; font-size:11px; color:var(--muted); position:relative; z-index:2; flex-shrink:0; transition:background 0.25s,border-color 0.25s,color 0.25s,box-shadow 0.25s; }
+  .ht-stage.ht-active .ht-dot { background:var(--accent); border-color:var(--accent); color:var(--black); box-shadow:0 0 0 4px rgba(232,200,74,0.15); }
+  @media (min-width:768px) { .ht-mobile-card { display:none; } }
+  .ht-panel { margin-top:2rem; border-left:3px solid var(--accent); background:var(--surface); padding:1.5rem 2rem; min-height:110px; }
+  .ht-pane { display:none; }
+  .ht-pane.ht-pane-active { display:block; animation:htIn 0.3s ease both; }
+  @keyframes htIn { from{opacity:0;transform:translateY(5px);} to{opacity:1;transform:translateY(0);} }
+  .ht-detail { font-family:'Barlow',sans-serif; font-weight:300; font-size:15px; color:var(--muted); line-height:1.75; margin:0 0 0.9rem; }
+  .ht-arrow { font-family:'DM Mono',monospace; font-size:12px; color:var(--white); line-height:1.6; margin:0; }
+  .ht-arrow-icon { color:var(--accent); margin-right:0.3em; }
+  @media (max-width:767px) {
+    .ht-stages { flex-direction:column; align-items:stretch; }
+    .ht-stages::after { display:none; }
+    .ht-stage { flex-direction:row; align-items:flex-start; gap:1rem; padding:0 0 2rem 0; opacity:1 !important; }
+    .ht-stage:not(:last-child)::before { content:''; position:absolute; left:18px; top:40px; bottom:0; width:2px; background:var(--rule); }
+    .ht-dot { order:0; flex-shrink:0; margin-top:1px; }
+    .ht-content { align-items:flex-start; flex:1; order:1; }
+    .ht-info { align-items:flex-start; text-align:left; padding-bottom:0.4rem; }
+    .ht-mobile-card { display:block; margin-top:0.5rem; }
+    .ht-panel { display:none; }
+  }
+  </style>
+  <section id="proof" data-section="proof">
+    <div class="container">
+
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Qiddiya &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Giga-Programme &nbsp;·&nbsp; Delivered through Accenture</span>
+
+      <h2 class="section-headline reveal">
+        One engagement.<br>
+        The full chain.<br>
+        <em>Every question<br>
+        answered.</em>
+      </h2>
+
+      <div class="proof-intro reveal">
+        <p>Qiddiya — a sovereign KSA entertainment and tourism
+        giga-programme with a capital development schedule
+        extending to 2050 — had no reliable single source of
+        truth across its delivery enterprise. Cost data in SAP
+        and cost control systems produced irreconcilable figures.
+        Schedule status in P6 could not be trusted at programme
+        level. Document and engineering data lived in disconnected
+        repositories. The development business had no confident
+        view of where the programme stood — and no mechanism
+        to build one.</p>
+        <p>This was not a technology implementation role.
+        It was a senior advisory mandate — from digital needs
+        assessment through platform selection through RFP
+        governance through Nvidia Omniverse deployment.
+        In a single engagement trajectory. On a live programme.</p>
+      </div>
+
+      <!-- Horizontal timeline (desktop) / Vertical stepper (mobile) -->
+      <div class="ht-timeline" id="proof-timeline">
+
+        <div class="ht-stages">
+
+          <div class="ht-stage ht-active" data-idx="0">
+            <div class="ht-content">
+              <div class="ht-info">
+                <span class="ht-num">Stage 01</span>
+                <span class="ht-title">Digital Needs Assessment</span>
+                <span class="ht-role">Diagnostician</span>
+              </div>
+              <div class="ht-mobile-card">
+                <p class="ht-detail">Mapped the full programme data landscape across the enterprise. Identified root causes of data distrust — misaligned cost hierarchies between SAP and cost control, no governed schedule baseline, fragmented document control with no audit trail.</p>
+                <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Strategic work disguised as technical work. That distinction is what sovereign clients pay for.</p>
+              </div>
+            </div>
+            <div class="ht-dot">01</div>
+          </div>
+
+          <div class="ht-stage" data-idx="1">
+            <div class="ht-content">
+              <div class="ht-info">
+                <span class="ht-num">Stage 02</span>
+                <span class="ht-title">PMIS Tool Scoring &amp; Selection</span>
+                <span class="ht-role">Evaluator</span>
+              </div>
+              <div class="ht-mobile-card">
+                <p class="ht-detail">Scored Oracle Unifier, Aconex, and competing PMIS platforms against the client's operating model with no commercial agenda. Recommended and justified Oracle on ERP integration, P6 linkage, and Aconex document control depth.</p>
+                <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Platform-agnostic authority. The advisor with no agenda and the depth to evaluate honestly is a fundamentally different proposition.</p>
+              </div>
+            </div>
+            <div class="ht-dot">02</div>
+          </div>
+
+          <div class="ht-stage" data-idx="2">
+            <div class="ht-content">
+              <div class="ht-info">
+                <span class="ht-num">Stage 03</span>
+                <span class="ht-title">RFP Authorship</span>
+                <span class="ht-role">Guardian</span>
+              </div>
+              <div class="ht-mobile-card">
+                <p class="ht-detail">Authored the full PMIS RFP — scope, functional requirements, integration specifications, evaluation criteria, and commercial structure. Deliberately excluded from budget definition to preserve complete integrity before competing in Stage 04.</p>
+                <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Owner-side independence under commercial pressure. Sovereign clients remember this.</p>
+              </div>
+            </div>
+            <div class="ht-dot">03</div>
+          </div>
+
+          <div class="ht-stage" data-idx="3">
+            <div class="ht-content">
+              <div class="ht-info">
+                <span class="ht-num">Stage 04</span>
+                <span class="ht-title">Competitive Award</span>
+                <span class="ht-role">Converter</span>
+              </div>
+              <div class="ht-mobile-card">
+                <p class="ht-detail">Responded competitively through Accenture. Won the implementation mandate on the basis of the technical and delivery approach — having personally defined the standard the market was measured against.</p>
+                <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Advisory credibility converted directly to commercial mandate. That is proof the strategy was deployable, not theoretical.</p>
+              </div>
+            </div>
+            <div class="ht-dot">04</div>
+          </div>
+
+          <div class="ht-stage" data-idx="4">
+            <div class="ht-content">
+              <div class="ht-info">
+                <span class="ht-num">Stage 05</span>
+                <span class="ht-title">BIM &amp; Digital Twin Extension</span>
+                <span class="ht-role">Anticipator</span>
+              </div>
+              <div class="ht-mobile-card">
+                <p class="ht-detail">Extended scope into BIM data taxonomy definition aligned to ISO 19650 and an Nvidia Omniverse Digital Twin POC — integrating structured PMIS and BIM asset data into a real-time operational simulation environment. On live programme data.</p>
+                <p class="ht-arrow"><span class="ht-arrow-icon">→</span>The engagement grew because the advisor saw further than the brief. That is Partner behaviour.</p>
+              </div>
+            </div>
+            <div class="ht-dot">05</div>
+          </div>
+
+        </div><!-- /.ht-stages -->
+
+        <!-- Desktop detail panel -->
+        <div class="ht-panel">
+
+          <div class="ht-pane ht-pane-active" data-idx="0">
+            <p class="ht-detail">Mapped the full programme data landscape across the enterprise. Identified root causes of data distrust — misaligned cost hierarchies between SAP and cost control, no governed schedule baseline, fragmented document control with no audit trail.</p>
+            <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Strategic work disguised as technical work. That distinction is what sovereign clients pay for.</p>
+          </div>
+
+          <div class="ht-pane" data-idx="1">
+            <p class="ht-detail">Scored Oracle Unifier, Aconex, and competing PMIS platforms against the client's operating model with no commercial agenda. Recommended and justified Oracle on ERP integration, P6 linkage, and Aconex document control depth.</p>
+            <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Platform-agnostic authority. The advisor with no agenda and the depth to evaluate honestly is a fundamentally different proposition.</p>
+          </div>
+
+          <div class="ht-pane" data-idx="2">
+            <p class="ht-detail">Authored the full PMIS RFP — scope, functional requirements, integration specifications, evaluation criteria, and commercial structure. Deliberately excluded from budget definition to preserve complete integrity before competing in Stage 04.</p>
+            <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Owner-side independence under commercial pressure. Sovereign clients remember this.</p>
+          </div>
+
+          <div class="ht-pane" data-idx="3">
+            <p class="ht-detail">Responded competitively through Accenture. Won the implementation mandate on the basis of the technical and delivery approach — having personally defined the standard the market was measured against.</p>
+            <p class="ht-arrow"><span class="ht-arrow-icon">→</span>Advisory credibility converted directly to commercial mandate. That is proof the strategy was deployable, not theoretical.</p>
+          </div>
+
+          <div class="ht-pane" data-idx="4">
+            <p class="ht-detail">Extended scope into BIM data taxonomy definition aligned to ISO 19650 and an Nvidia Omniverse Digital Twin POC — integrating structured PMIS and BIM asset data into a real-time operational simulation environment. On live programme data.</p>
+            <p class="ht-arrow"><span class="ht-arrow-icon">→</span>The engagement grew because the advisor saw further than the brief. That is Partner behaviour.</p>
+          </div>
+
+        </div><!-- /.ht-panel -->
+
+      </div><!-- /.ht-timeline -->
+
+      <div style="
+  border-left: 3px solid var(--rule);
+  background: var(--surface);
+  padding: 2rem 2.5rem;
+  margin-bottom: 2px;
+  max-width: 720px;
+">
+  <div style="
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  ">The outcome</div>
+  <p style="
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: var(--white);
+    line-height: 1.85;
+    margin-bottom: 1.2rem;
+  ">
+    Under my leadership, we established a single source
+    of truth in Oracle Unifier, with governed interfaces
+    to SAP (cost), Oracle P6 (schedule), and Oracle
+    Aconex (documents) maintaining enterprise data
+    integrity across the programme. The development
+    business gained — for the first time — a coherent,
+    trusted view of cost, schedule, and document status
+    at portfolio level.
+  </p>
+  <p style="
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: var(--white);
+    line-height: 1.85;
+    margin: 0;
+  ">
+    The BIM and Digital Twin extension created a live
+    proof of concept for operational asset intelligence,
+    directly connected to the delivery data layer rather
+    than built as a separate initiative.
+  </p>
+</div>
+
+      <!-- Verdict block -->
+      <div class="verdict reveal">
+        <span class="verdict-label">This engagement answers every question EY will ask</span>
+        <div class="verdict-body">
+          <p>Can you lead strategic mandates — not just deliver technically? &nbsp;Yes — Stage 01 and 02.</p>
+          <p>Can you maintain owner-side independence under commercial pressure? &nbsp;Yes — Stage 03.</p>
+          <p>Can you convert advisory credibility into revenue? &nbsp;Yes — Stage 04.</p>
+          <p>Can you extend a relationship before the client thinks to ask? &nbsp;Yes — Stage 05.</p>
+        </div>
+        <span class="verdict-close">One engagement. Five stages. No gaps.</span>
+      </div>
+
+    </div>
+  </section>
+  <script>
+  (function() {
+    function htInit() {
+      var tl = document.getElementById('proof-timeline');
+      if (!tl) return;
+      var stages = Array.from(tl.querySelectorAll('.ht-stage'));
+      var panes = Array.from(tl.querySelectorAll('.ht-pane'));
+      if (!stages.length) return;
+      function activate(idx) {
+        stages.forEach(function(s) { s.classList.toggle('ht-active', +s.dataset.idx === idx); });
+        panes.forEach(function(p) { p.classList.toggle('ht-pane-active', +p.dataset.idx === idx); });
+      }
+      stages.forEach(function(stage) { stage.addEventListener('mouseenter', function() { activate(+stage.dataset.idx); }); });
+      tl.addEventListener('mouseleave', function() { activate(0); });
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', htInit); }
+    else { htInit(); }
+  })();
+  </script>
+
+  <!-- ============================================================
+       SECTION 3 — WHY EY
+       ============================================================ -->
+  <section id="whyey" data-section="whyey">
+    <div class="container">
+
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Why EY — specifically</span>
+
+      <h2 class="section-headline reveal">
+        Not a Big Four argument.<br>
+        <em>A platform argument.</em>
+      </h2>
+
+      <!-- Intro block -->
+      <div class="whyey-intro reveal">
+        <p>EY's Capital Projects practice in the Middle East is at
+        an inflection point. The audit and risk relationships
+        with UAE sovereign developers, KSA Royal Commissions,
+        and PIF-affiliated entities are established. The client
+        trust is there.</p>
+        <p>What is not yet there — at the required depth — is the
+        strategic advisory capability to cover the full capital
+        asset lifecycle. Governance model design. PMIS business
+        case. Digital Twin use case definition. BIM value
+        realisation. And critically — the operational intelligence
+        layer that sovereign clients are now being held accountable
+        for: asset performance, handover readiness, and Digital
+        Twin continuity from delivery into operations. That full
+        chain, from programme business case to asset performing
+        in the field, is what this profile covers.</p>
+        <p>EY recently made a deliberate investment in Capital
+        Projects advisory leadership in the region. That signal
+        is clear: the intent to build is there. What I bring is the day-one capability to execute against it — before the window closes.</p>
+      </div>
+
+      <!-- Three conversion paths -->
+      <div class="path-grid reveal">
+
+        <div class="path-cell">
+          <span class="path-from">Audit relationship</span>
+          <div class="path-arrow">→</div>
+          <div class="path-to">Governance advisory mandate</div>
+          <p class="path-body">EY surfaces programme governance weakness or cost
+          control failures in a sovereign client audit. That
+          is the entry point for a $600K–$1.5M governance
+          model redesign or PMIS strategy engagement. The
+          trust already exists. I provide the technical credibility to lead the advisory work.</p>
+          <div class="path-fee">$600K – $1.5M initial → $800K – $2M pa retainer</div>
+        </div>
+
+        <div class="path-cell">
+          <span class="path-from">Risk and assurance</span>
+          <div class="path-arrow">→</div>
+          <div class="path-to">Programme recovery mandate</div>
+          <p class="path-body">EY's risk team identifies programme distress —
+          cost overruns, schedule failures, data integrity
+          breakdown. That creates the entry for a $600K–$2M
+          programme recovery advisory engagement. Highest
+          trust-building velocity of any engagement type.
+          Clients remember who helped them when it mattered.</p>
+          <div class="path-fee">$600K – $2M over 3–6 months</div>
+        </div>
+
+        <div class="path-cell">
+          <span class="path-from">Technology consulting</span>
+          <div class="path-arrow">→</div>
+          <div class="path-to">Capital advisory mandate</div>
+          <p class="path-body">EY's cloud or digital transformation engagement
+          creates a natural entry for Digital Twin strategy
+          or PMIS architecture advisory. The client
+          relationship is live. I provide the capability to lead the strategic business case and use case definition — the work pure technology consultants cannot credibly lead.</p>
+          <div class="path-fee">$300K – $700K initial → $1M – $3M roadmap</div>
+        </div>
+
+        <div class="path-cell">
+          <span class="path-from">Programme Credibility</span>
+          <div class="path-arrow">→</div>
+          <div class="path-to">Direct mandate entry</div>
+          <p class="path-body">Direct client-facing delivery on named GCC sovereign programmes — Qiddiya, TASMU, Khazna, among others — creates programme-level visibility and a professional starting point independent of firm introduction. This is not cold outreach. It is a parallel entry path that operates from day one alongside EY's platform conversion.</p>
+          <div class="path-fee">$400K – $1.5M · programme-credibility entry · independent of EY platform</div>
+        </div>
+
+      </div>
+
+      <!-- Multiplier callout -->
+      <div class="multiplier reveal">
+        <span class="multiplier-label">The multiplier effect</span>
+        <p class="multiplier-body">A capital programme governance engagement anchored in
+        EY's existing audit relationship generates pull-through
+        across risk controls, technology consulting, and tax
+        structuring on capital structure. A single $600K advisory
+        mandate, correctly positioned, activates EY's full
+        multi-service line capability. Competitors operating in
+        siloed practices cannot replicate this. EY can — with
+        the right advisory anchor in Capital Projects.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4 — WHY RARE
+       ============================================================ -->
+  <section id="rare" data-section="rare">
+    <div class="container">
+
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>The competitive gap</span>
+
+      <h2 class="section-headline reveal">
+        The market has strategists.<br>
+        The market has implementers.<br>
+        Neither covers the full lifecycle. <em>I do.</em>
+      </h2>
+
+      <!-- Three-column comparison grid -->
+      <div class="comparison-grid reveal">
+        <!-- Header row -->
+        <div class="comp-header col-market">What the market has</div>
+        <div class="comp-header col-gap">What the market cannot find</div>
+        <div class="comp-header col-mine">What I provide</div>
+
+        <!-- Row 1 -->
+        <div class="comp-cell col-market">PMIS strategy advisors who recommend Oracle but have
+        never configured a cost sheet</div>
+        <div class="comp-cell col-gap">Architects who know why a P6/SAP interface produces
+        mismatched cost data — and can fix the data model</div>
+        <div class="comp-cell col-mine">Oracle Unifier cost sheet design, P6 EPS architecture,
+        SAP data mapping — personally deployed on live
+        sovereign programmes</div>
+
+        <!-- Row 2 -->
+        <div class="comp-cell col-market">Digital Twin consultants who reference ISO 19650
+        in presentations</div>
+        <div class="comp-cell col-gap">Information managers who have authored a BEP, governed
+        a CDE, and linked it to a live programme cost and
+        schedule layer</div>
+        <div class="comp-cell col-mine">ISO 19650 BEP authorship, CDE design, 4D/5D linkage
+        — delivered on KSA and Qatar sovereign programmes</div>
+
+        <!-- Row 3 -->
+        <div class="comp-cell col-market">Technology partners who demo Nvidia Omniverse
+        to clients</div>
+        <div class="comp-cell col-gap">Advisors who have deployed Omniverse on live programme
+        data with real integration to PMIS and BIM layers</div>
+        <div class="comp-cell col-mine">Nvidia Omniverse POC on live KSA sovereign programme
+        — real programme data, not a demo environment</div>
+
+        <!-- Row 4 -->
+        <div class="comp-cell col-market">IoT platform vendors who describe operational twins</div>
+        <div class="comp-cell col-gap">Practitioners who have governed the data architecture
+        that makes IoT telemetry trustworthy enough to inform
+        operational decisions</div>
+        <div class="comp-cell col-mine">IoT sensor integration into live operational twin
+        — end-to-end data governance, not platform deployment</div>
+
+        <!-- Row 5 -->
+        <div class="comp-cell col-market">Capital advisors who stop at practical completion</div>
+        <div class="comp-cell col-gap">Practitioners who cover the full lifecycle — from
+        programme governance and delivery controls through to
+        operational handover, asset performance intelligence,
+        and Digital Twin continuity</div>
+        <div class="comp-cell col-mine">Full asset lifecycle advisory: programme business case
+        → delivery governance → operational handover → asset
+        performance intelligence. The advisory position most
+        capital practices do not occupy.</div>
+      </div>
+
+      <!-- Accordion label -->
+      <span class="accordion-eyebrow reveal">Full technical stack — click any layer to expand</span>
+
+      <!-- Eight accordion rows -->
+      <div class="accordion-list reveal">
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">Oracle Unifier</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Cost sheet design, CBS/WBS alignment, workflow
+            configuration, UDR (user-defined reports), business
+            process design, cost module integration with schedule
+            and risk data. Configuration at programme level —
+            not system administration.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">Oracle P6</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>EPS structure design, schedule baseline governance,
+            resource loading architecture, schedule health
+            assessment, P6 data model alignment with Unifier
+            cost hierarchy. Ability to assess schedule integrity
+            — not just read Gantt charts.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">Oracle Aconex</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Document control workflow design, transmittal logic,
+            revision control, register configuration, integration
+            with PMIS cost and schedule layers. Document management
+            as a data governance discipline, not a filing system.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">SAP / ERP Integration</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Data mapping between SAP cost modules (PS, MM, FI)
+            and Oracle Unifier cost sheet. API design, middleware
+            selection, data reconciliation logic. The integration
+            layer where data trust is won or lost — and the layer
+            most advisors cannot operate at.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">ISO 19650 / BIM Governance</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>BEP authorship defining information requirements,
+            delivery milestones, naming conventions, and model
+            maturity levels (LOI/LOD). CDE architecture: folder
+            structure, state management (WIP/Shared/Published/
+            Archived), access control, approval workflows.
+            Without this governance layer, a Digital Twin
+            is architecturally indefensible.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">4D / 5D Integration</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>P6 activity IDs linked to BIM object classification
+            for time-based construction simulation (4D). Oracle
+            Unifier cost data integrated with BIM model for
+            quantity-driven cost forecasting (5D). Requires
+            CBS/WBS alignment between Unifier and BIM hierarchy
+            — the taxonomy discipline most 4D projects fail on.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">Nvidia Omniverse</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Deployed as real-time simulation and visualisation
+            layer on a KSA sovereign giga-programme — connecting
+            structured asset data from PMIS and BIM layers into
+            a physics-accurate operational environment. Not a
+            proof of concept built in isolation. Built on live
+            programme data with real governance requirements.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-name">Sovereign Cloud</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>OCI, Azure, AWS, GCP architecture across regulated
+            and data-residency environments including in-country
+            KSA sovereign cloud models. Led MENA go-to-market
+            hybrid-cloud offering with HPE. Commercial and
+            financial shaping of cloud deals including TCO,
+            pricing, margin, and risk positioning.</p>
+          </div>
+        </div>
+
+      </div><!-- /.accordion-list -->
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5 — WHAT I BUILD
+       ============================================================ -->
+  <section id="build" data-section="build">
+    <div class="container">
+
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>The commercial case</span>
+
+      <h2 class="section-headline reveal">
+        Not a hire.<br>
+        <em>A practice.</em><br>
+        Built bottom-up.
+      </h2>
+
+      <!-- Three revenue blocks -->
+      <div class="revenue-grid reveal">
+
+        <div class="revenue-cell revenue-cell--base">
+          <span class="revenue-year">Year 1 · Base case</span>
+          <div class="revenue-fig">$2M</div>
+          <p class="revenue-desc">2 anchor engagements + 2 shorter projects.
+          EY's platform provides the institutional activation path. My contribution is complementary and specific: direct client-facing delivery on named GCC sovereign programmes — Qiddiya, TASMU, Khazna — among others — that creates programme-level visibility and a professional starting point independent of firm introduction. The Year 1 pipeline is built on both. Neither alone is sufficient. Together, they reduce concentration risk on a single activation path.</p>
+        </div>
+
+        <div class="revenue-cell revenue-cell--upside">
+          <span class="revenue-year">Year 1 · Upside</span>
+          <div class="revenue-fig">$4M</div>
+          <p class="revenue-desc">Base case + one further KSA Royal Commission
+          governance engagement. Activated through programme
+          credibility and the sovereign network built over
+          a decade of GCC delivery.</p>
+        </div>
+
+        <div class="revenue-cell revenue-cell--practice">
+          <span class="revenue-year">Year 3 · Practice revenue</span>
+          <div class="revenue-fig">$10M+</div>
+          <p class="revenue-desc">Initial engagements converted to multi-year
+          advisory retainers. Digital Twin advisory as
+          a recurring revenue stream. 8–10 FTE team.
+          Full P&amp;L accountability from year one.</p>
+        </div>
+
+      </div>
+
+      <p class="revenue-note">Year 1 target represents less than 1% of the
+      addressable premium sub-segment. The ambition is
+      not market share. It is anchored client relationships
+      that compound into a multi-year practice.</p>
+
+      <!-- Sales evidence block -->
+      <div id="commercial" class="sales-evidence reveal">
+        <span class="sales-label">Commercial track record · Accenture 2023–2026</span>
+        <span class="sales-framing">Engagement revenue led and TCV originated as Solution Lead or Engagement Manager — Accenture Industry X, Capital Projects practice.</span>
+        <div class="sales-rows">
+
+          <div class="sales-row">
+            <span class="sales-year">FY 2023–24</span>
+            <div class="sales-cols">
+              <div class="sales-col">
+                <div class="sales-fig">USD 4.2M</div>
+                <span class="sales-col-label">Revenue led</span>
+              </div>
+              <div class="sales-col sales-col--tcv">
+                <div class="sales-fig">USD 6.4M</div>
+                <span class="sales-col-label">TCV originated</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sales-row">
+            <span class="sales-year">FY 2024–25</span>
+            <div class="sales-cols">
+              <div class="sales-col">
+                <div class="sales-fig">USD 5.1M</div>
+                <span class="sales-col-label">Revenue led</span>
+              </div>
+              <div class="sales-col sales-col--tcv">
+                <div class="sales-fig">USD 19.2M</div>
+                <span class="sales-col-label">TCV originated</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sales-row">
+            <span class="sales-year">FY 2025–26 (ongoing*)</span>
+            <div class="sales-cols">
+              <div class="sales-col">
+                <div class="sales-fig">USD 6.3M</div>
+                <span class="sales-col-label">Revenue led</span>
+              </div>
+              <div class="sales-col sales-col--tcv">
+                <div class="sales-fig">USD 8.9M</div>
+                <span class="sales-col-label">TCV originated</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <p class="sales-note">* FY 2025–26 year-to-date figures as of April 2026. Fiscal year runs 1 September – 31 August.</p>
+      </div>
+
+      <!-- Target mandates -->
+      <div class="target-block reveal">
+        <span class="target-block-label">Priority mandate targets · Year 1 activation</span>
+        <p class="target-intro">These are not speculative targets. They are sovereign
+        programmes with live governance and digital advisory
+        requirements — directly aligned with this practice's
+        core offering — activated through EY's existing
+        relationships, direct programme delivery context,
+        or both.</p>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">Qiddiya · KSA</div>
+            <div class="target-mandate">PMIS governance continuity · BIM and Digital Twin
+            advisory · programme recovery and controls optimisation</div>
+          </div>
+          <div class="target-entry">Incumbent delivery position · direct programme relationship · no introduction required</div>
+        </div>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">FIFA World Cup 2034 Authority · KSA</div>
+            <div class="target-mandate">Programme governance architecture · PMIS strategy ·
+            delivery certainty advisory</div>
+          </div>
+          <div class="target-entry">EY audit relationship · KSA Royal Commission entry · Qiddiya programme context</div>
+        </div>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">Diriyah Gate Development Authority · KSA</div>
+            <div class="target-mandate">Digital Twin readiness · BIM value realisation ·
+            asset lifecycle advisory</div>
+          </div>
+          <div class="target-entry">Sovereign programme network · existing EY presence</div>
+        </div>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">New Murabba Development Company · KSA</div>
+            <div class="target-mandate">Capital programme controls · PMIS architecture ·
+            governance model design</div>
+          </div>
+          <div class="target-entry">PIF-affiliated · EY KSA platform entry</div>
+        </div>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">Abu Dhabi Master Developers (Aldar · Miral · MODON)</div>
+            <div class="target-mandate">Oracle PMIS governance · Digital Twin lifecycle
+            advisory · multi-asset portfolio controls</div>
+          </div>
+          <div class="target-entry">EY existing audit and advisory relationships · UAE</div>
+        </div>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">TAQA · Abu Dhabi</div>
+            <div class="target-mandate">Energy and water capital programme governance · asset
+            performance intelligence · Digital Twin lifecycle
+            advisory across power generation and infrastructure
+            assets</div>
+          </div>
+          <div class="target-entry">EY existing client relationship · UAE · long-cycle infrastructure asset advisory</div>
+        </div>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">Khazna Data Centres · UAE</div>
+            <div class="target-mandate">Critical infrastructure PMIS governance · Digital Twin
+            operational readiness · lifecycle handover intelligence
+            for mission-critical facilities</div>
+          </div>
+          <div class="target-entry">Direct programme delivery context · incumbent credibility · data centre capital advisory</div>
+        </div>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">TASMU · Qatar Smart City Programme</div>
+            <div class="target-mandate">Smart city platform evolution · iCCC governance
+            continuity · Digital Twin operational intelligence ·
+            post-deployment asset performance advisory</div>
+          </div>
+          <div class="target-entry">Incumbent delivery context · direct programme relationship · no introduction required</div>
+        </div>
+
+        <div class="target-row">
+          <div>
+            <div class="target-name">Ministry of Municipality · Qatar</div>
+            <div class="target-mandate">Urban capital programme governance · smart city
+            infrastructure advisory · Digital Twin readiness for
+            public infrastructure assets · lifecycle intelligence
+            beyond asset delivery</div>
+          </div>
+          <div class="target-entry">Natural adjacency from TASMU delivery context · Qatar sovereign programme network entry</div>
+        </div>
+
+      </div><!-- /.target-block -->
+
+      <!-- Three-phase activation timeline -->
+      <div class="phase-grid reveal">
+
+        <div class="phase-cell">
+          <span class="phase-label-text">Month 1–3</span>
+          <div class="phase-title">Orientation and pipeline</div>
+          <div class="phase-item">Map EY sovereign client relationships to programme opportunity</div>
+          <div class="phase-item">Identify 5–8 entry points across UAE, KSA, Qatar</div>
+          <div class="phase-item">Develop 2–3 targeted proposals</div>
+          <div class="phase-item">Establish go-to-market position within EY Capital Projects</div>
+        </div>
+
+        <div class="phase-cell">
+          <span class="phase-label-text">Month 4–6</span>
+          <div class="phase-title">First engagement live</div>
+          <div class="phase-item">Launch first engagement — deploy programme credibility</div>
+          <div class="phase-item">Build delivery team: 1 manager, 2–3 consultants</div>
+          <div class="phase-item">Second engagement pursued through programme-level entry points — Qiddiya, TASMU, Khazna context — independent of EY platform timing</div>
+          <div class="phase-item">Begin converting audit/risk relationships to advisory mandates</div>
+        </div>
+
+        <div class="phase-cell">
+          <span class="phase-label-text">Month 7–12</span>
+          <div class="phase-title">Scale and anchor</div>
+          <div class="phase-item">Convert first engagement to multi-year retainer</div>
+          <div class="phase-item">Activate 2nd and 3rd engagements</div>
+          <div class="phase-item">Target: $2M base / $4M upside in delivery</div>
+          <div class="phase-item">Practice team at 6 FTE, Year 2 plan in place</div>
+        </div>
+
+      </div>
+
+      <!-- Engagement type bar chart -->
+      <div class="engagement-bars reveal" id="engagement-bars">
+
+        <div class="bar-row">
+          <span class="bar-label">Capital Programme Governance Architecture</span>
+          <div class="bar-track"><div class="bar-fill" data-width="88%"></div></div>
+          <span class="bar-fee">$600K – $1.5M → $2M pa</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">PMIS Strategy and Business Case</span>
+          <div class="bar-track"><div class="bar-fill" data-width="62%"></div></div>
+          <span class="bar-fee">$400K – $1M</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">Digital Twin Strategy and Roadmap</span>
+          <div class="bar-track"><div class="bar-fill" data-width="52%"></div></div>
+          <span class="bar-fee">$300K – $700K → $1–3M</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">Programme Recovery and Restart</span>
+          <div class="bar-track"><div class="bar-fill" data-width="88%"></div></div>
+          <span class="bar-fee">$600K – $2M</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">Smart City / iCCC Strategy</span>
+          <div class="bar-track"><div class="bar-fill" data-width="100%"></div></div>
+          <span class="bar-fee">$700K – $2.5M</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">BIM Value Realisation</span>
+          <div class="bar-track"><div class="bar-fill" data-width="62%"></div></div>
+          <span class="bar-fee">$400K – $900K</span>
+        </div>
+
+      </div><!-- /.engagement-bars -->
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 6 — THE DECISION
+       ============================================================ -->
+  <section id="decision" data-section="decision">
+    <div class="container">
+
+      <span class="section-eyebrow reveal"><svg class="eyebrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>For EY Capital Projects leadership</span>
+
+      <!-- Three Q&A blocks -->
+      <div class="qa-block reveal">
+        <div class="qa-question">Is the market real and large enough?</div>
+        <p class="qa-answer">Yes. $8.3 billion at 12% growth — twice the rate
+        of North America. $1.65 trillion Saudi sovereign
+        programme pipeline. Hard political deadlines that
+        make governance advisory non-discretionary spend.
+        KSA sovereign clients raising the bar on advisory
+        relationships — independence, delivery authority,
+        and technical credibility now qualifying criteria.
+        The market is not the risk. The market is the
+        opportunity.</p>
+      </div>
+
+      <div class="qa-block reveal">
+        <div class="qa-question">Is the Year 1 revenue case credible?</div>
+        <p class="qa-answer">Yes. Built bottom-up from specific engagement types,
+        fee ranges, and named client targets with defined
+        activation paths. Not market-share speculation.
+        A client-by-client revenue build. The $2M base
+        case requires two anchor engagements and two shorter
+        projects — each mapped to a sovereign programme with a defined activation path — either through EY's existing audit and advisory relationships, or through programme-level visibility built through direct sovereign delivery on Qiddiya, TASMU, Khazna, and others. Both pipelines are live from day one. The $4M upside adds
+        one further KSA governance engagement. Every line
+        is traceable.</p>
+      </div>
+
+      <div class="qa-block reveal">
+        <div class="qa-question">Am I genuinely rare — and is there proof?</div>
+        <p class="qa-answer">Yes. The full Oracle PMIS stack — Unifier, P6,
+        Aconex, SAP integration — personally deployed on
+        sovereign programmes. The full Digital Twin chain
+        — ISO 19650 through CDE through 4D/5D through
+        Nvidia Omniverse — delivered on live sovereign
+        programme data. Ten continuous years across UAE,
+        KSA, and Qatar. Professional services commercial
+        experience — P&amp;L management, team leverage,
+        advisory practice economics — to convert it into
+        EY revenue from day one. The Qiddiya engagement
+        is the proof. Not a framework. A delivered outcome
+        on a live KSA sovereign giga-programme.</p>
+      </div>
+
+      <!-- Closing statement -->
+      <div class="closing reveal">
+        <span class="closing-line1">The window to lead<br>GCC capital advisory</span>
+        <span class="closing-line2">is open now.</span>
+        <p class="closing-sub">The next 12–18 months determine whether EY leads
+        this market or reacts to it once the positioning
+        has been captured. The capability to lead it
+        is available today.</p>
+      </div>
+
     </div>
   </section>
 
@@ -115,27 +1291,351 @@
 
     <div class="footer-bottom">
       <span>Confidential — prepared for EY Capital Projects Leadership</span>
+      <a href="index-short-ey.html" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;">Executive summary →</a>
     </div>
   </footer>
 
   <script>
     'use strict';
 
+    /* ============================================================
+       headerTransition
+       Observes .hero — adds .scrolled to header when hero exits
+       viewport; removes it when hero re-enters.
+       ============================================================ */
+    function headerTransition() {
+      var header = document.getElementById('site-header');
+      if (!header) return;
+
+      function onScroll() {
+        header.classList.toggle('scrolled', window.scrollY > 100);
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // set correct state on initial load
+    }
+
+    /* ============================================================
+       navActiveState
+       Tracks which section[data-section] is in the centre band.
+       Sets .active on the matching [data-nav] link in both the
+       desktop header nav and mobile overlay nav.
+       ============================================================ */
+    function navActiveState() {
+      var sections = document.querySelectorAll('section[data-section]');
+      var allLinks = document.querySelectorAll('[data-nav]');
+      if (!sections.length || !allLinks.length) return;
+
+      function setActive(id) {
+        allLinks.forEach(function(link) {
+          link.classList.toggle('active', link.dataset.nav === id);
+        });
+      }
+
+      var navObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            setActive(entry.target.dataset.section);
+          }
+        });
+      }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+
+      sections.forEach(function(s) { navObs.observe(s); });
+    }
+
+    /* ============================================================
+       scrollReveal
+       Adds .revealed to every .reveal element on entry.
+       Unobserves immediately — no re-animation on scroll back.
+       Hero has no .reveal so is unaffected.
+       ============================================================ */
+    function scrollReveal() {
+      var items = document.querySelectorAll('.reveal');
+      if (!items.length) return;
+
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      items.forEach(function(el) { obs.observe(el); });
+    }
+
+    /* ============================================================
+       timelineReveal
+       Staggered left-to-right reveal for .proof-card elements.
+       Observes the timeline container; fires once on entry.
+       ============================================================ */
+    function timelineReveal() {
+      var timeline = document.getElementById('proof-timeline');
+      if (!timeline) return;
+
+      var cards = Array.from(timeline.querySelectorAll('.proof-card'));
+
+      var obs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          cards.forEach(function(card, i) {
+            setTimeout(function() {
+              card.classList.add('revealed');
+              if (i === cards.length - 1) {
+                setTimeout(cardFlipInit, 250);
+              }
+            }, i * 150);
+          });
+          obs.unobserve(timeline);
+        }
+      }, { threshold: 0.1 });
+
+      obs.observe(timeline);
+    }
+
+    /* ============================================================
+       cardFlipInit
+       One card flipped at a time. Card 1 open by default.
+       Mouseenter flips hovered card; mouseleave on grid restores card 1.
+       ============================================================ */
+    function cardFlipInit() {
+      var timeline = document.getElementById('proof-timeline');
+      if (!timeline) return;
+      var cards = Array.from(timeline.querySelectorAll('.proof-card'));
+      if (!cards.length) return;
+
+      function flipTo(card) {
+        cards.forEach(function(c) { c.classList.remove('flipped'); });
+        if (card) card.classList.add('flipped');
+      }
+
+      flipTo(cards[0]);
+
+      cards.forEach(function(card) {
+        card.addEventListener('mouseenter', function() { flipTo(card); });
+      });
+
+      timeline.addEventListener('mouseleave', function() { flipTo(cards[0]); });
+    }
+
+    /* ============================================================
+       accordionInit
+       One accordion open at a time. Toggles .open class,
+       swaps icon + ↔ ×, animates max-height via CSS.
+       ============================================================ */
+    function accordionInit() {
+      var items = document.querySelectorAll('.accordion-item');
+      if (!items.length) return;
+
+      items.forEach(function(item) {
+        var header  = item.querySelector('.accordion-header');
+        var icon    = item.querySelector('.accordion-icon');
+        var content = item.querySelector('.accordion-content');
+        if (!header) return;
+
+        header.addEventListener('click', function() {
+          var isOpen = item.classList.contains('open');
+
+          // close all
+          items.forEach(function(other) {
+            other.classList.remove('open');
+            var otherIcon = other.querySelector('.accordion-icon');
+            if (otherIcon) otherIcon.textContent = '+';
+          });
+
+          // open clicked item if it was closed
+          if (!isOpen) {
+            item.classList.add('open');
+            if (icon) icon.textContent = '×';
+          }
+        });
+
+        // keyboard: Enter / Space on header
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('role', 'button');
+        header.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            header.click();
+          }
+        });
+      });
+    }
+
+    /* ============================================================
+       barAnimation
+       On entry of #engagement-bars, sets each .bar-fill width
+       to its data-width value with staggered setTimeout delays.
+       Width animation is the explicit spec exception to the
+       transform/opacity-only rule.
+       ============================================================ */
+    function barAnimation() {
+      var container = document.getElementById('engagement-bars');
+      if (!container) return;
+
+      var bars = container.querySelectorAll('.bar-fill');
+
+      var obs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          bars.forEach(function(bar, i) {
+            setTimeout(function() {
+              bar.style.width = bar.dataset.width || '0%';
+            }, i * 100);
+          });
+          obs.unobserve(container);
+        }
+      }, { threshold: 0.3 });
+
+      obs.observe(container);
+    }
+
+    /* ============================================================
+       scrollCueHide
+       Hides chevron after 120px scroll; removes listener once done.
+       ============================================================ */
     function scrollCueHide() {
       var cue = document.querySelector('.scroll-cue');
       if (!cue) return;
+
       function onScroll() {
         if (window.scrollY > 120) {
           cue.classList.add('hidden');
           window.removeEventListener('scroll', onScroll);
         }
       }
+
       window.addEventListener('scroll', onScroll, { passive: true });
     }
 
+    /* ============================================================
+       mobileMenu
+       Hamburger → full-screen overlay. Body scroll locked when
+       open. Closed by: close button, link tap, ESC key,
+       or tap outside any link (handled via overlay click).
+       ============================================================ */
+    function mobileMenu() {
+      var hamburger = document.getElementById('hamburger-btn');
+      var overlay   = document.getElementById('mobile-overlay');
+      var closeBtn  = document.getElementById('overlay-close');
+      if (!hamburger || !overlay) return;
+
+      function openMenu() {
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        hamburger.setAttribute('aria-expanded', 'true');
+        if (closeBtn) closeBtn.focus();
+      }
+
+      function closeMenu() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+      }
+
+      hamburger.addEventListener('click', openMenu);
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeMenu);
+      }
+
+      // Tapping a nav link closes overlay and scrolls to section
+      overlay.querySelectorAll('a[data-nav]').forEach(function(link) {
+        link.addEventListener('click', function() {
+          closeMenu();
+        });
+      });
+
+      // Tap on overlay backdrop (not on a link) closes menu
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeMenu();
+      });
+
+      // ESC closes menu
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) {
+          closeMenu();
+        }
+      });
+    }
+
+    /* ============================================================
+       countUp
+       Animates [data-counter] stat numbers from 0 to their value
+       using requestAnimationFrame, triggered by IntersectionObserver.
+       ============================================================ */
+    function countUp() {
+      var els = document.querySelectorAll('[data-counter]');
+      if (!els.length) return;
+
+      function animateEl(el) {
+        var target  = parseFloat(el.dataset.val);
+        var prefix  = el.dataset.prefix  || '';
+        var suffix  = el.dataset.suffix  || '';
+        var dec     = (el.dataset.val.split('.')[1] || '').length;
+        var duration = 1400;
+        var start   = null;
+
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          // ease-out cubic
+          var ease = 1 - Math.pow(1 - progress, 3);
+          var val = (ease * target).toFixed(dec);
+          el.textContent = prefix + val + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateEl(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      els.forEach(function(el) { obs.observe(el); });
+    }
+
+    /* ============================================================
+       timelineAnimate
+       Staggered reveal for the career journey timeline strip.
+       Line draws left→right, stops fade+slide in, dots spring-bounce.
+       ============================================================ */
+    function timelineAnimate() {
+      var strip = document.querySelector('.timeline-strip');
+      if (!strip) return;
+      var stops = strip.querySelectorAll('.timeline-stop');
+      var obs = new IntersectionObserver(function(entries) {
+        if (!entries[0].isIntersecting) return;
+        strip.classList.add('tl-animate');
+        stops.forEach(function(stop, i) {
+          setTimeout(function() { stop.classList.add('tl-revealed'); }, 200 + i * 150);
+        });
+        obs.unobserve(strip);
+      }, { threshold: 0.2 });
+      obs.observe(strip);
+    }
+
+    /* ============================================================
+       Init — DOMContentLoaded
+       ============================================================ */
     document.addEventListener('DOMContentLoaded', function() {
+      headerTransition();
+      navActiveState();
+      scrollReveal();
+      timelineReveal();
+      timelineAnimate();
+      accordionInit();
+      barAnimation();
+      countUp();
       scrollCueHide();
+      mobileMenu();
     });
+
   </script>
 
 </body>
