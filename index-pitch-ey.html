@@ -73,11 +73,13 @@
   .pipeline-meta { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; border-top:1px solid rgba(255,255,255,0.06); padding-top:0.75rem; }
   .pipeline-entry { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); border:1px solid rgba(255,255,255,0.12); border-radius:2px; padding:2px 7px; }
   .pipeline-fee { font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:600; color:var(--text); letter-spacing:0.02em; }
-  /* ── Pipeline phase badges ── */
-  .pipeline-phase-badge { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; padding:2px 7px; border-radius:2px; border:1px solid; white-space:nowrap; flex-shrink:0; }
-  .phase-badge--1 { color:#185FA5; border-color:#185FA5; background:rgba(24,95,165,0.08); }
-  .phase-badge--2 { color:#0F6E56; border-color:#0F6E56; background:rgba(15,110,86,0.08); }
-  .phase-badge--3 { color:#854F0B; border-color:#854F0B; background:rgba(133,79,11,0.08); }
+  /* ── Pipeline card tags ── */
+  .card-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+  .card-tag { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; padding:2px 8px; border-radius:2px; border:1px solid; white-space:nowrap; flex-shrink:0; }
+  .tag-ivan { color:#185FA5; border-color:#185FA5; background:rgba(24,95,165,0.10); }
+  .tag-ey { color:#E8C84A; border-color:#E8C84A; background:rgba(232,200,74,0.08); }
+  .tag-rfp { color:rgba(255,255,255,0.55); border-color:rgba(255,255,255,0.3); background:transparent; }
+  .tag-geo { color:rgba(255,255,255,0.35); border-color:rgba(255,255,255,0.15); background:transparent; }
   /* ── Team member photos ── */
   .team-photo-wrap { width:100%; display:flex; justify-content:center; margin-bottom:1.25rem; }
   .team-photo { width:88px; height:88px; border-radius:50%; object-fit:cover; object-position:center top; border:2px solid rgba(255,255,255,0.10); background:var(--surface); display:block; }
@@ -626,32 +628,32 @@
              bars:[{s:4,e:11,c:CE},{s:11,e:24,c:CR,o:.75}],
              ms:[{m:5,l:'First mtg'},{m:8,l:'Proposal'},{m:11,l:'Mandate'}],
              fee:'$150–400K',
-             tip:'Schedule health + EPMO design. EY risk/assurance is the entry. 18-month bid familiarity with SAR governance. Active: Landbridge ($7B PPP), Qiddiya rail link.'},
+             tip:'Schedule health + EPMO design. EY risk/assurance is the entry. 18-month bid familiarity with SAR governance. Active: Landbridge ($7B PPP), Qiddiya rail link.'},,
+            {name:'Expo 2030 Riyadh',sub:'KSA · EY Platform',type:'ey',
+             bars:[{s:3,e:12,c:CE},{s:12,e:24,c:CR,o:.55}],
+             ms:[{m:3,l:'RFP submitted'},{m:6,l:'Mandate'},{m:12,l:'Retainer'}],
+             fee:'$600K–1.2M',
+             tip:'RFP expected imminently — first International Participants Meeting Riyadh 2026. PIF-owned ERC, CEO Talal H. AlMarri. Bechtel PMC. 6km², 42M visitors, Oct 2030 deadline. Budget protected from PIF cuts. No advisory firm confirmed as governance lead.'},,
+            {name:'FIFA 2034 · WCA34',sub:'KSA · EY Platform',type:'ey',
+             bars:[{s:5,e:14,c:CE},{s:14,e:24,c:CR,o:.55}],
+             ms:[{m:5,l:'RFP submitted'},{m:9,l:'Mandate'},{m:14,l:'Retainer'}],
+             fee:'$800K–1.5M',
+             tip:'Stadium costs reassessed Dec 2025 — advisory mandate is live now, not 2028. Chaired by Crown Prince MBS. 15 stadiums (11 new) across 5 cities. Qiddiya and New Murabba both contain FIFA 2034 stadiums — Ivan holds programme knowledge on both sites.'},
             {name:'Diriyah (DGDA)',sub:'KSA · Mace',type:'ey',
              bars:[{s:7,e:15,c:CE},{s:15,e:24,c:CR,o:.75}],
              ms:[{m:8,l:'Mace intro'},{m:13,l:'Mandate'},{m:15,l:'Retainer'}],
              fee:'$600K–1.2M',
-             tip:'$63B UNESCO heritage programme. Mace Consult holds sitewide PMC. Christopher Seymour (MD MEA) — personal relationship. Heritage asset information management specialist niche.'},
+             tip:'$63B UNESCO heritage programme. Mace Consult holds sitewide PMC. Christopher Seymour (MD MEA) — personal relationship. Heritage asset information management specialist niche.'},,
             {name:'King Salman Airport',sub:'KSA · Mace',type:'ey',
              bars:[{s:8,e:16,c:CE},{s:16,e:24,c:CR,o:.75}],
              ms:[{m:9,l:'Via Seymour'},{m:13,l:'Mandate'},{m:16,l:'Retainer'}],
              fee:'$600K–1.2M',
-             tip:'$30B · 57km² · 6 runways. Mace is Delivery Partner. EY advises KSIADC above Mace. Hard deadlines: Expo 2030, FIFA 2034. Contacts: Marco Mejia (Acting CEO), Linda Schucroft.'},
+             tip:'$30B · 57km² · 6 runways. Mace is Delivery Partner. EY advises KSIADC above Mace. Hard deadlines: Expo 2030, FIFA 2034. Contacts: Marco Mejia (Acting CEO), Linda Schucroft.'},,
             {name:'Saudi Aramco',sub:'KSA · Worley',type:'ey',
              bars:[{s:14,e:22,c:CE},{s:22,e:24,c:CR,o:.75}],
              ms:[{m:15,l:'Worley intro'},{m:18,l:'Mandate'}],
              fee:'$1–2M',
-             tip:'$40B+ annual capex. Worley GES+ 5yr contract. SAP/Oracle PMIS reconciliation confirmed structural problem. Ivan has solved this at Qiddiya scale. Highest single fee in pipeline.'},
-            {name:'Expo 2030 Riyadh',sub:'KSA · EY Platform',type:'ey',
-             bars:[{s:15,e:22,c:CE},{s:22,e:24,c:CR,o:.75}],
-             ms:[{m:16,l:'RFP entry'},{m:19,l:'Mandate'}],
-             fee:'$600K–1.2M',
-             tip:'PIF-owned ERC, CEO Talal H. AlMarri. Bechtel PMC. 6km², 42M visitors, Oct 2030 deadline. Budget protected from PIF cuts. No advisory firm confirmed as governance lead.'},
-            {name:'FIFA 2034 · WCA34',sub:'KSA · EY Platform',type:'ey',
-             bars:[{s:16,e:24,c:CE}],
-             ms:[{m:17,l:'RFP entry'},{m:21,l:'Mandate'}],
-             fee:'$800K–1.5M',
-             tip:'Chaired by Crown Prince MBS. 15 stadiums (11 new) across 5 cities. Qiddiya and New Murabba both contain FIFA 2034 stadiums — Ivan holds programme knowledge on both sites.'},
+             tip:'$40B+ annual capex. Worley GES+ 5yr contract. SAP/Oracle PMIS reconciliation confirmed structural problem. Ivan has solved this at Qiddiya scale. Highest single fee in pipeline.'},,
           ]}
         ];
 
@@ -903,11 +905,10 @@
         <button class="pipeline-btn active" data-filter="all">All accounts</button>
         <button class="pipeline-btn" data-filter="ksa">KSA</button>
         <button class="pipeline-btn" data-filter="uae">UAE</button>
-        <button class="pipeline-btn" data-filter="partner">EY + Partnership</button>
         <span style="width:1px;height:20px;background:rgba(255,255,255,0.12);display:inline-block;margin:0 0.25rem;vertical-align:middle;"></span>
-        <button class="pipeline-btn" data-filter="phase1">Phase 1 · Direct</button>
-        <button class="pipeline-btn" data-filter="phase2">Phase 2 · Team Build</button>
-        <button class="pipeline-btn" data-filter="phase3">Phase 3 · Partnership</button>
+        <button class="pipeline-btn" data-filter="ivan">Ivan's network</button>
+        <button class="pipeline-btn" data-filter="ey">EY + Partnership</button>
+        <button class="pipeline-btn" data-filter="rfp">RFP · Active</button>
       </div>
 
       <!-- Pipeline card grid -->
@@ -917,10 +918,10 @@
         <div class="pipeline-card pipeline-card--incumbent" data-geo="ksa" data-phase="phase1" data-type="ivan">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Qiddiya Investment Company</span>
-            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <span class="pipeline-phase-badge phase-badge--1">Phase 1 · Direct</span>
-              <span class="pipeline-geo">KSA · Riyadh</span>
-            </div>
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-ivan">Ivan's network</span>
+            <span class="card-tag tag-geo">KSA</span>
           </div>
           <span class="pipeline-mandate-type">Programme Governance &amp; Digital Twin Phase 2</span>
 
@@ -952,10 +953,10 @@
         <div class="pipeline-card" data-geo="ksa" data-phase="phase1" data-type="ey">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Saudi Railways (SAR)</span>
-            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <span class="pipeline-phase-badge phase-badge--1">M5–8</span>
-              <span class="pipeline-geo">KSA · Riyadh</span>
-            </div>
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-ey">EY platform</span>
+            <span class="card-tag tag-geo">KSA</span>
           </div>
           <span class="pipeline-mandate-type">Schedule Health &amp; Controls Advisory</span>
 
@@ -986,14 +987,83 @@
           </div>
         </div>
 
+        <!-- Card 3: Expo 2030 Riyadh — Phase 1, RFP Active, EY Platform -->
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase1" data-type="ey" data-rfp="true">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">Expo 2030 Riyadh (ERC)</span>
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-rfp">RFP · Active</span>
+            <span class="card-tag tag-ey">EY platform</span>
+            <span class="card-tag tag-geo">KSA</span>
+          </div>
+          <span class="pipeline-mandate-type">Programme Governance &amp; Capital Controls Advisory</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
+          <p class="pipeline-mandate-body">First International Participants Meeting in Riyadh 2026 — RFP for independent programme governance advisory above Bechtel expected imminently. EY's MENA HQ in Riyadh and Ivan's Qiddiya proof point are the exact credentials this mandate requires. Respond immediately. PIF-owned. Bechtel is PMC. 6km², 246 exhibitors, 42M visitors, October 2030 hard deadline. Budget explicitly protected from PIF spending cuts.</p>
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
+            Talal H. AlMarri — CEO, Expo 2030 Riyadh (ERC)<br>
+            Via EY platform · PIF advisory relationships
+          </div>
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">RFP · Active · EY platform</span>
+            <span class="pipeline-fee">$600K–$1.2M</span>
+          </div>
+        </div>
+
+        <!-- Card 4: FIFA 2034 — Phase 1, RFP Active, EY Platform -->
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase1" data-type="ey" data-rfp="true">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">FIFA 2034 · WCA34</span>
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-rfp">RFP · Active</span>
+            <span class="card-tag tag-ey">EY platform</span>
+            <span class="card-tag tag-geo">KSA</span>
+          </div>
+          <span class="pipeline-mandate-type">Stadium Programme Governance &amp; Advisory</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
+          <p class="pipeline-mandate-body">Stadium costs being reassessed and construction starts delayed as of December 2025 — the governance crisis that creates the advisory mandate today, not in 2028. WCA34 needs independent programme assurance above all PMCs now. Respond immediately. Chaired by Crown Prince MBS. 15 stadiums (11 new) across 5 cities. Qiddiya and New Murabba both contain FIFA 2034 stadiums — Ivan holds programme-level knowledge on both sites already.</p>
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
+            Via EY platform · programme intersections at Qiddiya (contained stadium) and New Murabba (Mukaab stadium interface)
+          </div>
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">RFP · Active · EY platform</span>
+            <span class="pipeline-fee">$800K–$1.5M</span>
+          </div>
+        </div>
+
         <!-- Card 3: ROSHN — Phase 2, Ivan -->
         <div class="pipeline-card" data-geo="ksa" data-phase="phase2" data-type="ivan">
           <div class="pipeline-card-header">
             <span class="pipeline-client">ROSHN Group</span>
-            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <span class="pipeline-phase-badge phase-badge--2">M7–10</span>
-              <span class="pipeline-geo">KSA · Riyadh</span>
-            </div>
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-ivan">Ivan's network</span>
+            <span class="card-tag tag-geo">KSA</span>
           </div>
           <span class="pipeline-mandate-type">PMIS Governance Architecture</span>
 
@@ -1022,84 +1092,14 @@
           </div>
         </div>
 
-        <!-- Card 4: Diriyah — Phase 2, Mace partnership -->
-        <div class="pipeline-card" data-geo="partner" data-phase="phase2" data-type="ey">
-          <div class="pipeline-card-header">
-            <span class="pipeline-client">Diriyah (DGDA)</span>
-            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <span class="pipeline-phase-badge phase-badge--2">M8–12</span>
-              <span class="pipeline-geo">KSA · Riyadh</span>
-            </div>
-          </div>
-          <span class="pipeline-mandate-type">Heritage Programme Governance</span>
-
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
-          </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">Mace Consult holds the sitewide PMC mandate ($63B programme, UNESCO heritage site). EY's advisory entry is at the owner-side governance layer above Mace — PMIS strategy, heritage asset information management, Digital Twin for a living heritage environment. No cold approach. Christopher Seymour (MD MEA, Mace Consult) is the direct relationship.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
-            Entry via: Christopher Seymour — Managing Director MEA, Mace Consult<br>
-            Antony Brania — Director, Mace Consult
-          </div>
-          </div>
-          <div class="pipeline-meta">
-            <span class="pipeline-entry">Mace Consult Partnership</span>
-            <span class="pipeline-fee">$600K–$1.2M</span>
-          </div>
-        </div>
-
-        <!-- Card 5: King Salman Airport — Phase 2, Mace partnership -->
-        <div class="pipeline-card" data-geo="partner" data-phase="phase2" data-type="ey">
-          <div class="pipeline-card-header">
-            <span class="pipeline-client">King Salman International Airport</span>
-            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <span class="pipeline-phase-badge phase-badge--2">M8–12</span>
-              <span class="pipeline-geo">KSA · Riyadh</span>
-            </div>
-          </div>
-          <span class="pipeline-mandate-type">Owner-Side Programme Intelligence &amp; PMIS Strategy</span>
-
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
-          </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">The largest airport infrastructure programme in the world — $30B, 57km², 6 runways, 9 terminals, 100M+ passengers by 2030. PIF-owned (KSIADC). Mace Consult holds the Delivery Partner mandate — the full range of PMO, programme management, cost and commercial management, and construction management services.</p>
-          <p class="pipeline-mandate-body" style="margin-top:0.6rem;">EY's advisory entry is at the owner-side programme intelligence layer above Mace — independent PMIS strategy, schedule health governance, and capital controls advisory that KSIADC's leadership needs from a source with no delivery conflict of interest. Hard deadlines: Riyadh Expo 2030 and FIFA World Cup 2034 make delivery certainty advisory non-deferrable.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
-            Marco Mejia — Acting CEO, KSIADC<br>
-            Linda Schucroft — VP Innovation &amp; Guest Experience<br>
-            Entry via: Christopher Seymour — Managing Director MEA, Mace Consult (personally signed the KSIADC delivery partner contract)
-          </div>
-          </div>
-          <div class="pipeline-meta">
-            <span class="pipeline-entry">Mace Consult Partnership</span>
-            <span class="pipeline-fee">$600K–$1.2M</span>
-          </div>
-        </div>
-
         <!-- Card 6: King Salman Park — Phase 2, Ivan -->
         <div class="pipeline-card" data-geo="ksa" data-phase="phase2" data-type="ivan">
           <div class="pipeline-card-header">
             <span class="pipeline-client">King Salman Park Foundation</span>
-            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <span class="pipeline-phase-badge phase-badge--2">M9–12</span>
-              <span class="pipeline-geo">KSA · Riyadh</span>
-            </div>
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-ivan">Ivan's network</span>
+            <span class="card-tag tag-geo">KSA</span>
           </div>
           <span class="pipeline-mandate-type">Owner-Side Programme Intelligence &amp; Digital Twin Governance</span>
 
@@ -1130,14 +1130,84 @@
           </div>
         </div>
 
+        <!-- Card 4: Diriyah — Phase 2, Mace partnership -->
+        <div class="pipeline-card" data-geo="partner" data-phase="phase2" data-type="ey">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">Diriyah (DGDA)</span>
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-ey">Mace Consult</span>
+            <span class="card-tag tag-geo">KSA</span>
+          </div>
+          <span class="pipeline-mandate-type">Heritage Programme Governance</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
+          <p class="pipeline-mandate-body">Mace Consult holds the sitewide PMC mandate ($63B programme, UNESCO heritage site). EY's advisory entry is at the owner-side governance layer above Mace — PMIS strategy, heritage asset information management, Digital Twin for a living heritage environment. No cold approach. Christopher Seymour (MD MEA, Mace Consult) is the direct relationship.</p>
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
+            Entry via: Christopher Seymour — Managing Director MEA, Mace Consult<br>
+            Antony Brania — Director, Mace Consult
+          </div>
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">Mace Consult Partnership</span>
+            <span class="pipeline-fee">$600K–$1.2M</span>
+          </div>
+        </div>
+
+        <!-- Card 5: King Salman Airport — Phase 2, Mace partnership -->
+        <div class="pipeline-card" data-geo="partner" data-phase="phase2" data-type="ey">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">King Salman International Airport</span>
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-ey">Mace Consult</span>
+            <span class="card-tag tag-geo">KSA</span>
+          </div>
+          <span class="pipeline-mandate-type">Owner-Side Programme Intelligence &amp; PMIS Strategy</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
+          <p class="pipeline-mandate-body">The largest airport infrastructure programme in the world — $30B, 57km², 6 runways, 9 terminals, 100M+ passengers by 2030. PIF-owned (KSIADC). Mace Consult holds the Delivery Partner mandate — the full range of PMO, programme management, cost and commercial management, and construction management services.</p>
+          <p class="pipeline-mandate-body" style="margin-top:0.6rem;">EY's advisory entry is at the owner-side programme intelligence layer above Mace — independent PMIS strategy, schedule health governance, and capital controls advisory that KSIADC's leadership needs from a source with no delivery conflict of interest. Hard deadlines: Riyadh Expo 2030 and FIFA World Cup 2034 make delivery certainty advisory non-deferrable.</p>
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
+            Marco Mejia — Acting CEO, KSIADC<br>
+            Linda Schucroft — VP Innovation &amp; Guest Experience<br>
+            Entry via: Christopher Seymour — Managing Director MEA, Mace Consult (personally signed the KSIADC delivery partner contract)
+          </div>
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">Mace Consult Partnership</span>
+            <span class="pipeline-fee">$600K–$1.2M</span>
+          </div>
+        </div>
+
         <!-- Card 7: New Murabba — Phase 3, Ivan -->
         <div class="pipeline-card" data-geo="ksa" data-phase="phase3" data-type="ivan">
           <div class="pipeline-card-header">
             <span class="pipeline-client">New Murabba Development Company</span>
-            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <span class="pipeline-phase-badge phase-badge--3">M10–14</span>
-              <span class="pipeline-geo">KSA · Riyadh</span>
-            </div>
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-ivan">Ivan's network</span>
+            <span class="card-tag tag-geo">KSA</span>
           </div>
           <span class="pipeline-mandate-type">Owner-Side PMO &amp; Smart City Advisory</span>
 
@@ -1170,10 +1240,10 @@
         <div class="pipeline-card" data-geo="uae" data-phase="phase3" data-type="ivan">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Khazna Data Centers</span>
-            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <span class="pipeline-phase-badge phase-badge--3">M13–16</span>
-              <span class="pipeline-geo">UAE · Abu Dhabi</span>
-            </div>
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-ivan">Ivan's network</span>
+            <span class="card-tag tag-geo">UAE</span>
           </div>
           <span class="pipeline-mandate-type">Data Centre Programme Governance</span>
 
@@ -1205,10 +1275,10 @@
         <div class="pipeline-card" data-geo="ksa" data-phase="phase3" data-type="ivan">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Red Sea Global</span>
-            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <span class="pipeline-phase-badge phase-badge--3">M14–18</span>
-              <span class="pipeline-geo">KSA · Red Sea Coast</span>
-            </div>
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-ivan">Ivan's network</span>
+            <span class="card-tag tag-geo">KSA</span>
           </div>
           <span class="pipeline-mandate-type">IOC Governance &amp; Operational Advisory</span>
 
@@ -1239,10 +1309,10 @@
         <div class="pipeline-card" data-geo="partner" data-phase="phase3" data-type="ey">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Saudi Aramco</span>
-            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <span class="pipeline-phase-badge phase-badge--3">M14–18</span>
-              <span class="pipeline-geo">KSA · Al-Khobar</span>
-            </div>
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-ey">Worley</span>
+            <span class="card-tag tag-geo">KSA</span>
           </div>
           <span class="pipeline-mandate-type">Owner-Side PMIS &amp; Capital Controls Advisory</span>
 
@@ -1266,73 +1336,6 @@
           <div class="pipeline-meta">
             <span class="pipeline-entry">Worley Partnership</span>
             <span class="pipeline-fee">$1M–$2M</span>
-          </div>
-        </div>
-
-        <!-- Card 11: Expo 2030 Riyadh — Phase 3, EY Platform -->
-        <div class="pipeline-card" data-geo="ksa" data-phase="phase3" data-type="ey">
-          <div class="pipeline-card-header">
-            <span class="pipeline-client">Expo 2030 Riyadh (ERC)</span>
-            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <span class="pipeline-phase-badge phase-badge--3">M15–22</span>
-              <span class="pipeline-geo">KSA · Riyadh</span>
-            </div>
-          </div>
-          <span class="pipeline-mandate-type">Programme Governance &amp; Capital Controls Advisory</span>
-
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
-          </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">PIF-owned. Bechtel is PMC. 6km², 246 exhibitors, 42M visitors, October 2030 hard deadline. Budget explicitly protected from PIF spending cuts. No advisory firm has been confirmed as programme governance lead — the owner-side assurance layer is an open mandate. EY's institutional relationships across PIF and government ministries are the entry route.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
-            Talal H. AlMarri — CEO, Expo 2030 Riyadh (ERC)<br>
-            Via EY platform · PIF advisory relationships
-          </div>
-          </div>
-          <div class="pipeline-meta">
-            <span class="pipeline-entry">EY Platform · RFP</span>
-            <span class="pipeline-fee">$600K–$1.2M</span>
-          </div>
-        </div>
-
-        <!-- Card 12: FIFA 2034 — Phase 3, EY Platform -->
-        <div class="pipeline-card" data-geo="ksa" data-phase="phase3" data-type="ey">
-          <div class="pipeline-card-header">
-            <span class="pipeline-client">FIFA 2034 · WCA34</span>
-            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <span class="pipeline-phase-badge phase-badge--3">M16–24</span>
-              <span class="pipeline-geo">KSA · Multiple cities</span>
-            </div>
-          </div>
-          <span class="pipeline-mandate-type">Stadium Programme Governance &amp; Advisory</span>
-
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
-          </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">Chaired by Crown Prince MBS. 15 stadiums (11 new) across 5 cities. Stadium costs under reassessment December 2025 — advisory urgency confirmed. Qiddiya and New Murabba both contain FIFA 2034 stadiums — Ivan holds programme-level knowledge on both sites already. Budget protected from PIF cuts. Highest politically visible mandate in the plan.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
-            Via EY platform · programme intersections at Qiddiya (contained stadium) and New Murabba (Mukaab stadium interface)
-          </div>
-          </div>
-          <div class="pipeline-meta">
-            <span class="pipeline-entry">EY Platform · Programme Intersect</span>
-            <span class="pipeline-fee">$800K–$1.5M</span>
           </div>
         </div>
 
@@ -1708,15 +1711,20 @@
           btns.forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
           document.querySelectorAll('.pipeline-card').forEach(function(card) {
-            var geo   = card.dataset.geo   || '';
-            var phase = card.dataset.phase || '';
-            var show  = false;
+            var geo  = card.dataset.geo  || '';
+            var type = card.dataset.type || '';
+            var rfp  = card.dataset.rfp  || '';
+            var show = false;
             if (filter === 'all') {
               show = true;
-            } else if (filter === 'ksa' || filter === 'uae' || filter === 'partner') {
+            } else if (filter === 'ksa' || filter === 'uae') {
               show = (geo === filter);
-            } else if (filter === 'phase1' || filter === 'phase2' || filter === 'phase3') {
-              show = (phase === filter);
+            } else if (filter === 'ivan') {
+              show = (type === 'ivan');
+            } else if (filter === 'ey') {
+              show = (type === 'ey' && rfp !== 'true');
+            } else if (filter === 'rfp') {
+              show = (rfp === 'true');
             }
             card.style.display = show ? '' : 'none';
           });
