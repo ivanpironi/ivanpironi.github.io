@@ -640,6 +640,7 @@
 
         var gb=document.getElementById('gb');
         var gtt=document.getElementById('gtt');
+        document.body.appendChild(gtt); /* move outside .reveal transform context so position:fixed works */
 
         function p(m){return(((m-1)/M)*100).toFixed(2)+'%';}
         function pw(s,e){return(((e-s)/M)*100).toFixed(2)+'%';}
