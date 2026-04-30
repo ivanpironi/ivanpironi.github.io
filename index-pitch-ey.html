@@ -20,64 +20,6 @@
     gtag('config', 'G-KMLNJW4GDE');
   </script>
   <style>
-  /* === Deadline Timeline (Section 01) === */
-  .deadline-timeline {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 3rem 0 2rem;
-    padding: 0 1rem;
-  }
-  .deadline-timeline::before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 1rem;
-    right: 1rem;
-    height: 1px;
-    background: var(--muted);
-    opacity: 0.3;
-  }
-  .dl-point {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-    z-index: 1;
-  }
-  .dl-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-  .dl-labels {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 2px;
-  }
-  @media (max-width: 600px) {
-    .deadline-timeline {
-      flex-direction: column;
-      gap: 1.5rem;
-      padding: 0;
-    }
-    .deadline-timeline::before { display: none; }
-    .dl-point { flex-direction: row; align-items: center; gap: 12px; }
-    .dl-labels { align-items: flex-start; text-align: left; }
-  }
-  /* === Proof Cards (Section 02) === */
-  #proof-timeline { display:flex; gap:1.5rem; align-items:stretch; margin:2.5rem 0; }
-  .proof-card { flex:1; opacity:0; transform:translateY(20px); transition:opacity 0.5s ease,transform 0.5s ease; }
-  .proof-card.revealed { opacity:1; transform:translateY(0); }
-  .proof-card-inner { background:var(--surface); border:1px solid rgba(255,255,255,0.06); border-radius:4px; padding:1.5rem; height:100%; display:flex; flex-direction:column; }
-  .proof-card:nth-child(3) .proof-card-inner { border-color:var(--accent); }
-  .proof-card:nth-child(3) .callout-label { color:var(--accent); border-color:var(--accent); }
-  @media (max-width:768px) { #proof-timeline { flex-direction:column; } .proof-card { flex:none; } }
   /* ── Team org chart ── */
   .team-org { margin:2.5rem 0; display:flex; flex-direction:column; align-items:center; gap:0; }
   .org-level { display:flex; gap:1rem; justify-content:center; width:100%; }
@@ -114,20 +56,6 @@
   .pipeline-meta { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; border-top:1px solid rgba(255,255,255,0.06); padding-top:0.75rem; }
   .pipeline-entry { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); border:1px solid rgba(255,255,255,0.12); border-radius:2px; padding:2px 7px; }
   .pipeline-fee { font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:600; color:var(--text); letter-spacing:0.02em; }
-  /* ── Dual pipeline diagram ── */
-  .dual-pipeline { display:grid; grid-template-columns:1fr auto 1fr; gap:2rem; margin:2.5rem 0; align-items:start; }
-  .dp-column { background:var(--surface); border:1px solid rgba(255,255,255,0.06); border-radius:4px; padding:1.5rem; }
-  .dp-header { margin-bottom:1rem; padding-bottom:0.75rem; border-bottom:1px solid rgba(255,255,255,0.06); }
-  .dp-items { display:flex; flex-direction:column; gap:0.6rem; }
-  .dp-item { font-family:'Barlow',sans-serif; font-size:13px; color:var(--muted); line-height:1.5; padding-left:1rem; position:relative; }
-  .dp-item::before { content:'—'; position:absolute; left:0; color:var(--accent); font-size:10px; top:3px; }
-  .dp-divider { display:flex; flex-direction:column; align-items:center; gap:0.75rem; padding-top:1.5rem; }
-  .dp-divider-line { width:1px; flex:1; min-height:40px; background:rgba(255,255,255,0.12); }
-  .dp-divider-label { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); text-align:center; line-height:1.6; }
-  @media (max-width:768px) { .dual-pipeline { grid-template-columns:1fr; } .dp-divider { flex-direction:row; padding-top:0; } .dp-divider-line { width:100%; height:1px; min-height:unset; flex:1; } }
-  /* ── Accordion body text fallback ── */
-  .accordion-body p { font-family:'Barlow',sans-serif; font-size:15px; color:var(--muted); line-height:1.7; }
-  .accordion-body p + p { margin-top:0.75rem; }
   /* ── Pipeline phase badges ── */
   .pipeline-phase-badge { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; padding:2px 7px; border-radius:2px; border:1px solid; white-space:nowrap; flex-shrink:0; }
   .phase-badge--1 { color:#185FA5; border-color:#185FA5; background:rgba(24,95,165,0.08); }
@@ -154,12 +82,8 @@
         </div>
       </a>
       <nav class="header-nav" aria-label="Main navigation">
-        <a href="#market"          data-nav="market">Market</a>
-        <a href="#proof"           data-nav="proof">Proof</a>
-        <a href="#differentiation" data-nav="differentiation">Why Rare</a>
-        <a href="#team"            data-nav="team">Team</a>
-        <a href="#pipeline"        data-nav="pipeline">Pipeline</a>
-        <a href="#revenue"         data-nav="revenue">Revenue</a>
+        <a href="#team"     data-nav="team">Team</a>
+        <a href="#pipeline" data-nav="pipeline">Account Plan</a>
       </nav>
       <button class="hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -173,12 +97,8 @@
   <div class="mobile-overlay" id="mobile-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
     <button class="overlay-close" id="overlay-close" aria-label="Close navigation">×</button>
     <nav class="overlay-nav">
-      <a href="#market"          data-nav="market">Market</a>
-      <a href="#proof"           data-nav="proof">Proof</a>
-      <a href="#differentiation" data-nav="differentiation">Why Rare</a>
-      <a href="#team"            data-nav="team">Team</a>
-      <a href="#pipeline"        data-nav="pipeline">Pipeline</a>
-      <a href="#revenue"         data-nav="revenue">Revenue</a>
+      <a href="#team"     data-nav="team">Team</a>
+      <a href="#pipeline" data-nav="pipeline">Account Plan</a>
     </nav>
   </div>
 
@@ -186,7 +106,7 @@
        HERO
        ============================================================ -->
   <section class="hero" id="hero" aria-label="Hero">
-    <span class="hero-eyebrow">Capital Projects Advisory &nbsp;·&nbsp; Full Business Case &nbsp;·&nbsp; EY Middle East</span>
+    <span class="hero-eyebrow">Team &amp; Account Plan &nbsp;·&nbsp; EY Capital Projects &nbsp;·&nbsp; Ivan Pironi</span>
 
     <div class="hero-text">
       <span class="hero-name">Ivan</span>
@@ -195,9 +115,9 @@
       <div class="hero-rule" aria-hidden="true"></div>
 
       <p class="hero-statement">
-        What EY's Capital Projects practice gets.<br>
-        A named pipeline. A delivery team.<br>
-        <em>A practice — not a hire.</em>
+        A team that has already delivered<br>
+        at this level.<br>
+        <em>A pipeline that is already named.</em>
       </p>
 
       <div class="hero-tags">
@@ -205,15 +125,6 @@
         <span class="hero-tag">Programme Governance &amp; Controls</span>
         <span class="hero-tag">24 Years GCC Experience</span>
         <span class="hero-tag">PMO &amp; Delivery Excellence</span>
-        <span class="hero-tag">PMIS Strategy</span>
-        <span class="hero-tag">Schedule Health</span>
-        <span class="hero-tag">Cost Control</span>
-        <span class="hero-tag">Programme Recovery</span>
-        <span class="hero-tag">Oracle PMIS</span>
-        <span class="hero-tag">Digital Twin</span>
-        <span class="hero-tag">ISO 19650</span>
-        <span class="hero-tag">PMP®</span>
-        <span class="hero-tag">PRINCE2®</span>
       </div>
     </div>
 
@@ -226,297 +137,12 @@
   </section>
 
   <!-- ============================================================
-       SECTION 01 — THE MARKET
-       ============================================================ -->
-  <section id="market" data-section="market">
-    <div class="container">
-
-      <span class="section-eyebrow reveal">01 · The Market &amp; The Opportunity</span>
-
-      <h2 class="section-headline reveal">
-        The market is real.<br>
-        <em>The timing is now.</em>
-      </h2>
-
-      <p class="section-sub reveal">
-        The GCC is the fastest-growing advisory market in the world.
-        Capital projects sits at its centre. Five forces are driving
-        non-deferrable demand — converging at this moment.
-      </p>
-
-      <!-- Stat strip -->
-      <div class="stat-strip reveal">
-        <div class="stat-cell">
-          <div class="stat-num" data-counter data-val="8.3" data-prefix="$" data-suffix="B">$8.3B</div>
-          <div class="stat-label">GCC Consulting Market 2025</div>
-          <div class="stat-sub">12% growth per annum — twice the rate of North America. Saudi Arabia alone: $4.9B at 13% growth.</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-num" data-counter data-val="1.65" data-prefix="$" data-suffix="T">$1.65T</div>
-          <div class="stat-label">Saudi Sovereign Programme Pipeline</div>
-          <div class="stat-sub">2030 Expo. 2034 FIFA World Cup. Non-negotiable political deadlines that make governance advisory non-deferrable spend.</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-num">$400–700M</div>
-          <div class="stat-label">Premium Advisory Sub-Segment</div>
-          <div class="stat-sub">Programme governance, PMIS strategy, Digital Twin readiness. Growing rapidly. No Big Four firm owns it at the technical-advisory intersection.</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-num">$2–4M</div>
-          <div class="stat-label">Year 1 Revenue · Base to Upside</div>
-          <div class="stat-sub">Less than 1% of the addressable premium sub-segment. Built bottom-up from 4–5 named engagements across UAE, KSA, and Qatar.</div>
-        </div>
-      </div><!-- /.stat-strip -->
-
-      <!-- Five market forces -->
-      <div class="market-forces reveal">
-        <div class="force">
-          <span class="force-num">01</span>
-          <div>
-            <div class="force-title">Saudi Arabia's maturity shift</div>
-            <p class="force-body">Sovereign clients are no longer buying ambition. They are buying proof of return on investment. Programme governance and delivery intelligence advisory is now the highest-value spend — not a discretionary cost. This is precisely when technical advisory credibility commands premium rates over narrative consulting.</p>
-          </div>
-        </div>
-        <div class="force">
-          <span class="force-num">02</span>
-          <div>
-            <div class="force-title">Hard political deadlines that cannot move</div>
-            <p class="force-body">2030 Expo. 2034 FIFA World Cup. These are national commitments. Programme governance advisory on these programmes is mission-critical, non-deferrable spend — awarded to advisors who demonstrate delivery authority, not only strategic thinking.</p>
-          </div>
-        </div>
-        <div class="force">
-          <span class="force-num">03</span>
-          <div>
-            <div class="force-title">The raised bar for advisory independence</div>
-            <p class="force-body">KSA Royal Commissions and PIF-affiliated entities now require demonstrated independence from EPC and vendor agendas, and verifiable delivery authority. These are qualifying criteria — not differentiators. The advisor who cannot meet them does not get the conversation.</p>
-          </div>
-        </div>
-        <div class="force">
-          <span class="force-num">04</span>
-          <div>
-            <div class="force-title">Digital transformation spend intersects directly</div>
-            <p class="force-body">Two thirds of GCC organisations plan to allocate over 30% of consulting budgets to digital transformation in 2025. That spend intersects directly with PMIS intelligence, programme controls, and delivery governance — this practice's core territory.</p>
-          </div>
-        </div>
-        <div class="force">
-          <span class="force-num">05</span>
-          <div>
-            <div class="force-title">A structural pipeline — not a cyclical one</div>
-            <p class="force-body">$1.1 trillion in funded GCC infrastructure investment beyond 2030. The advisory pipeline is structural, multi-decade, and expanding. A practice built now compounds for years.</p>
-          </div>
-        </div>
-      </div><!-- /.market-forces -->
-
-      <!-- Hard deadline timeline -->
-      <div class="deadline-timeline reveal">
-
-        <div class="dl-point">
-          <div class="dl-dot" style="background:var(--muted);border:2px solid var(--muted);"></div>
-          <div class="dl-labels">
-            <span class="tl-period">2026</span>
-            <span class="tl-org">Now</span>
-          </div>
-        </div>
-
-        <div class="dl-point">
-          <div class="dl-dot" style="background:transparent;border:2px solid var(--muted);"></div>
-          <div class="dl-labels">
-            <span class="tl-period">2029</span>
-            <span class="tl-org">Asian Winter Games<br><em style="font-style:italic;color:var(--muted);font-size:11px;">postponed</em></span>
-          </div>
-        </div>
-
-        <div class="dl-point">
-          <div class="dl-dot" style="width:14px;height:14px;background:var(--accent);border:2px solid var(--accent);box-shadow:0 0 0 4px rgba(232,200,74,0.2);"></div>
-          <div class="dl-labels">
-            <span class="tl-period" style="color:var(--accent)">2030</span>
-            <span class="tl-org">Expo Saudi Arabia</span>
-            <span class="callout-label" style="margin-top:6px;">Hard Deadline</span>
-          </div>
-        </div>
-
-        <div class="dl-point">
-          <div class="dl-dot" style="width:14px;height:14px;background:var(--accent);border:2px solid var(--accent);box-shadow:0 0 0 4px rgba(232,200,74,0.2);"></div>
-          <div class="dl-labels">
-            <span class="tl-period" style="color:var(--accent)">2034</span>
-            <span class="tl-org">FIFA World Cup</span>
-            <span class="callout-label" style="margin-top:6px;">Hard Deadline</span>
-          </div>
-        </div>
-
-      </div><!-- /.deadline-timeline -->
-
-      <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-top:2rem;">
-        Source: Source Global Research, March 2025 &nbsp;·&nbsp; IMARC Group &nbsp;·&nbsp; MEED/GlobalData
-      </p>
-
-      <p class="section-pull reveal">
-        The window is open now. EY's existing sovereign relationships
-        and direct programme-level credibility — built through named
-        engagements across KSA, UAE, and Qatar — represent two
-        independent reasons to move. The next 12–18 months determine
-        whether EY leads this market or reacts to it.
-      </p>
-
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SECTION 02 — THE PROOF POINT
-       ============================================================ -->
-  <section id="proof" data-section="proof">
-    <div class="container">
-
-      <span class="section-eyebrow reveal">02 · The Proof Point</span>
-
-      <h2 class="section-headline reveal">
-        One engagement.<br>
-        <em>The full chain.</em>
-      </h2>
-
-      <!-- Client context bar -->
-      <div class="multiplier reveal">
-        <span class="multiplier-label">Qiddiya &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Giga-Programme &nbsp;·&nbsp; Delivered through Accenture</span>
-        <p class="multiplier-body">A sovereign KSA entertainment and tourism giga-programme with a capital development schedule extending to 2050. No reliable single source of truth across its delivery enterprise. Cost data irreconcilable. Schedule status untrustworthy. Document and engineering data fragmented. This engagement ran from digital needs assessment through Nvidia Omniverse deployment — five stages, one advisor, owner-side independence throughout.</p>
-      </div>
-
-      <!-- Five proof cards -->
-      <div id="proof-timeline" class="reveal">
-
-        <div class="proof-card">
-          <div class="proof-card-inner">
-            <span class="tl-period">01</span>
-            <div class="force-title" style="margin:0.5rem 0;">Digital Needs Assessment</div>
-            <span class="callout-label" style="margin-bottom:1rem;">Diagnostician</span>
-            <p class="force-body">Mapped the full programme data landscape. Identified root causes of data distrust — misaligned cost hierarchies, no governed schedule baseline, fragmented document control.</p>
-            <p class="ht-arrow" style="margin-top:auto;padding-top:1rem;"><span class="ht-arrow-icon">→</span>Strategic work disguised as technical work. That distinction is what sovereign clients pay for.</p>
-          </div>
-        </div>
-
-        <div class="proof-card">
-          <div class="proof-card-inner">
-            <span class="tl-period">02</span>
-            <div class="force-title" style="margin:0.5rem 0;">PMIS Tool Scoring &amp; Selection</div>
-            <span class="callout-label" style="margin-bottom:1rem;">Evaluator</span>
-            <p class="force-body">Scored Oracle Unifier, Aconex, and competing PMIS platforms with no commercial agenda. Recommended Oracle on ERP integration, P6 linkage, and document control depth.</p>
-            <p class="ht-arrow" style="margin-top:auto;padding-top:1rem;"><span class="ht-arrow-icon">→</span>Platform-agnostic authority. The advisor with no agenda and the depth to evaluate honestly.</p>
-          </div>
-        </div>
-
-        <div class="proof-card">
-          <div class="proof-card-inner">
-            <span class="tl-period">03</span>
-            <div class="force-title" style="margin:0.5rem 0;">RFP Authorship</div>
-            <span class="callout-label" style="margin-bottom:1rem;">Guardian</span>
-            <p class="force-body">Authored the full PMIS RFP — scope, requirements, integration specifications, evaluation criteria. Excluded from budget definition to preserve complete independence before competing in Stage 04.</p>
-            <p class="ht-arrow" style="margin-top:auto;padding-top:1rem;"><span class="ht-arrow-icon">→</span>Owner-side independence under commercial pressure. Sovereign clients remember this.</p>
-          </div>
-        </div>
-
-        <div class="proof-card">
-          <div class="proof-card-inner">
-            <span class="tl-period">04</span>
-            <div class="force-title" style="margin:0.5rem 0;">Competitive Award</div>
-            <span class="callout-label" style="margin-bottom:1rem;">Converter</span>
-            <p class="force-body">Responded competitively through Accenture. Won the implementation mandate having personally defined the standard the market was measured against.</p>
-            <p class="ht-arrow" style="margin-top:auto;padding-top:1rem;"><span class="ht-arrow-icon">→</span>Advisory credibility converted directly to commercial mandate. Strategy was deployable, not theoretical.</p>
-          </div>
-        </div>
-
-        <div class="proof-card">
-          <div class="proof-card-inner">
-            <span class="tl-period">05</span>
-            <div class="force-title" style="margin:0.5rem 0;">BIM &amp; Digital Twin Extension</div>
-            <span class="callout-label" style="margin-bottom:1rem;">Anticipator</span>
-            <p class="force-body">Extended scope into ISO 19650 BIM taxonomy and an Nvidia Omniverse Digital Twin POC — integrating PMIS and BIM asset data into a real-time operational simulation. On live programme data.</p>
-            <p class="ht-arrow" style="margin-top:auto;padding-top:1rem;"><span class="ht-arrow-icon">→</span>The engagement grew because the advisor saw further than the brief. That is Partner behaviour.</p>
-          </div>
-        </div>
-
-      </div><!-- /#proof-timeline -->
-
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SECTION 03 — WHY THIS PROFILE IS RARE
-       ============================================================ -->
-  <section id="differentiation" data-section="differentiation">
-    <div class="container">
-
-      <span class="section-eyebrow reveal">03 · Why This Profile Is Rare</span>
-
-      <h2 class="section-headline reveal">
-        The market has strategists.<br>
-        It has implementers.<br>
-        <em>It does not have both.</em>
-      </h2>
-
-      <div class="col-2 reveal">
-        <div class="col-prose">
-          <p>Every major advisory firm has capital strategy capacity. Every technology integrator has PMIS implementation capacity. The gap — the gap that sovereign programmes consistently expose — is the advisor who can operate with authority at both levels simultaneously.</p>
-          <hr class="section-rule">
-          <p>Sovereign programme clients do not want a strategist who hands off to an integrator. They want a single advisor who can author the RFP, evaluate the vendors, govern the implementation, and extend into digital twin territory when the programme is ready.</p>
-          <hr class="section-rule">
-          <p>That profile requires 24 years of GCC programme experience, technical fluency across Oracle, SAP, ISO 19650, and Digital Twin platforms, and a track record of owner-side independence on named sovereign programmes.</p>
-          <hr class="section-rule">
-          <p>It is not a profile that can be assembled from a hiring pool. It is built through two decades of decisions made consistently in the same direction.</p>
-        </div>
-
-        <div class="multiplier">
-          <span class="multiplier-label">The Three-Level Test</span>
-          <p class="multiplier-body"><strong style="color:var(--white);">Strategy:</strong> Can the advisor define the programme data architecture, set the advisory standard, and operate independently of vendor agendas?</p>
-          <hr style="border:none;border-top:1px solid var(--rule);margin:1rem 0;">
-          <p class="multiplier-body"><strong style="color:var(--white);">Architecture:</strong> Can the advisor configure Oracle Unifier cost sheets, P6 EPS structures, SAP data mapping, and ISO 19650 BIM governance at the same level of authority?</p>
-          <hr style="border:none;border-top:1px solid var(--rule);margin:1rem 0;">
-          <p class="multiplier-body"><strong style="color:var(--white);">Delivery Oversight:</strong> Can the advisor govern an active programme — assessing schedule health, interrogating cost data, and detecting variance before the client does?</p>
-        </div>
-      </div>
-
-      <!-- Comparison grid -->
-      <div class="comparison-grid reveal">
-        <div class="comp-header col-market">What the market has</div>
-        <div class="comp-header col-gap">What the market cannot find</div>
-        <div class="comp-header col-mine">What I provide</div>
-
-        <div class="comp-cell col-market">PMIS strategy advisors who recommend Oracle but have never configured a cost sheet</div>
-        <div class="comp-cell col-gap">Architects who know why a P6/SAP interface produces mismatched cost data — and can fix the data model</div>
-        <div class="comp-cell col-mine">Oracle Unifier cost sheet design, P6 EPS architecture, SAP data mapping — personally deployed on live sovereign programmes</div>
-
-        <div class="comp-cell col-market">Digital Twin consultants who reference ISO 19650 in presentations</div>
-        <div class="comp-cell col-gap">Information managers who have authored a BEP, governed a CDE, and linked it to a live programme cost and schedule layer</div>
-        <div class="comp-cell col-mine">ISO 19650 BEP authorship, CDE design, 4D/5D linkage — delivered on KSA and Qatar sovereign programmes</div>
-
-        <div class="comp-cell col-market">Technology partners who demo Nvidia Omniverse to clients</div>
-        <div class="comp-cell col-gap">Advisors who have deployed Omniverse on live programme data with real integration to PMIS and BIM layers</div>
-        <div class="comp-cell col-mine">Nvidia Omniverse POC on live KSA sovereign programme — real programme data, not a demo environment</div>
-
-        <div class="comp-cell col-market">Capital advisors who stop at practical completion</div>
-        <div class="comp-cell col-gap">Practitioners who cover the full lifecycle — from programme governance through to operational handover and asset performance intelligence</div>
-        <div class="comp-cell col-mine">Full asset lifecycle advisory: programme business case → delivery governance → operational handover → asset performance intelligence</div>
-
-        <div class="comp-cell col-market">Advisory firms that require 3–6 months to mobilise a team with the right profile</div>
-        <div class="comp-cell col-gap">A practice-ready advisor who arrives named, networked, and deployable from day one</div>
-        <div class="comp-cell col-mine">Named pipeline. Existing sovereign relationships. A practice that begins generating revenue before EY's onboarding process ends.</div>
-      </div><!-- /.comparison-grid -->
-
-      <p class="section-pull reveal">
-        The Big Four have scale. The niche technology firms have depth
-        in one layer. Neither has an advisor who operates credibly across
-        the full advisory-to-delivery spectrum on sovereign programmes.
-        That is what this practice brings.
-      </p>
-
-    </div>
-  </section>
-
-  <!-- ============================================================
        SECTION 04 — THE TEAM
        ============================================================ -->
   <section id="team" data-section="team">
     <div class="container">
 
-      <span class="section-eyebrow reveal">04 · The Team</span>
+      <span class="section-eyebrow reveal">01 · The Team</span>
 
       <h2 class="section-headline reveal">
         Every person has already<br>
@@ -759,7 +385,7 @@
   <section id="pipeline" data-section="pipeline">
     <div class="container">
 
-      <span class="section-eyebrow reveal">05 · The Mandate Pipeline · 18 Months</span>
+      <span class="section-eyebrow reveal">02 · The Account Plan · 18 Months</span>
 
       <h2 class="section-headline reveal">
         Named accounts.<br>
@@ -1088,261 +714,6 @@
   </section>
 
   <!-- ============================================================
-       SECTION 06 — THE REVENUE MODEL
-       ============================================================ -->
-  <section id="revenue" data-section="revenue">
-    <div class="container">
-
-      <span class="section-eyebrow reveal">06 · The Revenue Model</span>
-
-      <h2 class="section-headline reveal">
-        Bottom-up. Honest.<br>
-        <em>Defensible.</em>
-      </h2>
-
-      <p class="section-sub reveal">
-        Four to five named engagements. Specific fee ranges.
-        Stated assumptions. This is not market-share speculation
-        — it is a client-by-client revenue build across two
-        activation paths running simultaneously.
-      </p>
-
-      <!-- Stat strip -->
-      <div class="stat-strip reveal">
-        <div class="stat-cell">
-          <div class="stat-num">$2M</div>
-          <div class="stat-label">Year 1 Base</div>
-          <div class="stat-sub">2 anchor engagements + 2 shorter mandates. Requires Qiddiya to convert by Month 4 and King Salman Park by Month 8.</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-num">$4M</div>
-          <div class="stat-label">Year 1 Upside</div>
-          <div class="stat-sub">+1 KSA governance engagement (ROSHN or New Murabba) + Worley-sourced energy client entry in H2 Year 1.</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-num">$6–8M</div>
-          <div class="stat-label">Year 2 Target</div>
-          <div class="stat-sub">Retainers converting + team at 6–8 FTE + second KSA anchor. Red Sea Global enters the pipeline via Attila (Month 9).</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-num">$10M+</div>
-          <div class="stat-label">Year 3 Potential</div>
-          <div class="stat-sub">Sovereign retainers + Saudi Aramco / ADNOC via Worley partnership + Digital Twin recurring revenue stream.</div>
-        </div>
-      </div><!-- /.stat-strip -->
-
-      <!-- Revenue engagement bars -->
-      <div class="engagement-bars reveal" id="revenue-bars">
-
-        <div class="bar-row">
-          <span class="bar-label">Qiddiya — governance &amp; Digital Twin scoping</span>
-          <div class="bar-track"><div class="bar-fill" data-width="85%"></div></div>
-          <span class="bar-fee">$400K–$800K · Direct · Incumbent</span>
-        </div>
-
-        <div class="bar-row">
-          <span class="bar-label">King Salman Park — owner-side advisory</span>
-          <div class="bar-track"><div class="bar-fill" data-width="75%"></div></div>
-          <span class="bar-fee">$600K–$1.2M · Network · Month 9</span>
-        </div>
-
-        <div class="bar-row">
-          <span class="bar-label">ROSHN — PMIS governance advisory</span>
-          <div class="bar-track"><div class="bar-fill" data-width="60%"></div></div>
-          <span class="bar-fee">$400K–$800K · Direct · Network</span>
-        </div>
-
-        <div class="bar-row">
-          <span class="bar-label">New Murabba — owner PMO advisory</span>
-          <div class="bar-track"><div class="bar-fill" data-width="55%"></div></div>
-          <span class="bar-fee">$500K–$1M · Direct · Network</span>
-        </div>
-
-        <div class="bar-row">
-          <span class="bar-label">SAR — schedule health assessment</span>
-          <div class="bar-track"><div class="bar-fill" data-width="40%"></div></div>
-          <span class="bar-fee">$150K–$400K · EY platform</span>
-        </div>
-
-        <div class="bar-row">
-          <span class="bar-label">Saudi Aramco / ADNOC — via Worley</span>
-          <div class="bar-track"><div class="bar-fill" data-width="50%"></div></div>
-          <span class="bar-fee">$1M–$2M · Year 2 · Worley partnership</span>
-        </div>
-
-      </div><!-- /#revenue-bars -->
-
-      <!-- Dual pipeline diagram -->
-      <div class="dual-pipeline reveal">
-
-        <div class="dp-column">
-          <div class="dp-header">
-            <span class="callout-label">EY Platform Activation</span>
-          </div>
-          <div class="dp-items">
-            <div class="dp-item">Audit-to-advisory conversion (SAR, ADNOC)</div>
-            <div class="dp-item">Risk &amp; assurance surfaces programme distress → recovery mandate</div>
-            <div class="dp-item">Technology consulting → capital advisory pull-through</div>
-            <div class="dp-item">Multi-service-line revenue: every Capital Projects mandate creates Risk, Tax, and Technology work</div>
-          </div>
-        </div>
-
-        <div class="dp-divider">
-          <div class="dp-divider-line"></div>
-          <span class="dp-divider-label">Both pipelines<br>Year 1</span>
-          <div class="dp-divider-line"></div>
-        </div>
-
-        <div class="dp-column">
-          <div class="dp-header">
-            <span class="callout-label">Direct Network Origination</span>
-          </div>
-          <div class="dp-items">
-            <div class="dp-item">Qiddiya — incumbent, trust cycle closed</div>
-            <div class="dp-item">King Salman Park — 7 senior contacts, warm via team from Month 9</div>
-            <div class="dp-item">ROSHN — EPMO leadership, named contacts confirmed</div>
-            <div class="dp-item">New Murabba — Smart City &amp; Asset Management leads</div>
-            <div class="dp-item">Mace Consult → Diriyah, King Salman Airport</div>
-            <div class="dp-item">Worley → Aramco, ADNOC, QatarEnergy, NEOM</div>
-          </div>
-        </div>
-
-      </div><!-- /.dual-pipeline -->
-
-      <!-- Honest caveat -->
-      <div class="multiplier reveal" style="border-left:2px solid var(--accent);border-radius:0 4px 4px 0;">
-        <span class="multiplier-label">Stated assumptions — for the EY partnership</span>
-        <p class="multiplier-body" style="margin-top:1rem;">
-          The $2M base case requires Qiddiya to convert by
-          Month 4 and King Salman Park to convert by Month 8.
-          Both are realistic — neither is guaranteed. The $4M
-          upside requires ROSHN and a Worley-sourced engagement
-          to close in Year 1, which depends on the Worley
-          partnership formalising quickly.
-        </p>
-        <p class="multiplier-body" style="margin-top:0.75rem;">
-          Carlos's internal sponsorship and rapid integration
-          into EY's go-to-market process are the single biggest
-          variable in Year 1. The pipeline is real.
-          The activation speed depends on EY's platform —
-          not Ivan's network.
-        </p>
-      </div>
-
-      <p class="section-pull reveal">
-        Year 1 is built on two activation paths running
-        simultaneously — EY's platform conversion and direct
-        programme-level origination from named sovereign
-        delivery. The commercial model is a practice with P&amp;L
-        accountability and team leverage. Not an individual
-        contributor role.
-      </p>
-
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SECTION 07 — THE CLOSE
-       ============================================================ -->
-  <section id="close" data-section="close">
-    <div class="container">
-
-      <span class="section-eyebrow reveal">07 · Three Questions · Three Answers</span>
-
-      <h2 class="section-headline reveal">
-        Is the market real?<br>
-        Is the revenue credible?<br>
-        <em>Is the profile rare?</em>
-      </h2>
-
-      <!-- Three accordion items -->
-      <div class="reveal">
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <span>Is the market real and large enough to justify this investment?</span>
-            <span class="accordion-icon">+</span>
-          </div>
-          <div class="accordion-content">
-            <p>Yes. The GCC consulting market is $8.3 billion
-            at 12% growth. The Saudi programme pipeline is
-            $1.65 trillion. Hard delivery deadlines create
-            non-discretionary governance advisory demand.
-            KSA sovereign clients are raising the bar on
-            Big Four advisory relationships — independence,
-            delivery authority, and technical credibility are
-            now qualifying criteria. The capital project advisory
-            space at the PMIS and Digital Twin intersection is
-            growing rapidly and commands premium advisory rates.
-            EY's trusted position with sovereign owners is the
-            ideal platform from which to compete for it.</p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <span>Is the revenue case credible at $2–4M in Year 1?</span>
-            <span class="accordion-icon">+</span>
-          </div>
-          <div class="accordion-content">
-            <p>Yes. Built bottom-up from specific engagement
-            types, fee ranges, and activation paths — mapped
-            in Section 06. Four to five projects across UAE,
-            KSA, and Qatar, each activated through EY's
-            existing client relationships or the established
-            professional network. The $2M base case requires
-            two anchor engagements and two shorter projects.
-            The $4M upside adds one further KSA governance
-            engagement. Year 1 is realistic with strong EY
-            internal sponsorship and rapid onboarding into
-            EY's go-to-market process — ambitious without it.
-            That is the honest assessment.</p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <span>Is the profile genuinely rare — and is there proof it is real?</span>
-            <span class="accordion-icon">+</span>
-          </div>
-          <div class="accordion-content">
-            <p>Yes. The profile combines governance authority,
-            lifecycle architecture understanding, and sovereign
-            delivery experience within a single advisory
-            trajectory. The full Oracle PMIS stack — Unifier,
-            P6, Aconex, SAP integration — the full Digital Twin
-            chain — ISO 19650, CDE, 4D, 5D, Nvidia Omniverse,
-            IoT — and 10+ continuous years of sovereign programme
-            delivery across UAE, KSA, and Qatar: held in a single
-            profile, with professional services commercial
-            experience to convert it into EY revenue from day one.</p>
-            <p style="margin-top:0.75rem;">
-            The Qiddiya engagement is the proof — the full
-            advisory chain executed end-to-end on a live PIF
-            giga-programme. One engagement. Five stages.
-            Every question answered.
-            </p>
-          </div>
-        </div>
-
-      </div><!-- /.reveal wrapper -->
-
-      <!-- Cross-links -->
-      <div class="sales-evidence reveal" style="justify-content:center;gap:3rem;flex-wrap:wrap;">
-        <a href="index-short-ey.html"
-           style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;">
-          ← Executive summary
-        </a>
-        <a href="index-long-ey.html"
-           style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;">
-          Technical depth — full business case →
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============================================================
        FOOTER
        ============================================================ -->
   <footer>
@@ -1394,7 +765,11 @@
 
     <div class="footer-bottom">
       <span>Confidential — prepared for EY Capital Projects Leadership</span>
-      <a href="index-short-ey.html" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;">Executive summary →</a>
+      <div style="display:flex;align-items:center;gap:0;">
+        <a href="index-short-ey.html" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;">Executive summary →</a>
+        <span style="color:var(--muted);margin:0 0.75rem;">·</span>
+        <a href="index-long-ey.html" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;">Full business case →</a>
+      </div>
     </div>
   </footer>
 
@@ -1451,23 +826,6 @@
       items.forEach(function(el) { obs.observe(el); });
     }
 
-    /* ============================================================
-       timelineReveal — no-op if #proof-timeline absent
-       ============================================================ */
-    function timelineReveal() {
-      var timeline = document.getElementById('proof-timeline');
-      if (!timeline) return;
-      var cards = timeline.querySelectorAll('.proof-card');
-      var obs = new IntersectionObserver(function(entries) {
-        if (entries[0].isIntersecting) {
-          cards.forEach(function(card, i) {
-            setTimeout(function() { card.classList.add('revealed'); }, i * 150);
-          });
-          obs.unobserve(timeline);
-        }
-      }, { threshold: 0.1 });
-      obs.observe(timeline);
-    }
 
     /* ============================================================
        accordionInit — no-op if no .accordion-item present
@@ -1496,24 +854,6 @@
       });
     }
 
-    /* ============================================================
-       barAnimation — animates any .bar-fill container by id
-       ============================================================ */
-    function barAnimation(containerId) {
-      var id = containerId || 'engagement-bars';
-      var container = document.getElementById(id);
-      if (!container) return;
-      var bars = container.querySelectorAll('.bar-fill');
-      var obs = new IntersectionObserver(function(entries) {
-        if (entries[0].isIntersecting) {
-          bars.forEach(function(bar, i) {
-            setTimeout(function() { bar.style.width = bar.dataset.width || '0%'; }, i * 100);
-          });
-          obs.unobserve(container);
-        }
-      }, { threshold: 0.3 });
-      obs.observe(container);
-    }
 
     /* ============================================================
        scrollCueHide
@@ -1530,34 +870,6 @@
       window.addEventListener('scroll', onScroll, { passive: true });
     }
 
-    /* ============================================================
-       countUp — no-op if no [data-counter] present
-       ============================================================ */
-    function countUp() {
-      var els = document.querySelectorAll('[data-counter]');
-      if (!els.length) return;
-      function animateEl(el) {
-        var target = parseFloat(el.dataset.val);
-        var prefix = el.dataset.prefix || '';
-        var suffix = el.dataset.suffix || '';
-        var dec    = (el.dataset.val.split('.')[1] || '').length;
-        var duration = 1400; var start = null;
-        function step(ts) {
-          if (!start) start = ts;
-          var progress = Math.min((ts - start) / duration, 1);
-          var ease = 1 - Math.pow(1 - progress, 3);
-          el.textContent = prefix + (ease * target).toFixed(dec) + suffix;
-          if (progress < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      }
-      var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) { animateEl(entry.target); obs.unobserve(entry.target); }
-        });
-      }, { threshold: 0.5 });
-      els.forEach(function(el) { obs.observe(el); });
-    }
 
     /* ============================================================
        mobileMenu
@@ -1643,12 +955,8 @@
       headerTransition();
       navActiveState();
       scrollReveal();
-      timelineReveal();
       timelineItemsAnimate();
       accordionInit();
-      barAnimation('engagement-bars');
-      barAnimation('revenue-bars');
-      countUp();
       scrollCueHide();
       mobileMenu();
       pipelineFilter();
