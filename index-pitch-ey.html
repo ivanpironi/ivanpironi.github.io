@@ -70,6 +70,14 @@
     .dl-point { flex-direction: row; align-items: center; gap: 12px; }
     .dl-labels { align-items: flex-start; text-align: left; }
   }
+  /* === Proof Cards (Section 02) === */
+  #proof-timeline { display:flex; gap:1.5rem; align-items:stretch; margin:2.5rem 0; }
+  .proof-card { flex:1; opacity:0; transform:translateY(20px); transition:opacity 0.5s ease,transform 0.5s ease; }
+  .proof-card.revealed { opacity:1; transform:translateY(0); }
+  .proof-card-inner { background:var(--surface); border:1px solid rgba(255,255,255,0.06); border-radius:4px; padding:1.5rem; height:100%; display:flex; flex-direction:column; }
+  .proof-card:nth-child(3) .proof-card-inner { border-color:var(--accent); }
+  .proof-card:nth-child(3) .callout-label { color:var(--accent); border-color:var(--accent); }
+  @media (max-width:768px) { #proof-timeline { flex-direction:column; } .proof-card { flex:none; } }
   </style>
 </head>
 <body>
@@ -91,11 +99,12 @@
         </div>
       </a>
       <nav class="header-nav" aria-label="Main navigation">
-        <a href="#market"   data-nav="market">Market</a>
-        <a href="#proof"    data-nav="proof">Proof</a>
-        <a href="#team"     data-nav="team">Team</a>
-        <a href="#pipeline" data-nav="pipeline">Pipeline</a>
-        <a href="#revenue"  data-nav="revenue">Revenue</a>
+        <a href="#market"          data-nav="market">Market</a>
+        <a href="#proof"           data-nav="proof">Proof</a>
+        <a href="#differentiation" data-nav="differentiation">Why Rare</a>
+        <a href="#team"            data-nav="team">Team</a>
+        <a href="#pipeline"        data-nav="pipeline">Pipeline</a>
+        <a href="#revenue"         data-nav="revenue">Revenue</a>
       </nav>
       <button class="hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -109,11 +118,12 @@
   <div class="mobile-overlay" id="mobile-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
     <button class="overlay-close" id="overlay-close" aria-label="Close navigation">×</button>
     <nav class="overlay-nav">
-      <a href="#market"   data-nav="market">Market</a>
-      <a href="#proof"    data-nav="proof">Proof</a>
-      <a href="#team"     data-nav="team">Team</a>
-      <a href="#pipeline" data-nav="pipeline">Pipeline</a>
-      <a href="#revenue"  data-nav="revenue">Revenue</a>
+      <a href="#market"          data-nav="market">Market</a>
+      <a href="#proof"           data-nav="proof">Proof</a>
+      <a href="#differentiation" data-nav="differentiation">Why Rare</a>
+      <a href="#team"            data-nav="team">Team</a>
+      <a href="#pipeline"        data-nav="pipeline">Pipeline</a>
+      <a href="#revenue"         data-nav="revenue">Revenue</a>
     </nav>
   </div>
 
@@ -291,6 +301,155 @@
         engagements across KSA, UAE, and Qatar — represent two
         independent reasons to move. The next 12–18 months determine
         whether EY leads this market or reacts to it.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 02 — THE PROOF POINT
+       ============================================================ -->
+  <section id="proof" data-section="proof">
+    <div class="container">
+
+      <span class="section-eyebrow reveal">02 · The Proof Point</span>
+
+      <h2 class="section-headline reveal">
+        One engagement.<br>
+        <em>The full chain.</em>
+      </h2>
+
+      <!-- Client context bar -->
+      <div class="multiplier reveal">
+        <span class="multiplier-label">Qiddiya &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Giga-Programme &nbsp;·&nbsp; Delivered through Accenture</span>
+        <p class="multiplier-body">A sovereign KSA entertainment and tourism giga-programme with a capital development schedule extending to 2050. No reliable single source of truth across its delivery enterprise. Cost data irreconcilable. Schedule status untrustworthy. Document and engineering data fragmented. This engagement ran from digital needs assessment through Nvidia Omniverse deployment — five stages, one advisor, owner-side independence throughout.</p>
+      </div>
+
+      <!-- Five proof cards -->
+      <div id="proof-timeline" class="reveal">
+
+        <div class="proof-card">
+          <div class="proof-card-inner">
+            <span class="tl-period">01</span>
+            <div class="force-title" style="margin:0.5rem 0;">Digital Needs Assessment</div>
+            <span class="callout-label" style="margin-bottom:1rem;">Diagnostician</span>
+            <p class="force-body">Mapped the full programme data landscape. Identified root causes of data distrust — misaligned cost hierarchies, no governed schedule baseline, fragmented document control.</p>
+            <p class="ht-arrow" style="margin-top:auto;padding-top:1rem;"><span class="ht-arrow-icon">→</span>Strategic work disguised as technical work. That distinction is what sovereign clients pay for.</p>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <div class="proof-card-inner">
+            <span class="tl-period">02</span>
+            <div class="force-title" style="margin:0.5rem 0;">PMIS Tool Scoring &amp; Selection</div>
+            <span class="callout-label" style="margin-bottom:1rem;">Evaluator</span>
+            <p class="force-body">Scored Oracle Unifier, Aconex, and competing PMIS platforms with no commercial agenda. Recommended Oracle on ERP integration, P6 linkage, and document control depth.</p>
+            <p class="ht-arrow" style="margin-top:auto;padding-top:1rem;"><span class="ht-arrow-icon">→</span>Platform-agnostic authority. The advisor with no agenda and the depth to evaluate honestly.</p>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <div class="proof-card-inner">
+            <span class="tl-period">03</span>
+            <div class="force-title" style="margin:0.5rem 0;">RFP Authorship</div>
+            <span class="callout-label" style="margin-bottom:1rem;">Guardian</span>
+            <p class="force-body">Authored the full PMIS RFP — scope, requirements, integration specifications, evaluation criteria. Excluded from budget definition to preserve complete independence before competing in Stage 04.</p>
+            <p class="ht-arrow" style="margin-top:auto;padding-top:1rem;"><span class="ht-arrow-icon">→</span>Owner-side independence under commercial pressure. Sovereign clients remember this.</p>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <div class="proof-card-inner">
+            <span class="tl-period">04</span>
+            <div class="force-title" style="margin:0.5rem 0;">Competitive Award</div>
+            <span class="callout-label" style="margin-bottom:1rem;">Converter</span>
+            <p class="force-body">Responded competitively through Accenture. Won the implementation mandate having personally defined the standard the market was measured against.</p>
+            <p class="ht-arrow" style="margin-top:auto;padding-top:1rem;"><span class="ht-arrow-icon">→</span>Advisory credibility converted directly to commercial mandate. Strategy was deployable, not theoretical.</p>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <div class="proof-card-inner">
+            <span class="tl-period">05</span>
+            <div class="force-title" style="margin:0.5rem 0;">BIM &amp; Digital Twin Extension</div>
+            <span class="callout-label" style="margin-bottom:1rem;">Anticipator</span>
+            <p class="force-body">Extended scope into ISO 19650 BIM taxonomy and an Nvidia Omniverse Digital Twin POC — integrating PMIS and BIM asset data into a real-time operational simulation. On live programme data.</p>
+            <p class="ht-arrow" style="margin-top:auto;padding-top:1rem;"><span class="ht-arrow-icon">→</span>The engagement grew because the advisor saw further than the brief. That is Partner behaviour.</p>
+          </div>
+        </div>
+
+      </div><!-- /#proof-timeline -->
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 03 — WHY THIS PROFILE IS RARE
+       ============================================================ -->
+  <section id="differentiation" data-section="differentiation">
+    <div class="container">
+
+      <span class="section-eyebrow reveal">03 · Why This Profile Is Rare</span>
+
+      <h2 class="section-headline reveal">
+        The market has strategists.<br>
+        It has implementers.<br>
+        <em>It does not have both.</em>
+      </h2>
+
+      <div class="col-2 reveal">
+        <div class="col-prose">
+          <p>Every major advisory firm has capital strategy capacity. Every technology integrator has PMIS implementation capacity. The gap — the gap that sovereign programmes consistently expose — is the advisor who can operate with authority at both levels simultaneously.</p>
+          <hr class="section-rule">
+          <p>Sovereign programme clients do not want a strategist who hands off to an integrator. They want a single advisor who can author the RFP, evaluate the vendors, govern the implementation, and extend into digital twin territory when the programme is ready.</p>
+          <hr class="section-rule">
+          <p>That profile requires 24 years of GCC programme experience, technical fluency across Oracle, SAP, ISO 19650, and Digital Twin platforms, and a track record of owner-side independence on named sovereign programmes.</p>
+          <hr class="section-rule">
+          <p>It is not a profile that can be assembled from a hiring pool. It is built through two decades of decisions made consistently in the same direction.</p>
+        </div>
+
+        <div class="multiplier">
+          <span class="multiplier-label">The Three-Level Test</span>
+          <p class="multiplier-body"><strong style="color:var(--white);">Strategy:</strong> Can the advisor define the programme data architecture, set the advisory standard, and operate independently of vendor agendas?</p>
+          <hr style="border:none;border-top:1px solid var(--rule);margin:1rem 0;">
+          <p class="multiplier-body"><strong style="color:var(--white);">Architecture:</strong> Can the advisor configure Oracle Unifier cost sheets, P6 EPS structures, SAP data mapping, and ISO 19650 BIM governance at the same level of authority?</p>
+          <hr style="border:none;border-top:1px solid var(--rule);margin:1rem 0;">
+          <p class="multiplier-body"><strong style="color:var(--white);">Delivery Oversight:</strong> Can the advisor govern an active programme — assessing schedule health, interrogating cost data, and detecting variance before the client does?</p>
+        </div>
+      </div>
+
+      <!-- Comparison grid -->
+      <div class="comparison-grid reveal">
+        <div class="comp-header col-market">What the market has</div>
+        <div class="comp-header col-gap">What the market cannot find</div>
+        <div class="comp-header col-mine">What I provide</div>
+
+        <div class="comp-cell col-market">PMIS strategy advisors who recommend Oracle but have never configured a cost sheet</div>
+        <div class="comp-cell col-gap">Architects who know why a P6/SAP interface produces mismatched cost data — and can fix the data model</div>
+        <div class="comp-cell col-mine">Oracle Unifier cost sheet design, P6 EPS architecture, SAP data mapping — personally deployed on live sovereign programmes</div>
+
+        <div class="comp-cell col-market">Digital Twin consultants who reference ISO 19650 in presentations</div>
+        <div class="comp-cell col-gap">Information managers who have authored a BEP, governed a CDE, and linked it to a live programme cost and schedule layer</div>
+        <div class="comp-cell col-mine">ISO 19650 BEP authorship, CDE design, 4D/5D linkage — delivered on KSA and Qatar sovereign programmes</div>
+
+        <div class="comp-cell col-market">Technology partners who demo Nvidia Omniverse to clients</div>
+        <div class="comp-cell col-gap">Advisors who have deployed Omniverse on live programme data with real integration to PMIS and BIM layers</div>
+        <div class="comp-cell col-mine">Nvidia Omniverse POC on live KSA sovereign programme — real programme data, not a demo environment</div>
+
+        <div class="comp-cell col-market">Capital advisors who stop at practical completion</div>
+        <div class="comp-cell col-gap">Practitioners who cover the full lifecycle — from programme governance through to operational handover and asset performance intelligence</div>
+        <div class="comp-cell col-mine">Full asset lifecycle advisory: programme business case → delivery governance → operational handover → asset performance intelligence</div>
+
+        <div class="comp-cell col-market">Advisory firms that require 3–6 months to mobilise a team with the right profile</div>
+        <div class="comp-cell col-gap">A practice-ready advisor who arrives named, networked, and deployable from day one</div>
+        <div class="comp-cell col-mine">Named pipeline. Existing sovereign relationships. A practice that begins generating revenue before EY's onboarding process ends.</div>
+      </div><!-- /.comparison-grid -->
+
+      <p class="section-pull reveal">
+        The Big Four have scale. The niche technology firms have depth
+        in one layer. Neither has an advisor who operates credibly across
+        the full advisory-to-delivery spectrum on sovereign programmes.
+        That is what this practice brings.
       </p>
 
     </div>
