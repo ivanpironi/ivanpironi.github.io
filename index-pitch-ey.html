@@ -128,6 +128,11 @@
   /* ── Accordion body text fallback ── */
   .accordion-body p { font-family:'Barlow',sans-serif; font-size:15px; color:var(--muted); line-height:1.7; }
   .accordion-body p + p { margin-top:0.75rem; }
+  /* ── Pipeline phase badges ── */
+  .pipeline-phase-badge { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; padding:2px 7px; border-radius:2px; border:1px solid; white-space:nowrap; flex-shrink:0; }
+  .phase-badge--1 { color:#185FA5; border-color:#185FA5; background:rgba(24,95,165,0.08); }
+  .phase-badge--2 { color:#0F6E56; border-color:#0F6E56; background:rgba(15,110,86,0.08); }
+  .phase-badge--3 { color:#854F0B; border-color:#854F0B; background:rgba(133,79,11,0.08); }
   </style>
 </head>
 <body>
@@ -754,50 +759,86 @@
   <section id="pipeline" data-section="pipeline">
     <div class="container">
 
-      <span class="section-eyebrow reveal">05 · The Mandate Pipeline</span>
+      <span class="section-eyebrow reveal">05 · The Mandate Pipeline · 18 Months</span>
 
       <h2 class="section-headline reveal">
         Named accounts.<br>
-        <em>Specific mandates.</em> Real fees.
+        <em>Phased activation.</em><br>
+        A practice — not a sprint.
       </h2>
 
       <p class="section-sub reveal">
-        Seven client organisations. Named contacts at Director
-        level and above. Three open advisory mandates proposable
-        within 90 days of joining. Two partnership relationships
-        that give EY Capital Projects access to programmes the
-        practice cannot currently enter independently.
+        Ten client organisations across KSA, UAE, and Qatar.
+        Fourteen named contacts at Director level and above.
+        Three phases of activation — each unlocking the next.
+        The 90-day sprint gets the first engagement signed.
+        The 18-month build creates a practice Carlos can
+        defend to the EY partnership.
       </p>
+
+      <!-- Three phase summary cards -->
+      <div class="phase-grid reveal">
+
+        <div class="phase-cell">
+          <span class="phase-label-text">Phase 1 · Month 1–6</span>
+          <div class="phase-title">Mobilise &amp; First Wins</div>
+          <div class="phase-item">EY integration — map existing sovereign client relationships to live programme opportunities</div>
+          <div class="phase-item">Qiddiya governance extension + Digital Twin Phase 2 — first engagement signed by Month 4</div>
+          <div class="phase-item">SAR schedule health assessment — EY platform entry via risk &amp; assurance</div>
+          <div class="phase-item">Team: Elie Koueik (Manager, Month 4) + Mohit Goyal (Manager, Month 5) — delivery running, Ivan originating simultaneously</div>
+          <div class="phase-label-text" style="margin-top:1rem;">Target: 1 engagement live · 2 in pursuit · $400–800K billed</div>
+        </div>
+
+        <div class="phase-cell">
+          <span class="phase-label-text">Phase 2 · Month 7–12</span>
+          <div class="phase-title">Scale &amp; Anchor</div>
+          <div class="phase-item">Mahmoud Abuqalbain joins (Month 6) — KSA market lead, Riyadh-based, ROSHN and New Murabba activation independent of Ivan</div>
+          <div class="phase-item">Attila Rab joins (Month 9) — King Salman Park Foundation becomes warm account immediately via 7 senior contacts from delivered engagement</div>
+          <div class="phase-item">Mace Consult partnership activates → Diriyah entry via Christopher Seymour (MD MEA)</div>
+          <div class="phase-item">3 parallel engagements running — practice economics at partner leverage level</div>
+          <div class="phase-label-text" style="margin-top:1rem;">Target: Year 1 close · $2M base · $4M upside</div>
+        </div>
+
+        <div class="phase-cell">
+          <span class="phase-label-text">Phase 3 · Month 13–18</span>
+          <div class="phase-title">Retain &amp; Expand</div>
+          <div class="phase-item">First retainers converting — governance engagements become $800K–$2M annual advisory retainers as programmes expand</div>
+          <div class="phase-item">Worley partnership activates → Saudi Aramco, ADNOC, QatarEnergy pipeline opens via Alex Silvermaster (Plan Practice Lead EMEA)</div>
+          <div class="phase-item">Khazna Data Centers (UAE) — NexOps/Presight AI governance mandate, Abdulmajeed Harmoodi (CTO)</div>
+          <div class="phase-item">Red Sea Global — Attila's IOC delivery relationships convert to capital advisory mandate</div>
+          <div class="phase-label-text" style="margin-top:1rem;">Target: $6–8M run-rate · practice of 8–10 FTE</div>
+        </div>
+
+      </div><!-- /.phase-grid -->
 
       <!-- Filter bar -->
       <div class="pipeline-filters reveal">
-        <button class="pipeline-btn active" data-filter="all">All mandates</button>
+        <button class="pipeline-btn active" data-filter="all">All accounts</button>
         <button class="pipeline-btn" data-filter="ksa">KSA</button>
         <button class="pipeline-btn" data-filter="uae">UAE</button>
         <button class="pipeline-btn" data-filter="partner">Via partnership</button>
+        <span style="width:1px;height:20px;background:rgba(255,255,255,0.12);display:inline-block;margin:0 0.25rem;vertical-align:middle;"></span>
+        <button class="pipeline-btn" data-filter="phase1">Phase 1 · M1–6</button>
+        <button class="pipeline-btn" data-filter="phase2">Phase 2 · M7–12</button>
+        <button class="pipeline-btn" data-filter="phase3">Phase 3 · M13–18</button>
       </div>
 
       <!-- Pipeline card grid -->
       <div class="pipeline-grid reveal" id="pipeline-grid">
 
-        <!-- Card 1: Qiddiya — incumbent -->
-        <div class="pipeline-card pipeline-card--incumbent" data-geo="ksa">
+        <!-- Card 1: Qiddiya — Phase 1, Incumbent -->
+        <div class="pipeline-card pipeline-card--incumbent" data-geo="ksa" data-phase="phase1">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Qiddiya Investment Company</span>
-            <span class="pipeline-geo">KSA · Riyadh</span>
+            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+              <span class="pipeline-phase-badge phase-badge--1">M1–6</span>
+              <span class="pipeline-geo">KSA · Riyadh</span>
+            </div>
           </div>
-          <span class="pipeline-mandate-type">Programme Governance &amp; Digital Twin Advisory</span>
-          <p class="pipeline-mandate-body">
-            Governance recalibration as the programme shifts
-            from mobilisation to active delivery. Digital Twin
-            operational layer — Phase 2 of work already
-            delivered. Ivan is the incumbent advisor.
-            Yardi adoption (September 2025) creates a new
-            three-way integration mandate unaddressed by any
-            current advisor.
-          </p>
+          <span class="pipeline-mandate-type">Programme Governance &amp; Digital Twin Phase 2</span>
+          <p class="pipeline-mandate-body">Governance recalibration as programme shifts from mobilisation to active delivery. Digital Twin operational layer — natural Phase 2 of work already delivered. Yardi adoption (September 2025) creates a new three-way integration mandate unaddressed by any current advisor. Ivan is the incumbent. Zero trust cycle required.</p>
           <div class="pipeline-contacts">
-            Manuel Chaure — Executive Director, Digital &amp; IT Strategy<br>
+            Manuel Chaure — Executive Director, Digital &amp; IT Strategy &amp; Governance<br>
             Abdullah Barakat — Executive Director, IT Business Relationship Management<br>
             Sreedhar Reddy Kadiveti — Senior Director, Engineering &amp; Development Business Solutions
           </div>
@@ -807,21 +848,39 @@
           </div>
         </div>
 
-        <!-- Card 2: ROSHN -->
-        <div class="pipeline-card" data-geo="ksa">
+        <!-- Card 2: SAR — Phase 1, EY platform -->
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase1">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">Saudi Railways (SAR)</span>
+            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+              <span class="pipeline-phase-badge phase-badge--1">M5–8</span>
+              <span class="pipeline-geo">KSA · Riyadh</span>
+            </div>
+          </div>
+          <span class="pipeline-mandate-type">Schedule Health &amp; Controls Advisory</span>
+          <p class="pipeline-mandate-body">Owner-side programme controls assessment — independent of EPC contractors. Oracle Analytics Cloud deployed for finance reporting; owner-side capital project PMIS is the open gap. NIC reporting requires reliable delivery data that the current EPC-managed structure cannot guarantee. Entry engagement that pulls through a larger governance mandate.</p>
+          <div class="pipeline-contacts">
+            Dr. Mishari Al Mishari — Deputy Director, NIC<br>
+            Mohaimeed Bagabas — EPMO Manager<br>
+            Mohammed AlShaia — Director, Strategic Management Office
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">EY Platform · Risk &amp; Assurance</span>
+            <span class="pipeline-fee">$150K–$400K</span>
+          </div>
+        </div>
+
+        <!-- Card 3: ROSHN — Phase 2 -->
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase2">
           <div class="pipeline-card-header">
             <span class="pipeline-client">ROSHN Group</span>
-            <span class="pipeline-geo">KSA · Riyadh</span>
+            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+              <span class="pipeline-phase-badge phase-badge--2">M7–10</span>
+              <span class="pipeline-geo">KSA · Riyadh</span>
+            </div>
           </div>
           <span class="pipeline-mandate-type">PMIS Governance Architecture</span>
-          <p class="pipeline-mandate-body">
-            PMWeb deployed across a $120B+ national housing
-            portfolio. The EPMO governance maturity question at
-            this scale — whether the data architecture is
-            producing trustworthy portfolio-level intelligence
-            — is the exact conversation Ivan has led at Qiddiya.
-            Same problem. Larger scale.
-          </p>
+          <p class="pipeline-mandate-body">PMWeb deployed across a $120B+ national housing portfolio. Governance maturity question at this scale — whether the EPMO data architecture produces trustworthy portfolio-level intelligence — is the exact conversation Ivan has led at Qiddiya. Same problem. Larger scale. Mahmoud leads KSA activation from Month 6.</p>
           <div class="pipeline-contacts">
             Hazem Alaily — Chief Program &amp; Project Management Officer<br>
             Hadi E. — Executive Director, EPMO<br>
@@ -834,73 +893,60 @@
           </div>
         </div>
 
-        <!-- Card 3: King Salman Park Foundation -->
-        <div class="pipeline-card" data-geo="ksa">
+        <!-- Card 4: King Salman Park — Phase 2 -->
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase2">
           <div class="pipeline-card-header">
             <span class="pipeline-client">King Salman Park Foundation</span>
-            <span class="pipeline-geo">KSA · Riyadh</span>
+            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+              <span class="pipeline-phase-badge phase-badge--2">M9–12</span>
+              <span class="pipeline-geo">KSA · Riyadh</span>
+            </div>
           </div>
-          <span class="pipeline-mandate-type">Owner-Side Programme Intelligence</span>
-          <p class="pipeline-mandate-body">
-            Parsons holds the 25-month PMO contract. KSPF
-            leadership needs an independent view of programme
-            performance above Parsons' delivery layer. Digital
-            Twin actively in development — CEO confirmed.
-            2027 opening deadline. Activates Month 9 with
-            warm senior relationships across technology and
-            operations leadership.
-          </p>
+          <span class="pipeline-mandate-type">Owner-Side Programme Intelligence &amp; Digital Twin Governance</span>
+          <p class="pipeline-mandate-body">Parsons holds the 25-month PMO contract. KSPF leadership needs an independent view above Parsons' delivery layer. Digital Twin actively in development — CEO confirmed. 2027 opening deadline. Activates Month 9 with warm senior relationships from a delivered Smart City Strategy engagement across technology and operations leadership.</p>
           <div class="pipeline-contacts">
             CTO · Deputy CEO · Head of Asset Development<br>
             Head of Operational Readiness · Smart City Director<br>
             Chief Data Officer · Head of Park Operations
           </div>
           <div class="pipeline-meta">
-            <span class="pipeline-entry">Direct · Network</span>
+            <span class="pipeline-entry">Direct · Network · Warm M9</span>
             <span class="pipeline-fee">$600K–$1.2M</span>
           </div>
         </div>
 
-        <!-- Card 4: Saudi Railways -->
-        <div class="pipeline-card" data-geo="ksa">
+        <!-- Card 5: Diriyah — Phase 2, Mace partnership -->
+        <div class="pipeline-card" data-geo="partner" data-phase="phase2">
           <div class="pipeline-card-header">
-            <span class="pipeline-client">Saudi Railways (SAR)</span>
-            <span class="pipeline-geo">KSA · Riyadh</span>
+            <span class="pipeline-client">Diriyah (DGDA)</span>
+            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+              <span class="pipeline-phase-badge phase-badge--2">M8–12</span>
+              <span class="pipeline-geo">KSA · Riyadh</span>
+            </div>
           </div>
-          <span class="pipeline-mandate-type">Schedule Health &amp; Controls Advisory</span>
-          <p class="pipeline-mandate-body">
-            Owner-side programme controls assessment —
-            independent of EPC contractors. Oracle Analytics
-            Cloud deployed for finance; owner-side capital
-            project PMIS is the open gap. NIC reporting requires
-            reliable delivery data that the current EPC-managed
-            structure cannot guarantee.
-          </p>
+          <span class="pipeline-mandate-type">Heritage Programme Governance</span>
+          <p class="pipeline-mandate-body">Mace Consult holds the sitewide PMC mandate ($63B programme, UNESCO heritage site). EY's advisory entry is at the owner-side governance layer above Mace — PMIS strategy, heritage asset information management, Digital Twin for a living heritage environment. No cold approach. Christopher Seymour (MD MEA, Mace Consult) is the direct relationship.</p>
           <div class="pipeline-contacts">
-            Dr. Mishari Al Mishari — Deputy Director, NIC<br>
-            Mohaimeed Bagabas — EPMO Manager<br>
-            Mohammed AlShaia — Director, Strategic Management Office
+            Entry via: Christopher Seymour — Managing Director MEA, Mace Consult<br>
+            Antony Brania — Director, Mace Consult
           </div>
           <div class="pipeline-meta">
-            <span class="pipeline-entry">EY Platform · Risk &amp; Assurance</span>
-            <span class="pipeline-fee">$150K–$400K</span>
+            <span class="pipeline-entry">Mace Consult Partnership</span>
+            <span class="pipeline-fee">$600K–$1.2M</span>
           </div>
         </div>
 
-        <!-- Card 5: New Murabba -->
-        <div class="pipeline-card" data-geo="ksa">
+        <!-- Card 6: New Murabba — Phase 3 -->
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase3">
           <div class="pipeline-card-header">
             <span class="pipeline-client">New Murabba Development Company</span>
-            <span class="pipeline-geo">KSA · Riyadh</span>
+            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+              <span class="pipeline-phase-badge phase-badge--3">M10–14</span>
+              <span class="pipeline-geo">KSA · Riyadh</span>
+            </div>
           </div>
           <span class="pipeline-mandate-type">Owner-Side PMO &amp; Smart City Advisory</span>
-          <p class="pipeline-mandate-body">
-            Three PMC firms — Bechtel, Turner Arabia, AECOM —
-            three separate reporting chains, no single
-            owner-side PMIS layer. Smart city strategy mandate
-            above platform vendors. $38B programme. 2030 target
-            with FIFA 2034 stadium interface.
-          </p>
+          <p class="pipeline-mandate-body">Three PMC firms — Bechtel, Turner Arabia, AECOM — three separate reporting chains, no single owner-side PMIS layer. Smart city strategy mandate above platform vendors. $38B programme with FIFA 2034 stadium interface and 2030 target. Senior escalation via Mohammed Alqahtani (Head Smart City &amp; AI, MIT-educated).</p>
           <div class="pipeline-contacts">
             Mohammed Alqahtani — Head of Smart City &amp; AI (MIT)<br>
             Wail Balkhair — Executive Director, Asset Management<br>
@@ -913,46 +959,17 @@
           </div>
         </div>
 
-        <!-- Card 6: Diriyah — partnership -->
-        <div class="pipeline-card" data-geo="partner">
-          <div class="pipeline-card-header">
-            <span class="pipeline-client">Diriyah (DGDA)</span>
-            <span class="pipeline-geo">KSA · Riyadh</span>
-          </div>
-          <span class="pipeline-mandate-type">Heritage Programme Governance</span>
-          <p class="pipeline-mandate-body">
-            Mace Consult holds the sitewide PMC mandate ($63B
-            programme). EY's advisory entry is at the
-            owner-side governance layer above Mace — heritage
-            asset information management, PMIS strategy, Digital
-            Twin for UNESCO context. Entry via Mace Consult
-            partnership. No cold approach required.
-          </p>
-          <div class="pipeline-contacts">
-            Entry via: Christopher Seymour — Managing Director MEA, Mace Consult<br>
-            Antony Brania — Director, Mace Consult
-          </div>
-          <div class="pipeline-meta">
-            <span class="pipeline-entry">Mace Consult Partnership</span>
-            <span class="pipeline-fee">$600K–$1.2M</span>
-          </div>
-        </div>
-
-        <!-- Card 7: Khazna -->
-        <div class="pipeline-card" data-geo="uae">
+        <!-- Card 7: Khazna — Phase 3, UAE -->
+        <div class="pipeline-card" data-geo="uae" data-phase="phase3">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Khazna Data Centers</span>
-            <span class="pipeline-geo">UAE · Abu Dhabi</span>
+            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+              <span class="pipeline-phase-badge phase-badge--3">M13–16</span>
+              <span class="pipeline-geo">UAE · Abu Dhabi</span>
+            </div>
           </div>
           <span class="pipeline-mandate-type">Data Centre Programme Governance</span>
-          <p class="pipeline-mandate-body">
-            30+ facilities, $26.2B financing secured, Stargate
-            UAE partner. Turner &amp; Townsend holds the PMC
-            role. NexOps operational platform (Presight AI)
-            launched February 2026 — governance framework
-            completely open. Construction-to-operations
-            handover intelligence is the immediate mandate.
-          </p>
+          <p class="pipeline-mandate-body">30+ facilities, $26.2B financing secured, Stargate UAE partner. Turner &amp; Townsend holds the PMC role. NexOps operational platform (Presight AI) launched February 2026 — governance framework open. Construction-to-operations handover intelligence is the immediate mandate advisory gap.</p>
           <div class="pipeline-contacts">
             Abdulmajeed Harmoodi — CTO<br>
             Kevin Ayling — Senior Director, Technical Program Management<br>
@@ -961,6 +978,70 @@
           <div class="pipeline-meta">
             <span class="pipeline-entry">Direct · Network</span>
             <span class="pipeline-fee">$300K–$700K</span>
+          </div>
+        </div>
+
+        <!-- Card 8: Saudi Aramco — Phase 3, Worley partnership -->
+        <div class="pipeline-card" data-geo="partner" data-phase="phase3">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">Saudi Aramco</span>
+            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+              <span class="pipeline-phase-badge phase-badge--3">M14–18</span>
+              <span class="pipeline-geo">KSA · Al-Khobar</span>
+            </div>
+          </div>
+          <span class="pipeline-mandate-type">Owner-Side PMIS &amp; Capital Controls Advisory</span>
+          <p class="pipeline-mandate-body">Largest capital spender in KSA — $40B+ annual capex. Worley holds the GES+ 5-year engineering contract. EY advises the owner at the governance layer above Worley's engineering scope. SAP ↔ Oracle PMIS reconciliation is a confirmed structural problem across Aramco's capital portfolio — Ivan has solved this at Qiddiya. Highest single-engagement fee potential in the entire GCC market.</p>
+          <div class="pipeline-contacts">
+            Entry via: Alex Silvermaster — Plan Practice Lead EMEA, Worley<br>
+            Worley GES+ contract provides programme-level access to Aramco capital leadership
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">Worley Partnership</span>
+            <span class="pipeline-fee">$1M–$2M</span>
+          </div>
+        </div>
+
+        <!-- Card 9: ADNOC & QatarEnergy — Phase 3, Worley partnership -->
+        <div class="pipeline-card" data-geo="partner" data-phase="phase3">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">ADNOC &amp; QatarEnergy</span>
+            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+              <span class="pipeline-phase-badge phase-badge--3">M15–18</span>
+              <span class="pipeline-geo">UAE · Qatar</span>
+            </div>
+          </div>
+          <span class="pipeline-mandate-type">Capital Programme Governance &amp; Digital Twin Advisory</span>
+          <p class="pipeline-mandate-body">Worley holds active FEED mandates at ADNOC (Bab Gas Cap, Ruwais LNG) and QatarEnergy (CO₂ sequestration, North Field LNG — 10+ year relationship). EY advises the owner on capital programme governance and Digital Twin readiness above Worley's engineering scope. Worley's decade-long relationships are the trust bridge.</p>
+          <div class="pipeline-contacts">
+            Entry via: Alex Silvermaster — Plan Practice Lead EMEA, Worley<br>
+            ADNOC: Bab Gas Cap + Ruwais LNG FEED teams<br>
+            QatarEnergy: North Field LNG expansion programme
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">Worley Partnership</span>
+            <span class="pipeline-fee">$600K–$1.2M</span>
+          </div>
+        </div>
+
+        <!-- Card 10: Red Sea Global — Phase 3, Attila network -->
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase3">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">Red Sea Global</span>
+            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+              <span class="pipeline-phase-badge phase-badge--3">M14–18</span>
+              <span class="pipeline-geo">KSA · Red Sea Coast</span>
+            </div>
+          </div>
+          <span class="pipeline-mandate-type">IOC Governance &amp; Operational Advisory</span>
+          <p class="pipeline-mandate-body">PIF-owned luxury tourism giga-programme — 100+ operators, 10+ integrated city management functions, geographic footprint comparable to Belgium. IOC Operating Model already delivered by Attila (Director, joining Month 9). His operational leadership relationships convert to a capital advisory and governance retainer as the programme transitions from construction to operations.</p>
+          <div class="pipeline-contacts">
+            Via Attila Rab — IOC Operating Model delivery relationships with RSG operations leadership<br>
+            Warm account from Month 9
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">Direct · Network · M9+</span>
+            <span class="pipeline-fee">$400K–$800K</span>
           </div>
         </div>
 
@@ -994,10 +1075,13 @@
       </div>
 
       <p class="section-pull reveal">
-        Of seven accounts in the 90-day pipeline, five are
-        activated through the professional network or partnership
-        relationships — independent of EY's existing client base.
-        Carlos's platform is the accelerator. Not the engine.
+        Five accounts activate in the first 90 days.
+        Five more open in Months 7–18 — each unlocked by
+        a team member joining, a partnership formalising,
+        or a retainer converting. The practice doubles
+        in pipeline depth every six months. That is the
+        architecture of a practice — not the velocity
+        of a sprint.
       </p>
 
     </div>
@@ -1536,11 +1620,17 @@
           btns.forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
           document.querySelectorAll('.pipeline-card').forEach(function(card) {
-            if (filter === 'all' || card.dataset.geo === filter) {
-              card.style.display = '';
-            } else {
-              card.style.display = 'none';
+            var geo   = card.dataset.geo   || '';
+            var phase = card.dataset.phase || '';
+            var show  = false;
+            if (filter === 'all') {
+              show = true;
+            } else if (filter === 'ksa' || filter === 'uae' || filter === 'partner') {
+              show = (geo === filter);
+            } else if (filter === 'phase1' || filter === 'phase2' || filter === 'phase3') {
+              show = (phase === filter);
             }
+            card.style.display = show ? '' : 'none';
           });
         });
       });
