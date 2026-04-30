@@ -78,6 +78,42 @@
   .proof-card:nth-child(3) .proof-card-inner { border-color:var(--accent); }
   .proof-card:nth-child(3) .callout-label { color:var(--accent); border-color:var(--accent); }
   @media (max-width:768px) { #proof-timeline { flex-direction:column; } .proof-card { flex:none; } }
+  /* ── Team org chart ── */
+  .team-org { margin:2.5rem 0; display:flex; flex-direction:column; align-items:center; gap:0; }
+  .org-level { display:flex; gap:1rem; justify-content:center; width:100%; }
+  .org-connector { width:1px; height:2rem; background:rgba(255,255,255,0.12); margin:0 auto; }
+  .org-node { display:flex; flex-direction:column; align-items:center; text-align:center; background:var(--surface); border:1px solid rgba(255,255,255,0.06); border-radius:4px; padding:0.75rem 1.25rem; min-width:140px; gap:3px; }
+  .org-node--lead { border-color:var(--accent); min-width:180px; }
+  .org-node--bench { border-style:dashed; border-color:rgba(255,255,255,0.12); opacity:0.7; }
+  .org-grade { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); display:block; }
+  .org-node--bench .org-grade { color:var(--muted); }
+  .org-name { font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:600; color:var(--text); display:block; }
+  .org-timing { font-family:'Barlow',sans-serif; font-size:11px; color:var(--muted); display:block; }
+  @media (max-width:768px) { .org-level { flex-direction:column; align-items:center; } .org-node { min-width:200px; } }
+  /* ── Team grid ── */
+  .team-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:2rem 0; }
+  @media (max-width:768px) { .team-grid { grid-template-columns:1fr; } }
+  .team-card { display:flex; flex-direction:column; }
+  /* ── Pipeline filters ── */
+  .pipeline-filters { display:flex; gap:0.5rem; flex-wrap:wrap; margin:1.5rem 0; }
+  .pipeline-btn { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); background:transparent; border:1px solid rgba(255,255,255,0.12); border-radius:2px; padding:0.4rem 0.9rem; cursor:pointer; transition:all 0.2s ease; }
+  .pipeline-btn:hover { color:var(--text); border-color:rgba(255,255,255,0.3); }
+  .pipeline-btn.active { color:var(--accent); border-color:var(--accent); background:rgba(232,200,74,0.06); }
+  /* ── Pipeline grid ── */
+  .pipeline-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1rem 0 2.5rem; }
+  @media (max-width:768px) { .pipeline-grid { grid-template-columns:1fr; } }
+  .pipeline-card { background:var(--surface); border:1px solid rgba(255,255,255,0.06); border-radius:4px; padding:1.5rem; display:flex; flex-direction:column; gap:0.75rem; transition:border-color 0.2s ease; }
+  .pipeline-card:hover { border-color:rgba(255,255,255,0.15); }
+  .pipeline-card--incumbent { border-color:var(--accent); }
+  .pipeline-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; }
+  .pipeline-client { font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; color:var(--text); letter-spacing:0.02em; line-height:1.2; }
+  .pipeline-geo { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); white-space:nowrap; padding-top:3px; }
+  .pipeline-mandate-type { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); display:block; }
+  .pipeline-mandate-body { font-family:'Barlow',sans-serif; font-size:13px; color:var(--muted); line-height:1.55; flex:1; }
+  .pipeline-contacts { font-family:'Barlow',sans-serif; font-size:12px; color:rgba(255,255,255,0.5); line-height:1.5; border-top:1px solid rgba(255,255,255,0.06); padding-top:0.75rem; }
+  .pipeline-meta { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; border-top:1px solid rgba(255,255,255,0.06); padding-top:0.75rem; }
+  .pipeline-entry { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); border:1px solid rgba(255,255,255,0.12); border-radius:2px; padding:2px 7px; }
+  .pipeline-fee { font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:600; color:var(--text); letter-spacing:0.02em; }
   </style>
 </head>
 <body>
@@ -455,6 +491,504 @@
     </div>
   </section>
 
+  <!-- ============================================================
+       SECTION 04 — THE TEAM
+       ============================================================ -->
+  <section id="team" data-section="team">
+    <div class="container">
+
+      <span class="section-eyebrow reveal">04 · The Team</span>
+
+      <h2 class="section-headline reveal">
+        Every person has already<br>
+        <em>delivered</em> at this level.
+      </h2>
+
+      <p class="section-sub reveal">
+        This is not a team being built from scratch. Every hire
+        from Manager upward has sat in front of a sovereign client,
+        made decisions under pressure, and delivered the outcome.
+        The advisor-doer distinction does not exist in this team.
+      </p>
+
+      <!-- Org hierarchy visual -->
+      <div class="team-org reveal">
+
+        <!-- Level 1 -->
+        <div class="org-level org-level--1">
+          <div class="org-node org-node--lead">
+            <span class="org-grade">SM → Partner-track</span>
+            <span class="org-name">Ivan Pironi</span>
+            <span class="org-timing">Practice Lead · Day 1</span>
+          </div>
+        </div>
+
+        <div class="org-connector" aria-hidden="true"></div>
+
+        <!-- Level 2 -->
+        <div class="org-level org-level--2">
+          <div class="org-node">
+            <span class="org-grade">Director</span>
+            <span class="org-name">Attila Rab</span>
+            <span class="org-timing">Month 9 · Riyadh</span>
+          </div>
+          <div class="org-node">
+            <span class="org-grade">Senior Manager</span>
+            <span class="org-name">Mahmoud Abuqalbain</span>
+            <span class="org-timing">Month 6 · KSA Lead</span>
+          </div>
+        </div>
+
+        <div class="org-connector" aria-hidden="true"></div>
+
+        <!-- Level 3 -->
+        <div class="org-level org-level--3">
+          <div class="org-node">
+            <span class="org-grade">Manager</span>
+            <span class="org-name">Elie Koueik</span>
+            <span class="org-timing">Month 4 · PMO</span>
+          </div>
+          <div class="org-node">
+            <span class="org-grade">Manager</span>
+            <span class="org-name">Mohit Goyal</span>
+            <span class="org-timing">Month 5 · PMIS</span>
+          </div>
+          <div class="org-node org-node--bench">
+            <span class="org-grade">Technical bench</span>
+            <span class="org-name">6 specialists</span>
+            <span class="org-timing">Engagement-activated</span>
+          </div>
+        </div>
+
+      </div><!-- /.team-org -->
+
+      <!-- Five person cards -->
+      <div class="team-grid reveal">
+
+        <!-- Card 1: Ivan Pironi -->
+        <div class="phase-cell team-card">
+          <span class="phase-label-text">SM → Partner-track · Practice Lead · Day 1</span>
+          <div class="phase-title">Ivan Pironi</div>
+          <div class="phase-item">
+            <strong>Capital Projects value:</strong> 24 years.
+            Three continents. Led the full advisory chain on
+            Qiddiya — digital needs assessment through Nvidia
+            Omniverse POC. P&amp;L accountability, team management,
+            and advisory practice economics from day one.
+          </div>
+          <div class="phase-item">
+            <strong>What he does in Year 1:</strong> Revenue
+            origination and senior client relationships. 60%
+            billable. 40% on BD, proposals, and EY platform
+            activation. Not a delivery resource — the practice
+            engine.
+          </div>
+          <div class="tl-proof" style="margin-top:auto;padding-top:1rem;">
+            <span>PMIS governance</span>
+            <span>Digital Twin</span>
+            <span>Oracle stack</span>
+            <span>Sovereign advisory</span>
+            <span>P&amp;L</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Attila Rab -->
+        <div class="phase-cell team-card">
+          <span class="phase-label-text">Director · Month 9 · Riyadh-based</span>
+          <div class="phase-title">Attila Rab</div>
+          <div class="phase-item">
+            <strong>Capital Projects value:</strong> Directed
+            the Operational Readiness Programme at Qiddiya —
+            same programme as Ivan, different workstream. Designed
+            and delivered KSPF's Smart City Strategy and Enterprise
+            Architecture. IOC Operating Model at Red Sea Global.
+            DBA candidate, Smart Cities. Six Sigma Black Belt.
+          </div>
+          <div class="phase-item">
+            <strong>What he unlocks:</strong> King Salman Park
+            Foundation becomes a warm account the moment he joins —
+            his working relationships with KSPF's CTO, Deputy CEO,
+            Smart City Director, and CDO are from the delivered
+            engagement, not a cold network. Red Sea Global enters
+            the Year 2 pipeline.
+          </div>
+          <div class="tl-proof" style="margin-top:auto;padding-top:1rem;">
+            <span>Capital programme delivery</span>
+            <span>Master scheduling</span>
+            <span>IOC / iCCC</span>
+            <span>Operational readiness</span>
+            <span>KSA sovereign</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Mahmoud Abuqalbain -->
+        <div class="phase-cell team-card">
+          <span class="phase-label-text">Senior Manager · Month 6 · KSA Market Lead</span>
+          <div class="phase-title">Mahmoud Abuqalbain</div>
+          <div class="phase-item">
+            <strong>Capital Projects value:</strong> Senior enough
+            to lead KSA client conversations with programme
+            directors at ROSHN, government centres, and sovereign
+            authorities without Ivan in the room. Closed $120M PPP
+            design-build as primary engineer. Led operating model
+            design for multiple KSA sovereign entities.
+            Arabic-fluent. Riyadh-based.
+          </div>
+          <div class="phase-item">
+            <strong>What he unlocks:</strong> The KSA geographic
+            coverage question — answered from Month 6. Every KSA
+            account in the pipeline has a senior, on-ground lead
+            who can hold the client conversation independently.
+          </div>
+          <div class="tl-proof" style="margin-top:auto;padding-top:1rem;">
+            <span>KSA sovereign</span>
+            <span>Smart city strategy</span>
+            <span>Operating models</span>
+            <span>PPP construction</span>
+            <span>Riyadh-based</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Elie Koueik -->
+        <div class="phase-cell team-card">
+          <span class="phase-label-text">Manager · Month 4 · PMO Delivery Lead</span>
+          <div class="phase-title">Elie Koueik</div>
+          <div class="phase-item">
+            <strong>Capital Projects value:</strong> Directed the
+            central PMO for one of the region's largest transport
+            PPP programmes. Delivered €500M+ feasibility studies.
+            ESSEC MBA + civil engineering — technically credible
+            in client workshops without Ivan present.
+          </div>
+          <div class="phase-item">
+            <strong>What he unlocks:</strong> Engagement 1 runs
+            with Elie as delivery lead. Ivan originates Engagement
+            2 simultaneously. This is the only model that reaches
+            $2M in Year 1.
+          </div>
+          <div class="tl-proof" style="margin-top:auto;padding-top:1rem;">
+            <span>PMO delivery</span>
+            <span>Business case</span>
+            <span>RFP / RFQ</span>
+            <span>PPP transport</span>
+            <span>Governance design</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Mohit Goyal -->
+        <div class="phase-cell team-card">
+          <span class="phase-label-text">Manager · Month 5 · PMIS &amp; Cost Control</span>
+          <div class="phase-title">Mohit Goyal</div>
+          <div class="phase-item">
+            <strong>Capital Projects value:</strong> Was in the
+            room at Qiddiya. Direct programme continuity — zero
+            ramp-up cycle. Client-side Product Owner on enterprise
+            PPM, C-suite workshop facilitation. INSEAD MBA +
+            UCLA MSc. Rapid progression path to Senior Manager
+            as the practice scales.
+          </div>
+          <div class="phase-item">
+            <strong>What he unlocks:</strong> Qiddiya mandate
+            continuity under EY — the client knows him, the
+            context is live, the delivery starts immediately.
+          </div>
+          <div class="tl-proof" style="margin-top:auto;padding-top:1rem;">
+            <span>Cost control</span>
+            <span>PPM platforms</span>
+            <span>Portfolio monitoring</span>
+            <span>Qiddiya context</span>
+            <span>INSEAD MBA</span>
+          </div>
+        </div>
+
+      </div><!-- /.team-grid -->
+
+      <!-- Technical bench callout -->
+      <div class="sales-evidence reveal">
+        <div>
+          <span class="sales-label">Technical Bench</span>
+          <p class="multiplier-body" style="margin-top:0.5rem;">
+            Six specialist profiles — engagement-activated,
+            not permanent headcount. Oracle PMIS specialist
+            &nbsp;·&nbsp; Reporting &amp; dashboards analyst
+            &nbsp;·&nbsp; BIM / CDE analyst &nbsp;·&nbsp;
+            Data &amp; integration analyst &nbsp;·&nbsp;
+            Digital Twin / IoT analyst &nbsp;·&nbsp;
+            Schedule analyst (P6). Billed at junior rates.
+            Managed by the engagement Manager. EY's advisory
+            independence is never compromised — the bench
+            works on the client's environment under EY's
+            governance framework.
+          </p>
+        </div>
+      </div>
+
+      <p class="section-pull reveal">
+        Every person from Manager upward is client-facing,
+        delivery-proven, and capable of leading a workstream
+        independently. Ivan operates as originator and strategic
+        authority — not as the team's delivery backstop.
+        That is the only model that generates $2M in Year 1.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 05 — THE MANDATE PIPELINE
+       ============================================================ -->
+  <section id="pipeline" data-section="pipeline">
+    <div class="container">
+
+      <span class="section-eyebrow reveal">05 · The Mandate Pipeline</span>
+
+      <h2 class="section-headline reveal">
+        Named accounts.<br>
+        <em>Specific mandates.</em> Real fees.
+      </h2>
+
+      <p class="section-sub reveal">
+        Seven client organisations. Named contacts at Director
+        level and above. Three open advisory mandates proposable
+        within 90 days of joining. Two partnership relationships
+        that give EY Capital Projects access to programmes the
+        practice cannot currently enter independently.
+      </p>
+
+      <!-- Filter bar -->
+      <div class="pipeline-filters reveal">
+        <button class="pipeline-btn active" data-filter="all">All mandates</button>
+        <button class="pipeline-btn" data-filter="ksa">KSA</button>
+        <button class="pipeline-btn" data-filter="uae">UAE</button>
+        <button class="pipeline-btn" data-filter="partner">Via partnership</button>
+      </div>
+
+      <!-- Pipeline card grid -->
+      <div class="pipeline-grid reveal" id="pipeline-grid">
+
+        <!-- Card 1: Qiddiya — incumbent -->
+        <div class="pipeline-card pipeline-card--incumbent" data-geo="ksa">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">Qiddiya Investment Company</span>
+            <span class="pipeline-geo">KSA · Riyadh</span>
+          </div>
+          <span class="pipeline-mandate-type">Programme Governance &amp; Digital Twin Advisory</span>
+          <p class="pipeline-mandate-body">
+            Governance recalibration as the programme shifts
+            from mobilisation to active delivery. Digital Twin
+            operational layer — Phase 2 of work already
+            delivered. Ivan is the incumbent advisor.
+            Yardi adoption (September 2025) creates a new
+            three-way integration mandate unaddressed by any
+            current advisor.
+          </p>
+          <div class="pipeline-contacts">
+            Manuel Chaure — Executive Director, Digital &amp; IT Strategy<br>
+            Abdullah Barakat — Executive Director, IT Business Relationship Management<br>
+            Sreedhar Reddy Kadiveti — Senior Director, Engineering &amp; Development Business Solutions
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">Direct · Incumbent</span>
+            <span class="pipeline-fee">$400K–$800K</span>
+          </div>
+        </div>
+
+        <!-- Card 2: ROSHN -->
+        <div class="pipeline-card" data-geo="ksa">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">ROSHN Group</span>
+            <span class="pipeline-geo">KSA · Riyadh</span>
+          </div>
+          <span class="pipeline-mandate-type">PMIS Governance Architecture</span>
+          <p class="pipeline-mandate-body">
+            PMWeb deployed across a $120B+ national housing
+            portfolio. The EPMO governance maturity question at
+            this scale — whether the data architecture is
+            producing trustworthy portfolio-level intelligence
+            — is the exact conversation Ivan has led at Qiddiya.
+            Same problem. Larger scale.
+          </p>
+          <div class="pipeline-contacts">
+            Hazem Alaily — Chief Program &amp; Project Management Officer<br>
+            Hadi E. — Executive Director, EPMO<br>
+            Roger Fatovic — Group Chief Projects Delivery Officer (Acting)<br>
+            Mohammad Ajlouni — Director, EPMO &amp; Project Controls
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">Direct · Network</span>
+            <span class="pipeline-fee">$400K–$800K</span>
+          </div>
+        </div>
+
+        <!-- Card 3: King Salman Park Foundation -->
+        <div class="pipeline-card" data-geo="ksa">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">King Salman Park Foundation</span>
+            <span class="pipeline-geo">KSA · Riyadh</span>
+          </div>
+          <span class="pipeline-mandate-type">Owner-Side Programme Intelligence</span>
+          <p class="pipeline-mandate-body">
+            Parsons holds the 25-month PMO contract. KSPF
+            leadership needs an independent view of programme
+            performance above Parsons' delivery layer. Digital
+            Twin actively in development — CEO confirmed.
+            2027 opening deadline. Activates Month 9 with
+            warm senior relationships across technology and
+            operations leadership.
+          </p>
+          <div class="pipeline-contacts">
+            CTO · Deputy CEO · Head of Asset Development<br>
+            Head of Operational Readiness · Smart City Director<br>
+            Chief Data Officer · Head of Park Operations
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">Direct · Network</span>
+            <span class="pipeline-fee">$600K–$1.2M</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Saudi Railways -->
+        <div class="pipeline-card" data-geo="ksa">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">Saudi Railways (SAR)</span>
+            <span class="pipeline-geo">KSA · Riyadh</span>
+          </div>
+          <span class="pipeline-mandate-type">Schedule Health &amp; Controls Advisory</span>
+          <p class="pipeline-mandate-body">
+            Owner-side programme controls assessment —
+            independent of EPC contractors. Oracle Analytics
+            Cloud deployed for finance; owner-side capital
+            project PMIS is the open gap. NIC reporting requires
+            reliable delivery data that the current EPC-managed
+            structure cannot guarantee.
+          </p>
+          <div class="pipeline-contacts">
+            Dr. Mishari Al Mishari — Deputy Director, NIC<br>
+            Mohaimeed Bagabas — EPMO Manager<br>
+            Mohammed AlShaia — Director, Strategic Management Office
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">EY Platform · Risk &amp; Assurance</span>
+            <span class="pipeline-fee">$150K–$400K</span>
+          </div>
+        </div>
+
+        <!-- Card 5: New Murabba -->
+        <div class="pipeline-card" data-geo="ksa">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">New Murabba Development Company</span>
+            <span class="pipeline-geo">KSA · Riyadh</span>
+          </div>
+          <span class="pipeline-mandate-type">Owner-Side PMO &amp; Smart City Advisory</span>
+          <p class="pipeline-mandate-body">
+            Three PMC firms — Bechtel, Turner Arabia, AECOM —
+            three separate reporting chains, no single
+            owner-side PMIS layer. Smart city strategy mandate
+            above platform vendors. $38B programme. 2030 target
+            with FIFA 2034 stadium interface.
+          </p>
+          <div class="pipeline-contacts">
+            Mohammed Alqahtani — Head of Smart City &amp; AI (MIT)<br>
+            Wail Balkhair — Executive Director, Asset Management<br>
+            Faisal AlSayegh — Manager, Smart City &amp; AI<br>
+            Abdullah Bafakih — Development Director
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">Direct · Network</span>
+            <span class="pipeline-fee">$500K–$1M</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Diriyah — partnership -->
+        <div class="pipeline-card" data-geo="partner">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">Diriyah (DGDA)</span>
+            <span class="pipeline-geo">KSA · Riyadh</span>
+          </div>
+          <span class="pipeline-mandate-type">Heritage Programme Governance</span>
+          <p class="pipeline-mandate-body">
+            Mace Consult holds the sitewide PMC mandate ($63B
+            programme). EY's advisory entry is at the
+            owner-side governance layer above Mace — heritage
+            asset information management, PMIS strategy, Digital
+            Twin for UNESCO context. Entry via Mace Consult
+            partnership. No cold approach required.
+          </p>
+          <div class="pipeline-contacts">
+            Entry via: Christopher Seymour — Managing Director MEA, Mace Consult<br>
+            Antony Brania — Director, Mace Consult
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">Mace Consult Partnership</span>
+            <span class="pipeline-fee">$600K–$1.2M</span>
+          </div>
+        </div>
+
+        <!-- Card 7: Khazna -->
+        <div class="pipeline-card" data-geo="uae">
+          <div class="pipeline-card-header">
+            <span class="pipeline-client">Khazna Data Centers</span>
+            <span class="pipeline-geo">UAE · Abu Dhabi</span>
+          </div>
+          <span class="pipeline-mandate-type">Data Centre Programme Governance</span>
+          <p class="pipeline-mandate-body">
+            30+ facilities, $26.2B financing secured, Stargate
+            UAE partner. Turner &amp; Townsend holds the PMC
+            role. NexOps operational platform (Presight AI)
+            launched February 2026 — governance framework
+            completely open. Construction-to-operations
+            handover intelligence is the immediate mandate.
+          </p>
+          <div class="pipeline-contacts">
+            Abdulmajeed Harmoodi — CTO<br>
+            Kevin Ayling — Senior Director, Technical Program Management<br>
+            Hassan Al Naqbi — CEO
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">Direct · Network</span>
+            <span class="pipeline-fee">$300K–$700K</span>
+          </div>
+        </div>
+
+      </div><!-- /.pipeline-grid -->
+
+      <!-- Partnership callout bar -->
+      <div class="sales-evidence reveal">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;width:100%;">
+
+          <div>
+            <span class="sales-label">Mace Consult</span>
+            <p class="multiplier-body" style="margin-top:0.5rem;">
+              Christopher Seymour — MD MEA &nbsp;·&nbsp; Antony Brania — Director<br>
+              Active mandates: Diriyah · Qiddiya · King Salman Airport<br>
+              Independent since March 2026 (Goldman Sachs PE).
+              Actively seeking digital advisory partnerships.
+            </p>
+          </div>
+
+          <div>
+            <span class="sales-label">Worley</span>
+            <p class="multiplier-body" style="margin-top:0.5rem;">
+              Alex Silvermaster — Plan Practice Lead EMEA<br>
+              Active mandates: Saudi Aramco (GES+) · ADNOC · NEOM · QatarEnergy · SABIC<br>
+              Engineering and EPCM — no owner-side capital
+              advisory capability. EY fills that gap.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="section-pull reveal">
+        Of seven accounts in the 90-day pipeline, five are
+        activated through the professional network or partnership
+        relationships — independent of EY's existing client base.
+        Carlos's platform is the accelerator. Not the engine.
+      </p>
+
+    </div>
+  </section>
+
   <script>
     'use strict';
 
@@ -665,6 +1199,28 @@
     }
 
     /* ============================================================
+       pipelineFilter
+       ============================================================ */
+    function pipelineFilter() {
+      var btns = document.querySelectorAll('.pipeline-btn');
+      if (!btns.length) return;
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var filter = btn.dataset.filter;
+          btns.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          document.querySelectorAll('.pipeline-card').forEach(function(card) {
+            if (filter === 'all' || card.dataset.geo === filter) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+
+    /* ============================================================
        Init — DOMContentLoaded
        ============================================================ */
     document.addEventListener('DOMContentLoaded', function() {
@@ -678,6 +1234,7 @@
       countUp();
       scrollCueHide();
       mobileMenu();
+      pipelineFilter();
     });
 
   </script>
