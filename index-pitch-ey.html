@@ -20,6 +20,23 @@
     gtag('config', 'G-KMLNJW4GDE');
   </script>
   <style>
+  /* ── Pipeline card tabs ── */
+  .card-tabs { display:flex; margin:0.6rem 0 0; border-bottom:1px solid rgba(255,255,255,0.07); }
+  .card-tab { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em;
+    text-transform:uppercase; color:rgba(255,255,255,0.3); background:transparent;
+    border:none; padding:0.35rem 0.85rem 0.35rem 0; cursor:pointer;
+    position:relative; transition:color 0.15s; flex-shrink:0; }
+  .card-tab:last-child { padding-right:0; }
+  .card-tab.active { color:var(--accent); }
+  .card-tab.active::after { content:''; position:absolute; bottom:-1px; left:0;
+    width:100%; height:1px; background:var(--accent); }
+  .card-tab:hover:not(.active) { color:rgba(255,255,255,0.6); }
+  .card-panel { min-height:4.5rem; }
+  .card-panel .pipeline-contacts { border-top:none; padding-top:0.25rem; }
+  .card-panel--placeholder { display:flex; align-items:center; min-height:4.5rem; }
+  .card-panel--placeholder p { font-family:'Barlow',sans-serif; font-size:12px;
+    color:rgba(255,255,255,0.2); font-style:italic; margin:0; }
+
   /* ── Team org chart ── */
   .team-org { margin:2.5rem 0; display:flex; flex-direction:column; align-items:center; gap:0; }
   .org-level { display:flex; gap:1rem; justify-content:center; width:100%; }
@@ -906,11 +923,24 @@
             </div>
           </div>
           <span class="pipeline-mandate-type">Programme Governance &amp; Digital Twin Phase 2</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
           <p class="pipeline-mandate-body">Governance recalibration as the programme transitions from Phase 2 cluster delivery to Phase 3 city establishment (2026–2035). Yardi adoption (September 2025) creates a three-way integration challenge between Yardi, Oracle Unifier, and SAP — unaddressed by any current advisor. Ivan designed the Oracle layer. Zero trust-building cycle required.</p>
-          <div class="pipeline-contacts">
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
             Manuel Chaure — Executive Director, Digital &amp; IT Strategy &amp; Governance<br>
             Abdullah Barakat — Executive Director, IT Business Relationship Management<br>
             Sreedhar Reddy Kadiveti — Senior Director, Engineering &amp; Development Business Solutions
+          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Direct · Incumbent</span>
@@ -928,14 +958,27 @@
             </div>
           </div>
           <span class="pipeline-mandate-type">Schedule Health &amp; Controls Advisory</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
           <p class="pipeline-mandate-body">Owner-side programme controls assessment — independent of EPC contractors. Oracle Analytics Cloud deployed for finance reporting; owner-side capital project PMIS is the open gap. NIC reporting requires reliable delivery data that the current EPC-managed structure cannot guarantee.</p>
           <p class="pipeline-mandate-body" style="margin-top:0.6rem;">Active pursuit context: an 18-month PMIS and EPMO advisory bid has been in progress at SAR — providing direct programme-level familiarity with their governance requirements, decision-making structure, and the specific data trust gaps the advisory mandate is designed to address. This is not a cold account.</p>
-          <div class="pipeline-contacts">
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
             Dr. Mishari Al Mishari — Deputy Director, NIC<br>
             Mohaimeed Bagabas — EPMO Manager<br>
             Mohammed AlShaia — Director, Strategic Management Office<br>
             Fahad Almutairi — SAR (role TBC)<br>
             Salamh Alenazi — SAR (role TBC)
+          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">EY Platform · Risk &amp; Assurance</span>
@@ -953,12 +996,25 @@
             </div>
           </div>
           <span class="pipeline-mandate-type">PMIS Governance Architecture</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
           <p class="pipeline-mandate-body">PMWeb deployed across a $120B+ national housing portfolio. Governance maturity question at this scale — whether the EPMO data architecture produces trustworthy portfolio-level intelligence — is the exact conversation Ivan has led at Qiddiya. Same problem. Larger scale. Mahmoud leads KSA activation from Month 6.</p>
-          <div class="pipeline-contacts">
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
             Hazem Alaily — Chief Program &amp; Project Management Officer<br>
             Hadi E. — Executive Director, EPMO<br>
             Roger Fatovic — Group Chief Projects Delivery Officer (Acting)<br>
             Mohammad Ajlouni — Director, EPMO &amp; Project Controls
+          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Direct · Network</span>
@@ -976,10 +1032,23 @@
             </div>
           </div>
           <span class="pipeline-mandate-type">Heritage Programme Governance</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
           <p class="pipeline-mandate-body">Mace Consult holds the sitewide PMC mandate ($63B programme, UNESCO heritage site). EY's advisory entry is at the owner-side governance layer above Mace — PMIS strategy, heritage asset information management, Digital Twin for a living heritage environment. No cold approach. Christopher Seymour (MD MEA, Mace Consult) is the direct relationship.</p>
-          <div class="pipeline-contacts">
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
             Entry via: Christopher Seymour — Managing Director MEA, Mace Consult<br>
             Antony Brania — Director, Mace Consult
+          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Mace Consult Partnership</span>
@@ -997,12 +1066,25 @@
             </div>
           </div>
           <span class="pipeline-mandate-type">Owner-Side Programme Intelligence &amp; PMIS Strategy</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
           <p class="pipeline-mandate-body">The largest airport infrastructure programme in the world — $30B, 57km², 6 runways, 9 terminals, 100M+ passengers by 2030. PIF-owned (KSIADC). Mace Consult holds the Delivery Partner mandate — the full range of PMO, programme management, cost and commercial management, and construction management services.</p>
           <p class="pipeline-mandate-body" style="margin-top:0.6rem;">EY's advisory entry is at the owner-side programme intelligence layer above Mace — independent PMIS strategy, schedule health governance, and capital controls advisory that KSIADC's leadership needs from a source with no delivery conflict of interest. Hard deadlines: Riyadh Expo 2030 and FIFA World Cup 2034 make delivery certainty advisory non-deferrable.</p>
-          <div class="pipeline-contacts">
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
             Marco Mejia — Acting CEO, KSIADC<br>
             Linda Schucroft — VP Innovation &amp; Guest Experience<br>
             Entry via: Christopher Seymour — Managing Director MEA, Mace Consult (personally signed the KSIADC delivery partner contract)
+          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Mace Consult Partnership</span>
@@ -1020,14 +1102,27 @@
             </div>
           </div>
           <span class="pipeline-mandate-type">Owner-Side Programme Intelligence &amp; Digital Twin Governance</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
           <p class="pipeline-mandate-body">Parsons holds the 25-month PMO contract. KSPF leadership needs an independent view above Parsons' delivery layer. Digital Twin actively in development — CEO confirmed. 2027 opening deadline. Seven named contacts across technology, operations, and data leadership — relationships grounded in a delivered Smart City Strategy and Enterprise Architecture engagement on this programme. Warm account.</p>
-          <div class="pipeline-contacts">
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
             Majed Alhudaib — CTO<br>
             Dale Chadwick — Chief Development Officer<br>
             Tom Jarvis — Head of Park Operations<br>
             Douglas Stagner — Operational Readiness Director<br>
             Ben Edmonds — Smart City Director<br>
             Abdulmalik Alsaleh — Chief Data Officer
+          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Direct · Network</span>
@@ -1045,12 +1140,25 @@
             </div>
           </div>
           <span class="pipeline-mandate-type">Owner-Side PMO &amp; Smart City Advisory</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
           <p class="pipeline-mandate-body">Three PMC firms — Bechtel, Turner Arabia, AECOM — three separate reporting chains, no single owner-side PMIS layer. Smart city strategy mandate above platform vendors. $38B programme with FIFA 2034 stadium interface and 2030 target. Senior escalation via Mohammed Alqahtani (Head Smart City &amp; AI, MIT-educated).</p>
-          <div class="pipeline-contacts">
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
             Mohammed Alqahtani — Head of Smart City &amp; AI (MIT)<br>
             Wail Balkhair — Executive Director, Asset Management<br>
             Faisal AlSayegh — Manager, Smart City &amp; AI<br>
             Abdullah Bafakih — Development Director
+          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Direct · Network</span>
@@ -1068,11 +1176,24 @@
             </div>
           </div>
           <span class="pipeline-mandate-type">Data Centre Programme Governance</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
           <p class="pipeline-mandate-body">30+ facilities, $26.2B financing secured, Stargate UAE partner. Turner &amp; Townsend holds the PMC role. NexOps operational platform (Presight AI) launched February 2026 — governance framework open. Construction-to-operations handover intelligence is the immediate mandate advisory gap.</p>
-          <div class="pipeline-contacts">
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
             Abdulmajeed Harmoodi — CTO<br>
             Kevin Ayling — Senior Director, Technical Program Management<br>
             Hassan Al Naqbi — CEO
+          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Direct · Network</span>
@@ -1090,10 +1211,23 @@
             </div>
           </div>
           <span class="pipeline-mandate-type">IOC Governance &amp; Operational Advisory</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
           <p class="pipeline-mandate-body">PIF-owned luxury tourism giga-programme — 100+ operators, 10+ integrated city management functions, geographic footprint comparable to Belgium. IOC Operating Model already delivered by Attila (Director, joining Month 9). His operational leadership relationships convert to a capital advisory and governance retainer as the programme transitions from construction to operations.</p>
-          <div class="pipeline-contacts">
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
             Via Attila Rab — IOC Operating Model delivery relationships with RSG operations leadership<br>
             Warm account from Month 9
+          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Direct · Network</span>
@@ -1111,10 +1245,23 @@
             </div>
           </div>
           <span class="pipeline-mandate-type">Owner-Side PMIS &amp; Capital Controls Advisory</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
           <p class="pipeline-mandate-body">Largest capital spender in KSA — $40B+ annual capex. Worley holds the GES+ 5-year engineering contract. EY advises the owner at the governance layer above Worley's engineering scope. SAP ↔ Oracle PMIS reconciliation is a confirmed structural problem across Aramco's capital portfolio — Ivan has solved this at Qiddiya. Highest single-engagement fee potential in the entire GCC market.</p>
-          <div class="pipeline-contacts">
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
             Entry via: Alex Silvermaster — Plan Practice Lead EMEA, Worley<br>
             Worley GES+ contract provides programme-level access to Aramco capital leadership
+          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Worley Partnership</span>
@@ -1132,10 +1279,23 @@
             </div>
           </div>
           <span class="pipeline-mandate-type">Programme Governance &amp; Capital Controls Advisory</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
           <p class="pipeline-mandate-body">PIF-owned. Bechtel is PMC. 6km², 246 exhibitors, 42M visitors, October 2030 hard deadline. Budget explicitly protected from PIF spending cuts. No advisory firm has been confirmed as programme governance lead — the owner-side assurance layer is an open mandate. EY's institutional relationships across PIF and government ministries are the entry route.</p>
-          <div class="pipeline-contacts">
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
             Talal H. AlMarri — CEO, Expo 2030 Riyadh (ERC)<br>
             Via EY platform · PIF advisory relationships
+          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">EY Platform · RFP</span>
@@ -1153,9 +1313,22 @@
             </div>
           </div>
           <span class="pipeline-mandate-type">Stadium Programme Governance &amp; Advisory</span>
+
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="overview">Overview</button>
+            <button class="card-tab" data-tab="opportunity">Opportunity</button>
+            <button class="card-tab" data-tab="connections">Connections</button>
+          </div>
+          <div class="card-panel" data-panel="overview">
           <p class="pipeline-mandate-body">Chaired by Crown Prince MBS. 15 stadiums (11 new) across 5 cities. Stadium costs under reassessment December 2025 — advisory urgency confirmed. Qiddiya and New Murabba both contain FIFA 2034 stadiums — Ivan holds programme-level knowledge on both sites already. Budget protected from PIF cuts. Highest politically visible mandate in the plan.</p>
-          <div class="pipeline-contacts">
+          </div>
+          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
+            <p>Opportunity context to be added.</p>
+          </div>
+          <div class="card-panel" data-panel="connections" style="display:none;">
+            <div class="pipeline-contacts">
             Via EY platform · programme intersections at Qiddiya (contained stadium) and New Murabba (Mukaab stadium interface)
+          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">EY Platform · Programme Intersect</span>
@@ -1506,6 +1679,24 @@
     }
 
     /* ============================================================
+       cardTabs
+       ============================================================ */
+    function cardTabs() {
+      document.querySelectorAll('.card-tab').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var card = tab.closest('.pipeline-card');
+          var target = tab.dataset.tab;
+          card.querySelectorAll('.card-tab').forEach(function(t) {
+            t.classList.toggle('active', t.dataset.tab === target);
+          });
+          card.querySelectorAll('.card-panel').forEach(function(p) {
+            p.style.display = p.dataset.panel === target ? '' : 'none';
+          });
+        });
+      });
+    }
+
+    /* ============================================================
        pipelineFilter
        ============================================================ */
     function pipelineFilter() {
@@ -1545,6 +1736,7 @@
       scrollCueHide();
       mobileMenu();
       pipelineFilter();
+      cardTabs();
     });
 
   </script>
