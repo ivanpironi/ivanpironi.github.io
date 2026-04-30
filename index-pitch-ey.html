@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ivan Pironi — Full business case for EY Capital Projects. Market, proof, team, pipeline, and revenue — built for the Carlos conversation.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ivan Pironi · Capital Projects · EY — Full Business Case</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a1a1a'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='700' fill='%23ffffff' letter-spacing='-0.5'>IP</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMLNJW4GDE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMLNJW4GDE');
+  </script>
+  <style>
+  /* === Deadline Timeline (Section 01) === */
+  .deadline-timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 3rem 0 2rem;
+    padding: 0 1rem;
+  }
+  .deadline-timeline::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 1rem;
+    right: 1rem;
+    height: 1px;
+    background: var(--muted);
+    opacity: 0.3;
+  }
+  .dl-point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .dl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .dl-labels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2px;
+  }
+  @media (max-width: 600px) {
+    .deadline-timeline {
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 0;
+    }
+    .deadline-timeline::before { display: none; }
+    .dl-point { flex-direction: row; align-items: center; gap: 12px; }
+    .dl-labels { align-items: flex-start; text-align: left; }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header id="site-header">
+    <!-- State 1: eyebrow only (visible over hero) -->
+    <div class="h-state1">Capital Projects · Full Business Case &nbsp;·&nbsp; EY Middle East</div>
+
+    <!-- State 2: full header (visible when scrolled) -->
+    <div class="h-state2">
+      <a class="header-identity" href="#" aria-label="Back to top">
+        <div class="header-avatar" aria-hidden="true"></div>
+        <div class="identity-text">
+          <span class="identity-name">Ivan Pironi</span>
+          <span class="identity-role">Capital Projects Advisory</span>
+        </div>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="#market"   data-nav="market">Market</a>
+        <a href="#proof"    data-nav="proof">Proof</a>
+        <a href="#team"     data-nav="team">Team</a>
+        <a href="#pipeline" data-nav="pipeline">Pipeline</a>
+        <a href="#revenue"  data-nav="revenue">Revenue</a>
+      </nav>
+      <button class="hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MOBILE NAV OVERLAY
+       ============================================================ -->
+  <div class="mobile-overlay" id="mobile-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
+    <button class="overlay-close" id="overlay-close" aria-label="Close navigation">×</button>
+    <nav class="overlay-nav">
+      <a href="#market"   data-nav="market">Market</a>
+      <a href="#proof"    data-nav="proof">Proof</a>
+      <a href="#team"     data-nav="team">Team</a>
+      <a href="#pipeline" data-nav="pipeline">Pipeline</a>
+      <a href="#revenue"  data-nav="revenue">Revenue</a>
+    </nav>
+  </div>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" id="hero" aria-label="Hero">
+    <span class="hero-eyebrow">Capital Projects Advisory &nbsp;·&nbsp; Full Business Case &nbsp;·&nbsp; EY Middle East</span>
+
+    <div class="hero-text">
+      <span class="hero-name">Ivan</span>
+      <span class="hero-name">Pironi</span>
+
+      <div class="hero-rule" aria-hidden="true"></div>
+
+      <p class="hero-statement">
+        What EY's Capital Projects practice gets.<br>
+        A named pipeline. A delivery team.<br>
+        <em>A practice — not a hire.</em>
+      </p>
+
+      <div class="hero-tags">
+        <span class="hero-tag">GCC Sovereign Advisory</span>
+        <span class="hero-tag">Programme Governance &amp; Controls</span>
+        <span class="hero-tag">24 Years GCC Experience</span>
+        <span class="hero-tag">PMO &amp; Delivery Excellence</span>
+        <span class="hero-tag">PMIS Strategy</span>
+        <span class="hero-tag">Schedule Health</span>
+        <span class="hero-tag">Cost Control</span>
+        <span class="hero-tag">Programme Recovery</span>
+        <span class="hero-tag">Oracle PMIS</span>
+        <span class="hero-tag">Digital Twin</span>
+        <span class="hero-tag">ISO 19650</span>
+        <span class="hero-tag">PMP®</span>
+        <span class="hero-tag">PRINCE2®</span>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="scroll-cue" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 9L12 15L18 9" stroke="#E8C84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 01 — THE MARKET
+       ============================================================ -->
+  <section id="market" data-section="market">
+    <div class="container">
+
+      <span class="section-eyebrow reveal">01 · The Market &amp; The Opportunity</span>
+
+      <h2 class="section-headline reveal">
+        The market is real.<br>
+        <em>The timing is now.</em>
+      </h2>
+
+      <p class="section-sub reveal">
+        The GCC is the fastest-growing advisory market in the world.
+        Capital projects sits at its centre. Five forces are driving
+        non-deferrable demand — converging at this moment.
+      </p>
+
+      <!-- Stat strip -->
+      <div class="stat-strip reveal">
+        <div class="stat-cell">
+          <div class="stat-num" data-counter data-val="8.3" data-prefix="$" data-suffix="B">$8.3B</div>
+          <div class="stat-label">GCC Consulting Market 2025</div>
+          <div class="stat-sub">12% growth per annum — twice the rate of North America. Saudi Arabia alone: $4.9B at 13% growth.</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" data-counter data-val="1.65" data-prefix="$" data-suffix="T">$1.65T</div>
+          <div class="stat-label">Saudi Sovereign Programme Pipeline</div>
+          <div class="stat-sub">2030 Expo. 2034 FIFA World Cup. Non-negotiable political deadlines that make governance advisory non-deferrable spend.</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">$400–700M</div>
+          <div class="stat-label">Premium Advisory Sub-Segment</div>
+          <div class="stat-sub">Programme governance, PMIS strategy, Digital Twin readiness. Growing rapidly. No Big Four firm owns it at the technical-advisory intersection.</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">$2–4M</div>
+          <div class="stat-label">Year 1 Revenue · Base to Upside</div>
+          <div class="stat-sub">Less than 1% of the addressable premium sub-segment. Built bottom-up from 4–5 named engagements across UAE, KSA, and Qatar.</div>
+        </div>
+      </div><!-- /.stat-strip -->
+
+      <!-- Five market forces -->
+      <div class="market-forces reveal">
+        <div class="force">
+          <span class="force-num">01</span>
+          <div>
+            <div class="force-title">Saudi Arabia's maturity shift</div>
+            <p class="force-body">Sovereign clients are no longer buying ambition. They are buying proof of return on investment. Programme governance and delivery intelligence advisory is now the highest-value spend — not a discretionary cost. This is precisely when technical advisory credibility commands premium rates over narrative consulting.</p>
+          </div>
+        </div>
+        <div class="force">
+          <span class="force-num">02</span>
+          <div>
+            <div class="force-title">Hard political deadlines that cannot move</div>
+            <p class="force-body">2030 Expo. 2034 FIFA World Cup. These are national commitments. Programme governance advisory on these programmes is mission-critical, non-deferrable spend — awarded to advisors who demonstrate delivery authority, not only strategic thinking.</p>
+          </div>
+        </div>
+        <div class="force">
+          <span class="force-num">03</span>
+          <div>
+            <div class="force-title">The raised bar for advisory independence</div>
+            <p class="force-body">KSA Royal Commissions and PIF-affiliated entities now require demonstrated independence from EPC and vendor agendas, and verifiable delivery authority. These are qualifying criteria — not differentiators. The advisor who cannot meet them does not get the conversation.</p>
+          </div>
+        </div>
+        <div class="force">
+          <span class="force-num">04</span>
+          <div>
+            <div class="force-title">Digital transformation spend intersects directly</div>
+            <p class="force-body">Two thirds of GCC organisations plan to allocate over 30% of consulting budgets to digital transformation in 2025. That spend intersects directly with PMIS intelligence, programme controls, and delivery governance — this practice's core territory.</p>
+          </div>
+        </div>
+        <div class="force">
+          <span class="force-num">05</span>
+          <div>
+            <div class="force-title">A structural pipeline — not a cyclical one</div>
+            <p class="force-body">$1.1 trillion in funded GCC infrastructure investment beyond 2030. The advisory pipeline is structural, multi-decade, and expanding. A practice built now compounds for years.</p>
+          </div>
+        </div>
+      </div><!-- /.market-forces -->
+
+      <!-- Hard deadline timeline -->
+      <div class="deadline-timeline reveal">
+
+        <div class="dl-point">
+          <div class="dl-dot" style="background:var(--muted);border:2px solid var(--muted);"></div>
+          <div class="dl-labels">
+            <span class="tl-period">2026</span>
+            <span class="tl-org">Now</span>
+          </div>
+        </div>
+
+        <div class="dl-point">
+          <div class="dl-dot" style="background:transparent;border:2px solid var(--muted);"></div>
+          <div class="dl-labels">
+            <span class="tl-period">2029</span>
+            <span class="tl-org">Asian Winter Games<br><em style="font-style:italic;color:var(--muted);font-size:11px;">postponed</em></span>
+          </div>
+        </div>
+
+        <div class="dl-point">
+          <div class="dl-dot" style="width:14px;height:14px;background:var(--accent);border:2px solid var(--accent);box-shadow:0 0 0 4px rgba(232,200,74,0.2);"></div>
+          <div class="dl-labels">
+            <span class="tl-period" style="color:var(--accent)">2030</span>
+            <span class="tl-org">Expo Saudi Arabia</span>
+            <span class="callout-label" style="margin-top:6px;">Hard Deadline</span>
+          </div>
+        </div>
+
+        <div class="dl-point">
+          <div class="dl-dot" style="width:14px;height:14px;background:var(--accent);border:2px solid var(--accent);box-shadow:0 0 0 4px rgba(232,200,74,0.2);"></div>
+          <div class="dl-labels">
+            <span class="tl-period" style="color:var(--accent)">2034</span>
+            <span class="tl-org">FIFA World Cup</span>
+            <span class="callout-label" style="margin-top:6px;">Hard Deadline</span>
+          </div>
+        </div>
+
+      </div><!-- /.deadline-timeline -->
+
+      <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-top:2rem;">
+        Source: Source Global Research, March 2025 &nbsp;·&nbsp; IMARC Group &nbsp;·&nbsp; MEED/GlobalData
+      </p>
+
+      <p class="section-pull reveal">
+        The window is open now. EY's existing sovereign relationships
+        and direct programme-level credibility — built through named
+        engagements across KSA, UAE, and Qatar — represent two
+        independent reasons to move. The next 12–18 months determine
+        whether EY leads this market or reacts to it.
+      </p>
+
+    </div>
+  </section>
+
+  <script>
+    'use strict';
+
+    /* ============================================================
+       headerTransition
+       ============================================================ */
+    function headerTransition() {
+      var header = document.getElementById('site-header');
+      if (!header) return;
+      function onScroll() {
+        header.classList.toggle('scrolled', window.scrollY > 100);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    /* ============================================================
+       navActiveState
+       ============================================================ */
+    function navActiveState() {
+      var sections = document.querySelectorAll('section[data-section]');
+      var allLinks = document.querySelectorAll('[data-nav]');
+      if (!sections.length || !allLinks.length) return;
+      function setActive(id) {
+        allLinks.forEach(function(link) {
+          link.classList.toggle('active', link.dataset.nav === id);
+        });
+      }
+      var navObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { setActive(entry.target.dataset.section); }
+        });
+      }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+      sections.forEach(function(s) { navObs.observe(s); });
+    }
+
+    /* ============================================================
+       scrollReveal
+       ============================================================ */
+    function scrollReveal() {
+      var items = document.querySelectorAll('.reveal');
+      if (!items.length) return;
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function(el) { obs.observe(el); });
+    }
+
+    /* ============================================================
+       timelineReveal — no-op if #proof-timeline absent
+       ============================================================ */
+    function timelineReveal() {
+      var timeline = document.getElementById('proof-timeline');
+      if (!timeline) return;
+      var cards = timeline.querySelectorAll('.proof-card');
+      var obs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          cards.forEach(function(card, i) {
+            setTimeout(function() { card.classList.add('revealed'); }, i * 150);
+          });
+          obs.unobserve(timeline);
+        }
+      }, { threshold: 0.1 });
+      obs.observe(timeline);
+    }
+
+    /* ============================================================
+       accordionInit — no-op if no .accordion-item present
+       ============================================================ */
+    function accordionInit() {
+      var items = document.querySelectorAll('.accordion-item');
+      if (!items.length) return;
+      items.forEach(function(item) {
+        var hdr  = item.querySelector('.accordion-header');
+        var icon = item.querySelector('.accordion-icon');
+        if (!hdr) return;
+        hdr.addEventListener('click', function() {
+          var isOpen = item.classList.contains('open');
+          items.forEach(function(other) {
+            other.classList.remove('open');
+            var oi = other.querySelector('.accordion-icon');
+            if (oi) oi.textContent = '+';
+          });
+          if (!isOpen) { item.classList.add('open'); if (icon) icon.textContent = '×'; }
+        });
+        hdr.setAttribute('tabindex', '0');
+        hdr.setAttribute('role', 'button');
+        hdr.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hdr.click(); }
+        });
+      });
+    }
+
+    /* ============================================================
+       barAnimation — no-op if #engagement-bars absent
+       ============================================================ */
+    function barAnimation() {
+      var container = document.getElementById('engagement-bars');
+      if (!container) return;
+      var bars = container.querySelectorAll('.bar-fill');
+      var obs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          bars.forEach(function(bar, i) {
+            setTimeout(function() { bar.style.width = bar.dataset.width || '0%'; }, i * 100);
+          });
+          obs.unobserve(container);
+        }
+      }, { threshold: 0.3 });
+      obs.observe(container);
+    }
+
+    /* ============================================================
+       scrollCueHide
+       ============================================================ */
+    function scrollCueHide() {
+      var cue = document.querySelector('.scroll-cue');
+      if (!cue) return;
+      function onScroll() {
+        if (window.scrollY > 120) {
+          cue.classList.add('hidden');
+          window.removeEventListener('scroll', onScroll);
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    /* ============================================================
+       countUp — no-op if no [data-counter] present
+       ============================================================ */
+    function countUp() {
+      var els = document.querySelectorAll('[data-counter]');
+      if (!els.length) return;
+      function animateEl(el) {
+        var target = parseFloat(el.dataset.val);
+        var prefix = el.dataset.prefix || '';
+        var suffix = el.dataset.suffix || '';
+        var dec    = (el.dataset.val.split('.')[1] || '').length;
+        var duration = 1400; var start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = prefix + (ease * target).toFixed(dec) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { animateEl(entry.target); obs.unobserve(entry.target); }
+        });
+      }, { threshold: 0.5 });
+      els.forEach(function(el) { obs.observe(el); });
+    }
+
+    /* ============================================================
+       mobileMenu
+       ============================================================ */
+    function mobileMenu() {
+      var hamburger = document.getElementById('hamburger-btn');
+      var overlay   = document.getElementById('mobile-overlay');
+      var closeBtn  = document.getElementById('overlay-close');
+      if (!hamburger || !overlay) return;
+      function openMenu() {
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        hamburger.setAttribute('aria-expanded', 'true');
+        if (closeBtn) closeBtn.focus();
+      }
+      function closeMenu() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+      }
+      hamburger.addEventListener('click', openMenu);
+      if (closeBtn) { closeBtn.addEventListener('click', closeMenu); }
+      overlay.querySelectorAll('a[data-nav]').forEach(function(link) {
+        link.addEventListener('click', function() { closeMenu(); });
+      });
+      overlay.addEventListener('click', function(e) { if (e.target === overlay) closeMenu(); });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) { closeMenu(); }
+      });
+    }
+
+    /* ============================================================
+       timelineItemsAnimate
+       ============================================================ */
+    function timelineItemsAnimate() {
+      var container = document.querySelector('.col-timeline');
+      if (!container) return;
+      var items = container.querySelectorAll('.tl-item');
+      if (!items.length) return;
+      var obs = new IntersectionObserver(function(entries) {
+        if (!entries[0].isIntersecting) return;
+        items.forEach(function(item, i) {
+          setTimeout(function() { item.classList.add('tl-visible'); }, i * 140);
+        });
+        obs.unobserve(container);
+      }, { threshold: 0.1 });
+      obs.observe(container);
+    }
+
+    /* ============================================================
+       Init — DOMContentLoaded
+       ============================================================ */
+    document.addEventListener('DOMContentLoaded', function() {
+      headerTransition();
+      navActiveState();
+      scrollReveal();
+      timelineReveal();
+      timelineItemsAnimate();
+      accordionInit();
+      barAnimation();
+      countUp();
+      scrollCueHide();
+      mobileMenu();
+    });
+
+  </script>
+
+</body>
+</html>
