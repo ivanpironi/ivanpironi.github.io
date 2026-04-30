@@ -114,6 +114,20 @@
   .pipeline-meta { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; border-top:1px solid rgba(255,255,255,0.06); padding-top:0.75rem; }
   .pipeline-entry { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); border:1px solid rgba(255,255,255,0.12); border-radius:2px; padding:2px 7px; }
   .pipeline-fee { font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:600; color:var(--text); letter-spacing:0.02em; }
+  /* ── Dual pipeline diagram ── */
+  .dual-pipeline { display:grid; grid-template-columns:1fr auto 1fr; gap:2rem; margin:2.5rem 0; align-items:start; }
+  .dp-column { background:var(--surface); border:1px solid rgba(255,255,255,0.06); border-radius:4px; padding:1.5rem; }
+  .dp-header { margin-bottom:1rem; padding-bottom:0.75rem; border-bottom:1px solid rgba(255,255,255,0.06); }
+  .dp-items { display:flex; flex-direction:column; gap:0.6rem; }
+  .dp-item { font-family:'Barlow',sans-serif; font-size:13px; color:var(--muted); line-height:1.5; padding-left:1rem; position:relative; }
+  .dp-item::before { content:'—'; position:absolute; left:0; color:var(--accent); font-size:10px; top:3px; }
+  .dp-divider { display:flex; flex-direction:column; align-items:center; gap:0.75rem; padding-top:1.5rem; }
+  .dp-divider-line { width:1px; flex:1; min-height:40px; background:rgba(255,255,255,0.12); }
+  .dp-divider-label { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); text-align:center; line-height:1.6; }
+  @media (max-width:768px) { .dual-pipeline { grid-template-columns:1fr; } .dp-divider { flex-direction:row; padding-top:0; } .dp-divider-line { width:100%; height:1px; min-height:unset; flex:1; } }
+  /* ── Accordion body text fallback ── */
+  .accordion-body p { font-family:'Barlow',sans-serif; font-size:15px; color:var(--muted); line-height:1.7; }
+  .accordion-body p + p { margin-top:0.75rem; }
   </style>
 </head>
 <body>
@@ -989,6 +1003,317 @@
     </div>
   </section>
 
+  <!-- ============================================================
+       SECTION 06 — THE REVENUE MODEL
+       ============================================================ -->
+  <section id="revenue" data-section="revenue">
+    <div class="container">
+
+      <span class="section-eyebrow reveal">06 · The Revenue Model</span>
+
+      <h2 class="section-headline reveal">
+        Bottom-up. Honest.<br>
+        <em>Defensible.</em>
+      </h2>
+
+      <p class="section-sub reveal">
+        Four to five named engagements. Specific fee ranges.
+        Stated assumptions. This is not market-share speculation
+        — it is a client-by-client revenue build across two
+        activation paths running simultaneously.
+      </p>
+
+      <!-- Stat strip -->
+      <div class="stat-strip reveal">
+        <div class="stat-cell">
+          <div class="stat-num">$2M</div>
+          <div class="stat-label">Year 1 Base</div>
+          <div class="stat-sub">2 anchor engagements + 2 shorter mandates. Requires Qiddiya to convert by Month 4 and King Salman Park by Month 8.</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">$4M</div>
+          <div class="stat-label">Year 1 Upside</div>
+          <div class="stat-sub">+1 KSA governance engagement (ROSHN or New Murabba) + Worley-sourced energy client entry in H2 Year 1.</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">$6–8M</div>
+          <div class="stat-label">Year 2 Target</div>
+          <div class="stat-sub">Retainers converting + team at 6–8 FTE + second KSA anchor. Red Sea Global enters the pipeline via Attila (Month 9).</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">$10M+</div>
+          <div class="stat-label">Year 3 Potential</div>
+          <div class="stat-sub">Sovereign retainers + Saudi Aramco / ADNOC via Worley partnership + Digital Twin recurring revenue stream.</div>
+        </div>
+      </div><!-- /.stat-strip -->
+
+      <!-- Revenue engagement bars -->
+      <div class="engagement-bars reveal" id="revenue-bars">
+
+        <div class="bar-row">
+          <span class="bar-label">Qiddiya — governance &amp; Digital Twin scoping</span>
+          <div class="bar-track"><div class="bar-fill" data-width="85%"></div></div>
+          <span class="bar-fee">$400K–$800K · Direct · Incumbent</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">King Salman Park — owner-side advisory</span>
+          <div class="bar-track"><div class="bar-fill" data-width="75%"></div></div>
+          <span class="bar-fee">$600K–$1.2M · Network · Month 9</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">ROSHN — PMIS governance advisory</span>
+          <div class="bar-track"><div class="bar-fill" data-width="60%"></div></div>
+          <span class="bar-fee">$400K–$800K · Direct · Network</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">New Murabba — owner PMO advisory</span>
+          <div class="bar-track"><div class="bar-fill" data-width="55%"></div></div>
+          <span class="bar-fee">$500K–$1M · Direct · Network</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">SAR — schedule health assessment</span>
+          <div class="bar-track"><div class="bar-fill" data-width="40%"></div></div>
+          <span class="bar-fee">$150K–$400K · EY platform</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">Saudi Aramco / ADNOC — via Worley</span>
+          <div class="bar-track"><div class="bar-fill" data-width="50%"></div></div>
+          <span class="bar-fee">$1M–$2M · Year 2 · Worley partnership</span>
+        </div>
+
+      </div><!-- /#revenue-bars -->
+
+      <!-- Dual pipeline diagram -->
+      <div class="dual-pipeline reveal">
+
+        <div class="dp-column">
+          <div class="dp-header">
+            <span class="callout-label">EY Platform Activation</span>
+          </div>
+          <div class="dp-items">
+            <div class="dp-item">Audit-to-advisory conversion (SAR, ADNOC)</div>
+            <div class="dp-item">Risk &amp; assurance surfaces programme distress → recovery mandate</div>
+            <div class="dp-item">Technology consulting → capital advisory pull-through</div>
+            <div class="dp-item">Multi-service-line revenue: every Capital Projects mandate creates Risk, Tax, and Technology work</div>
+          </div>
+        </div>
+
+        <div class="dp-divider">
+          <div class="dp-divider-line"></div>
+          <span class="dp-divider-label">Both pipelines<br>Year 1</span>
+          <div class="dp-divider-line"></div>
+        </div>
+
+        <div class="dp-column">
+          <div class="dp-header">
+            <span class="callout-label">Direct Network Origination</span>
+          </div>
+          <div class="dp-items">
+            <div class="dp-item">Qiddiya — incumbent, trust cycle closed</div>
+            <div class="dp-item">King Salman Park — 7 senior contacts, warm via team from Month 9</div>
+            <div class="dp-item">ROSHN — EPMO leadership, named contacts confirmed</div>
+            <div class="dp-item">New Murabba — Smart City &amp; Asset Management leads</div>
+            <div class="dp-item">Mace Consult → Diriyah, King Salman Airport</div>
+            <div class="dp-item">Worley → Aramco, ADNOC, QatarEnergy, NEOM</div>
+          </div>
+        </div>
+
+      </div><!-- /.dual-pipeline -->
+
+      <!-- Honest caveat -->
+      <div class="multiplier reveal" style="border-left:2px solid var(--accent);border-radius:0 4px 4px 0;">
+        <span class="multiplier-label">Stated assumptions — for the EY partnership</span>
+        <p class="multiplier-body" style="margin-top:1rem;">
+          The $2M base case requires Qiddiya to convert by
+          Month 4 and King Salman Park to convert by Month 8.
+          Both are realistic — neither is guaranteed. The $4M
+          upside requires ROSHN and a Worley-sourced engagement
+          to close in Year 1, which depends on the Worley
+          partnership formalising quickly.
+        </p>
+        <p class="multiplier-body" style="margin-top:0.75rem;">
+          Carlos's internal sponsorship and rapid integration
+          into EY's go-to-market process are the single biggest
+          variable in Year 1. The pipeline is real.
+          The activation speed depends on EY's platform —
+          not Ivan's network.
+        </p>
+      </div>
+
+      <p class="section-pull reveal">
+        Year 1 is built on two activation paths running
+        simultaneously — EY's platform conversion and direct
+        programme-level origination from named sovereign
+        delivery. The commercial model is a practice with P&amp;L
+        accountability and team leverage. Not an individual
+        contributor role.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 07 — THE CLOSE
+       ============================================================ -->
+  <section id="close" data-section="close">
+    <div class="container">
+
+      <span class="section-eyebrow reveal">07 · Three Questions · Three Answers</span>
+
+      <h2 class="section-headline reveal">
+        Is the market real?<br>
+        Is the revenue credible?<br>
+        <em>Is the profile rare?</em>
+      </h2>
+
+      <!-- Three accordion items -->
+      <div class="reveal">
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>Is the market real and large enough to justify this investment?</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Yes. The GCC consulting market is $8.3 billion
+            at 12% growth. The Saudi programme pipeline is
+            $1.65 trillion. Hard delivery deadlines create
+            non-discretionary governance advisory demand.
+            KSA sovereign clients are raising the bar on
+            Big Four advisory relationships — independence,
+            delivery authority, and technical credibility are
+            now qualifying criteria. The capital project advisory
+            space at the PMIS and Digital Twin intersection is
+            growing rapidly and commands premium advisory rates.
+            EY's trusted position with sovereign owners is the
+            ideal platform from which to compete for it.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>Is the revenue case credible at $2–4M in Year 1?</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Yes. Built bottom-up from specific engagement
+            types, fee ranges, and activation paths — mapped
+            in Section 06. Four to five projects across UAE,
+            KSA, and Qatar, each activated through EY's
+            existing client relationships or the established
+            professional network. The $2M base case requires
+            two anchor engagements and two shorter projects.
+            The $4M upside adds one further KSA governance
+            engagement. Year 1 is realistic with strong EY
+            internal sponsorship and rapid onboarding into
+            EY's go-to-market process — ambitious without it.
+            That is the honest assessment.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>Is the profile genuinely rare — and is there proof it is real?</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Yes. The profile combines governance authority,
+            lifecycle architecture understanding, and sovereign
+            delivery experience within a single advisory
+            trajectory. The full Oracle PMIS stack — Unifier,
+            P6, Aconex, SAP integration — the full Digital Twin
+            chain — ISO 19650, CDE, 4D, 5D, Nvidia Omniverse,
+            IoT — and 10+ continuous years of sovereign programme
+            delivery across UAE, KSA, and Qatar: held in a single
+            profile, with professional services commercial
+            experience to convert it into EY revenue from day one.</p>
+            <p style="margin-top:0.75rem;">
+            The Qiddiya engagement is the proof — the full
+            advisory chain executed end-to-end on a live PIF
+            giga-programme. One engagement. Five stages.
+            Every question answered.
+            </p>
+          </div>
+        </div>
+
+      </div><!-- /.reveal wrapper -->
+
+      <!-- Cross-links -->
+      <div class="sales-evidence reveal" style="justify-content:center;gap:3rem;flex-wrap:wrap;">
+        <a href="index-short-ey.html"
+           style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;">
+          ← Executive summary
+        </a>
+        <a href="index-long-ey.html"
+           style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;">
+          Technical depth — full business case →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+
+      <!-- Identity -->
+      <div>
+        <span class="footer-name">Ivan Pironi</span>
+        <span class="footer-role">Capital Projects Advisory</span>
+      </div>
+
+      <!-- Contact details -->
+      <div class="footer-contacts">
+
+        <a class="footer-contact" href="mailto:ivan.pironi@gmail.com">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M22 7l-10 7L2 7"/>
+          </svg>
+          ivan.pironi@gmail.com
+        </a>
+
+        <a class="footer-contact" href="tel:+971545831119">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          +971 54 583 1119
+        </a>
+
+        <a class="footer-contact" href="https://linkedin.com/in/ivanpironi" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          linkedin.com/in/ivanpironi
+        </a>
+
+        <span class="footer-contact">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+            <circle cx="12" cy="9" r="2"/>
+          </svg>
+          Dubai &nbsp;·&nbsp; UAE &nbsp;·&nbsp; April 2026
+        </span>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Confidential — prepared for EY Capital Projects Leadership</span>
+      <a href="index-short-ey.html" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;">Executive summary →</a>
+    </div>
+  </footer>
+
   <script>
     'use strict';
 
@@ -1088,10 +1413,11 @@
     }
 
     /* ============================================================
-       barAnimation — no-op if #engagement-bars absent
+       barAnimation — animates any .bar-fill container by id
        ============================================================ */
-    function barAnimation() {
-      var container = document.getElementById('engagement-bars');
+    function barAnimation(containerId) {
+      var id = containerId || 'engagement-bars';
+      var container = document.getElementById(id);
       if (!container) return;
       var bars = container.querySelectorAll('.bar-fill');
       var obs = new IntersectionObserver(function(entries) {
@@ -1230,7 +1556,8 @@
       timelineReveal();
       timelineItemsAnimate();
       accordionInit();
-      barAnimation();
+      barAnimation('engagement-bars');
+      barAnimation('revenue-bars');
       countUp();
       scrollCueHide();
       mobileMenu();
