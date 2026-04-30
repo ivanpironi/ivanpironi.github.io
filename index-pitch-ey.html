@@ -61,7 +61,41 @@
   .phase-badge--1 { color:#185FA5; border-color:#185FA5; background:rgba(24,95,165,0.08); }
   .phase-badge--2 { color:#0F6E56; border-color:#0F6E56; background:rgba(15,110,86,0.08); }
   .phase-badge--3 { color:#854F0B; border-color:#854F0B; background:rgba(133,79,11,0.08); }
+  /* ── Team member photos ── */
+  .team-photo-wrap { width:100%; display:flex; justify-content:center; margin-bottom:1.25rem; }
+  .team-photo { width:88px; height:88px; border-radius:50%; object-fit:cover; object-position:center top; border:2px solid rgba(255,255,255,0.10); background:var(--surface); display:block; }
+  .team-photo--lead { border-color:var(--accent); box-shadow:0 0 0 3px rgba(232,200,74,0.15); }
+  .team-photo-placeholder { width:88px; height:88px; border-radius:50%; border:2px solid rgba(255,255,255,0.10); background:var(--surface); display:flex; align-items:center; justify-content:center; font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:600; letter-spacing:0.04em; color:rgba(255,255,255,0.35); flex-shrink:0; }
+  .team-photo-placeholder--lead { border-color:var(--accent); box-shadow:0 0 0 3px rgba(232,200,74,0.15); color:var(--accent); }
+  /* Portrait-first card adjustments */
+  .team-card { align-items:center; text-align:center; }
+  .team-card .phase-label-text { text-align:center; }
+  .team-card .tl-proof { justify-content:center; }
+  .team-card .phase-item { text-align:left; }
+  .team-card .phase-item strong { display:block; margin-bottom:2px; }
   </style>
+<!--
+  TEAM PHOTOS — HOW TO ADD REAL IMAGES
+  ─────────────────────────────────────
+  When a real photo is ready for any team member:
+
+  1. Crop the photo to square format (1:1 ratio),
+     minimum 200×200px, ideally 400×400px.
+
+  2. Save as .jpg, filename exactly:
+     ivan-pironi.jpg
+     attila-rab.jpg
+     mahmoud-abuqalbain.jpg
+     elie-koueik.jpg
+     mohit-goyal.jpg
+
+  3. Upload to: assets/img/team/
+
+  4. The placeholder (initials circle) will automatically
+     hide when the real image loads successfully.
+     No code changes required.
+  ─────────────────────────────────────
+-->
 </head>
 <body>
 
@@ -212,6 +246,10 @@
 
         <!-- Card 1: Ivan Pironi -->
         <div class="phase-cell team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo team-photo--lead" src="assets/img/team/ivan-pironi.jpg" alt="Ivan Pironi" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="team-photo-placeholder team-photo-placeholder--lead" style="display:none;">IP</div>
+          </div>
           <span class="phase-label-text">SM → Partner-track · Practice Lead · Day 1</span>
           <div class="phase-title">Ivan Pironi</div>
           <div class="phase-item">
@@ -239,6 +277,10 @@
 
         <!-- Card 2: Attila Rab -->
         <div class="phase-cell team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="assets/img/team/attila-rab.jpg" alt="Attila Rab" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="team-photo-placeholder" style="display:none;">AR</div>
+          </div>
           <span class="phase-label-text">Director · Month 9 · Riyadh-based</span>
           <div class="phase-title">Attila Rab</div>
           <div class="phase-item">
@@ -268,6 +310,10 @@
 
         <!-- Card 3: Mahmoud Abuqalbain -->
         <div class="phase-cell team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="assets/img/team/mahmoud-abuqalbain.jpg" alt="Mahmoud Abuqalbain" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="team-photo-placeholder" style="display:none;">MA</div>
+          </div>
           <span class="phase-label-text">Senior Manager · Month 6 · KSA Market Lead</span>
           <div class="phase-title">Mahmoud Abuqalbain</div>
           <div class="phase-item">
@@ -296,6 +342,10 @@
 
         <!-- Card 4: Elie Koueik -->
         <div class="phase-cell team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="assets/img/team/elie-koueik.jpg" alt="Elie Koueik" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="team-photo-placeholder" style="display:none;">EK</div>
+          </div>
           <span class="phase-label-text">Manager · Month 4 · PMO Delivery Lead</span>
           <div class="phase-title">Elie Koueik</div>
           <div class="phase-item">
@@ -322,6 +372,10 @@
 
         <!-- Card 5: Mohit Goyal -->
         <div class="phase-cell team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="assets/img/team/mohit-goyal.jpg" alt="Mohit Goyal" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="team-photo-placeholder" style="display:none;">MG</div>
+          </div>
           <span class="phase-label-text">Manager · Month 5 · PMIS &amp; Cost Control</span>
           <div class="phase-title">Mohit Goyal</div>
           <div class="phase-item">
