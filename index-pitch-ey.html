@@ -92,6 +92,131 @@
   .team-card .tl-proof { justify-content:center; }
   .team-card .phase-item { text-align:left; }
   .team-card .phase-item strong { display:block; margin-bottom:2px; }
+
+  /* ── Card expanded content ── */
+  .card-section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 5px;
+    display: block;
+  }
+  .pipeline-overview {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  .pipeline-opps {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  .pipeline-opp-item {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    padding-left: 10px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .pipeline-opp-item::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 10px;
+  }
+  .pipeline-opp-fee {
+    font-size: 10px;
+    color: rgba(255,255,255,0.3);
+    margin-left: 4px;
+  }
+  .card-click-hint {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.2);
+    text-align: right;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  /* ── Pipeline overlay ── */
+  .pipeline-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.78);
+    z-index: 9000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .pipeline-overlay.open {
+    display: flex;
+  }
+  .pipeline-overlay-card {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    max-width: 680px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 28px;
+    position: relative;
+    animation: overlayIn .2s ease;
+  }
+  @keyframes overlayIn {
+    from { opacity:0; transform:scale(.97); }
+    to   { opacity:1; transform:scale(1); }
+  }
+  .overlay-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.6);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  .overlay-close-btn:hover { background: rgba(255,255,255,0.14); color: var(--text); }
+  .ov-name { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:700; color:var(--text); margin-bottom:4px; padding-right:40px; }
+  .ov-meta { font-family:'Barlow',sans-serif; font-size:12px; color:rgba(255,255,255,0.4); margin-bottom:12px; line-height:1.5; }
+  .ov-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:18px; }
+  .ov-section { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.09em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:8px; display:block; margin-top:18px; }
+  .ov-overview { background:rgba(255,255,255,0.04); border-radius:6px; padding:14px; font-family:'Barlow',sans-serif; font-size:13px; color:rgba(255,255,255,0.6); line-height:1.7; }
+  .ov-overview strong { color:var(--text); font-weight:500; }
+  .ov-opps { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .ov-opp { background:rgba(255,255,255,0.04); border-radius:6px; padding:12px; }
+  .ov-opp-title { font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; color:var(--text); margin-bottom:5px; }
+  .ov-opp-body { font-family:'Barlow',sans-serif; font-size:12px; color:rgba(255,255,255,0.5); line-height:1.55; }
+  .ov-opp-fee { font-family:'DM Mono',monospace; font-size:11px; color:var(--accent); margin-top:8px; }
+  .ov-contacts { border:1px solid rgba(255,255,255,0.08); border-radius:6px; overflow:hidden; }
+  .ov-contact { font-family:'Barlow',sans-serif; font-size:12px; color:rgba(255,255,255,0.55); padding:8px 12px; border-bottom:1px solid rgba(255,255,255,0.06); line-height:1.4; }
+  .ov-contact:last-child { border-bottom:none; }
+  .ov-footer { display:flex; justify-content:space-between; align-items:center; margin-top:18px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.08); }
+  .ov-entry { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.35); border:1px solid rgba(255,255,255,0.12); border-radius:2px; padding:3px 8px; }
+  .ov-fee { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:700; color:var(--text); }
+  @media (max-width:600px) {
+    .ov-opps { grid-template-columns:1fr; }
+    .pipeline-overlay-card { padding:20px; }
+  }
   </style>
 <!--
   TEAM PHOTOS — HOW TO ADD REAL IMAGES
@@ -873,29 +998,32 @@
 
         <div class="phase-cell">
           <span class="phase-label-text">Phase 1 · Direct</span>
-          <div class="phase-title">First mandates — now</div>
-          <div class="phase-item">Qiddiya governance extension — incumbent, zero trust cycle</div>
-          <div class="phase-item">SAR schedule health — EY platform entry via risk &amp; assurance</div>
-          <div class="phase-item">Team: Elie (M4) + Mohit (M5) — delivery running, Ivan originating</div>
-          <div class="phase-label-text" style="margin-top:1rem;">Target: 1 live · 2 in pursuit · $400–800K billed</div>
+          <div class="phase-title">Incumbent relationships and active RFPs. No warm-up required.</div>
+          <div class="phase-item">Qiddiya — incumbent advisor on the largest PIF entertainment giga-programme. Zero trust cycle. First mandate proposed immediately.</div>
+          <div class="phase-item">SAR — 18 months of bid engagement on their PMIS/EPMO requirements. The governance structure is already understood.</div>
+          <div class="phase-item">Expo 2030 — ERC launched June 2025, Bechtel appointed as PMC, advisory RFP expected imminently. Budget protected from PIF cuts.</div>
+          <div class="phase-item">FIFA 2034 — stadium costs being reassessed December 2025. The governance crisis that creates the advisory mandate is live now.</div>
+          <div class="phase-label-text" style="margin-top:1rem;">Four accounts. First proposals in the market from day one.</div>
         </div>
 
         <div class="phase-cell">
-          <span class="phase-label-text">Phase 2 · Network &amp; Team</span>
-          <div class="phase-title">Scale as the team builds</div>
-          <div class="phase-item">Mahmoud joins (M6) — KSA market coverage independent of Ivan</div>
-          <div class="phase-item">Attila joins (M9) — King Salman Park becomes warm account immediately</div>
-          <div class="phase-item">Mace partnership activates — Diriyah and KSIA via Christopher Seymour</div>
-          <div class="phase-label-text" style="margin-top:1rem;">Target: Year 1 close · $2M base · $4M upside</div>
+          <span class="phase-label-text">Phase 2 · Network</span>
+          <div class="phase-title">Sovereign relationships converting — as market presence compounds.</div>
+          <div class="phase-item">ROSHN — EPMO leadership contacts across a $120B+ portfolio. PMWeb governance gap structural at multi-region scale.</div>
+          <div class="phase-item">King Salman Park — seven named contacts from a delivered Smart City Strategy engagement. Parsons holds PMO. EY advises above.</div>
+          <div class="phase-item">Diriyah — Mace Consult sitewide PMC. Christopher Seymour (MD MEA, personal relationship) is the direct entry. No cold approach.</div>
+          <div class="phase-item">King Salman Airport — Mace Consult Delivery Partner. Same entry path. $30B, Expo 2030 and FIFA 2034 hard deadlines.</div>
+          <div class="phase-label-text" style="margin-top:1rem;">Four accounts. EY platform and network converting together.</div>
         </div>
 
         <div class="phase-cell">
-          <span class="phase-label-text">Phase 3 · Partnership &amp; Scale</span>
-          <div class="phase-title">Retainers convert. Partnerships compound.</div>
-          <div class="phase-item">Worley activates Aramco — highest single-engagement fee</div>
-          <div class="phase-item">Expo 2030 and FIFA 2034 — RFP + EY platform + protected budgets</div>
-          <div class="phase-item">First retainers converting — $800K–$2M annual per client</div>
-          <div class="phase-label-text" style="margin-top:1rem;">Target: $6–8M run-rate · practice of 8–10 FTE</div>
+          <span class="phase-label-text">Phase 3 · Scale</span>
+          <div class="phase-title">Retainers compound. Partnerships open the largest mandates in the market.</div>
+          <div class="phase-item">Saudi Aramco — Worley GES+ 5yr contract is the access path. SAP/Oracle PMIS reconciliation failure confirmed structural across Aramco's capital portfolio. Highest single fee in GCC.</div>
+          <div class="phase-item">New Murabba — three PMC firms, no owner-side PMIS layer. FIFA 2034 stadium on site. Smart city mandate above Naver Cloud.</div>
+          <div class="phase-item">Khazna — NexOps launched Feb 2026. Construction-to-operations handover governance gap open. 30+ facilities.</div>
+          <div class="phase-item">Red Sea Global — IOC Operating Model delivered. Warm operational leadership relationships. PIF ROI pressure creates immediate advisory urgency.</div>
+          <div class="phase-label-text" style="margin-top:1rem;">Four accounts. Practice compounding through retainers and partnerships.</div>
         </div>
 
       </div><!-- /.phase-grid -->
@@ -915,7 +1043,7 @@
       <div class="pipeline-grid reveal" id="pipeline-grid">
 
         <!-- Card 1: Qiddiya — Phase 1, Incumbent, Ivan -->
-        <div class="pipeline-card pipeline-card--incumbent" data-geo="ksa" data-phase="phase1" data-type="ivan">
+        <div class="pipeline-card pipeline-card--incumbent" data-geo="ksa" data-phase="phase1" data-type="ivan" data-key="qiddiya">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Qiddiya Investment Company</span>
           </div>
@@ -925,32 +1053,27 @@
           </div>
           <span class="pipeline-mandate-type">Programme Governance &amp; Digital Twin Phase 2</span>
 
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">PIF-owned entertainment and tourism giga-programme — capital development to 2050. Phase 3 city establishment now mobilising (11,000 housing units, full entertainment city). Oracle Unifier + SAP + P6 + Aconex deployed. September 2025: Yardi adopted for real estate operations — creating a three-way integration challenge between Yardi, Oracle Unifier, and SAP that no current advisor can address without a conflict of interest. Ivan designed the Oracle layer.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Yardi ↔ Oracle ↔ SAP integration governance <span class="pipeline-opp-fee">$300–500K</span></div>
+            <div class="pipeline-opp-item">Phase 3 programme governance reset + PIF ROI assurance <span class="pipeline-opp-fee">$500–900K</span></div>
           </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">Governance recalibration as the programme transitions from Phase 2 cluster delivery to Phase 3 city establishment (2026–2035). Yardi adoption (September 2025) creates a three-way integration challenge between Yardi, Oracle Unifier, and SAP — unaddressed by any current advisor. Ivan designed the Oracle layer. Zero trust-building cycle required.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
+          <div class="pipeline-contacts">
             Manuel Chaure — Executive Director, Digital &amp; IT Strategy &amp; Governance<br>
             Abdullah Barakat — Executive Director, IT Business Relationship Management<br>
             Sreedhar Reddy Kadiveti — Senior Director, Engineering &amp; Development Business Solutions
-          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Direct · Incumbent</span>
             <span class="pipeline-fee">$400K–$800K</span>
           </div>
+          <div class="card-click-hint">Click to expand →</div>
         </div>
 
         <!-- Card 2: SAR — Phase 1, EY Platform -->
-        <div class="pipeline-card" data-geo="ksa" data-phase="phase1" data-type="ey">
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase1" data-type="ey" data-key="sar">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Saudi Railways (SAR)</span>
           </div>
@@ -960,35 +1083,29 @@
           </div>
           <span class="pipeline-mandate-type">Schedule Health &amp; Controls Advisory</span>
 
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">National rail operator managing Landbridge ($7B PPP/BOT), Qiddiya rail link (PPP concession), and 8,000km+ network expansion simultaneously. Oracle Analytics Cloud deployed for finance and procurement reporting — capital project delivery data remains EPC-managed, producing the data trust gap Ivan's advisory addresses. 18-month PMIS/EPMO bid engagement provides direct familiarity with SAR's governance structure.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Owner-side schedule health assessment — independent of EPC contractors <span class="pipeline-opp-fee">$150–400K</span></div>
+            <div class="pipeline-opp-item">EPMO design + Oracle OAC ↔ capital delivery integration <span class="pipeline-opp-fee">$400–700K</span></div>
           </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">Owner-side programme controls assessment — independent of EPC contractors. Oracle Analytics Cloud deployed for finance reporting; owner-side capital project PMIS is the open gap. NIC reporting requires reliable delivery data that the current EPC-managed structure cannot guarantee.</p>
-          <p class="pipeline-mandate-body" style="margin-top:0.6rem;">Active pursuit context: an 18-month PMIS and EPMO advisory bid has been in progress at SAR — providing direct programme-level familiarity with their governance requirements, decision-making structure, and the specific data trust gaps the advisory mandate is designed to address. This is not a cold account.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
+          <div class="pipeline-contacts">
             Dr. Mishari Al Mishari — Deputy Director, NIC<br>
             Mohaimeed Bagabas — EPMO Manager<br>
             Mohammed AlShaia — Director, Strategic Management Office<br>
             Fahad Almutairi — SAR (role TBC)<br>
             Salamh Alenazi — SAR (role TBC)
           </div>
-          </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">EY Platform · Risk &amp; Assurance</span>
             <span class="pipeline-fee">$150K–$400K</span>
           </div>
+          <div class="card-click-hint">Click to expand →</div>
         </div>
 
         <!-- Card 3: Expo 2030 Riyadh — Phase 1, RFP Active, EY Platform -->
-        <div class="pipeline-card" data-geo="ksa" data-phase="phase1" data-type="ey" data-rfp="true">
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase1" data-type="ey" data-rfp="true" data-key="expo">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Expo 2030 Riyadh (ERC)</span>
           </div>
@@ -999,31 +1116,27 @@
           </div>
           <span class="pipeline-mandate-type">Programme Governance &amp; Capital Controls Advisory</span>
 
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">PIF launched Expo 2030 Riyadh Company (ERC) June 2025. CEO: Talal H. AlMarri. Bechtel appointed as PMC (John Doyle, Programme Director). 6km², 226 pavilions, 246 exhibitors, 42M visitors, Oct 2030 hard opening deadline. Budget explicitly protected from PIF spending cuts. No advisory firm confirmed as independent programme governance lead above Bechtel. First International Participants Meeting Riyadh 2026 — RFP for independent advisory expected imminently.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Owner-side programme assurance above Bechtel — is delivery on a credible 2030 path? <span class="pipeline-opp-fee">$600K–1.2M</span></div>
+            <div class="pipeline-opp-item">PMIS strategy for 246-entity programme + iCCC Smart Expo <span class="pipeline-opp-fee">$500–900K</span></div>
           </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">First International Participants Meeting in Riyadh 2026 — RFP for independent programme governance advisory above Bechtel expected imminently. EY's MENA HQ in Riyadh and Ivan's Qiddiya proof point are the exact credentials this mandate requires. Respond immediately. PIF-owned. Bechtel is PMC. 6km², 246 exhibitors, 42M visitors, October 2030 hard deadline. Budget explicitly protected from PIF spending cuts.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
+          <div class="pipeline-contacts">
             Talal H. AlMarri — CEO, Expo 2030 Riyadh (ERC)<br>
-            Via EY platform · PIF advisory relationships
-          </div>
+            Ibrahim Al Sultan — Chairman, Expo 2030 · Minister of State<br>
+            John Doyle — Programme Director, Expo 2030 Riyadh (Bechtel PMC)
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">RFP · Active · EY platform</span>
             <span class="pipeline-fee">$600K–$1.2M</span>
           </div>
+          <div class="card-click-hint">Click to expand →</div>
         </div>
 
         <!-- Card 4: FIFA 2034 — Phase 1, RFP Active, EY Platform -->
-        <div class="pipeline-card" data-geo="ksa" data-phase="phase1" data-type="ey" data-rfp="true">
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase1" data-type="ey" data-rfp="true" data-key="fifa">
           <div class="pipeline-card-header">
             <span class="pipeline-client">FIFA 2034 · WCA34</span>
           </div>
@@ -1034,30 +1147,25 @@
           </div>
           <span class="pipeline-mandate-type">Stadium Programme Governance &amp; Advisory</span>
 
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">World Cup 2034 Hosting Higher Authority (WCA34) — chaired by Crown Prince MBS. Board: Ministers of Finance, Transport, Sport, Tourism + PIF Governor. 15 stadiums (11 new builds) across 5 cities: Riyadh, Jeddah, Al Khobar, Abha, NEOM. Stadium costs being reassessed Dec 2025 — architecture firms asked to revise designs, construction starts delayed. Advisory urgency is live now. Qiddiya and New Murabba both contain FIFA 2034 stadiums — Ivan holds programme knowledge on both sites.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Multi-city stadium programme governance — 15 stadiums, 5 cities, one owner view <span class="pipeline-opp-fee">$800K–1.5M</span></div>
+            <div class="pipeline-opp-item">FIFA milestone delivery assurance + smart stadium Digital Twin strategy <span class="pipeline-opp-fee">$500–1M</span></div>
           </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">Stadium costs being reassessed and construction starts delayed as of December 2025 — the governance crisis that creates the advisory mandate today, not in 2028. WCA34 needs independent programme assurance above all PMCs now. Respond immediately. Chaired by Crown Prince MBS. 15 stadiums (11 new) across 5 cities. Qiddiya and New Murabba both contain FIFA 2034 stadiums — Ivan holds programme-level knowledge on both sites already.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
+          <div class="pipeline-contacts">
             Via EY platform · programme intersections at Qiddiya (contained stadium) and New Murabba (Mukaab stadium interface)
-          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">RFP · Active · EY platform</span>
             <span class="pipeline-fee">$800K–$1.5M</span>
           </div>
+          <div class="card-click-hint">Click to expand →</div>
         </div>
 
         <!-- Card 3: ROSHN — Phase 2, Ivan -->
-        <div class="pipeline-card" data-geo="ksa" data-phase="phase2" data-type="ivan">
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase2" data-type="ivan" data-key="roshn">
           <div class="pipeline-card-header">
             <span class="pipeline-client">ROSHN Group</span>
           </div>
@@ -1067,33 +1175,28 @@
           </div>
           <span class="pipeline-mandate-type">PMIS Governance Architecture</span>
 
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">PIF-owned national housing developer. $120B+ portfolio across Riyadh, Jeddah, Makkah, Dhahran — scaling from 2 to 7+ active regions simultaneously. PMWeb deployed (Project of Year 2025) — but the multi-region scale creates integration failure points that single-site implementations never expose. ERP (SAP) ↔ PMWeb cost reconciliation gap structural at portfolio scale. PIF spending cuts require defensible ROI data presented to PIF leadership.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Multi-region EPMO governance architecture + ERP ↔ PMWeb integration diagnostic <span class="pipeline-opp-fee">$500–900K</span></div>
+            <div class="pipeline-opp-item">PIF delivery assurance — independent programme intelligence above PMWeb <span class="pipeline-opp-fee">$400–700K</span></div>
           </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">PMWeb deployed across a $120B+ national housing portfolio. Governance maturity question at this scale — whether the EPMO data architecture produces trustworthy portfolio-level intelligence — is the exact conversation Ivan has led at Qiddiya. Same problem. Larger scale. Mahmoud leads KSA activation from Month 6.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
+          <div class="pipeline-contacts">
             Hazem Alaily — Chief Program &amp; Project Management Officer<br>
             Hadi E. — Executive Director, EPMO<br>
             Roger Fatovic — Group Chief Projects Delivery Officer (Acting)<br>
             Mohammad Ajlouni — Director, EPMO &amp; Project Controls
           </div>
-          </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Direct · Network</span>
             <span class="pipeline-fee">$400K–$800K</span>
           </div>
+          <div class="card-click-hint">Click to expand →</div>
         </div>
 
         <!-- Card 6: King Salman Park — Phase 2, Ivan -->
-        <div class="pipeline-card" data-geo="ksa" data-phase="phase2" data-type="ivan">
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase2" data-type="ivan" data-key="kspf">
           <div class="pipeline-card-header">
             <span class="pipeline-client">King Salman Park Foundation</span>
           </div>
@@ -1103,19 +1206,14 @@
           </div>
           <span class="pipeline-mandate-type">Owner-Side Programme Intelligence &amp; Digital Twin Governance</span>
 
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">World's largest urban park — 17.2km², former Riyadh air base, $38B total investment, 2027 opening deadline. 13,000 workers currently on site. Parsons holds the 25-month PMO contract. CEO publicly confirmed Digital Twin in active development. KSPF leadership receives all programme intelligence through Parsons. No independent owner-side view of whether Parsons' reporting reflects delivery reality.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Owner-side programme intelligence above Parsons + Digital Twin governance <span class="pipeline-opp-fee">$500–900K</span></div>
+            <div class="pipeline-opp-item">iCCC design + construction-to-operations handover strategy <span class="pipeline-opp-fee">$500–900K</span></div>
           </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">Parsons holds the 25-month PMO contract. KSPF leadership needs an independent view above Parsons' delivery layer. Digital Twin actively in development — CEO confirmed. 2027 opening deadline. Seven named contacts across technology, operations, and data leadership — relationships grounded in a delivered Smart City Strategy and Enterprise Architecture engagement on this programme. Warm account.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
+          <div class="pipeline-contacts">
             Majed Alhudaib — CTO<br>
             Dale Chadwick — Chief Development Officer<br>
             Tom Jarvis — Head of Park Operations<br>
@@ -1123,15 +1221,15 @@
             Ben Edmonds — Smart City Director<br>
             Abdulmalik Alsaleh — Chief Data Officer
           </div>
-          </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Direct · Network</span>
             <span class="pipeline-fee">$600K–$1.2M</span>
           </div>
+          <div class="card-click-hint">Click to expand →</div>
         </div>
 
         <!-- Card 4: Diriyah — Phase 2, Mace partnership -->
-        <div class="pipeline-card" data-geo="partner" data-phase="phase2" data-type="ey">
+        <div class="pipeline-card" data-geo="partner" data-phase="phase2" data-type="ey" data-key="diriyah">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Diriyah (DGDA)</span>
           </div>
@@ -1141,31 +1239,26 @@
           </div>
           <span class="pipeline-mandate-type">Heritage Programme Governance</span>
 
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">$63B UNESCO World Heritage Site being developed into cultural and hospitality destination. Mace Consult holds the sitewide PMC mandate. $1.5B Arena Block awarded June 2025 — construction accelerating. PIF spending cuts partially protected given cultural and tourism mandate. DGDA leadership receives all programme data through Mace. Heritage asset information management overlays traditional capital delivery governance in ways no standard PMC addresses.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Owner-side programme intelligence above Mace + heritage asset information management <span class="pipeline-opp-fee">$500–900K</span></div>
+            <div class="pipeline-opp-item">Digital Twin for UNESCO context + multi-contractor cost governance <span class="pipeline-opp-fee">$400–700K</span></div>
           </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">Mace Consult holds the sitewide PMC mandate ($63B programme, UNESCO heritage site). EY's advisory entry is at the owner-side governance layer above Mace — PMIS strategy, heritage asset information management, Digital Twin for a living heritage environment. No cold approach. Christopher Seymour (MD MEA, Mace Consult) is the direct relationship.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
+          <div class="pipeline-contacts">
             Entry via: Christopher Seymour — Managing Director MEA, Mace Consult<br>
             Antony Brania — Director, Mace Consult
-          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Mace Consult Partnership</span>
             <span class="pipeline-fee">$600K–$1.2M</span>
           </div>
+          <div class="card-click-hint">Click to expand →</div>
         </div>
 
         <!-- Card 5: King Salman Airport — Phase 2, Mace partnership -->
-        <div class="pipeline-card" data-geo="partner" data-phase="phase2" data-type="ey">
+        <div class="pipeline-card" data-geo="partner" data-phase="phase2" data-type="ey" data-key="ksia">
           <div class="pipeline-card-header">
             <span class="pipeline-client">King Salman International Airport</span>
           </div>
@@ -1175,33 +1268,27 @@
           </div>
           <span class="pipeline-mandate-type">Owner-Side Programme Intelligence &amp; PMIS Strategy</span>
 
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">Largest airport infrastructure programme in the world — $30B, 57km², 6 runways, 9 terminals, 100M+ passengers by 2030. PIF-owned (KSIADC). Three major delivery firms: Mace Consult (Delivery Partner — Seymour signed personally), Bechtel (three terminals), Parsons (runways, taxiways, ATC). Three firms, three reporting chains, one owner who needs to trust the data. Hard deadlines: Expo 2030 (operational) and FIFA 2034. Construction commenced September 2025.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Owner-side multi-firm programme governance above Mace/Bechtel/Parsons + Expo 2030 delivery assurance <span class="pipeline-opp-fee">$700K–1.5M</span></div>
+            <div class="pipeline-opp-item">ISO 19650 information management across all delivery firms + aviation Digital Twin strategy <span class="pipeline-opp-fee">$300–800K</span></div>
           </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">The largest airport infrastructure programme in the world — $30B, 57km², 6 runways, 9 terminals, 100M+ passengers by 2030. PIF-owned (KSIADC). Mace Consult holds the Delivery Partner mandate — the full range of PMO, programme management, cost and commercial management, and construction management services.</p>
-          <p class="pipeline-mandate-body" style="margin-top:0.6rem;">EY's advisory entry is at the owner-side programme intelligence layer above Mace — independent PMIS strategy, schedule health governance, and capital controls advisory that KSIADC's leadership needs from a source with no delivery conflict of interest. Hard deadlines: Riyadh Expo 2030 and FIFA World Cup 2034 make delivery certainty advisory non-deferrable.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
+          <div class="pipeline-contacts">
             Marco Mejia — Acting CEO, KSIADC<br>
             Linda Schucroft — VP Innovation &amp; Guest Experience<br>
             Entry via: Christopher Seymour — Managing Director MEA, Mace Consult (personally signed the KSIADC delivery partner contract)
-          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Mace Consult Partnership</span>
             <span class="pipeline-fee">$600K–$1.2M</span>
           </div>
+          <div class="card-click-hint">Click to expand →</div>
         </div>
 
         <!-- Card 7: New Murabba — Phase 3, Ivan -->
-        <div class="pipeline-card" data-geo="ksa" data-phase="phase3" data-type="ivan">
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase3" data-type="ivan" data-key="newmurabba">
           <div class="pipeline-card-header">
             <span class="pipeline-client">New Murabba Development Company</span>
           </div>
@@ -1211,33 +1298,28 @@
           </div>
           <span class="pipeline-mandate-type">Owner-Side PMO &amp; Smart City Advisory</span>
 
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">$38B programme in central Riyadh — 19km², mixed-use district including The Mukaab (one of world's largest built structures). Three PMC firms: Bechtel (masterplan + infrastructure), Turner Arabia (The Mukaab), AECOM (buildings). Naver Cloud MoU confirmed for smart city and digital construction monitoring. FIFA 2034 stadium on site (New Murabba Stadium, 46,010 capacity). No single owner-side PMIS layer above three PMC reporting chains.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Owner-side PMIS strategy above Bechtel/Turner/AECOM + multi-PMC schedule governance <span class="pipeline-opp-fee">$500–900K</span></div>
+            <div class="pipeline-opp-item">Smart city ↔ construction integration + FIFA 2034 delivery certainty assurance <span class="pipeline-opp-fee">$400–700K</span></div>
           </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">Three PMC firms — Bechtel, Turner Arabia, AECOM — three separate reporting chains, no single owner-side PMIS layer. Smart city strategy mandate above platform vendors. $38B programme with FIFA 2034 stadium interface and 2030 target. Senior escalation via Mohammed Alqahtani (Head Smart City &amp; AI, MIT-educated).</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
+          <div class="pipeline-contacts">
             Mohammed Alqahtani — Head of Smart City &amp; AI (MIT)<br>
             Wail Balkhair — Executive Director, Asset Management<br>
             Faisal AlSayegh — Manager, Smart City &amp; AI<br>
             Abdullah Bafakih — Development Director
           </div>
-          </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Direct · Network</span>
             <span class="pipeline-fee">$500K–$1M</span>
           </div>
+          <div class="card-click-hint">Click to expand →</div>
         </div>
 
         <!-- Card 8: Khazna — Phase 3, UAE, Ivan -->
-        <div class="pipeline-card" data-geo="uae" data-phase="phase3" data-type="ivan">
+        <div class="pipeline-card" data-geo="uae" data-phase="phase3" data-type="ivan" data-key="khazna">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Khazna Data Centers</span>
           </div>
@@ -1247,32 +1329,27 @@
           </div>
           <span class="pipeline-mandate-type">Data Centre Programme Governance</span>
 
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">UAE data centre platform — 30+ facilities, $26.2B financing secured, Stargate UAE partner (February 2026), G42/Mubadala ecosystem. Turner &amp; Townsend holds PMC role. February 2026: Khazna launched NexOps — in-house operations model with Presight AI providing AI-powered command and control across 30+ facilities. NexOps insourced 230+ specialists, 5,000 operational documents built in under 12 months. The data governance gap between T&amp;T's construction delivery and NexOps operational requirements is completely unaddressed.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Construction-to-operations handover intelligence — ISO 19650 + BIM-to-FM governance for NexOps <span class="pipeline-opp-fee">$300–600K</span></div>
+            <div class="pipeline-opp-item">NexOps governance framework + portfolio PMIS strategy across 30+ facilities <span class="pipeline-opp-fee">$300–500K</span></div>
           </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">30+ facilities, $26.2B financing secured, Stargate UAE partner. Turner &amp; Townsend holds the PMC role. NexOps operational platform (Presight AI) launched February 2026 — governance framework open. Construction-to-operations handover intelligence is the immediate mandate advisory gap.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
+          <div class="pipeline-contacts">
             Abdulmajeed Harmoodi — CTO<br>
             Kevin Ayling — Senior Director, Technical Program Management<br>
             Hassan Al Naqbi — CEO
-          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Direct · Network</span>
             <span class="pipeline-fee">$300K–$700K</span>
           </div>
+          <div class="card-click-hint">Click to expand →</div>
         </div>
 
         <!-- Card 9: Red Sea Global — Phase 3, Ivan -->
-        <div class="pipeline-card" data-geo="ksa" data-phase="phase3" data-type="ivan">
+        <div class="pipeline-card" data-geo="ksa" data-phase="phase3" data-type="ivan" data-key="rsg">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Red Sea Global</span>
           </div>
@@ -1282,31 +1359,27 @@
           </div>
           <span class="pipeline-mandate-type">IOC Governance &amp; Operational Advisory</span>
 
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">PIF-owned luxury tourism giga-programme — 100+ operators, 10+ integrated city functions, geographic footprint comparable to Belgium. Among the PIF projects bearing the heaviest 2025 spending cut pressure. Phase 1 resorts operational while Phase 2+ construction remains active — the most complex concurrent governance challenge in the GCC. IOC Operating Model previously delivered — warm relationships with RSG operations leadership already established.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Construction-operations concurrent governance + PIF ROI validation for leadership reporting <span class="pipeline-opp-fee">$400–700K</span></div>
+            <div class="pipeline-opp-item">IOC maturity assessment + asset handover and FM integration governance <span class="pipeline-opp-fee">$300–500K</span></div>
           </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">PIF-owned luxury tourism giga-programme — 100+ operators, 10+ integrated city management functions, geographic footprint comparable to Belgium. IOC Operating Model already delivered by Attila (Director, joining Month 9). His operational leadership relationships convert to a capital advisory and governance retainer as the programme transitions from construction to operations.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
-            Via Attila Rab — IOC Operating Model delivery relationships with RSG operations leadership<br>
-            Warm account from Month 9
-          </div>
+          <div class="pipeline-contacts">
+            Via team delivery relationships with RSG operations leadership<br>
+            Established through IOC Operating Model engagement<br>
+            Warm account — no cold approach required
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Direct · Network</span>
             <span class="pipeline-fee">$400K–$800K</span>
           </div>
+          <div class="card-click-hint">Click to expand →</div>
         </div>
 
         <!-- Card 10: Saudi Aramco — Phase 3, Worley partnership -->
-        <div class="pipeline-card" data-geo="partner" data-phase="phase3" data-type="ey">
+        <div class="pipeline-card" data-geo="partner" data-phase="phase3" data-type="ey" data-key="aramco">
           <div class="pipeline-card-header">
             <span class="pipeline-client">Saudi Aramco</span>
           </div>
@@ -1316,27 +1389,22 @@
           </div>
           <span class="pipeline-mandate-type">Owner-Side PMIS &amp; Capital Controls Advisory</span>
 
-          <div class="card-tabs">
-            <button class="card-tab active" data-tab="overview">Overview</button>
-            <button class="card-tab" data-tab="opportunity">Opportunity</button>
-            <button class="card-tab" data-tab="connections">Connections</button>
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">Largest capital spender in KSA — $40B+ annual capex. Worley holds the GES+ 5-year engineering and project management contract across Aramco's capital portfolio. SAP deeply embedded as ERP. Aramco cut $40B dividends in 2025 due to lower oil prices — capital efficiency and ROI on programme spend under higher scrutiny than at any point in recent years. SAP ↔ PMIS cost reconciliation confirmed as structural failure across the capital portfolio. Ivan has resolved this exact problem at Qiddiya scale.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">SAP ↔ PMIS cost reconciliation advisory — the structural failure Ivan has solved at sovereign scale <span class="pipeline-opp-fee">$600K–1.2M</span></div>
+            <div class="pipeline-opp-item">Capital programme controls maturity + PMIS strategy and business case <span class="pipeline-opp-fee">$500–1M</span></div>
           </div>
-          <div class="card-panel" data-panel="overview">
-          <p class="pipeline-mandate-body">Largest capital spender in KSA — $40B+ annual capex. Worley holds the GES+ 5-year engineering contract. EY advises the owner at the governance layer above Worley's engineering scope. SAP ↔ Oracle PMIS reconciliation is a confirmed structural problem across Aramco's capital portfolio — Ivan has solved this at Qiddiya. Highest single-engagement fee potential in the entire GCC market.</p>
-          </div>
-          <div class="card-panel card-panel--placeholder" data-panel="opportunity" style="display:none;">
-            <p>Opportunity context to be added.</p>
-          </div>
-          <div class="card-panel" data-panel="connections" style="display:none;">
-            <div class="pipeline-contacts">
+          <div class="pipeline-contacts">
             Entry via: Alex Silvermaster — Plan Practice Lead EMEA, Worley<br>
             Worley GES+ contract provides programme-level access to Aramco capital leadership
-          </div>
           </div>
           <div class="pipeline-meta">
             <span class="pipeline-entry">Worley Partnership</span>
             <span class="pipeline-fee">$1M–$2M</span>
           </div>
+          <div class="card-click-hint">Click to expand →</div>
         </div>
 
       </div><!-- /.pipeline-grid -->
@@ -1472,6 +1540,15 @@
       </p>
 
     </div>
+
+      <!-- Pipeline overlay -->
+      <div class="pipeline-overlay" id="pipeline-overlay">
+        <div class="pipeline-overlay-card" id="pipeline-overlay-card">
+          <button class="overlay-close-btn" id="overlay-close-btn" aria-label="Close">×</button>
+          <div id="overlay-body"></div>
+        </div>
+      </div>
+
   </section>
 
   <!-- ============================================================
@@ -1732,6 +1809,234 @@
       });
     }
 
+
+    /* ============================================================
+       initPipelineOverlay
+       ============================================================ */
+    function initPipelineOverlay() {
+      var overlay = document.getElementById('pipeline-overlay');
+      var closeBtn = document.getElementById('overlay-close-btn');
+      if (!overlay) return;
+
+      var cards = {
+        'qiddiya': {
+          name: 'Qiddiya Investment Company',
+          meta: 'KSA · Riyadh · PIF-owned · $40B · Entertainment & Tourism Giga-Programme · Capital development to 2050',
+          tags: [["Ivan's network",'tag-ivan'],['KSA','tag-geo']],
+          overview: 'PIF-owned entertainment and tourism giga-programme. Phase 3 city establishment now mobilising — 11,000 housing units, full entertainment city. <strong>Oracle Unifier + SAP + P6 + Aconex deployed.</strong> September 2025: Yardi adopted for real estate operations — creating a three-way integration challenge between Yardi, Oracle Unifier, and SAP that no current advisor can address without a conflict of interest. Ivan designed the Oracle layer. Ivan is the incumbent PMIS advisor.',
+          opps: [
+            {t:'Yardi ↔ Oracle ↔ SAP Integration Governance',b:'Independent advisory on the three-way data architecture. Ivan designed the Oracle layer and has no Yardi commercial relationship — the only advisor who can diagnose objectively without conflict.',f:'$300–500K · 3–4 months'},
+            {t:'Phase 3 Programme Governance Reset',b:'Multi-contractor portfolio governance redesign as Qiddiya transitions to city-scale delivery. EPS baseline reset, schedule integrity framework for the 2030 Expo deadline.',f:'$500–900K'},
+            {t:'Digital Twin Operationalisation',b:"Move from Omniverse POC to live operational twin — use case definition, IoT data governance, asset information requirements for FM handover. Ivan is the only advisor with live Omniverse deployment on this programme.",f:'$400–700K → $1–2M oversight retainer'},
+            {t:'PIF ROI Reporting & Assurance',b:"With PIF mandating 20% spending cuts, QIC leadership needs independent validation of EPC-reported delivery data for PIF board reporting. EY's independence from all EPCs is the structural credential.",f:'$400–600K · retainer'}
+          ],
+          contacts: ['Manuel Chaure — Executive Director, Digital & IT Strategy & Governance','Abdullah Barakat — Executive Director, IT Business Relationship Management','Sreedhar Reddy Kadiveti — Senior Director, Engineering & Development Business Solutions'],
+          entry: 'Direct · Incumbent', fee: '$400K–$800K → retainer'
+        },
+        'sar': {
+          name: 'Saudi Railways (SAR)',
+          meta: 'KSA · Riyadh · PIF-owned · National rail operator · Landbridge $7B PPP · 8,000km+ network expansion',
+          tags: [['EY platform','tag-ey'],['KSA','tag-geo']],
+          overview: 'National rail operator managing <strong>Landbridge ($7B PPP/BOT)</strong>, the Qiddiya rail link (PPP concession), and 8,000km+ national network expansion simultaneously. Oracle Analytics Cloud deployed for finance and procurement — capital project delivery data remains EPC-managed. <strong>18-month PMIS/EPMO bid engagement</strong> provides direct familiarity with SAR\'s governance structure, decision-makers, and the specific data trust gaps the advisory addresses. The EPMO mandate is confirmed open.',
+          opps: [
+            {t:'Owner-Side Schedule Health Assessment',b:'SAR relies on EPC-submitted P6 schedules with no confirmed owner-side baseline governance. Independent health assessment across Landbridge, Qiddiya link, and network expansion.',f:'$150–400K · entry mandate'},
+            {t:'EPMO Design & Programme Controls Framework',b:'SAR is managing multiple concurrent capital programmes with no unified owner-side EPMO producing portfolio intelligence. Design the EPMO operating model, controls framework, and reporting architecture.',f:'$400–700K'},
+            {t:'Oracle OAC ↔ Capital Delivery Integration',b:'OAC deployed for finance — capital project delivery data not integrated. The gap between financial reporting and programme delivery means SAR cannot present a coherent ROI picture to PIF.',f:'$300–500K'},
+            {t:'Smart Rail Digital Twin Strategy',b:'SAR has publicly confirmed Digital Twin and 5G monitoring ambitions for track infrastructure. Long-life rail assets create the strongest Digital Twin business case of any infrastructure class.',f:'$300–600K'}
+          ],
+          contacts: ['Dr. Mishari Al Mishari — Deputy Director, NIC','Mohaimeed Bagabas — EPMO Manager','Mohammed AlShaia — Director, Strategic Management Office','Fahad Almutairi — SAR (role TBC)','Salamh Alenazi — SAR (role TBC)'],
+          entry: 'EY Platform · Risk & Assurance', fee: '$150K–$400K'
+        },
+        'expo': {
+          name: 'Expo 2030 Riyadh (ERC)',
+          meta: 'KSA · Riyadh · PIF-owned · 6km² · 246 exhibitors · 42M visitors · Oct 2030 hard deadline · Budget protected from PIF cuts',
+          tags: [['RFP · Active','tag-rfp'],['EY platform','tag-ey'],['KSA','tag-geo']],
+          overview: 'PIF launched <strong>Expo 2030 Riyadh Company (ERC)</strong> in June 2025. CEO: Talal H. AlMarri. <strong>Bechtel appointed as PMC</strong> (John Doyle, Programme Director). 6km² site adjacent to King Salman International Airport. 226 pavilions, 246 exhibiting nations, 42M visitors, October 2030 hard opening deadline. Budget <strong>explicitly protected from PIF spending cuts.</strong> No advisory firm confirmed as independent programme governance lead above Bechtel. Advisory RFP expected imminently.',
+          opps: [
+            {t:'Owner-Side Programme Assurance Above Bechtel',b:'ERC receives all construction intelligence through Bechtel. Independent advisory: is the delivery trajectory credible for Oct 2030? Are 226 pavilion packages converging on schedule?',f:'$600K–1.2M → retainer'},
+            {t:'PMIS Strategy — 246-Entity Programme',b:'PMIS architecture managing owner-delivered infrastructure and 246 participant-delivered pavilions in a single programme intelligence framework.',f:'$500–900K'},
+            {t:'iCCC & Smart Expo Strategy',b:"Theme ‘Foresight for Tomorrow’ — technology is a core mandate. Integrated Command & Control for 42M visitors across 6km². Ivan's TASMU and KSPF iCCC experience is the direct credential.",f:'$500–900K'},
+            {t:'Legacy Transition — Global Village Governance',b:'Post-Expo, 6km² becomes "Global Village" permanent district. Full-lifecycle advisory: asset information management, FM data governance, Digital Twin continuity.',f:'$400–700K'}
+          ],
+          contacts: ['Talal H. AlMarri — CEO, Expo 2030 Riyadh Company','Ibrahim Al Sultan — Chairman, Expo 2030 · Minister of State','John Doyle — Programme Director, Expo 2030 Riyadh (Bechtel PMC)','Investigate: EY MENA relationships with PIF and ERC board members'],
+          entry: 'RFP · Active · EY platform', fee: '$600K–$1.2M'
+        },
+        'fifa': {
+          name: 'FIFA 2034 · WCA34',
+          meta: 'KSA · National · Chaired by Crown Prince MBS · 15 stadiums (11 new) · 5 cities · 48 teams · June 2034 · Budget protected',
+          tags: [['RFP · Active','tag-rfp'],['EY platform','tag-ey'],['KSA','tag-geo']],
+          overview: '<strong>World Cup 2034 Hosting Higher Authority (WCA34)</strong> — chaired by Crown Prince MBS. Board includes Ministers of Finance, Transport, Sport, Tourism, Health, Communications, and the PIF Governor. 15 stadiums (11 new builds, 4 renovations) across Riyadh, Jeddah, Al Khobar, Abha, and NEOM. <strong>Stadium costs being reassessed December 2025</strong> — construction starts delayed. The governance crisis creating the advisory mandate is live now. Qiddiya and New Murabba both contain FIFA 2034 stadiums.',
+          opps: [
+            {t:'Multi-City Stadium Programme Governance',b:'15 stadiums across 5 cities, each with a separate PMC or EPC — WCA34 needs a unified owner-side programme intelligence framework.',f:'$800K–1.5M → retainer'},
+            {t:'FIFA Delivery Milestone Assurance',b:'FIFA imposes formal delivery milestones and stadium certification requirements. Independent advisory: are 15 programmes on credible trajectories?',f:'$600K–1.2M'},
+            {t:'Smart Stadium & Digital Twin Strategy',b:"WCA34 has committed to ‘technology redefining how fans interact at matches.’ Smart stadium strategy, Digital Twin for venue operations, iCCC for tournament operations.",f:'$500K–1M'},
+            {t:'ISO 19650 Information Management — Portfolio',b:'15 stadiums, 50+ organisations producing BIM models in different formats. Without ISO 19650 at portfolio level, WCA34 will receive disconnected asset data.',f:'$400–800K'}
+          ],
+          contacts: ['World Cup 2034 Hosting Higher Authority (WCA34)','HRH Crown Prince MBS — Chairman, Board of Directors','Yasir Al-Rumayyan — Governor, PIF · Board member','Prince Abdulaziz bin Turki — Minister of Sport · Board member','Investigate: EY government advisory relationships + Mace global stadium credentials'],
+          entry: 'RFP · Active · EY platform', fee: '$800K–$1.5M'
+        },
+        'roshn': {
+          name: 'ROSHN Group',
+          meta: 'KSA · Riyadh · PIF-owned · $120B+ portfolio · 400,000 units by 2030 · Active in Riyadh, Jeddah, Makkah, Dhahran',
+          tags: [["Ivan's network",'tag-ivan'],['KSA','tag-geo']],
+          overview: 'PIF-owned national housing developer scaling from 2 to 7+ active regions simultaneously. PMWeb deployed across the EPMO — <strong>Project of the Year 2025</strong>. The governance question at multi-region scale: is PMWeb data trustworthy across all regions? <strong>SAP ↔ PMWeb cost reconciliation gap structural</strong> at portfolio scale. PIF spending cut pressure (20%+ mandated 2025) requires defensible ROI data for PIF leadership reporting.',
+          opps: [
+            {t:'Multi-Region EPMO Governance Architecture',b:'As ROSHN scales to 7+ regions, the EPMO governance model needs redesign — decision rights, cost consolidation architecture, and contractor management.',f:'$500–900K'},
+            {t:'SAP ↔ PMWeb Integration Diagnostic',b:'The ERP ↔ PMWeb cost reconciliation gap is structural at this scale. Ivan has solved this on Oracle at Qiddiya — the advisory is transferable.',f:'$300–600K'},
+            {t:'PIF Delivery Assurance',b:'With 20% PIF spending cuts mandated, ROSHN leadership needs independent programme assurance across 7+ regions.',f:'$400–700K · retainer'},
+            {t:'Digital Twin Readiness — Asset Portfolio',b:'ROSHN has a Naver Cloud MoU for smart city monitoring. At 200km² of integrated neighbourhoods, ISO 19650 and CDE advisory is the governance layer Naver Cloud cannot provide.',f:'$300–500K'}
+          ],
+          contacts: ['Hazem Alaily — Chief Program & Project Management Officer','Hadi E. — Executive Director, EPMO','Roger Fatovic — Group Chief Projects Delivery Officer (Acting)','Mohammad Ajlouni — Director, EPMO & Project Controls'],
+          entry: 'Direct · Network', fee: '$400K–$800K → retainer'
+        },
+        'kspf': {
+          name: 'King Salman Park Foundation',
+          meta: 'KSA · Riyadh · $38B · 17.2km² · Former Riyadh air base · 2027 hard opening deadline · 13,000 workers on site',
+          tags: [["Ivan's network",'tag-ivan'],['KSA','tag-geo']],
+          overview: "World's largest urban park — 17.2km², former Riyadh air base, $38B investment, <strong>2027 opening deadline</strong>. 13,000 workers on site. Parsons holds the 25-month PMO contract. CEO publicly confirmed <strong>Digital Twin in active development</strong>. KSPF leadership receives all programme intelligence through Parsons. No independent owner-side view of whether Parsons' reporting reflects delivery reality. Seven named contacts from a delivered Smart City Strategy engagement.",
+          opps: [
+            {t:'Owner-Side Programme Intelligence',b:"Independent review of programme performance above Parsons' delivery reporting. Is the schedule data accurate? Are cost-to-complete figures defensible?",f:'$500–900K → retainer'},
+            {t:'Digital Twin Governance',b:"CEO confirmed Digital Twin in active development. The governance layer — data architecture, CDE design, asset information requirements — is open. Ivan's Omniverse POC is the direct credential.",f:'$400–700K'},
+            {t:'iCCC Design & Smart City Integration',b:"70,000 daily visitors projected. An Integrated Command & Control Centre is a mandatory operational requirement at this scale. Ivan's TASMU iCCC experience is the direct advisory credential.",f:'$500–900K'},
+            {t:'Construction-to-Operations Handover',b:'With 2027 opening target, KSPF is approaching the handover phase. ISO 19650 asset information requirements, BIM-to-FM data governance, operational readiness advisory.',f:'$400–700K'}
+          ],
+          contacts: ['Majed Alhudaib — CTO','Dale Chadwick — Chief Development Officer','Tom Jarvis — Head of Park Operations','Douglas Stagner — Operational Readiness Director','Ben Edmonds — Smart City Director','Abdulmalik Alsaleh — Chief Data Officer'],
+          entry: 'Direct · Network · Warm', fee: '$600K–$1.2M'
+        },
+        'diriyah': {
+          name: 'Diriyah Gate Development Authority (DGDA)',
+          meta: 'KSA · Riyadh · $63B · UNESCO World Heritage Site · 2027 Arena Block target · Mace Consult as sitewide PMC',
+          tags: [['Mace Consult','tag-ey'],['KSA','tag-geo']],
+          overview: '<strong>$63B UNESCO World Heritage Site</strong> being developed into cultural and hospitality destination. Mace Consult holds the sitewide PMC mandate. <strong>$1.5B Arena Block awarded June 2025</strong> — construction accelerating. Heritage asset information management overlays traditional capital delivery governance in ways no standard PMC addresses. EY advises DGDA at the owner-side layer above Mace.',
+          opps: [
+            {t:'Owner-Side Programme Intelligence',b:"DGDA receives all programme data through Mace. Independent advisory layer: is Mace's schedule and cost reporting accurate? Are packages converging on the 2027 Arena Block target?",f:'$500–900K → retainer'},
+            {t:'Heritage Asset Information Management',b:'A UNESCO World Heritage Site has asset information requirements beyond standard BIM governance — heritage documentation, conservation records, regulatory compliance.',f:'$400–700K'},
+            {t:'Digital Twin for Heritage Environment',b:"Active construction + UNESCO conservation creates a unique Digital Twin mandate. Ivan's Omniverse experience is the credential.",f:'$400–700K'},
+            {t:'Multi-Contractor Cost Control Governance',b:'As Diriyah accelerates with multiple packages, an owner-side cost control framework above Mace is the governance gap.',f:'$300–600K'}
+          ],
+          contacts: ['Entry via: Christopher Seymour — Managing Director MEA, Mace Consult','Antony Brania — Director, Mace Consult'],
+          entry: 'Mace Consult Partnership', fee: '$600K–$1.2M'
+        },
+        'ksia': {
+          name: 'King Salman International Airport (KSIADC)',
+          meta: 'KSA · Riyadh · $30B · 57km² · 6 runways · 9 terminals · 100M+ passengers by 2030 · Construction commenced Sep 2025',
+          tags: [['Mace Consult','tag-ey'],['KSA','tag-geo']],
+          overview: 'Largest airport infrastructure programme in the world. <strong>Three major delivery firms simultaneously</strong>: Mace Consult (Delivery Partner — Christopher Seymour signed personally), Bechtel (three passenger terminals), Parsons (runways, taxiways, ATC towers). Three firms, three reporting chains, one owner who needs to trust the data. <strong>Hard deadlines: Expo 2030 operational opening, FIFA 2034 tournament.</strong> Construction commenced September 2025.',
+          opps: [
+            {t:'Owner-Side Multi-Firm Programme Governance',b:'Three firms each managing separate scopes across 57km². KSIADC needs owner-side intelligence above all three firms simultaneously.',f:'$700K–1.5M → retainer'},
+            {t:'Expo 2030 Delivery Assurance',b:'Airport must be operational for Expo 2030. Independent assurance: is the current delivery trajectory credible for a 2030 operational opening?',f:'$600K–1.2M'},
+            {t:'Aviation Digital Twin Strategy',b:'KSIA designed as an aerotropolis — 9 terminals, 6 runways, 57km² of airside and landside operations.',f:'$400–800K'},
+            {t:'ISO 19650 Information Management',b:'Designed by Jacobs and Foster+Partners, delivered by Mace, Bechtel, and Parsons — five organisations producing disconnected asset data without ISO 19650 governance.',f:'$300–600K'}
+          ],
+          contacts: ['Marco Mejia — Acting CEO, KSIADC','Linda Schucroft — VP Innovation & Guest Experience','Entry via: Christopher Seymour — Managing Director MEA, Mace Consult (signed personally)'],
+          entry: 'Mace Consult Partnership', fee: '$600K–$1.2M'
+        },
+        'newmurabba': {
+          name: 'New Murabba Development Company',
+          meta: 'KSA · Riyadh · $38B · 19km² · Three PMCs · FIFA 2034 stadium on site · 2030 target',
+          tags: [["Ivan's network",'tag-ivan'],['KSA','tag-geo']],
+          overview: '$38B mixed-use district in central Riyadh including <strong>The Mukaab</strong> (one of the world\'s largest built structures). Three PMC firms simultaneously: Bechtel (masterplan + infrastructure), Turner Arabia (The Mukaab), AECOM (buildings). <strong>No single owner-side PMIS layer</strong> above three separate reporting chains. Naver Cloud MoU confirmed for smart city monitoring. <strong>FIFA 2034 New Murabba Stadium</strong> (46,010 capacity) on site.',
+          opps: [
+            {t:'Owner-Side PMIS Strategy Above Three PMCs',b:'Three PMCs producing three report formats — NMDC cannot see the programme as a whole. Define the owner-side PMIS architecture consolidating all three PMC chains.',f:'$500–900K'},
+            {t:'Smart City ↔ Construction Integration',b:"Naver Cloud MoU covers smart city monitoring — but integration between the smart city data layer and three PMC chains is completely unaddressed. Ivan's TASMU experience is directly applicable.",f:'$400–700K'},
+            {t:'Multi-PMC Schedule Governance',b:'Three PMCs submitting P6 schedules in different EPS structures with no owner-side baseline governance.',f:'$300–500K'},
+            {t:'FIFA 2034 Delivery Certainty',b:"New Murabba's programme interface with FIFA 2034 stadium delivery creates a hard deadline governance requirement.",f:'$400–700K'}
+          ],
+          contacts: ['Mohammed Alqahtani — Head of Smart City & AI (MIT)','Wail Balkhair — Executive Director, Asset Management','Faisal AlSayegh — Manager, Smart City & AI','Abdullah Bafakih — Development Director','Michael Dyke — CEO'],
+          entry: 'Direct · Network', fee: '$500K–$1M'
+        },
+        'khazna': {
+          name: 'Khazna Data Centers',
+          meta: 'UAE · Abu Dhabi / Dubai · 30+ facilities · $26.2B financing · Stargate UAE partner · G42/Mubadala ecosystem',
+          tags: [["Ivan's network",'tag-ivan'],['UAE','tag-geo']],
+          overview: 'UAE data centre platform — 30+ facilities, $26.2B financing secured, <strong>Stargate UAE partner</strong> (February 2026), G42/Mubadala ecosystem. Turner & Townsend holds PMC role. <strong>February 2026: Khazna launched NexOps</strong> — in-house operations model with Presight AI providing AI-powered command and control across 30+ facilities. NexOps insourced 230+ specialists, 5,000 operational documents built in under 12 months. The data governance gap between construction delivery and NexOps operational requirements is completely unaddressed.',
+          opps: [
+            {t:'Construction-to-Operations Handover Intelligence',b:"NexOps has 5,000 operational documents but the data architecture connecting T&T construction delivery to NexOps operational systems is open. ISO 19650, BIM-to-FM, commissioning data integration.",f:'$300–600K'},
+            {t:'NexOps Governance Framework',b:'Presight AI provides the platform. The governance framework above it — data quality standards, integration architecture — is open.',f:'$300–500K'},
+            {t:'Portfolio PMIS Strategy — 30+ Facilities',b:'T&T manages construction delivery but Khazna leadership needs owner-side portfolio visibility across 30+ simultaneous construction and expansion phases.',f:'$250–450K'},
+            {t:'International Expansion Governance',b:"With $26.2B financing and active international expansion, Khazna's programme governance model needs to scale globally.",f:'$400–700K'}
+          ],
+          contacts: ['Abdulmajeed Harmoodi — CTO','Kevin Ayling — Senior Director, Technical Program Management','Hassan Al Naqbi — CEO'],
+          entry: 'Direct · Network', fee: '$300K–$700K'
+        },
+        'rsg': {
+          name: 'Red Sea Global',
+          meta: 'KSA · Red Sea Coast · PIF-owned · Luxury tourism giga-programme · 100+ operators · Belgium-scale footprint',
+          tags: [["Ivan's network",'tag-ivan'],['KSA','tag-geo']],
+          overview: 'PIF-owned luxury tourism giga-programme — 100+ operators, 10+ integrated city functions, geographic footprint comparable to Belgium. <strong>Among the PIF projects bearing the heaviest 2025 spending cut pressure.</strong> Phase 1 resorts are operational while Phase 2+ construction remains active. <strong>IOC Operating Model previously delivered</strong> — warm relationships with RSG operations leadership already established.',
+          opps: [
+            {t:'Construction-Operations Concurrent Governance',b:'Phase 1 operational + Phase 2+ construction active simultaneously across a Belgium-scale footprint. Governing a programme that is simultaneously building and operating requires a governance architecture most advisors have never designed.',f:'$400–700K → retainer'},
+            {t:'PIF Spending Cut Response — ROI Validation',b:'RSG under heaviest spending pressure of any PIF giga-project. Leadership needs independent ROI validation to present a credible case to PIF leadership.',f:'$300–600K'},
+            {t:'IOC Maturity & Operational Intelligence',b:'IOC Operating Model is in place. The maturity question — is the IOC producing the operational intelligence RSG leadership needs — is the next advisory mandate.',f:'$300–500K'},
+            {t:'Asset Handover & FM Integration',b:'As Phase 1 assets hand over from construction to operations, data quality of what PMCs deliver to RSG FM teams becomes a live operational risk.',f:'$250–450K'}
+          ],
+          contacts: ['Via team delivery relationships with RSG operations leadership','Established through IOC Operating Model engagement','Warm account — no cold approach required'],
+          entry: 'Direct · Network', fee: '$400K–$800K'
+        },
+        'aramco': {
+          name: 'Saudi Aramco',
+          meta: 'KSA · Al-Khobar · $40B+ annual capex · Worley GES+ 5yr engineering contract · SAP deeply embedded',
+          tags: [['Worley','tag-ey'],['KSA','tag-geo']],
+          overview: 'Largest capital spender in KSA — <strong>$40B+ annual capex</strong>. Worley holds the GES+ 5-year engineering and project management contract. SAP deeply embedded as ERP across the capital portfolio. Aramco <strong>cut $40B dividends in 2025</strong> due to lower oil prices — capital efficiency under the highest scrutiny in recent years. <strong>SAP ↔ PMIS cost reconciliation confirmed as a structural failure</strong> across the capital portfolio. Ivan has resolved this exact problem at Qiddiya scale. Highest single-engagement fee potential in the GCC market.',
+          opps: [
+            {t:'SAP ↔ PMIS Cost Reconciliation Advisory',b:"Structural mismatch between SAP PS/MM/FI actuals and PMIS committed/forecast data across Aramco's capital portfolio. Ivan resolved this at sovereign scale.",f:'$600K–1.2M → retainer'},
+            {t:'Capital Programme Controls Maturity',b:"With $40B annual capex and dividend cuts creating pressure, Aramco needs independent assessment: are schedules trustworthy? Are cost-to-complete figures defensible?",f:'$500K–1M'},
+            {t:'PMIS Strategy & Business Case',b:"An owner-side PMIS strategy advisory: is the current architecture fit for purpose at Aramco's scale?",f:'$400–800K'},
+            {t:'Capital Asset Digital Twin Strategy',b:"Aramco's asset base — refineries, pipelines, platforms — represents the world's most valuable capital asset portfolio. Operational Digital Twin business case is the strongest in any industry.",f:'$500K–1M'}
+          ],
+          contacts: ['Entry via: Alex Silvermaster — Plan Practice Lead EMEA, Worley (+44 7585 984 918)','Worley GES+ contract provides programme-level access to Aramco capital leadership'],
+          entry: 'Worley Partnership', fee: '$1M–$2M'
+        }
+      };
+
+      document.querySelectorAll('.pipeline-card').forEach(function(card) {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', function() {
+          var key = card.dataset.key;
+          if (!key || !cards[key]) return;
+          var d = cards[key];
+          var h = '';
+          h += '<div class="ov-name">' + d.name + '</div>';
+          h += '<div class="ov-meta">' + d.meta + '</div>';
+          h += '<div class="ov-tags">';
+          d.tags.forEach(function(t) { h += '<span class="card-tag ' + t[1] + '">' + t[0] + '</span>'; });
+          h += '</div>';
+          h += '<span class="ov-section">Overview</span>';
+          h += '<div class="ov-overview">' + d.overview + '</div>';
+          h += '<span class="ov-section">Advisory opportunities</span>';
+          h += '<div class="ov-opps">';
+          d.opps.forEach(function(o) {
+            h += '<div class="ov-opp">';
+            h += '<div class="ov-opp-title">' + o.t + '</div>';
+            h += '<div class="ov-opp-body">' + o.b + '</div>';
+            h += '<div class="ov-opp-fee">' + o.f + '</div>';
+            h += '</div>';
+          });
+          h += '</div>';
+          h += '<span class="ov-section">Key contacts</span>';
+          h += '<div class="ov-contacts">';
+          d.contacts.forEach(function(c) { h += '<div class="ov-contact">' + c + '</div>'; });
+          h += '</div>';
+          h += '<div class="ov-footer">';
+          h += '<span class="ov-entry">' + d.entry + '</span>';
+          h += '<span class="ov-fee">' + d.fee + '</span>';
+          h += '</div>';
+          document.getElementById('overlay-body').innerHTML = h;
+          overlay.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      closeBtn.addEventListener('click', function() { closeOverlay(); });
+      overlay.addEventListener('click', function(e) { if (e.target === overlay) { closeOverlay(); } });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && overlay.classList.contains('open')) { closeOverlay(); } });
+
+      function closeOverlay() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
     /* ============================================================
        Init — DOMContentLoaded
        ============================================================ */
@@ -1745,6 +2050,7 @@
       mobileMenu();
       pipelineFilter();
       cardTabs();
+      initPipelineOverlay();
     });
 
   </script>
