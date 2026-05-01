@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" width="200" height="40">
+  <text x="0" y="28" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="800" letter-spacing="2" fill="white">FIFA</text>
+  <text x="74" y="28" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="300" letter-spacing="1" fill="rgba(255,255,255,0.6)">WORLD CUP</text>
+  <text x="0" y="38" font-family="Arial,Helvetica,sans-serif" font-size="7" font-weight="400" letter-spacing="5" fill="rgba(232,200,74,0.9)">2034 · SAUDI ARABIA</text>
+</svg>
