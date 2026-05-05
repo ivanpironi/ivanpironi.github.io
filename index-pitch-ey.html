@@ -226,6 +226,11 @@
     .ov-opps { grid-template-columns:1fr; }
     .pipeline-overlay-card { padding:20px; }
   }
+  /* Mobile: show .reveal elements immediately — bypass IntersectionObserver */
+  @media (max-width:950px) {
+    .reveal { opacity:1 !important; transform:none !important; }
+    .reveal.revealed { transition:none !important; }
+  }
   </style>
 <!--
   TEAM PHOTOS — HOW TO ADD REAL IMAGES
