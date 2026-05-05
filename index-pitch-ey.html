@@ -897,12 +897,12 @@
             cell.appendChild(span);
           });
 
-          /* Same quarter divider lines as engagement bar rows */
-          [4,7,10,13,16,19,22].forEach(function(qm){
+          /* Same quarter divider lines as engagement bar rows + outer boundaries */
+          [1,4,7,10,13,16,19,22,'end'].forEach(function(qm){
             var vl=document.createElement('div');
             vl.style.cssText=
               'position:absolute;top:0;bottom:0;width:1px;pointer-events:none;'+
-              'left:'+pL(qm)+';'+
+              (qm==='end'?'right:0;':'left:'+pL(qm)+';')+
               (qm===13?'background:rgba(255,255,255,0.30);':'background:rgba(255,255,255,0.20);');
             cell.appendChild(vl);
           });
@@ -982,12 +982,12 @@
         dia.title='Contract signed M'+e.sale+' — '+fK(e.saleAmt);
         btd.appendChild(dia);
 
-        /* Quarter divider lines */
-        [4,7,10,13,16,19,22].forEach(function(qm){
+        /* Quarter divider lines + outer boundary lines */
+        [1,4,7,10,13,16,19,22,'end'].forEach(function(qm){
           var vl=document.createElement('div');
           vl.style.cssText=
             'position:absolute;top:0;bottom:0;width:1px;pointer-events:none;'+
-            'left:'+pL(qm)+';'+
+            (qm==='end'?'right:0;':'left:'+pL(qm)+';')+
             (qm===13
               ? 'background:rgba(255,255,255,0.25);'   /* Y1/Y2 boundary — slightly brighter */
               : 'background:rgba(255,255,255,0.14);');
