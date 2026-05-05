@@ -872,29 +872,42 @@
             th.style.cssText='color:'+def.c+';opacity:'+def.op+';text-align:left;'+
               'font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.07em;'+
               'text-transform:uppercase;padding:2px 6px 2px 0;white-space:nowrap;'+
-              'border-bottom:none;';
+              'border-bottom:none;border-right:none;';
             th.textContent=def.lbl;
             tr.appendChild(th);
-            qtots.forEach(function(q){
+            qtots.forEach(function(q,qi){
               var td=document.createElement('th');
               td.colSpan=3;
               td.style.cssText='text-align:center;font-family:"DM Mono",monospace;font-size:9px;'+
                 'letter-spacing:0.04em;color:'+def.c+';opacity:'+def.op+';padding:2px 1px;'+
-                'border-bottom:none;';
+                'border-bottom:none;'+
+                (qi<7?'border-right:1px solid rgba(255,255,255,0.09);':'border-right:none;');
               td.textContent=fK(q[def.key]);
               tr.appendChild(td);
             });
             var fh=document.createElement('th');fh.className='fh';
-            fh.style.borderBottom='none';tr.appendChild(fh);
+            fh.style.cssText='border-bottom:none;border-right:none;';
+            tr.appendChild(fh);
             thead.insertBefore(tr,firstRow);
           })(defs[di]);
         }
-        /* Separator between totals strip and Q headers */
+        /* Separator: one cell per column so layout stays consistent */
         var sep=document.createElement('tr');
-        var sepTh=document.createElement('th');
-        sepTh.colSpan=M+2;
-        sepTh.style.cssText='padding:3px 0 0;border-bottom:1px solid rgba(255,255,255,0.18);';
-        sep.appendChild(sepTh);
+        var sepLh=document.createElement('th');
+        sepLh.className='lh';
+        sepLh.style.cssText='padding:3px 0 0;border-bottom:1px solid rgba(255,255,255,0.18);border-right:none;';
+        sep.appendChild(sepLh);
+        for(var qi=0;qi<8;qi++){
+          var sepQ=document.createElement('th');
+          sepQ.colSpan=3;
+          sepQ.style.cssText='padding:3px 0 0;border-bottom:1px solid rgba(255,255,255,0.18);'+
+            (qi<7?'border-right:1px solid rgba(255,255,255,0.09);':'border-right:none;');
+          sep.appendChild(sepQ);
+        }
+        var sepFh=document.createElement('th');
+        sepFh.className='fh';
+        sepFh.style.cssText='padding:3px 0 0;border-bottom:1px solid rgba(255,255,255,0.18);border-right:none;';
+        sep.appendChild(sepFh);
         thead.insertBefore(sep,firstRow);
       })();
 
