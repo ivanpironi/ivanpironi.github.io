@@ -633,7 +633,9 @@
         color:rgba(255,255,255,0.6);font-weight:400;text-align:center;padding:3px 1px;
         border-bottom:1px solid rgba(255,255,255,0.08);}
       .gt thead th.qh{font-weight:500;color:rgba(255,255,255,0.75);
-        border-bottom:1px solid rgba(255,255,255,0.18);}
+        border-bottom:1px solid rgba(255,255,255,0.18);
+        border-right:1px solid rgba(255,255,255,0.09);}
+      .gt thead th.qh:last-child{border-right:none;}
       .gt thead th.lh{text-align:left;min-width:200px;}
       .gt thead th.fh{text-align:right;min-width:72px;}
       .gt tbody tr{border-bottom:1px solid rgba(255,255,255,0.05);}
@@ -956,6 +958,18 @@
           'z-index:4;cursor:help;';
         dia.title='Contract signed M'+e.sale+' — '+fK(e.saleAmt);
         btd.appendChild(dia);
+
+        /* Quarter divider lines */
+        [4,7,10,13,16,19,22].forEach(function(qm){
+          var vl=document.createElement('div');
+          vl.style.cssText=
+            'position:absolute;top:0;bottom:0;width:1px;pointer-events:none;'+
+            'left:'+pL(qm)+';'+
+            (qm===13
+              ? 'background:rgba(255,255,255,0.13);'   /* Y1/Y2 boundary — slightly brighter */
+              : 'background:rgba(255,255,255,0.07);');
+          btd.appendChild(vl);
+        });
 
         /* Tooltip */
         btd.addEventListener('mouseenter',function(){
