@@ -1900,6 +1900,10 @@
     function scrollReveal() {
       var items = document.querySelectorAll('.reveal');
       if (!items.length) return;
+      if (window.innerWidth <= 950) {
+        items.forEach(function(el) { el.classList.add('revealed'); });
+        return;
+      }
       var obs = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
@@ -1907,7 +1911,7 @@
             obs.unobserve(entry.target);
           }
         });
-      }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
+      }, { threshold: 0 });
       items.forEach(function(el) { obs.observe(el); });
     }
 
