@@ -676,8 +676,10 @@
         <div class="gl">
           <div class="gli"><div class="gsw" style="background:#5B8DEF"></div>Consulting</div>
           <div class="gli"><div class="gsw" style="background:#E8C84A"></div>Tech Advisory</div>
-          <div class="gli"><div class="gsw" style="background:linear-gradient(to right,#5B8DEF 55%,#E8C84A 55%);width:24px"></div>Mixed engagement bar</div>
-          <div class="gli"><div class="gms-lg"></div>Sale event (contract signed)</div>
+          <div class="gli"><div class="gsw" style="background:linear-gradient(to right,#5B8DEF 55%,#E8C84A 55%);width:24px;height:8px;border-radius:2px;"></div>Initial engagement</div>
+          <div class="gli"><div style="width:24px;height:4px;border-radius:2px;flex-shrink:0;background:repeating-linear-gradient(-45deg,transparent,transparent 3px,rgba(255,255,255,0.15) 3px,rgba(255,255,255,0.15) 4px),linear-gradient(to right,#5B8DEF 55%,#E8C84A 55%);opacity:0.78;"></div>Retainer continuation</div>
+          <div class="gli"><div class="gms-lg"></div>Initial sale milestone (filled)</div>
+          <div class="gli"><div class="gms-lg" style="background:transparent;border:2px solid rgba(255,255,255,0.9);"></div>Retainer sale milestone (outlined)</div>
         </div>
 
         <div class="gf">
@@ -728,21 +730,19 @@
       'use strict';
 
       /* ── COMPUTATION NOTE ─────────────────────────────────────────────────────
-         Computed vs expected portfolio totals (from brief):
-         Y1 Sales:          Brief ~$5.4M   → Computed $5.4M   ✓
-         Y1 Recognised Rev: Brief ~$2.4M   → Computed $2.86M  ⚠  (+$460K)
-         Y1 Deferred:       Brief ~$3.0M   → Computed $2.54M  ⚠  (−$460K)
-         Y2 Sales:          Brief ~$4.3M   → Computed $4.3M   ✓
-         Y2 Recognised Rev: Brief ~$5.0M   → Computed $6.27M  ⚠  (+$1.27M)
-         Mix Cons/Tech:     Brief ~60/40   → Computed 59/41   ✓  (≈)
+         Computed vs addendum targets (initial + retainer):
+         Y1 Sales (incl. Qiddiya ret M8):  Target ~$6.4M  → ~$6.36M  ✓
+         Y1 Recognised Rev (incl. ret):    Target ~$2.7M  → ~$3.18M  ⚠ higher
+         Y2 Sales (incl. 4 ret sigs):      Target ~$8.0M  → ~$8.5M   ⚠ higher
+         Y2 Recognised Rev:                Target ~$5.8M  → ~$8.9M   ⚠ higher
+         Retainer annualised run-rate:      Target ~$5.2M  → $5.16M   ✓
 
-         Revenue is higher than expected because straight-line recognition from
-         Del Start means Qiddiya ($700K, M2–M7) and SAR ($300K, M3–M6) both
-         complete entirely within Year 1. The brief's ~$2.4M target may assume
-         a 1–2 month mobilisation lag before first revenue recognition. The chart
-         reflects the supplied engagement data exactly. Raise with Ivan before
-         presenting — if a mobilisation lag is intended, adjust delStart by +1
-         for early engagements to close the gap.
+         Revenue is systematically higher than targets because straight-line
+         recognition from delStart (no mobilisation lag) means engagements
+         start earning immediately. The addendum's targets appear to assume a
+         1–2 month lag before first recognition — consistent with the original
+         brief discrepancy. All computations reflect exact supplied data.
+         Retainer run-rate = sum of all signed retainer annual values ($430K/mo × 12).
          ────────────────────────────────────────────────────────────────────── */
 
       var M=24;
@@ -758,6 +758,7 @@
         {key:'qiddiya',   name:'Qiddiya',             phase:'Phase 1',type:'ivan',
          sale:1, saleAmt:700, consPct:60,techPct:40,consAmt:420,techAmt:280,
          delStart:2, delEnd:7,  dur:6,
+         ret:{signed:8,rate:80,visStart:9,visEnd:20,consPct:75,techPct:25,cpm:60,tpm:20,saleAmt:960,consSale:720,techSale:240},
          tip:'Incumbent PMIS advisor. PIF entertainment giga-programme $40B+. Oracle/SAP/P6/Aconex deployed. Programme Governance & Digital Twin Phase 2.'},
         {key:'sar',       name:'SAR',                  phase:'Phase 1',type:'ey',
          sale:2, saleAmt:300, consPct:65,techPct:35,consAmt:195,techAmt:105,
@@ -766,6 +767,7 @@
         {key:'expo',      name:'Expo 2030 Riyadh',      phase:'Phase 1',type:'ey',
          sale:5, saleAmt:900, consPct:75,techPct:25,consAmt:675,techAmt:225,
          delStart:7, delEnd:15, dur:9,
+         ret:{signed:16,rate:100,visStart:17,visEnd:24,consPct:80,techPct:20,cpm:80,tpm:20,saleAmt:1200,consSale:960,techSale:240},
          tip:'RFP active. Bechtel PMC. Owner-side assurance above Bechtel. 6km\xb2, 42M visitors, Oct 2030 hard deadline. Budget protected from PIF cuts.'},
         {key:'fifa',      name:'FIFA 2034 \xb7 WCA34',      phase:'Phase 1',type:'ey',
          sale:5, saleAmt:1100,consPct:80,techPct:20,consAmt:880,techAmt:220,
@@ -774,14 +776,17 @@
         {key:'roshn',     name:'ROSHN Group',            phase:'Phase 2',type:'ivan',
          sale:8, saleAmt:600, consPct:55,techPct:45,consAmt:330,techAmt:270,
          delStart:10,delEnd:15, dur:6,
+         ret:{signed:16,rate:70,visStart:17,visEnd:24,consPct:70,techPct:30,cpm:49,tpm:21,saleAmt:840,consSale:588,techSale:252},
          tip:'PIF housing developer. $120B+ portfolio. PMWeb award-winning but ERP integration gap structural at multi-region scale.'},
         {key:'kspf',      name:'King Salman Park',       phase:'Phase 2',type:'ivan',
          sale:9, saleAmt:900, consPct:50,techPct:50,consAmt:450,techAmt:450,
          delStart:11,delEnd:18, dur:8,
+         ret:{signed:19,rate:100,visStart:20,visEnd:24,consPct:70,techPct:30,cpm:70,tpm:30,saleAmt:1200,consSale:840,techSale:360},
          tip:'$38B \xb7 17.2km\xb2 \xb7 2027 opening. Seven warm contacts. Parsons PMO. Digital Twin & iCCC mandates open.'},
         {key:'diriyah',   name:'Diriyah (DGDA)',          phase:'Phase 2',type:'ey',
          sale:12,saleAmt:900, consPct:70,techPct:30,consAmt:630,techAmt:270,
          delStart:14,delEnd:21, dur:8,
+         ret:{signed:22,rate:80,visStart:23,visEnd:24,consPct:75,techPct:25,cpm:60,tpm:20,saleAmt:960,consSale:720,techSale:240},
          tip:'$63B UNESCO heritage programme. Mace Consult sitewide PMC. $1.5B Arena Block awarded June 2025.'},
         {key:'ksia',      name:'King Salman Airport',     phase:'Phase 2',type:'ey',
          sale:13,saleAmt:1000,consPct:55,techPct:45,consAmt:550,techAmt:450,
@@ -805,36 +810,58 @@
          tip:'IOC Operating Model delivered — warm relationships. PIF spending cuts heaviest here. Phase 1 resorts operational.'}
       ];
 
-      /* Monthly revenue vectors (index 1…24) */
+      /* Monthly revenue vectors (index 1…24) — initial engagements */
       var mRC=new Array(M+2).fill(0), mRT=new Array(M+2).fill(0);
       ENG.forEach(function(e){
         var cR=e.consAmt/e.dur, tR=e.techAmt/e.dur;
         for(var m=e.delStart;m<=Math.min(e.delEnd,M);m++){mRC[m]+=cR;mRT[m]+=tR;}
       });
+      /* Retainer monthly revenue added to same vectors */
+      ENG.forEach(function(e){
+        if(!e.ret)return;
+        var r=e.ret;
+        for(var m=r.visStart;m<=Math.min(r.visEnd,M);m++){mRC[m]+=r.cpm;mRT[m]+=r.tpm;}
+      });
 
-      /* Quarterly cumulative totals */
+      /* Quarterly cumulative totals — include retainer sale bookings */
       var qtots=[];
       var cSC=0,cST=0,cRC=0,cRT=0;
       for(var qi=1;qi<=8;qi++){
         var qm1=(qi-1)*3+1, qm3=qi*3;
         ENG.forEach(function(e){
           if(e.sale>=qm1&&e.sale<=qm3){cSC+=e.consAmt;cST+=e.techAmt;}
+          if(e.ret&&e.ret.signed>=qm1&&e.ret.signed<=qm3){cSC+=e.ret.consSale;cST+=e.ret.techSale;}
         });
         for(var qm=qm1;qm<=qm3;qm++){cRC+=mRC[qm];cRT+=mRT[qm];}
         qtots.push({sc:Math.round(cSC),st:Math.round(cST),rc:Math.round(cRC),rt:Math.round(cRT)});
       }
 
-      /* Year 1 / Year 2 financials */
+      /* Year 1 / Year 2 financials — initial + retainer sales */
       var y1S=0,y1SC=0,y1ST=0,y1RC=0,y1RT=0;
       var y2S=0,y2SC=0,y2ST=0;
       ENG.forEach(function(e){
         if(e.sale<=12){y1S+=e.saleAmt;y1SC+=e.consAmt;y1ST+=e.techAmt;}
         else{y2S+=e.saleAmt;y2SC+=e.consAmt;y2ST+=e.techAmt;}
+        if(e.ret){
+          if(e.ret.signed<=12){y1S+=e.ret.saleAmt;y1SC+=e.ret.consSale;y1ST+=e.ret.techSale;}
+          else{y2S+=e.ret.saleAmt;y2SC+=e.ret.consSale;y2ST+=e.ret.techSale;}
+        }
       });
       for(var ym=1;ym<=12;ym++){y1RC+=mRC[ym];y1RT+=mRT[ym];}
       var y2RC=0,y2RT=0;
       for(var ym=13;ym<=M;ym++){y2RC+=mRC[ym];y2RT+=mRT[ym];}
       var y1R=y1RC+y1RT, y1Def=y1S-y1R, y2R=y2RC+y2RT;
+
+      /* Retainer-specific metrics for summary band */
+      var y1RetR=0,y2RetR=0,retRunRate=0;
+      ENG.forEach(function(e){
+        if(!e.ret)return;
+        var r=e.ret;
+        for(var m=r.visStart;m<=Math.min(r.visEnd,M);m++){
+          if(m<=12)y1RetR+=(r.cpm+r.tpm); else y2RetR+=(r.cpm+r.tpm);
+        }
+        retRunRate+=r.rate*12; /* annualised value of all signed retainers */
+      });
 
       /* Formatting helpers */
       function fK(k,d){
@@ -926,9 +953,18 @@
         var tr=document.createElement('tr');
         tr.dataset.type=e.type;
 
-        /* Label — two lines of info */
+        /* Label — two or three lines */
         var ntd=document.createElement('td');
         ntd.className='gn';
+        var retLine3=e.ret?
+          '<span style="display:block;font-size:9px;color:rgba(255,255,255,0.26);'+
+          'font-family:\'DM Mono\',monospace;letter-spacing:0.05em;margin-top:2px;">'+
+          '↳ Ret M'+e.ret.signed+' &nbsp;\xb7&nbsp; $'+e.ret.rate+'K/mo &nbsp;\xb7&nbsp; '+
+          (Math.min(e.ret.visEnd,M)-e.ret.visStart+1)+' mo &nbsp;\xb7&nbsp; '+
+          '<span style="color:'+CC+'">'+fK(e.ret.consSale)+' C</span>'+
+          ' <span style="color:rgba(255,255,255,0.18);">/</span> '+
+          '<span style="color:'+CT+'">'+fK(e.ret.techSale)+' T</span>'+
+          '</span>':'';
         ntd.innerHTML=
           '<span style="display:block;font-size:14px;font-weight:600;color:var(--text);'+
           'font-family:\'Barlow Condensed\',sans-serif;letter-spacing:0.02em;line-height:1.2;">'+
@@ -939,7 +975,8 @@
           '<span style="color:'+CC+'">'+fK(e.consAmt)+' Cons</span>'+
           ' <span style="color:rgba(255,255,255,0.18);">/</span> '+
           '<span style="color:'+CT+'">'+fK(e.techAmt)+' Tech</span>'+
-          ' &nbsp;\xb7&nbsp; '+e.dur+' mo</span>';
+          ' &nbsp;\xb7&nbsp; '+e.dur+' mo</span>'+
+          retLine3;
         tr.appendChild(ntd);
 
         /* Bar cell */
@@ -969,7 +1006,7 @@
           }
         }
 
-        /* Sale milestone diamond */
+        /* Sale milestone diamond — filled */
         var DS=8;
         var dia=document.createElement('div');
         dia.style.cssText=
@@ -981,6 +1018,45 @@
           'z-index:4;cursor:help;';
         dia.title='Contract signed M'+e.sale+' — '+fK(e.saleAmt);
         btd.appendChild(dia);
+
+        /* Retainer continuation — half-height bar + hollow diamond + R badge */
+        if(e.ret){
+          var r=e.ret;
+          var retDur=Math.min(r.visEnd,M)-r.visStart+1;
+
+          /* Half-height striped bar */
+          var rbar=document.createElement('div');
+          rbar.style.cssText=
+            'position:absolute;top:13px;height:7px;border-radius:2px;'+
+            'left:'+pL(r.visStart)+';width:'+pW(retDur)+';'+
+            'background:'+
+              'repeating-linear-gradient(-45deg,transparent,transparent 3px,rgba(255,255,255,0.15) 3px,rgba(255,255,255,0.15) 4px),'+
+              'linear-gradient(to bottom,'+CC+' 0%,'+CC+' '+r.consPct+'%,'+CT+' '+r.consPct+'%,'+CT+' 100%);'+
+            'opacity:0.78;';
+          btd.appendChild(rbar);
+
+          /* R badge above bar */
+          var rbadge=document.createElement('div');
+          rbadge.style.cssText=
+            'position:absolute;left:'+pL(r.visStart)+';top:5px;margin-left:2px;'+
+            'font-family:"DM Mono",monospace;font-size:7px;font-weight:700;'+
+            'color:rgba(255,255,255,0.55);letter-spacing:0;line-height:1;'+
+            'pointer-events:none;z-index:5;';
+          rbadge.textContent='R';
+          btd.appendChild(rbadge);
+
+          /* Hollow retainer sale diamond */
+          var rdia=document.createElement('div');
+          rdia.style.cssText=
+            'position:absolute;width:'+DS+'px;height:'+DS+'px;'+
+            'background:transparent;border:2px solid '+CS+';border-radius:1px;'+
+            'transform:rotate(45deg);'+
+            'top:'+(10+7-Math.round(DS/2))+'px;'+
+            'left:'+pL(r.signed)+';margin-left:'+(-Math.round(DS/2))+'px;'+
+            'z-index:4;cursor:help;';
+          rdia.title='Retainer signed M'+r.signed+' — '+fK(r.saleAmt)+' ($'+r.rate+'K/mo \xd712)';
+          btd.appendChild(rdia);
+        }
 
         /* Quarter divider lines + outer boundary lines */
         [1,4,7,10,13,16,19,22,'end'].forEach(function(qm){
@@ -1062,6 +1138,11 @@
               '&nbsp;&middot;&nbsp;'+
               '<span style="color:'+CT+'">'+fK(Math.round(y1RT))+' Tech</span>'+
             '</div>'+
+            '<div class="yr-row" style="color:rgba(255,255,255,0.55);font-size:9px;">'+
+              'Recurring retainer revenue'+
+              '<span style="color:rgba(255,255,255,0.7);">'+fK(Math.round(y1RetR))+
+              ' <span style="color:rgba(255,255,255,0.35);font-size:8px;">('+fP(y1RetR,y1R)+' of rev)</span></span>'+
+            '</div>'+
             '<div class="yr-def">'+
               '<span class="yr-def-lbl">Deferred Revenue → Year 2</span>'+
               '<span class="yr-def-val">'+carry+'</span>'+
@@ -1085,6 +1166,23 @@
             '</div>'+
             '<div class="yr-carry">Includes '+carry+' Year 1 carry &plus; '+y2newDel+' Year 2 deliveries</div>'+
           '</div>'+
+
+          /* Retainer run-rate panel */
+          '<div style="flex-basis:100%;margin-top:10px;">'+
+            '<div class="yr-def" style="flex-direction:column;align-items:flex-start;gap:4px;">'+
+              '<span class="yr-def-lbl">Annualised retainer run-rate at end of Year 2</span>'+
+              '<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">'+
+                '<span class="yr-def-val">'+fK(retRunRate,1)+'</span>'+
+                '<span style="font-size:10px;color:rgba(255,255,255,0.45);">This number + deferred revenue proves the practice compounds</span>'+
+              '</div>'+
+              '<div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:2px;">'+
+                ENG.filter(function(e){return e.ret;}).map(function(e){
+                  return e.name+' $'+e.ret.rate+'K/mo';
+                }).join(' \xb7 ')+
+              '</div>'+
+            '</div>'+
+          '</div>'+
+
           '</div>';
 
         tr.appendChild(td);
