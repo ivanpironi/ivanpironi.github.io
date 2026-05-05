@@ -628,7 +628,7 @@
         color:rgba(255,255,255,0.65);background:transparent;
         border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:3px 9px;cursor:pointer;}
       .gfb.on{color:var(--accent);border-color:var(--accent);background:rgba(232,200,74,0.06);}
-      .gt{width:100%;border-collapse:collapse;min-width:760px;}
+      .gt{width:100%;border-collapse:collapse;min-width:760px;table-layout:fixed;}
       .gt thead th{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.05em;
         color:rgba(255,255,255,0.6);font-weight:400;text-align:center;padding:3px 1px;
         border-bottom:1px solid rgba(255,255,255,0.08);}
@@ -636,8 +636,8 @@
         border-bottom:1px solid rgba(255,255,255,0.18);
         border-right:1px solid rgba(255,255,255,0.09);}
       .gt thead th.qh:last-child{border-right:none;}
-      .gt thead th.lh{text-align:left;min-width:200px;}
-      .gt thead th.fh{text-align:right;min-width:72px;}
+      .gt thead th.lh{text-align:left;width:200px;}
+      .gt thead th.fh{text-align:right;width:72px;}
       .gt tbody tr{border-bottom:1px solid rgba(255,255,255,0.05);}
       .gt tbody tr:last-child{border-bottom:none;}
       .gt tbody tr.phr td{padding:10px 0 3px;border-bottom:none;}
@@ -701,7 +701,7 @@
               <th class="fh qh">Sale $</th>
             </tr>
             <tr>
-              <th class="lh"></th>
+              <th class="lh" style="text-align:right;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding-right:6px;">MONTH</th>
               <th>1</th><th>2</th><th>3</th>
               <th>4</th><th>5</th><th>6</th>
               <th>7</th><th>8</th><th>9</th>
@@ -903,7 +903,7 @@
             vl.style.cssText=
               'position:absolute;top:0;bottom:0;width:1px;pointer-events:none;'+
               'left:'+pL(qm)+';'+
-              (qm===13?'background:rgba(255,255,255,0.13);':'background:rgba(255,255,255,0.07);');
+              (qm===13?'background:rgba(255,255,255,0.22);':'background:rgba(255,255,255,0.15);');
             cell.appendChild(vl);
           });
 
