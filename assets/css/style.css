@@ -166,6 +166,12 @@
     .reveal.revealed > *:nth-child(4) { transition-delay: 240ms; }
     .reveal.revealed > *:nth-child(5) { transition-delay: 320ms; }
 
+    /* On mobile, skip the hidden state entirely — IntersectionObserver is unreliable on large elements */
+    @media (max-width: 950px) {
+      .reveal { opacity: 1; transform: none; }
+      .reveal.revealed { transition: none; }
+    }
+
     /* ============================================================
        HEADER
        ============================================================ */
