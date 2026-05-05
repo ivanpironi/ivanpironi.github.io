@@ -852,64 +852,64 @@
       var gtt=document.getElementById('gtt');
       document.body.appendChild(gtt);
 
-      /* ── Running totals strip (injected into thead, above Q headers) ── */
-      (function(){
-        var thead=document.querySelector('#gt thead');
-        var firstRow=thead.querySelector('tr');
+      /* ── mkTotalsStrip: portfolio totals in tbody using the bar cell coordinate
+         system — guaranteed pixel-perfect alignment with engagement bars ── */
+      function mkTotalsStrip(){
+        var hdr=document.createElement('tr');
+        hdr.className='phr';
+        var hTd=document.createElement('td');
+        hTd.colSpan=M+2;
+        hTd.innerHTML='<span class="gpl">Cumulative Portfolio — Sales &amp; Revenue</span>';
+        hdr.appendChild(hTd);
+        gb.appendChild(hdr);
+
         var defs=[
           {lbl:'Sales \xb7 Consulting',    c:CC,key:'sc',op:1},
           {lbl:'Sales \xb7 Tech Advisory', c:CT,key:'st',op:1},
-          {lbl:'Rev \xb7 Consulting',      c:CC,key:'rc',op:0.6},
-          {lbl:'Rev \xb7 Tech Advisory',   c:CT,key:'rt',op:0.6}
+          {lbl:'Rev \xb7 Consulting',      c:CC,key:'rc',op:0.62},
+          {lbl:'Rev \xb7 Tech Advisory',   c:CT,key:'rt',op:0.62}
         ];
-        /* Insert in reverse so final DOM order matches defs array */
-        for(var di=defs.length-1;di>=0;di--){
-          (function(def){
-            var tr=document.createElement('tr');
-            tr.className='tot-r';
-            var th=document.createElement('th');
-            th.className='lh';
-            th.style.cssText='color:'+def.c+';opacity:'+def.op+';text-align:left;'+
-              'font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.07em;'+
-              'text-transform:uppercase;padding:2px 6px 2px 0;white-space:nowrap;'+
-              'border-bottom:none;border-right:none;';
-            th.textContent=def.lbl;
-            tr.appendChild(th);
-            qtots.forEach(function(q,qi){
-              var td=document.createElement('th');
-              td.colSpan=3;
-              td.style.cssText='text-align:center;font-family:"DM Mono",monospace;font-size:9px;'+
-                'letter-spacing:0.04em;color:'+def.c+';opacity:'+def.op+';padding:2px 1px;'+
-                'border-bottom:none;'+
-                (qi<7?'border-right:1px solid rgba(255,255,255,0.09);':'border-right:none;');
-              td.textContent=fK(q[def.key]);
-              tr.appendChild(td);
-            });
-            var fh=document.createElement('th');fh.className='fh';
-            fh.style.cssText='border-bottom:none;border-right:none;';
-            tr.appendChild(fh);
-            thead.insertBefore(tr,firstRow);
-          })(defs[di]);
-        }
-        /* Separator: one cell per column so layout stays consistent */
+
+        defs.forEach(function(def){
+          var tr=document.createElement('tr');
+
+          /* Label — same column as engagement labels */
+          var lbl=document.createElement('td');
+          lbl.style.cssText='padding:1px 8px 1px 0;font-family:"DM Mono",monospace;'+
+            'font-size:9px;letter-spacing:0.07em;text-transform:uppercase;'+
+            'color:'+def.c+';opacity:'+def.op+';white-space:nowrap;vertical-align:middle;';
+          lbl.textContent=def.lbl;
+          tr.appendChild(lbl);
+
+          /* Bar cell — same colspan=24 as engagement rows, values placed via pL/pW */
+          var cell=document.createElement('td');
+          cell.colSpan=M;
+          cell.style.cssText='position:relative;height:20px;padding:0;';
+
+          qtots.forEach(function(q,qi){
+            var span=document.createElement('span');
+            span.style.cssText=
+              'position:absolute;font-family:"DM Mono",monospace;font-size:9px;'+
+              'letter-spacing:0.04em;color:'+def.c+';opacity:'+def.op+';'+
+              'left:'+pL(qi*3+1)+';width:'+pW(3)+';'+
+              'text-align:center;top:3px;white-space:nowrap;line-height:1;pointer-events:none;';
+            span.textContent=fK(q[def.key]);
+            cell.appendChild(span);
+          });
+
+          tr.appendChild(cell);
+          tr.appendChild(document.createElement('td')); /* empty fee col */
+          gb.appendChild(tr);
+        });
+
+        /* Thin separator before engagement rows */
         var sep=document.createElement('tr');
-        var sepLh=document.createElement('th');
-        sepLh.className='lh';
-        sepLh.style.cssText='padding:3px 0 0;border-bottom:1px solid rgba(255,255,255,0.18);border-right:none;';
-        sep.appendChild(sepLh);
-        for(var qi=0;qi<8;qi++){
-          var sepQ=document.createElement('th');
-          sepQ.colSpan=3;
-          sepQ.style.cssText='padding:3px 0 0;border-bottom:1px solid rgba(255,255,255,0.18);'+
-            (qi<7?'border-right:1px solid rgba(255,255,255,0.09);':'border-right:none;');
-          sep.appendChild(sepQ);
-        }
-        var sepFh=document.createElement('th');
-        sepFh.className='fh';
-        sepFh.style.cssText='padding:3px 0 0;border-bottom:1px solid rgba(255,255,255,0.18);border-right:none;';
-        sep.appendChild(sepFh);
-        thead.insertBefore(sep,firstRow);
-      })();
+        var sTd=document.createElement('td');
+        sTd.colSpan=M+2;
+        sTd.style.cssText='padding:5px 0 0;border-bottom:1px solid rgba(255,255,255,0.1);';
+        sep.appendChild(sTd);
+        gb.appendChild(sep);
+      }
 
       /* ── mkRow: single engagement row ── */
       function mkRow(e){
@@ -1084,6 +1084,7 @@
       /* ── buildGantt ── */
       function buildGantt(filter){
         gb.innerHTML='';
+        mkTotalsStrip(); /* always at top — portfolio totals regardless of filter */
         var phases=['Phase 1','Phase 2','Phase 3'];
         var phLabels={
           'Phase 1':'Phase 1 — Incumbent &amp; Active RFP',
