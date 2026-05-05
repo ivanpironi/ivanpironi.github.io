@@ -622,50 +622,60 @@
       .gl{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px;}
       .gli{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(255,255,255,0.75);}
       .gsw{width:20px;height:8px;border-radius:2px;}
-      .sw-iv{background:#1A6FB5;}
-      .sw-ey{background:#E8C84A;}
-      .sw-rt{background:#39FF14;opacity:.75;}
-      .gms-lg{width:9px;height:9px;background:#FF5555;border:1px solid rgba(255,85,85,0.5);transform:rotate(45deg);flex-shrink:0;}
+      .gms-lg{width:8px;height:8px;background:rgba(255,255,255,0.9);border:1.5px solid rgba(255,255,255,0.35);transform:rotate(45deg);border-radius:1px;flex-shrink:0;}
       .gf{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
       .gfb{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;
         color:rgba(255,255,255,0.65);background:transparent;
         border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:3px 9px;cursor:pointer;}
       .gfb.on{color:var(--accent);border-color:var(--accent);background:rgba(232,200,74,0.06);}
-      .gt{width:100%;border-collapse:collapse;min-width:700px;}
+      .gt{width:100%;border-collapse:collapse;min-width:760px;}
       .gt thead th{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.05em;
         color:rgba(255,255,255,0.6);font-weight:400;text-align:center;padding:3px 1px;
         border-bottom:1px solid rgba(255,255,255,0.08);}
       .gt thead th.qh{font-weight:500;color:rgba(255,255,255,0.75);
         border-bottom:1px solid rgba(255,255,255,0.18);}
-      .gt thead th.lh{text-align:left;min-width:155px;}
-      .gt thead th.fh{text-align:right;min-width:95px;}
+      .gt thead th.lh{text-align:left;min-width:200px;}
+      .gt thead th.fh{text-align:right;min-width:72px;}
       .gt tbody tr{border-bottom:1px solid rgba(255,255,255,0.05);}
       .gt tbody tr:last-child{border-bottom:none;}
       .gt tbody tr.phr td{padding:10px 0 3px;border-bottom:none;}
       .gt td{padding:3px 1px;vertical-align:middle;}
-      .gn{padding:4px 8px 4px 0 !important;font-family:'Barlow Condensed',sans-serif;
-        font-size:14px;font-weight:600;color:var(--text) !important;white-space:nowrap;}
-      .gsb{font-size:10px;color:rgba(255,255,255,0.6);font-weight:400;display:block;font-family:'Barlow',sans-serif;}
-      .gfe{font-size:10px;color:rgba(255,255,255,0.6);text-align:right;
-        padding:4px 0 4px 6px !important;white-space:nowrap;}
+      .gn{padding:4px 8px 4px 0 !important;vertical-align:top;}
+      .gfe{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.6);
+        text-align:right;padding:4px 0 4px 6px !important;white-space:nowrap;vertical-align:top;}
       .gpl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.06em;
         text-transform:uppercase;color:rgba(255,255,255,0.7);}
-      .gdl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.05em;
-        text-transform:uppercase;color:rgba(255,255,255,0.7);
-        padding:4px 8px 4px 0 !important;white-space:nowrap;}
       .gtt{position:fixed;background:var(--surface);
         border:1px solid rgba(255,255,255,0.16);border-radius:4px;
         padding:8px 10px;font-size:12px;color:rgba(255,255,255,0.8);
-        pointer-events:none;z-index:9999;max-width:230px;line-height:1.5;display:none;}
+        pointer-events:none;z-index:9999;max-width:240px;line-height:1.5;display:none;}
       .gtt strong{color:var(--text);font-weight:500;display:block;margin-bottom:3px;}
+      /* Year summary */
+      .yr-blk{font-family:'DM Mono',monospace;min-width:220px;flex:1;}
+      .yr-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;
+        color:var(--text);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;}
+      .yr-sub{font-weight:300;font-size:11px;color:rgba(255,255,255,0.4);
+        text-transform:none;letter-spacing:0;}
+      .yr-row{display:flex;justify-content:space-between;gap:12px;
+        color:rgba(255,255,255,0.45);font-size:10px;letter-spacing:0.04em;padding:2px 0;}
+      .yr-row span{color:rgba(255,255,255,0.82);font-weight:500;}
+      .yr-mix{font-size:9px;color:rgba(255,255,255,0.4);letter-spacing:0.03em;
+        padding:1px 0 5px;border-bottom:1px solid rgba(255,255,255,0.05);margin-bottom:4px;}
+      .yr-def{display:flex;justify-content:space-between;align-items:center;
+        margin-top:10px;padding:7px 10px;
+        background:rgba(232,200,74,0.07);border:1px solid rgba(232,200,74,0.3);border-radius:3px;}
+      .yr-def-lbl{font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+      .yr-def-val{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#E8C84A;}
+      .yr-carry{font-size:9px;color:rgba(255,255,255,0.3);letter-spacing:0.03em;
+        margin-top:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.06);}
       </style>
 
       <div class="gw">
         <div class="gl">
-          <div class="gli"><div class="gsw sw-iv"></div>Ivan's network</div>
-          <div class="gli"><div class="gsw sw-ey"></div>EY + Partnership</div>
-          <div class="gli"><div class="gsw sw-rt"></div>Retainer</div>
-          <div class="gli"><div class="gms-lg"></div>Milestone</div>
+          <div class="gli"><div class="gsw" style="background:#5B8DEF"></div>Consulting</div>
+          <div class="gli"><div class="gsw" style="background:#E8C84A"></div>Tech Advisory</div>
+          <div class="gli"><div class="gsw" style="background:linear-gradient(to right,#5B8DEF 55%,#E8C84A 55%);width:24px"></div>Mixed engagement bar</div>
+          <div class="gli"><div class="gms-lg"></div>Sale event (contract signed)</div>
         </div>
 
         <div class="gf">
@@ -686,7 +696,7 @@
               <th class="qh" colspan="3">Q6</th>
               <th class="qh" colspan="3">Q7</th>
               <th class="qh" colspan="3">Q8</th>
-              <th class="fh qh">Fee range</th>
+              <th class="fh qh">Sale $</th>
             </tr>
             <tr>
               <th class="lh"></th>
@@ -713,287 +723,373 @@
 
       <script>
       (function(){
-        var M=24;
-        var CI='#1A6FB5';   /* Ivan's network  — darker blue      */
-        var CE='#E8C84A';   /* EY+Partnership  — site accent gold */
-        var CR='#39FF14';   /* Retainer        — neon green       */
-        var CM='#FF5555';   /* Milestone       — red              */
-        var CMB='rgba(255,85,85,0.5)'; /* milestone border */
+      'use strict';
 
-        var accounts=[
-          {phase:"Ivan's network",rows:[
-            {name:'Qiddiya',sub:'KSA · Incumbent',type:'ivan',
-             bars:[{s:3,e:12,c:CI},{s:12,e:24,c:CR,o:.75}],
-             ms:[{m:4,l:'Eng signed'},{m:12,l:'Retainer'}],
-             fee:'$400–800K → retainer',
-             tip:'Governance + Digital Twin Phase 2. Ivan is the incumbent — zero trust cycle. Yardi (Sep 2025) creates a new three-way integration mandate unaddressed by any current advisor.'},
-            {name:'ROSHN',sub:'KSA',type:'ivan',
-             bars:[{s:6,e:14,c:CI},{s:14,e:24,c:CR,o:.75}],
-             ms:[{m:7,l:'Network'},{m:10,l:'Proposal'},{m:14,l:'Retainer'}],
-             fee:'$400–800K → retainer',
-             tip:'PMIS governance at $120B+ portfolio. PMWeb award-winning but ERP integration gap structural. Contacts: Hazem Alaily (Chief PPMO), Mohammad Ajlouni (Director EPMO).'},
-            {name:'King Salman Park',sub:'KSA',type:'ivan',
-             bars:[{s:9,e:15,c:CI},{s:15,e:24,c:CR,o:.75}],
-             ms:[{m:9,l:'Warm'},{m:12,l:'Mandate'},{m:15,l:'Retainer'}],
-             fee:'$600K–1.2M',
-             tip:'7 named contacts from delivered engagement: Majed Alhudaib (CTO), Dale Chadwick (CDO), Tom Jarvis, Douglas Stagner, Ben Edmonds, Abdulmalik Alsaleh. Parsons holds PMO.'},
-            {name:'New Murabba',sub:'KSA',type:'ivan',
-             bars:[{s:10,e:17,c:CI},{s:17,e:24,c:CR,o:.75}],
-             ms:[{m:12,l:'Escalation'},{m:16,l:'Mandate'}],
-             fee:'$500K–1M',
-             tip:'Three PMCs (Bechtel, Turner, AECOM) — no owner-side PMIS layer. Contains FIFA 2034 stadium. Contacts: Mohammed Alqahtani (Head Smart City & AI), Wail Balkhair (Exec Director AM).'},
-            {name:'Khazna Data Centers',sub:'UAE',type:'ivan',
-             bars:[{s:12,e:18,c:CI},{s:18,e:24,c:CR,o:.75}],
-             ms:[{m:13,l:'Mandate'},{m:18,l:'Retainer'}],
-             fee:'$300–700K',
-             tip:'30+ facilities, $26.2B. NexOps/Presight AI launched Feb 2026 — construction-to-operations handover gap open. Contacts: Abdulmajeed Harmoodi (CTO), Kevin Ayling.'},
-            {name:'Red Sea Global',sub:'KSA',type:'ivan',
-             bars:[{s:13,e:20,c:CI},{s:20,e:24,c:CR,o:.75}],
-             ms:[{m:14,l:'IOC entry'},{m:18,l:'Mandate'}],
-             fee:'$400–800K',
-             tip:'IOC Operating Model delivered by team — warm relationships with RSG operations leadership. PIF spending cuts heaviest here — ROI validation advisory is most urgent.'},
-          ]},
-          {phase:"EY + Partnership",rows:[
-            {name:'SAR',sub:'KSA · EY Platform',type:'ey',
-             bars:[{s:4,e:11,c:CE},{s:11,e:24,c:CR,o:.75}],
-             ms:[{m:5,l:'First mtg'},{m:8,l:'Proposal'},{m:11,l:'Mandate'}],
-             fee:'$150–400K',
-             tip:'Schedule health + EPMO design. EY risk/assurance is the entry. 18-month bid familiarity with SAR governance. Active: Landbridge ($7B PPP), Qiddiya rail link.'},,
-            {name:'Expo 2030 Riyadh',sub:'KSA · EY Platform',type:'ey',
-             bars:[{s:3,e:12,c:CE},{s:12,e:24,c:CR,o:.55}],
-             ms:[{m:3,l:'RFP submitted'},{m:6,l:'Mandate'},{m:12,l:'Retainer'}],
-             fee:'$600K–1.2M',
-             tip:'RFP expected imminently — first International Participants Meeting Riyadh 2026. PIF-owned ERC, CEO Talal H. AlMarri. Bechtel PMC. 6km², 42M visitors, Oct 2030 deadline. Budget protected from PIF cuts. No advisory firm confirmed as governance lead.'},,
-            {name:'FIFA 2034 · WCA34',sub:'KSA · EY Platform',type:'ey',
-             bars:[{s:5,e:14,c:CE},{s:14,e:24,c:CR,o:.55}],
-             ms:[{m:5,l:'RFP submitted'},{m:9,l:'Mandate'},{m:14,l:'Retainer'}],
-             fee:'$800K–1.5M',
-             tip:'Stadium costs reassessed Dec 2025 — advisory mandate is live now, not 2028. Chaired by Crown Prince MBS. 15 stadiums (11 new) across 5 cities. Qiddiya and New Murabba both contain FIFA 2034 stadiums — Ivan holds programme knowledge on both sites.'},
-            {name:'Diriyah (DGDA)',sub:'KSA · Mace',type:'ey',
-             bars:[{s:7,e:15,c:CE},{s:15,e:24,c:CR,o:.75}],
-             ms:[{m:8,l:'Mace intro'},{m:13,l:'Mandate'},{m:15,l:'Retainer'}],
-             fee:'$600K–1.2M',
-             tip:'$63B UNESCO heritage programme. Mace Consult holds sitewide PMC. Christopher Seymour (MD MEA) — personal relationship. Heritage asset information management specialist niche.'},,
-            {name:'King Salman Airport',sub:'KSA · Mace',type:'ey',
-             bars:[{s:8,e:16,c:CE},{s:16,e:24,c:CR,o:.75}],
-             ms:[{m:9,l:'Via Seymour'},{m:13,l:'Mandate'},{m:16,l:'Retainer'}],
-             fee:'$600K–1.2M',
-             tip:'$30B · 57km² · 6 runways. Mace is Delivery Partner. EY advises KSIADC above Mace. Hard deadlines: Expo 2030, FIFA 2034. Contacts: Marco Mejia (Acting CEO), Linda Schucroft.'},,
-            {name:'Saudi Aramco',sub:'KSA · Worley',type:'ey',
-             bars:[{s:14,e:22,c:CE},{s:22,e:24,c:CR,o:.75}],
-             ms:[{m:15,l:'Worley intro'},{m:18,l:'Mandate'}],
-             fee:'$1–2M',
-             tip:'$40B+ annual capex. Worley GES+ 5yr contract. SAP/Oracle PMIS reconciliation confirmed structural problem. Ivan has solved this at Qiddiya scale. Highest single fee in pipeline.'},,
-          ]}
-        ];
+      /* ── COMPUTATION NOTE ─────────────────────────────────────────────────────
+         Computed vs expected portfolio totals (from brief):
+         Y1 Sales:          Brief ~$5.4M   → Computed $5.4M   ✓
+         Y1 Recognised Rev: Brief ~$2.4M   → Computed $2.86M  ⚠  (+$460K)
+         Y1 Deferred:       Brief ~$3.0M   → Computed $2.54M  ⚠  (−$460K)
+         Y2 Sales:          Brief ~$4.3M   → Computed $4.3M   ✓
+         Y2 Recognised Rev: Brief ~$5.0M   → Computed $6.27M  ⚠  (+$1.27M)
+         Mix Cons/Tech:     Brief ~60/40   → Computed 59/41   ✓  (≈)
 
-        var gb=document.getElementById('gb');
-        var gtt=document.getElementById('gtt');
-        document.body.appendChild(gtt); /* move outside .reveal transform context so position:fixed works */
+         Revenue is higher than expected because straight-line recognition from
+         Del Start means Qiddiya ($700K, M2–M7) and SAR ($300K, M3–M6) both
+         complete entirely within Year 1. The brief's ~$2.4M target may assume
+         a 1–2 month mobilisation lag before first revenue recognition. The chart
+         reflects the supplied engagement data exactly. Raise with Ivan before
+         presenting — if a mobilisation lag is intended, adjust delStart by +1
+         for early engagements to close the gap.
+         ────────────────────────────────────────────────────────────────────── */
 
-        function p(m){return(((m-1)/M)*100).toFixed(2)+'%';}
-        function pw(s,e){return(((e-s)/M)*100).toFixed(2)+'%';}
+      var M=24;
 
-        /* diamond at the bottom edge of the bar (bar ends at top:22px) */
-        var BAR_TOP=4; var BAR_H=18;
-        var DIA_SZ=7;
-        var DIA_TOP=BAR_TOP+BAR_H-Math.round(DIA_SZ/2); /* ≈18 */
+      /* Color tokens */
+      var CC='#5B8DEF';               /* Consulting — blue              */
+      var CT='#E8C84A';               /* Tech Advisory — yellow accent  */
+      var CS='rgba(255,255,255,0.92)';/* Sale marker fill               */
+      var CSB='rgba(255,255,255,0.35)';/* Sale marker border            */
 
-        function mkDiamond(leftPct,topPx,color,borderColor,titleText){
-          var d=document.createElement('div');
-          d.style.cssText=
-            'position:absolute;width:'+DIA_SZ+'px;height:'+DIA_SZ+'px;'+
-            'background:'+color+';border:1px solid '+borderColor+';'+
-            'transform:rotate(45deg);'+
-            'top:'+topPx+'px;left:'+leftPct+';margin-left:'+(-Math.round(DIA_SZ/2))+'px;'+
-            'z-index:3;cursor:help;flex-shrink:0;';
-          if(titleText) d.title=titleText;
-          return d;
-        }
+      /* Engagement data (amounts in $K) */
+      var ENG=[
+        {key:'qiddiya',   name:'Qiddiya',             phase:'Phase 1',type:'ivan',
+         sale:1, saleAmt:700, consPct:60,techPct:40,consAmt:420,techAmt:280,
+         delStart:2, delEnd:7,  dur:6,
+         tip:'Incumbent PMIS advisor. PIF entertainment giga-programme $40B+. Oracle/SAP/P6/Aconex deployed. Programme Governance & Digital Twin Phase 2.'},
+        {key:'sar',       name:'SAR',                  phase:'Phase 1',type:'ey',
+         sale:2, saleAmt:300, consPct:65,techPct:35,consAmt:195,techAmt:105,
+         delStart:3, delEnd:6,  dur:4,
+         tip:'Saudi Arabia Railways. Schedule Health & EPMO design. 18-month bid familiarity. Landbridge $7B PPP.'},
+        {key:'expo',      name:'Expo 2030 Riyadh',      phase:'Phase 1',type:'ey',
+         sale:5, saleAmt:900, consPct:75,techPct:25,consAmt:675,techAmt:225,
+         delStart:7, delEnd:15, dur:9,
+         tip:'RFP active. Bechtel PMC. Owner-side assurance above Bechtel. 6km\xb2, 42M visitors, Oct 2030 hard deadline. Budget protected from PIF cuts.'},
+        {key:'fifa',      name:'FIFA 2034 \xb7 WCA34',      phase:'Phase 1',type:'ey',
+         sale:5, saleAmt:1100,consPct:80,techPct:20,consAmt:880,techAmt:220,
+         delStart:7, delEnd:15, dur:9,
+         tip:'RFP active. 15 stadiums, 5 cities, chaired by Crown Prince MBS. Governance crisis live. Qiddiya & New Murabba contain FIFA 2034 stadiums.'},
+        {key:'roshn',     name:'ROSHN Group',            phase:'Phase 2',type:'ivan',
+         sale:8, saleAmt:600, consPct:55,techPct:45,consAmt:330,techAmt:270,
+         delStart:10,delEnd:15, dur:6,
+         tip:'PIF housing developer. $120B+ portfolio. PMWeb award-winning but ERP integration gap structural at multi-region scale.'},
+        {key:'kspf',      name:'King Salman Park',       phase:'Phase 2',type:'ivan',
+         sale:9, saleAmt:900, consPct:50,techPct:50,consAmt:450,techAmt:450,
+         delStart:11,delEnd:18, dur:8,
+         tip:'$38B \xb7 17.2km\xb2 \xb7 2027 opening. Seven warm contacts. Parsons PMO. Digital Twin & iCCC mandates open.'},
+        {key:'diriyah',   name:'Diriyah (DGDA)',          phase:'Phase 2',type:'ey',
+         sale:12,saleAmt:900, consPct:70,techPct:30,consAmt:630,techAmt:270,
+         delStart:14,delEnd:21, dur:8,
+         tip:'$63B UNESCO heritage programme. Mace Consult sitewide PMC. $1.5B Arena Block awarded June 2025.'},
+        {key:'ksia',      name:'King Salman Airport',     phase:'Phase 2',type:'ey',
+         sale:13,saleAmt:1000,consPct:55,techPct:45,consAmt:550,techAmt:450,
+         delStart:15,delEnd:24, dur:10,
+         tip:'$30B \xb7 57km\xb2 \xb7 3 PMCs simultaneously: Mace, Bechtel, Parsons. Hard deadlines: Expo 2030 + FIFA 2034.'},
+        {key:'aramco',    name:'Saudi Aramco',            phase:'Phase 3',type:'ey',
+         sale:15,saleAmt:1500,consPct:35,techPct:65,consAmt:525,techAmt:975,
+         delStart:18,delEnd:26, dur:9,
+         tip:'$40B+ annual capex. Worley GES+ contract. SAP↔PMIS cost reconciliation structural problem. Highest single fee in portfolio.'},
+        {key:'newmurabba',name:'New Murabba',             phase:'Phase 3',type:'ivan',
+         sale:16,saleAmt:700, consPct:55,techPct:45,consAmt:385,techAmt:315,
+         delStart:18,delEnd:24, dur:7,
+         tip:'$38B \xb7 3 PMCs (Bechtel/Turner/AECOM). Contains FIFA 2034 stadium. Naver Cloud MoU.'},
+        {key:'khazna',    name:'Khazna Data Centers',     phase:'Phase 3',type:'ivan',
+         sale:18,saleAmt:500, consPct:50,techPct:50,consAmt:250,techAmt:250,
+         delStart:19,delEnd:24, dur:6,
+         tip:'30+ facilities. $26.2B financing. Stargate UAE partner. NexOps/Presight AI launched Feb 2026.'},
+        {key:'rsg',       name:'Red Sea Global',          phase:'Phase 3',type:'ivan',
+         sale:20,saleAmt:600, consPct:70,techPct:30,consAmt:420,techAmt:180,
+         delStart:22,delEnd:26, dur:5,
+         tip:'IOC Operating Model delivered — warm relationships. PIF spending cuts heaviest here. Phase 1 resorts operational.'}
+      ];
 
-        function mkRow(row){
-          var tr=document.createElement('tr');
-          tr.dataset.type=row.type;
+      /* Monthly revenue vectors (index 1…24) */
+      var mRC=new Array(M+2).fill(0), mRT=new Array(M+2).fill(0);
+      ENG.forEach(function(e){
+        var cR=e.consAmt/e.dur, tR=e.techAmt/e.dur;
+        for(var m=e.delStart;m<=Math.min(e.delEnd,M);m++){mRC[m]+=cR;mRT[m]+=tR;}
+      });
 
-          var ntd=document.createElement('td');
-          ntd.className='gn';
-          ntd.innerHTML=row.name+'<span class="gsb">'+row.sub+'</span>';
-          tr.appendChild(ntd);
-
-          var btd=document.createElement('td');
-          btd.colSpan=M;
-          btd.style.cssText='position:relative;height:36px;padding:2px 0;';
-
-          row.bars.forEach(function(b){
-            var d=document.createElement('div');
-            d.style.cssText=
-              'position:absolute;top:'+BAR_TOP+'px;height:'+BAR_H+'px;border-radius:2px;'+
-              'left:'+p(b.s)+';width:'+pw(b.s,b.e)+';'+
-              'background:'+b.c+';opacity:'+(b.o||1)+';';
-            btd.appendChild(d);
-          });
-
-          (row.ms||[]).forEach(function(ms){
-            var dia=mkDiamond(p(ms.m),DIA_TOP,CM,CMB,ms.l);
-            btd.appendChild(dia);
-            var lbl=document.createElement('span');
-            lbl.style.cssText=
-              'position:absolute;top:'+(DIA_TOP+DIA_SZ+2)+'px;left:'+p(ms.m)+';'+
-              'transform:translateX(-50%);font-size:8px;'+
-              'color:rgba(255,255,255,0.55);white-space:nowrap;'+
-              'font-family:"DM Mono",monospace;letter-spacing:0.03em;';
-            lbl.textContent=ms.l;
-            btd.appendChild(lbl);
-          });
-
-          btd.addEventListener('mouseenter',function(){
-            gtt.innerHTML='<strong>'+row.name+'</strong>'+row.tip+
-              '<br><span style="color:rgba(255,255,255,0.55);font-size:10px;margin-top:4px;display:block;">'+
-              row.fee+'</span>';
-            gtt.style.display='block';
-          });
-          btd.addEventListener('mousemove',function(e){
-            gtt.style.left=(e.clientX+14)+'px';
-            gtt.style.top=(e.clientY-10)+'px';
-          });
-          btd.addEventListener('mouseleave',function(){
-            gtt.style.display='none';
-          });
-          tr.appendChild(btd);
-
-          var ftd=document.createElement('td');
-          ftd.className='gfe';
-          ftd.textContent=row.fee;
-          tr.appendChild(ftd);
-          return tr;
-        }
-
-        function mkDepth(allRows){
-          var counts=new Array(M).fill(0);
-          allRows.forEach(function(row){
-            row.bars.forEach(function(b){
-              for(var m=b.s;m<b.e&&m<=M;m++) counts[m-1]++;
-            });
-          });
-          var max=Math.max.apply(null,counts)||1;
-
-          var sep=document.createElement('tr');
-          sep.className='phr';
-          var std=document.createElement('td');
-          std.colSpan=M+2;
-          std.innerHTML='<span class="gpl">Active client mandates — concurrent</span>';
-          sep.appendChild(std);
-          gb.appendChild(sep);
-
-          var tr=document.createElement('tr');
-          var lbl=document.createElement('td');
-          lbl.className='gdl';
-          lbl.textContent='Depth';
-          tr.appendChild(lbl);
-
-          var dtd=document.createElement('td');
-          dtd.colSpan=M;
-          dtd.style.cssText='position:relative;height:48px;padding:2px 0;';
-
-          counts.forEach(function(c,i){
-            if(!c) return;
-            var h=Math.max(6,Math.round((c/max)*38));
-            var bar=document.createElement('div');
-            bar.style.cssText=
-              'position:absolute;bottom:2px;'+
-              'left:calc('+((i/M)*100).toFixed(2)+'% + 1px);'+
-              'width:calc('+(1/M*100).toFixed(2)+'% - 2px);'+
-              'height:'+h+'px;'+
-              'background:rgba(74,144,217,0.35);'+
-              'border-top:2px solid rgba(74,144,217,0.75);'+
-              'border-radius:1px 1px 0 0;';
-            bar.title=c+' mandate'+(c>1?'s':'')+' active';
-            dtd.appendChild(bar);
-
-            var num=document.createElement('span');
-            num.style.cssText=
-              'position:absolute;bottom:'+(h+3)+'px;'+
-              'left:calc('+((i/M)*100).toFixed(2)+'% + 1px);'+
-              'width:calc('+(1/M*100).toFixed(2)+'% - 2px);'+
-              'text-align:center;font-size:9px;'+
-              'color:rgba(255,255,255,0.7);';
-            num.textContent=c;
-            dtd.appendChild(num);
-          });
-          tr.appendChild(dtd);
-          tr.appendChild(document.createElement('td'));
-          gb.appendChild(tr);
-        }
-
-
-        function mkRevenue(){
-          var sep=document.createElement('tr');
-          sep.className='phr';
-          var std=document.createElement('td');
-          std.colSpan=M+2;
-          std.innerHTML='<span class="gpl">Revenue trajectory</span>';
-          sep.appendChild(std);
-          gb.appendChild(sep);
-
-          var tr=document.createElement('tr');
-          var lbl=document.createElement('td');
-          lbl.className='gdl';
-          lbl.textContent='Revenue';
-          tr.appendChild(lbl);
-
-          var rtd=document.createElement('td');
-          rtd.colSpan=M;
-          rtd.style.cssText='position:relative;height:18px;padding:2px 0;';
-
-          [{s:1,e:12,c:'#2B6CB0',l:'$2–4M Year 1'},
-           {s:12,e:18,c:'#2C7A5C',l:'$6–8M'},
-           {s:18,e:24,c:'#276749',l:'$10M+ run-rate'}
-          ].forEach(function(t){
-            var d=document.createElement('div');
-            d.style.cssText=
-              'position:absolute;top:0;height:16px;border-radius:2px;'+
-              'left:'+p(t.s)+';width:'+pw(t.s,t.e)+';background:'+t.c+';'+
-              'display:flex;align-items:center;padding:0 6px;font-size:9px;'+
-              'color:rgba(255,255,255,0.85);font-weight:500;overflow:hidden;'+
-              'white-space:nowrap;font-family:"DM Mono",monospace;letter-spacing:0.04em;';
-            d.textContent=t.l;
-            rtd.appendChild(d);
-          });
-          tr.appendChild(rtd);
-          tr.appendChild(document.createElement('td'));
-          gb.appendChild(tr);
-        }
-
-        function buildGantt(filter){
-          gb.innerHTML='';
-          var allRows=[];
-          accounts.forEach(function(group){
-            var rows=filter==='all'
-              ? group.rows
-              : group.rows.filter(function(r){return r.type===filter;});
-            if(!rows.length) return;
-            allRows=allRows.concat(rows);
-            var ph=document.createElement('tr');
-            ph.className='phr';
-            var phTd=document.createElement('td');
-            phTd.colSpan=M+2;
-            phTd.innerHTML='<span class="gpl">'+group.phase+'</span>';
-            ph.appendChild(phTd);
-            gb.appendChild(ph);
-            rows.forEach(function(r){gb.appendChild(mkRow(r));});
-          });
-          if(filter==='all'){mkDepth(allRows);mkRevenue();}
-        }
-
-        buildGantt('all');
-
-        document.querySelectorAll('.gfb').forEach(function(b){
-          b.addEventListener('click',function(){
-            document.querySelectorAll('.gfb').forEach(function(x){x.classList.remove('on');});
-            b.classList.add('on');
-            buildGantt(b.dataset.gf);
-          });
+      /* Quarterly cumulative totals */
+      var qtots=[];
+      var cSC=0,cST=0,cRC=0,cRT=0;
+      for(var qi=1;qi<=8;qi++){
+        var qm1=(qi-1)*3+1, qm3=qi*3;
+        ENG.forEach(function(e){
+          if(e.sale>=qm1&&e.sale<=qm3){cSC+=e.consAmt;cST+=e.techAmt;}
         });
+        for(var qm=qm1;qm<=qm3;qm++){cRC+=mRC[qm];cRT+=mRT[qm];}
+        qtots.push({sc:Math.round(cSC),st:Math.round(cST),rc:Math.round(cRC),rt:Math.round(cRT)});
+      }
+
+      /* Year 1 / Year 2 financials */
+      var y1S=0,y1SC=0,y1ST=0,y1RC=0,y1RT=0;
+      var y2S=0,y2SC=0,y2ST=0;
+      ENG.forEach(function(e){
+        if(e.sale<=12){y1S+=e.saleAmt;y1SC+=e.consAmt;y1ST+=e.techAmt;}
+        else{y2S+=e.saleAmt;y2SC+=e.consAmt;y2ST+=e.techAmt;}
+      });
+      for(var ym=1;ym<=12;ym++){y1RC+=mRC[ym];y1RT+=mRT[ym];}
+      var y2RC=0,y2RT=0;
+      for(var ym=13;ym<=M;ym++){y2RC+=mRC[ym];y2RT+=mRT[ym];}
+      var y1R=y1RC+y1RT, y1Def=y1S-y1R, y2R=y2RC+y2RT;
+
+      /* Formatting helpers */
+      function fK(k,d){
+        if(k>=1000)return'$'+(k/1000).toFixed(d!==undefined?d:1)+'M';
+        return'$'+Math.round(k)+'K';
+      }
+      function fP(n,d){return(n/d*100).toFixed(0)+'%';}
+
+      /* Positioning */
+      function pL(m){return(((m-1)/M)*100).toFixed(2)+'%';}
+      function pW(dur){return((dur/M)*100).toFixed(2)+'%';}
+
+      /* DOM refs */
+      var gb=document.getElementById('gb');
+      var gtt=document.getElementById('gtt');
+      document.body.appendChild(gtt);
+
+      /* ── Running totals strip (injected into thead, above Q headers) ── */
+      (function(){
+        var thead=document.querySelector('#gt thead');
+        var firstRow=thead.querySelector('tr');
+        var defs=[
+          {lbl:'Sales \xb7 Consulting',    c:CC,key:'sc',op:1},
+          {lbl:'Sales \xb7 Tech Advisory', c:CT,key:'st',op:1},
+          {lbl:'Rev \xb7 Consulting',      c:CC,key:'rc',op:0.6},
+          {lbl:'Rev \xb7 Tech Advisory',   c:CT,key:'rt',op:0.6}
+        ];
+        /* Insert in reverse so final DOM order matches defs array */
+        for(var di=defs.length-1;di>=0;di--){
+          (function(def){
+            var tr=document.createElement('tr');
+            tr.className='tot-r';
+            var th=document.createElement('th');
+            th.className='lh';
+            th.style.cssText='color:'+def.c+';opacity:'+def.op+';text-align:left;'+
+              'font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.07em;'+
+              'text-transform:uppercase;padding:2px 6px 2px 0;white-space:nowrap;'+
+              'border-bottom:none;';
+            th.textContent=def.lbl;
+            tr.appendChild(th);
+            qtots.forEach(function(q){
+              var td=document.createElement('th');
+              td.colSpan=3;
+              td.style.cssText='text-align:center;font-family:"DM Mono",monospace;font-size:9px;'+
+                'letter-spacing:0.04em;color:'+def.c+';opacity:'+def.op+';padding:2px 1px;'+
+                'border-bottom:none;';
+              td.textContent=fK(q[def.key]);
+              tr.appendChild(td);
+            });
+            var fh=document.createElement('th');fh.className='fh';
+            fh.style.borderBottom='none';tr.appendChild(fh);
+            thead.insertBefore(tr,firstRow);
+          })(defs[di]);
+        }
+        /* Separator between totals strip and Q headers */
+        var sep=document.createElement('tr');
+        var sepTh=document.createElement('th');
+        sepTh.colSpan=M+2;
+        sepTh.style.cssText='padding:3px 0 0;border-bottom:1px solid rgba(255,255,255,0.18);';
+        sep.appendChild(sepTh);
+        thead.insertBefore(sep,firstRow);
+      })();
+
+      /* ── mkRow: single engagement row ── */
+      function mkRow(e){
+        var tr=document.createElement('tr');
+        tr.dataset.type=e.type;
+
+        /* Label — two lines of info */
+        var ntd=document.createElement('td');
+        ntd.className='gn';
+        ntd.innerHTML=
+          '<span style="display:block;font-size:14px;font-weight:600;color:var(--text);'+
+          'font-family:\'Barlow Condensed\',sans-serif;letter-spacing:0.02em;line-height:1.2;">'+
+          e.name+'</span>'+
+          '<span style="display:block;font-size:9px;color:rgba(255,255,255,0.32);'+
+          'font-family:\'DM Mono\',monospace;letter-spacing:0.06em;text-transform:uppercase;'+
+          'margin-top:2px;">'+fK(e.saleAmt)+' sale &nbsp;\xb7&nbsp; '+
+          '<span style="color:'+CC+'">'+fK(e.consAmt)+' Cons</span>'+
+          ' <span style="color:rgba(255,255,255,0.18);">/</span> '+
+          '<span style="color:'+CT+'">'+fK(e.techAmt)+' Tech</span>'+
+          ' &nbsp;\xb7&nbsp; '+e.dur+' mo</span>';
+        tr.appendChild(ntd);
+
+        /* Bar cell */
+        var btd=document.createElement('td');
+        btd.colSpan=M;
+        btd.style.cssText='position:relative;height:44px;padding:2px 0;';
+
+        /* Delivery bar: gradient split cons (top) / tech (bottom) */
+        var visEnd=Math.min(e.delEnd,M);
+        if(visEnd>=e.delStart){
+          var durVis=visEnd-e.delStart+1;
+          var bar=document.createElement('div');
+          bar.style.cssText=
+            'position:absolute;top:10px;height:14px;border-radius:2px;'+
+            'left:'+pL(e.delStart)+';width:'+pW(durVis)+';'+
+            'background:linear-gradient(to bottom,'+CC+' 0%,'+CC+' '+e.consPct+'%,'+
+            CT+' '+e.consPct+'%,'+CT+' 100%);opacity:0.82;';
+          btd.appendChild(bar);
+          /* Extends-beyond indicator */
+          if(e.delEnd>M){
+            var ext=document.createElement('div');
+            ext.style.cssText=
+              'position:absolute;top:10px;height:14px;right:0;width:6px;'+
+              'background:linear-gradient(to right,transparent,rgba(255,255,255,0.25));'+
+              'border-radius:0 2px 2px 0;';
+            btd.appendChild(ext);
+          }
+        }
+
+        /* Sale milestone diamond */
+        var DS=8;
+        var dia=document.createElement('div');
+        dia.style.cssText=
+          'position:absolute;width:'+DS+'px;height:'+DS+'px;'+
+          'background:'+CS+';border:1.5px solid '+CSB+';border-radius:1px;'+
+          'transform:rotate(45deg);'+
+          'top:'+(10+7-Math.round(DS/2))+'px;'+
+          'left:'+pL(e.sale)+';margin-left:'+(-Math.round(DS/2))+'px;'+
+          'z-index:4;cursor:help;';
+        dia.title='Contract signed M'+e.sale+' — '+fK(e.saleAmt);
+        btd.appendChild(dia);
+
+        /* Tooltip */
+        btd.addEventListener('mouseenter',function(){
+          gtt.innerHTML=
+            '<strong>'+e.name+'</strong>'+
+            '<span style="display:block;color:rgba(255,255,255,0.38);font-size:9px;'+
+            'text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px;">'+e.phase+'</span>'+
+            e.tip+
+            '<span style="display:block;margin-top:7px;font-size:10px;">'+
+            '<span style="color:'+CC+'">Consulting '+fK(e.consAmt)+'</span>'+
+            ' &nbsp;&middot;&nbsp; '+
+            '<span style="color:'+CT+'">Tech Advisory '+fK(e.techAmt)+'</span>'+
+            '</span>'+
+            '<span style="display:block;margin-top:3px;font-size:9px;color:rgba(255,255,255,0.3);">'+
+            'Sale M'+e.sale+' &middot; Delivery M'+e.delStart+'–M'+Math.min(e.delEnd,M)+(e.delEnd>M?'+':'')+'</span>';
+          gtt.style.display='block';
+        });
+        btd.addEventListener('mousemove',function(ev){
+          gtt.style.left=(ev.clientX+14)+'px';
+          gtt.style.top=(ev.clientY-10)+'px';
+        });
+        btd.addEventListener('mouseleave',function(){gtt.style.display='none';});
+        tr.appendChild(btd);
+
+        /* Sale amount */
+        var ftd=document.createElement('td');
+        ftd.className='gfe';
+        ftd.textContent=fK(e.saleAmt);
+        tr.appendChild(ftd);
+        return tr;
+      }
+
+      /* ── Year-end summary band ── */
+      function mkYearSummary(){
+        var sep=document.createElement('tr');
+        sep.className='phr';
+        var sd=document.createElement('td');
+        sd.colSpan=M+2;
+        sd.innerHTML='<span class="gpl">Year-end financial summary</span>';
+        sep.appendChild(sd);
+        gb.appendChild(sep);
+
+        var tr=document.createElement('tr');
+        var td=document.createElement('td');
+        td.colSpan=M+2;
+        td.style.cssText='padding:14px 0 6px;';
+
+        var carry=fK(y1Def,1);
+        var y2fromY1=fK(Math.min(y1Def,y2R),1);
+        var y2newDel=fK(Math.max(y2R-y1Def,0),1);
+
+        td.innerHTML=
+          '<div style="display:flex;gap:24px;flex-wrap:wrap;">'+
+
+          /* Year 1 */
+          '<div class="yr-blk">'+
+            '<div class="yr-title">Year 1 <span class="yr-sub">Months 1–12</span></div>'+
+            '<div class="yr-row">Total Sales<span>'+fK(y1S,1)+'</span></div>'+
+            '<div class="yr-mix">'+
+              '<span style="color:'+CC+'">'+fK(y1SC)+' Cons ('+fP(y1SC,y1S)+')</span>'+
+              '&nbsp;&middot;&nbsp;'+
+              '<span style="color:'+CT+'">'+fK(y1ST)+' Tech ('+fP(y1ST,y1S)+')</span>'+
+            '</div>'+
+            '<div class="yr-row">Recognised Revenue<span>'+fK(y1R,1)+'</span></div>'+
+            '<div class="yr-mix">'+
+              '<span style="color:'+CC+'">'+fK(Math.round(y1RC))+' Cons</span>'+
+              '&nbsp;&middot;&nbsp;'+
+              '<span style="color:'+CT+'">'+fK(Math.round(y1RT))+' Tech</span>'+
+            '</div>'+
+            '<div class="yr-def">'+
+              '<span class="yr-def-lbl">Deferred Revenue → Year 2</span>'+
+              '<span class="yr-def-val">'+carry+'</span>'+
+            '</div>'+
+          '</div>'+
+
+          /* Year 2 */
+          '<div class="yr-blk">'+
+            '<div class="yr-title">Year 2 <span class="yr-sub">Months 13–24</span></div>'+
+            '<div class="yr-row">Total Sales<span>'+fK(y2S,1)+'</span></div>'+
+            '<div class="yr-mix">'+
+              '<span style="color:'+CC+'">'+fK(y2SC)+' Cons</span>'+
+              '&nbsp;&middot;&nbsp;'+
+              '<span style="color:'+CT+'">'+fK(y2ST)+' Tech</span>'+
+            '</div>'+
+            '<div class="yr-row">Recognised Revenue<span>'+fK(y2R,1)+'</span></div>'+
+            '<div class="yr-mix">'+
+              '<span style="color:'+CC+'">'+fK(Math.round(y2RC))+' Cons</span>'+
+              '&nbsp;&middot;&nbsp;'+
+              '<span style="color:'+CT+'">'+fK(Math.round(y2RT))+' Tech</span>'+
+            '</div>'+
+            '<div class="yr-carry">Includes '+carry+' Year 1 carry &plus; '+y2newDel+' Year 2 deliveries</div>'+
+          '</div>'+
+          '</div>';
+
+        tr.appendChild(td);
+        gb.appendChild(tr);
+      }
+
+      /* ── buildGantt ── */
+      function buildGantt(filter){
+        gb.innerHTML='';
+        var phases=['Phase 1','Phase 2','Phase 3'];
+        var phLabels={
+          'Phase 1':'Phase 1 — Incumbent &amp; Active RFP',
+          'Phase 2':'Phase 2 — Network Activation',
+          'Phase 3':'Phase 3 — Scale &amp; Enterprise'
+        };
+        phases.forEach(function(ph){
+          var rows=ENG.filter(function(e){
+            return e.phase===ph&&(filter==='all'||e.type===filter);
+          });
+          if(!rows.length)return;
+          var phTr=document.createElement('tr');
+          phTr.className='phr';
+          var phTd=document.createElement('td');
+          phTd.colSpan=M+2;
+          phTd.innerHTML='<span class="gpl">'+phLabels[ph]+'</span>';
+          phTr.appendChild(phTd);
+          gb.appendChild(phTr);
+          rows.forEach(function(e){gb.appendChild(mkRow(e));});
+        });
+        if(filter==='all')mkYearSummary();
+      }
+
+      buildGantt('all');
+
+      document.querySelectorAll('.gfb').forEach(function(b){
+        b.addEventListener('click',function(){
+          document.querySelectorAll('.gfb').forEach(function(x){x.classList.remove('on');});
+          b.classList.add('on');
+          buildGantt(b.dataset.gf);
+        });
+      });
+
       })();
       </script>
 
