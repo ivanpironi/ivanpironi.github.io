@@ -146,10 +146,14 @@
     text-transform: uppercase;
   }
 
-  /* Client logos */
-  .client-logo { display:block; height:28px; width:auto; max-width:170px; object-fit:contain; object-position:left center; }
+  /* Client logos — real brand assets, mixed aspect ratios */
+  .client-logo { display:block; height:30px; width:auto; max-width:160px; max-height:30px;
+    object-fit:contain; object-position:left center;
+    filter:brightness(1.08) drop-shadow(0 0 6px rgba(255,255,255,0.04)); }
   .pipeline-card-header { margin-bottom:10px; }
-  .ov-logo { display:block; height:36px; width:auto; max-width:220px; object-fit:contain; object-position:left center; margin-bottom:10px; opacity:0.92; }
+  .ov-logo { display:block; height:42px; width:auto; max-width:210px; max-height:42px;
+    object-fit:contain; object-position:left center; margin-bottom:12px;
+    filter:brightness(1.08) drop-shadow(0 0 8px rgba(255,255,255,0.05)); }
 
   /* ── Pipeline overlay ── */
   .pipeline-overlay {
@@ -1282,7 +1286,7 @@
         <!-- Card 1: Qiddiya — Phase 1, Incumbent, Ivan -->
         <div class="pipeline-card pipeline-card--incumbent" data-geo="ksa" data-phase="phase1" data-type="ivan" data-key="qiddiya">
           <div class="pipeline-card-header">
-            <img class="client-logo" src="assets/img/logos/qiddiya.svg" alt="Qiddiya Investment Company">
+            <img class="client-logo" src="assets/img/logos/qiddiya.png" alt="Qiddiya Investment Company">
           </div>
           <div class="card-tags">
             <span class="card-tag tag-ivan">Ivan's network</span>
@@ -1311,7 +1315,7 @@
         <!-- Card 2: SAR — Phase 1, EY Platform -->
         <div class="pipeline-card" data-geo="ksa" data-phase="phase1" data-type="ey" data-key="sar">
           <div class="pipeline-card-header">
-            <img class="client-logo" src="assets/img/logos/sar.svg" alt="Saudi Railways (SAR)">
+            <img class="client-logo" src="assets/img/logos/sar.png" alt="Saudi Railways (SAR)">
           </div>
           <div class="card-tags">
             <span class="card-tag tag-ey">EY platform</span>
@@ -1374,7 +1378,7 @@
         <!-- Card 4: FIFA 2034 — Phase 1, RFP Active, EY Platform -->
         <div class="pipeline-card" data-geo="ksa" data-phase="phase1" data-type="ey" data-rfp="true" data-key="fifa">
           <div class="pipeline-card-header">
-            <img class="client-logo" src="assets/img/logos/fifa2034.svg" alt="FIFA 2034 · WCA34">
+            <img class="client-logo" src="assets/img/logos/fifa2034.png" alt="FIFA 2034 · WCA34">
           </div>
           <div class="card-tags">
             <span class="card-tag tag-rfp">RFP · Active</span>
@@ -1434,7 +1438,7 @@
         <!-- Card 6: King Salman Park — Phase 2, Ivan -->
         <div class="pipeline-card" data-geo="ksa" data-phase="phase2" data-type="ivan" data-key="kspf">
           <div class="pipeline-card-header">
-            <img class="client-logo" src="assets/img/logos/kspf.svg" alt="King Salman Park Foundation">
+            <img class="client-logo" src="assets/img/logos/kspf.png" alt="King Salman Park Foundation">
           </div>
           <div class="card-tags">
             <span class="card-tag tag-ivan">Ivan's network</span>
@@ -1467,7 +1471,7 @@
         <!-- Card 4: Diriyah — Phase 2, Mace partnership -->
         <div class="pipeline-card" data-geo="partner" data-phase="phase2" data-type="ey" data-key="diriyah">
           <div class="pipeline-card-header">
-            <img class="client-logo" src="assets/img/logos/dgda.svg" alt="Diriyah (DGDA)">
+            <img class="client-logo" src="assets/img/logos/dgda.png" alt="Diriyah (DGDA)">
           </div>
           <div class="card-tags">
             <span class="card-tag tag-ey">Mace Consult</span>
@@ -1496,7 +1500,7 @@
         <!-- Card 5: King Salman Airport — Phase 2, Mace partnership -->
         <div class="pipeline-card" data-geo="partner" data-phase="phase2" data-type="ey" data-key="ksia">
           <div class="pipeline-card-header">
-            <img class="client-logo" src="assets/img/logos/ksia.svg" alt="King Salman International Airport">
+            <img class="client-logo" src="assets/img/logos/ksia.png" alt="King Salman International Airport">
           </div>
           <div class="card-tags">
             <span class="card-tag tag-ey">Mace Consult</span>
@@ -1526,7 +1530,7 @@
         <!-- Card 7: New Murabba — Phase 3, Ivan -->
         <div class="pipeline-card" data-geo="ksa" data-phase="phase3" data-type="ivan" data-key="newmurabba">
           <div class="pipeline-card-header">
-            <img class="client-logo" src="assets/img/logos/newmurabba.svg" alt="New Murabba Development Company">
+            <img class="client-logo" src="assets/img/logos/newmurabba.png" alt="New Murabba Development Company">
           </div>
           <div class="card-tags">
             <span class="card-tag tag-ivan">Ivan's network</span>
@@ -1557,7 +1561,7 @@
         <!-- Card 8: Khazna — Phase 3, UAE, Ivan -->
         <div class="pipeline-card" data-geo="uae" data-phase="phase3" data-type="ivan" data-key="khazna">
           <div class="pipeline-card-header">
-            <img class="client-logo" src="assets/img/logos/khazna.svg" alt="Khazna Data Centers">
+            <img class="client-logo" src="assets/img/logos/khazna.png" alt="Khazna Data Centers">
           </div>
           <div class="card-tags">
             <span class="card-tag tag-ivan">Ivan's network</span>
@@ -1587,7 +1591,7 @@
         <!-- Card 9: Red Sea Global — Phase 3, Ivan -->
         <div class="pipeline-card" data-geo="ksa" data-phase="phase3" data-type="ivan" data-key="rsg">
           <div class="pipeline-card-header">
-            <img class="client-logo" src="assets/img/logos/rsg.svg" alt="Red Sea Global">
+            <img class="client-logo" src="assets/img/logos/rsg.png" alt="Red Sea Global">
           </div>
           <div class="card-tags">
             <span class="card-tag tag-ivan">Ivan's network</span>
@@ -1617,7 +1621,7 @@
         <!-- Card 10: Saudi Aramco — Phase 3, Worley partnership -->
         <div class="pipeline-card" data-geo="partner" data-phase="phase3" data-type="ey" data-key="aramco">
           <div class="pipeline-card-header">
-            <img class="client-logo" src="assets/img/logos/aramco.svg" alt="Saudi Aramco">
+            <img class="client-logo" src="assets/img/logos/aramco.png" alt="Saudi Aramco">
           </div>
           <div class="card-tags">
             <span class="card-tag tag-ey">Worley</span>
@@ -2059,7 +2063,7 @@
       var cards = {
         'qiddiya': {
           name: 'Qiddiya Investment Company',
-          logo: 'qiddiya',
+          logo: 'qiddiya.png',
           meta: 'KSA · Riyadh · PIF-owned · $40B · Entertainment & Tourism Giga-Programme · Capital development to 2050',
           tags: [["Ivan's network",'tag-ivan'],['KSA','tag-geo']],
           overview: 'PIF-owned entertainment and tourism giga-programme. Phase 3 city establishment now mobilising — 11,000 housing units, full entertainment city. <strong>Oracle Unifier + SAP + P6 + Aconex deployed.</strong> September 2025: Yardi adopted for real estate operations — creating a three-way integration challenge between Yardi, Oracle Unifier, and SAP that no current advisor can address without a conflict of interest. Ivan designed the Oracle layer. Ivan is the incumbent PMIS advisor.',
@@ -2073,7 +2077,7 @@
         },
         'sar': {
           name: 'Saudi Railways (SAR)',
-          logo: 'sar',
+          logo: 'sar.png',
           meta: 'KSA · Riyadh · PIF-owned · National rail operator · Landbridge $7B PPP · 8,000km+ network expansion',
           tags: [['EY platform','tag-ey'],['KSA','tag-geo']],
           overview: 'National rail operator managing <strong>Landbridge ($7B PPP/BOT)</strong>, the Qiddiya rail link (PPP concession), and 8,000km+ national network expansion simultaneously. Oracle Analytics Cloud deployed for finance and procurement — capital project delivery data remains EPC-managed. <strong>18-month PMIS/EPMO bid engagement</strong> provides direct familiarity with SAR\'s governance structure, decision-makers, and the specific data trust gaps the advisory addresses. The EPMO mandate is confirmed open.',
@@ -2088,7 +2092,7 @@
         },
         'expo': {
           name: 'Expo 2030 Riyadh (ERC)',
-          logo: 'expo2030',
+          logo: 'expo2030.svg',
           meta: 'KSA · Riyadh · PIF-owned · 6km² · 246 exhibitors · 42M visitors · Oct 2030 hard deadline · Budget protected from PIF cuts',
           tags: [['RFP · Active','tag-rfp'],['EY platform','tag-ey'],['KSA','tag-geo']],
           overview: 'PIF launched <strong>Expo 2030 Riyadh Company (ERC)</strong> in June 2025. CEO: Talal H. AlMarri. <strong>Bechtel appointed as PMC</strong> (John Doyle, Programme Director). 6km² site adjacent to King Salman International Airport. 226 pavilions, 246 exhibiting nations, 42M visitors, October 2030 hard opening deadline. Budget <strong>explicitly protected from PIF spending cuts.</strong> No advisory firm confirmed as independent programme governance lead above Bechtel. Advisory RFP expected imminently.',
@@ -2103,7 +2107,7 @@
         },
         'fifa': {
           name: 'FIFA 2034 · WCA34',
-          logo: 'fifa2034',
+          logo: 'fifa2034.png',
           meta: 'KSA · National · Chaired by Crown Prince MBS · 15 stadiums (11 new) · 5 cities · 48 teams · June 2034 · Budget protected',
           tags: [['RFP · Active','tag-rfp'],['EY platform','tag-ey'],['KSA','tag-geo']],
           overview: '<strong>World Cup 2034 Hosting Higher Authority (WCA34)</strong> — chaired by Crown Prince MBS. Board includes Ministers of Finance, Transport, Sport, Tourism, Health, Communications, and the PIF Governor. 15 stadiums (11 new builds, 4 renovations) across Riyadh, Jeddah, Al Khobar, Abha, and NEOM. <strong>Stadium costs being reassessed December 2025</strong> — construction starts delayed. The governance crisis creating the advisory mandate is live now. Qiddiya and New Murabba both contain FIFA 2034 stadiums.',
@@ -2118,7 +2122,7 @@
         },
         'roshn': {
           name: 'ROSHN Group',
-          logo: 'roshn',
+          logo: 'roshn.svg',
           meta: 'KSA · Riyadh · PIF-owned · $120B+ portfolio · 400,000 units by 2030 · Active in Riyadh, Jeddah, Makkah, Dhahran',
           tags: [["Ivan's network",'tag-ivan'],['KSA','tag-geo']],
           overview: 'PIF-owned national housing developer scaling from 2 to 7+ active regions simultaneously. PMWeb deployed across the EPMO — <strong>Project of the Year 2025</strong>. The governance question at multi-region scale: is PMWeb data trustworthy across all regions? <strong>SAP ↔ PMWeb cost reconciliation gap structural</strong> at portfolio scale. PIF spending cut pressure (20%+ mandated 2025) requires defensible ROI data for PIF leadership reporting.',
@@ -2133,7 +2137,7 @@
         },
         'kspf': {
           name: 'King Salman Park Foundation',
-          logo: 'kspf',
+          logo: 'kspf.png',
           meta: 'KSA · Riyadh · $38B · 17.2km² · Former Riyadh air base · 2027 hard opening deadline · 13,000 workers on site',
           tags: [["Ivan's network",'tag-ivan'],['KSA','tag-geo']],
           overview: "World's largest urban park — 17.2km², former Riyadh air base, $38B investment, <strong>2027 opening deadline</strong>. 13,000 workers on site. Parsons holds the 25-month PMO contract. CEO publicly confirmed <strong>Digital Twin in active development</strong>. KSPF leadership receives all programme intelligence through Parsons. No independent owner-side view of whether Parsons' reporting reflects delivery reality. Seven named contacts from a delivered Smart City Strategy engagement.",
@@ -2148,7 +2152,7 @@
         },
         'diriyah': {
           name: 'Diriyah Gate Development Authority (DGDA)',
-          logo: 'dgda',
+          logo: 'dgda.png',
           meta: 'KSA · Riyadh · $63B · UNESCO World Heritage Site · 2027 Arena Block target · Mace Consult as sitewide PMC',
           tags: [['Mace Consult','tag-ey'],['KSA','tag-geo']],
           overview: '<strong>$63B UNESCO World Heritage Site</strong> being developed into cultural and hospitality destination. Mace Consult holds the sitewide PMC mandate. <strong>$1.5B Arena Block awarded June 2025</strong> — construction accelerating. Heritage asset information management overlays traditional capital delivery governance in ways no standard PMC addresses. EY advises DGDA at the owner-side layer above Mace.',
@@ -2163,7 +2167,7 @@
         },
         'ksia': {
           name: 'King Salman International Airport (KSIADC)',
-          logo: 'ksia',
+          logo: 'ksia.png',
           meta: 'KSA · Riyadh · $30B · 57km² · 6 runways · 9 terminals · 100M+ passengers by 2030 · Construction commenced Sep 2025',
           tags: [['Mace Consult','tag-ey'],['KSA','tag-geo']],
           overview: 'Largest airport infrastructure programme in the world. <strong>Three major delivery firms simultaneously</strong>: Mace Consult (Delivery Partner — Christopher Seymour signed personally), Bechtel (three passenger terminals), Parsons (runways, taxiways, ATC towers). Three firms, three reporting chains, one owner who needs to trust the data. <strong>Hard deadlines: Expo 2030 operational opening, FIFA 2034 tournament.</strong> Construction commenced September 2025.',
@@ -2178,7 +2182,7 @@
         },
         'newmurabba': {
           name: 'New Murabba Development Company',
-          logo: 'newmurabba',
+          logo: 'newmurabba.png',
           meta: 'KSA · Riyadh · $38B · 19km² · Three PMCs · FIFA 2034 stadium on site · 2030 target',
           tags: [["Ivan's network",'tag-ivan'],['KSA','tag-geo']],
           overview: '$38B mixed-use district in central Riyadh including <strong>The Mukaab</strong> (one of the world\'s largest built structures). Three PMC firms simultaneously: Bechtel (masterplan + infrastructure), Turner Arabia (The Mukaab), AECOM (buildings). <strong>No single owner-side PMIS layer</strong> above three separate reporting chains. Naver Cloud MoU confirmed for smart city monitoring. <strong>FIFA 2034 New Murabba Stadium</strong> (46,010 capacity) on site.',
@@ -2193,7 +2197,7 @@
         },
         'khazna': {
           name: 'Khazna Data Centers',
-          logo: 'khazna',
+          logo: 'khazna.png',
           meta: 'UAE · Abu Dhabi / Dubai · 30+ facilities · $26.2B financing · Stargate UAE partner · G42/Mubadala ecosystem',
           tags: [["Ivan's network",'tag-ivan'],['UAE','tag-geo']],
           overview: 'UAE data centre platform — 30+ facilities, $26.2B financing secured, <strong>Stargate UAE partner</strong> (February 2026), G42/Mubadala ecosystem. Turner & Townsend holds PMC role. <strong>February 2026: Khazna launched NexOps</strong> — in-house operations model with Presight AI providing AI-powered command and control across 30+ facilities. NexOps insourced 230+ specialists, 5,000 operational documents built in under 12 months. The data governance gap between construction delivery and NexOps operational requirements is completely unaddressed.',
@@ -2208,7 +2212,7 @@
         },
         'rsg': {
           name: 'Red Sea Global',
-          logo: 'rsg',
+          logo: 'rsg.png',
           meta: 'KSA · Red Sea Coast · PIF-owned · Luxury tourism giga-programme · 100+ operators · Belgium-scale footprint',
           tags: [["Ivan's network",'tag-ivan'],['KSA','tag-geo']],
           overview: 'PIF-owned luxury tourism giga-programme — 100+ operators, 10+ integrated city functions, geographic footprint comparable to Belgium. <strong>Among the PIF projects bearing the heaviest 2025 spending cut pressure.</strong> Phase 1 resorts are operational while Phase 2+ construction remains active. <strong>IOC Operating Model previously delivered</strong> — warm relationships with RSG operations leadership already established.',
@@ -2223,7 +2227,7 @@
         },
         'aramco': {
           name: 'Saudi Aramco',
-          logo: 'aramco',
+          logo: 'aramco.png',
           meta: 'KSA · Al-Khobar · $40B+ annual capex · Worley GES+ 5yr engineering contract · SAP deeply embedded',
           tags: [['Worley','tag-ey'],['KSA','tag-geo']],
           overview: 'Largest capital spender in KSA — <strong>$40B+ annual capex</strong>. Worley holds the GES+ 5-year engineering and project management contract. SAP deeply embedded as ERP across the capital portfolio. Aramco <strong>cut $40B dividends in 2025</strong> due to lower oil prices — capital efficiency under the highest scrutiny in recent years. <strong>SAP ↔ PMIS cost reconciliation confirmed as a structural failure</strong> across the capital portfolio. Ivan has resolved this exact problem at Qiddiya scale. Highest single-engagement fee potential in the GCC market.',
@@ -2245,7 +2249,7 @@
           if (!key || !cards[key]) return;
           var d = cards[key];
           var h = '';
-          if (d.logo) { h += '<img class="ov-logo" src="assets/img/logos/' + d.logo + '.svg" alt="">'; }
+          if (d.logo) { h += '<img class="ov-logo" src="assets/img/logos/' + d.logo + '" alt="">'; }
           h += '<div class="ov-name">' + d.name + '</div>';
           h += '<div class="ov-meta">' + d.meta + '</div>';
           h += '<div class="ov-tags">';
