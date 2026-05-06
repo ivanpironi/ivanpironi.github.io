@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Ivan Pironi — Full business case for EY Capital Projects. Market, proof, team, pipeline, and revenue — built for the Carlos conversation.">
   <meta name="robots" content="noindex, nofollow">
   <title>Ivan Pironi · Capital Projects · EY — Full Business Case</title>
@@ -233,7 +233,7 @@
   @media (max-width:768px) {
     .gantt-fade-edge { display:block; position:absolute; top:0; right:0; bottom:0; width:56px; background:linear-gradient(to left, #0A0A0A 0%, transparent 100%); pointer-events:none; transition:opacity 0.4s ease; z-index:1; }
     .gantt-scroll-wrap.scrolled .gantt-fade-edge { opacity:0; }
-    .gantt-scroll-hint { display:flex; align-items:center; gap:5px; position:fixed; bottom:20px; right:16px; background:rgba(232,200,74,0.15); border:1px solid rgba(232,200,74,0.5); border-radius:20px; padding:6px 13px; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#E8C84A; pointer-events:none; opacity:0; transition:opacity 0.35s ease; z-index:200; }
+    .gantt-scroll-hint { display:flex; align-items:center; gap:5px; position:fixed; bottom:calc(20px + env(safe-area-inset-bottom, 0px)); right:max(16px, env(safe-area-inset-right, 16px)); background:rgba(232,200,74,0.15); border:1px solid rgba(232,200,74,0.5); border-radius:20px; padding:6px 13px; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#E8C84A; pointer-events:none; opacity:0; transition:opacity 0.35s ease; z-index:200; }
     .gantt-scroll-hint.visible { opacity:1; }
   }
   </style>
