@@ -2030,7 +2030,10 @@
         });
       }
 
-      /* Run immediately so Chrome Android repaints the grid on load */
+      /* Force Chrome Android to paint: hide→reflow→show creates genuine visual change */
+      var allCards = document.querySelectorAll('.pipeline-card');
+      allCards.forEach(function(c) { c.style.display = 'none'; });
+      void document.getElementById('pipeline-grid').offsetHeight; /* synchronous reflow */
       applyFilter('all');
 
       btns.forEach(function(btn) {
