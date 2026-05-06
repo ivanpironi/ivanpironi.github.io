@@ -2030,11 +2030,20 @@
         });
       }
 
-      /* Force Chrome Android to paint: hide→reflow→show creates genuine visual change */
-      var allCards = document.querySelectorAll('.pipeline-card');
-      allCards.forEach(function(c) { c.style.display = 'none'; });
-      void document.getElementById('pipeline-grid').offsetHeight; /* synchronous reflow */
-      applyFilter('all');
+      /* Chrome Android deferred-paint fix: trigger hide→reflow→show the moment
+         the grid enters the viewport (not at page load, which is off-screen) */
+      var grid = document.getElementById('pipeline-grid');
+      if (grid && 'IntersectionObserver' in window) {
+        var repaintOnce = new IntersectionObserver(function(entries, obs) {
+          if (!entries[0].isIntersecting) return;
+          obs.disconnect();
+          document.querySelectorAll('.pipeline-card').forEach(function(c) { c.style.display = 'none'; });
+          void grid.offsetHeight; /* synchronous reflow */
+          var active = document.querySelector('.pipeline-btn.active');
+          applyFilter(active ? active.dataset.filter : 'all');
+        }, { threshold: 0.01 });
+        repaintOnce.observe(grid);
+      }
 
       btns.forEach(function(btn) {
         btn.addEventListener('click', function() {
