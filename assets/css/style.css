@@ -146,31 +146,10 @@
     }
 
     /* ============================================================
-       SCROLL REVEAL
+       SCROLL REVEAL — disabled, elements always visible
        ============================================================ */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    .reveal.revealed {
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-
-    /* Child stagger within revealed blocks */
-    .reveal.revealed > *:nth-child(1) { transition-delay: 0ms; }
-    .reveal.revealed > *:nth-child(2) { transition-delay: 80ms; }
-    .reveal.revealed > *:nth-child(3) { transition-delay: 160ms; }
-    .reveal.revealed > *:nth-child(4) { transition-delay: 240ms; }
-    .reveal.revealed > *:nth-child(5) { transition-delay: 320ms; }
-
-    /* On mobile, skip the hidden state entirely — IntersectionObserver is unreliable on large elements */
-    @media (max-width: 950px) {
-      .reveal { opacity: 1; transform: none; }
-      .reveal.revealed { transition: none; }
-    }
+    .reveal { opacity: 1; transform: none; }
+    .reveal.revealed { opacity: 1; transform: none; }
 
     /* ============================================================
        HEADER

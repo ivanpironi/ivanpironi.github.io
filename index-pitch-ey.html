@@ -226,11 +226,6 @@
     .ov-opps { grid-template-columns:1fr; }
     .pipeline-overlay-card { padding:20px; }
   }
-  /* Mobile: show .reveal elements immediately — bypass IntersectionObserver */
-  @media (max-width:950px) {
-    .reveal { opacity:1 !important; transform:none !important; }
-    .reveal.revealed { transition:none !important; }
-  }
   </style>
 <!--
   TEAM PHOTOS — HOW TO ADD REAL IMAGES
@@ -1895,28 +1890,6 @@
     }
 
     /* ============================================================
-       scrollReveal
-       ============================================================ */
-    function scrollReveal() {
-      var items = document.querySelectorAll('.reveal');
-      if (!items.length) return;
-      if (window.innerWidth <= 950) {
-        items.forEach(function(el) { el.classList.add('revealed'); });
-        return;
-      }
-      var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0 });
-      items.forEach(function(el) { obs.observe(el); });
-    }
-
-
-    /* ============================================================
        accordionInit — no-op if no .accordion-item present
        ============================================================ */
     function accordionInit() {
@@ -2306,7 +2279,6 @@
     document.addEventListener('DOMContentLoaded', function() {
       headerTransition();
       navActiveState();
-      scrollReveal();
       timelineItemsAnimate();
       accordionInit();
       scrollCueHide();
