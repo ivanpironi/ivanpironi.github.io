@@ -2008,29 +2008,36 @@
     function pipelineFilter() {
       var btns = document.querySelectorAll('.pipeline-btn');
       if (!btns.length) return;
+
+      function applyFilter(filter) {
+        document.querySelectorAll('.pipeline-card').forEach(function(card) {
+          var geo  = card.dataset.geo  || '';
+          var type = card.dataset.type || '';
+          var rfp  = card.dataset.rfp  || '';
+          var show = false;
+          if (filter === 'all') {
+            show = true;
+          } else if (filter === 'ksa' || filter === 'uae') {
+            show = (geo === filter);
+          } else if (filter === 'ivan') {
+            show = (type === 'ivan');
+          } else if (filter === 'ey') {
+            show = (type === 'ey' && rfp !== 'true');
+          } else if (filter === 'rfp') {
+            show = (rfp === 'true');
+          }
+          card.style.display = show ? 'block' : 'none';
+        });
+      }
+
+      /* Run immediately so Chrome Android repaints the grid on load */
+      applyFilter('all');
+
       btns.forEach(function(btn) {
         btn.addEventListener('click', function() {
-          var filter = btn.dataset.filter;
           btns.forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
-          document.querySelectorAll('.pipeline-card').forEach(function(card) {
-            var geo  = card.dataset.geo  || '';
-            var type = card.dataset.type || '';
-            var rfp  = card.dataset.rfp  || '';
-            var show = false;
-            if (filter === 'all') {
-              show = true;
-            } else if (filter === 'ksa' || filter === 'uae') {
-              show = (geo === filter);
-            } else if (filter === 'ivan') {
-              show = (type === 'ivan');
-            } else if (filter === 'ey') {
-              show = (type === 'ey' && rfp !== 'true');
-            } else if (filter === 'rfp') {
-              show = (rfp === 'true');
-            }
-            card.style.display = show ? '' : 'none';
-          });
+          applyFilter(btn.dataset.filter);
         });
       });
     }
