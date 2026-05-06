@@ -642,7 +642,7 @@
         color:rgba(255,255,255,0.65);background:transparent;
         border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:3px 9px;cursor:pointer;}
       .gfb.on{color:var(--accent);border-color:var(--accent);background:rgba(232,200,74,0.06);}
-      .gt{width:100%;border-collapse:collapse;min-width:760px;table-layout:fixed;}
+      .gt{width:100%;border-collapse:separate;border-spacing:0;min-width:760px;table-layout:fixed;}
       .gt thead th{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.05em;
         color:rgba(255,255,255,0.6);font-weight:400;text-align:center;padding:3px 1px;
         border-bottom:1px solid rgba(255,255,255,0.08);}
@@ -652,8 +652,8 @@
       .gt thead th.qh:last-child{border-right:none;}
       .gt thead th.lh{text-align:left;width:200px;}
       .gt thead th.fh{text-align:right;width:72px;}
-      .gt tbody tr{border-bottom:1px solid rgba(255,255,255,0.05);}
-      .gt tbody tr:last-child{border-bottom:none;}
+      .gt tbody td{border-bottom:1px solid rgba(255,255,255,0.05);}
+      .gt tbody tr:last-child td{border-bottom:none;}
       .gt tbody tr.phr td{padding:10px 0 3px;border-bottom:none;}
       .gt td{padding:3px 1px;vertical-align:middle;}
       .gn{padding:4px 8px 4px 0 !important;vertical-align:top;}
@@ -2268,7 +2268,7 @@
       var obs = new IntersectionObserver(function(entries) {
         inView = entries[0].isIntersecting;
         hint.classList.toggle('visible', inView && inner.scrollLeft <= 10);
-      }, { threshold: 0.2 });
+      }, { threshold: 0 });
       obs.observe(wrap);
       inner.addEventListener('scroll', function() {
         if (inner.scrollLeft > 10) {
