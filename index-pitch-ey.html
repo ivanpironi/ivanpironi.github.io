@@ -684,6 +684,9 @@
       .yr-def-val{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#E8C84A;}
       .yr-carry{font-size:9px;color:rgba(255,255,255,0.3);letter-spacing:0.03em;
         margin-top:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.06);}
+      /* Sticky first column */
+      .gt thead th.lh { position:sticky; left:0; z-index:3; background:#0A0A0A; box-shadow:2px 0 6px rgba(0,0,0,0.7); }
+      .gt td.gn       { position:sticky; left:0; z-index:2; background:#0A0A0A; box-shadow:2px 0 6px rgba(0,0,0,0.7); }
       </style>
 
       <div class="gw">
@@ -2261,17 +2264,19 @@
       var inner = document.querySelector('.gantt-scroll-inner');
       var hint  = document.querySelector('.gantt-scroll-hint');
       if (!wrap || !inner || !hint) return;
-      var used = false;
+      var inView = false;
       var obs = new IntersectionObserver(function(entries) {
-        if (used) return;
-        hint.classList.toggle('visible', entries[0].isIntersecting);
+        inView = entries[0].isIntersecting;
+        hint.classList.toggle('visible', inView && inner.scrollLeft <= 10);
       }, { threshold: 0.2 });
       obs.observe(wrap);
       inner.addEventListener('scroll', function() {
         if (inner.scrollLeft > 10) {
-          used = true;
           hint.classList.remove('visible');
           wrap.classList.add('scrolled');
+        } else {
+          wrap.classList.remove('scrolled');
+          if (inView) hint.classList.add('visible');
         }
       }, { passive: true });
     }
