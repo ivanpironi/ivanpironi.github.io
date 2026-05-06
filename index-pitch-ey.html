@@ -59,11 +59,11 @@
   .pipeline-btn:hover { color:var(--text); border-color:rgba(255,255,255,0.3); }
   .pipeline-btn.active { color:var(--accent); border-color:var(--accent); background:rgba(232,200,74,0.06); }
   /* ── Pipeline grid ── */
-  .pipeline-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1rem 0 2.5rem; }
+  .pipeline-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1rem 0 2.5rem; position:relative; z-index:1; }
   @media (max-width:768px) { .pipeline-grid { grid-template-columns:1fr; } }
-  .pipeline-card { background:var(--surface); border:1px solid rgba(255,255,255,0.06); border-radius:4px; padding:1.5rem; display:flex; flex-direction:column; gap:0.75rem; transition:border-color 0.2s ease; }
-  .pipeline-card:hover { border-color:rgba(255,255,255,0.15); }
-  .pipeline-card--incumbent { border-color:var(--accent); }
+  .pipeline-card { background:#1a1a18; border:1px solid rgba(255,255,255,0.14); border-radius:4px; padding:1.5rem; display:block; min-height:80px; transition:border-color 0.2s ease; }
+  .pipeline-card:hover { border-color:rgba(255,255,255,0.25); }
+  .pipeline-card--incumbent { border:2px solid #E8C84A; }
   .pipeline-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; }
   .pipeline-client { font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; color:var(--text); letter-spacing:0.02em; line-height:1.2; }
   .pipeline-geo { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); white-space:nowrap; padding-top:3px; }
@@ -624,7 +624,7 @@
 
       <!-- Gantt chart -->
       <div style="margin:2.5rem 0;">
-      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+      <div style="overflow-x:auto;">
 
       <style>
       .gw{font-size:13px;}
