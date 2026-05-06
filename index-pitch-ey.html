@@ -56,10 +56,6 @@
   @media (max-width:768px) { .team-grid { grid-template-columns:1fr; } }
   .team-card { display:flex; flex-direction:column; }
   /* ── Pipeline filters ── */
-  .pipeline-filters { display:flex; gap:0.5rem; flex-wrap:wrap; margin:1.5rem 0; }
-  .pipeline-btn { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); background:transparent; border:1px solid rgba(255,255,255,0.12); border-radius:2px; padding:0.4rem 0.9rem; cursor:pointer; transition:all 0.2s ease; }
-  .pipeline-btn:hover { color:var(--text); border-color:rgba(255,255,255,0.3); }
-  .pipeline-btn.active { color:var(--accent); border-color:var(--accent); background:rgba(232,200,74,0.06); }
   /* ── Pipeline grid ── */
   .pipeline-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1rem 0 2.5rem; }
   @media (max-width:768px) { .pipeline-grid { grid-template-columns:1fr; } }
@@ -1271,17 +1267,6 @@
 
       </div><!-- /.phase-grid -->
 
-      <!-- Filter bar -->
-      <div class="pipeline-filters">
-        <button class="pipeline-btn active" data-filter="all">All accounts</button>
-        <button class="pipeline-btn" data-filter="ksa">KSA</button>
-        <button class="pipeline-btn" data-filter="uae">UAE</button>
-        <span style="width:1px;height:20px;background:rgba(255,255,255,0.12);display:inline-block;margin:0 0.25rem;vertical-align:middle;"></span>
-        <button class="pipeline-btn" data-filter="ivan">Ivan's network</button>
-        <button class="pipeline-btn" data-filter="ey">EY + Partnership</button>
-        <button class="pipeline-btn" data-filter="rfp">RFP · Active</button>
-      </div>
-
       <!-- Pipeline card grid -->
       <div class="pipeline-grid" id="pipeline-grid">
 
@@ -2002,43 +1987,6 @@
       });
     }
 
-    /* ============================================================
-       pipelineFilter
-       ============================================================ */
-    function pipelineFilter() {
-      var btns = document.querySelectorAll('.pipeline-btn');
-      if (!btns.length) return;
-
-      function applyFilter(filter) {
-        document.querySelectorAll('.pipeline-card').forEach(function(card) {
-          var geo  = card.dataset.geo  || '';
-          var type = card.dataset.type || '';
-          var rfp  = card.dataset.rfp  || '';
-          var show = false;
-          if (filter === 'all') {
-            show = true;
-          } else if (filter === 'ksa' || filter === 'uae') {
-            show = (geo === filter);
-          } else if (filter === 'ivan') {
-            show = (type === 'ivan');
-          } else if (filter === 'ey') {
-            show = (type === 'ey' && rfp !== 'true');
-          } else if (filter === 'rfp') {
-            show = (rfp === 'true');
-          }
-          card.style.display = show ? 'block' : 'none';
-        });
-      }
-
-
-      btns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          btns.forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-          applyFilter(btn.dataset.filter);
-        });
-      });
-    }
 
 
     /* ============================================================
@@ -2290,7 +2238,6 @@
       accordionInit();
       scrollCueHide();
       mobileMenu();
-      pipelineFilter();
       cardTabs();
       initPipelineOverlay();
     });
