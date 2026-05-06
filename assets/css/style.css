@@ -184,10 +184,8 @@
     /* Scrolled state */
     #site-header.scrolled {
       position: fixed;
-      background: rgba(10, 10, 10, 0.97);
+      background: #0A0A0A;
       border-bottom: 1px solid var(--rule);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
       padding: 0;
     }
 
