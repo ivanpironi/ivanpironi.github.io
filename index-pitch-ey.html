@@ -2030,38 +2030,40 @@
         });
       }
 
-      /* Chrome Android deferred-paint fix.
-         offsetHeight forces layout but NOT a paint; the browser can still batch
-         the none→block back to a net no-op. requestAnimationFrame crosses a real
-         frame boundary so the browser must paint the display:none state before
-         the next callback runs and shows the cards. */
+      /* Chrome Android repaint fix — three principles:
+         1. Trigger 600px BEFORE the grid enters the viewport so the repaint
+            happens off-screen and Chrome pre-rasterises it in advance.
+         2. Use a "wrong filter → correct filter" cycle instead of display:none,
+            so every card gets a genuine none→block transition Chrome cannot
+            batch away, regardless of the current active filter.
+         3. Keep a scroll fallback with the same 600px buffer in case IO misfires. */
       var grid = document.getElementById('pipeline-grid');
       var painted = false;
 
       function forceRepaint() {
         if (painted) return;
         painted = true;
-        document.querySelectorAll('.pipeline-card').forEach(function(c) { c.style.display = 'none'; });
-        requestAnimationFrame(function() {
-          var active = document.querySelector('.pipeline-btn.active');
-          applyFilter(active ? active.dataset.filter : 'all');
-        });
+        var active = document.querySelector('.pipeline-btn.active');
+        var cur = active ? active.dataset.filter : 'all';
+        /* Apply a mismatched filter so every card gets a genuine none→block flip */
+        applyFilter(cur === 'rfp' ? 'ksa' : 'rfp');
+        requestAnimationFrame(function() { applyFilter(cur); });
       }
 
+      /* rootMargin '0px 0px 600px 0px' fires when grid is still 600px below fold */
       if (grid && 'IntersectionObserver' in window) {
         new IntersectionObserver(function(entries, obs) {
           if (!entries[0].isIntersecting) return;
           obs.disconnect();
           forceRepaint();
-        }, { threshold: 0 }).observe(grid);
+        }, { threshold: 0, rootMargin: '0px 0px 600px 0px' }).observe(grid);
       }
 
-      /* Scroll fallback: fires on every scroll tick while section is in view */
       window.addEventListener('scroll', function scrollFallback() {
         if (painted) { window.removeEventListener('scroll', scrollFallback); return; }
         if (!grid) return;
         var r = grid.getBoundingClientRect();
-        if (r.top < window.innerHeight && r.bottom > 0) {
+        if (r.top < window.innerHeight + 600 && r.bottom > 0) {
           window.removeEventListener('scroll', scrollFallback);
           forceRepaint();
         }
