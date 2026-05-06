@@ -61,7 +61,8 @@
   .pipeline-btn.active { color:var(--accent); border-color:var(--accent); background:rgba(232,200,74,0.06); }
   /* ── Pipeline grid ── */
   .pipeline-grid { display:flex; flex-wrap:wrap; gap:1.25rem; margin:1rem 0 2.5rem; }
-  .pipeline-card { flex:0 0 calc(50% - 0.625rem); box-sizing:border-box; background:#141412; border:1px solid rgba(255,255,255,0.10); border-radius:4px; padding:1.5rem; min-height:80px; transition:border-color 0.18s ease, box-shadow 0.18s ease; }
+  .pipeline-card { flex:0 0 calc(50% - 0.625rem); box-sizing:border-box; background:#141412; border:1px solid rgba(255,255,255,0.10); border-radius:4px; padding:1.5rem; min-height:80px; opacity:0; transform:translateY(18px); transition:opacity 0.45s ease, transform 0.45s ease, border-color 0.18s ease, box-shadow 0.18s ease; }
+  .pipeline-card.revealed { opacity:1; transform:translateY(0); }
   @media (max-width:768px) { .pipeline-card { flex:0 0 100%; } }
   .pipeline-card:hover { border-color:#E8C84A; box-shadow:0 2px 16px rgba(232,200,74,0.12); }
   .pipeline-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; }
@@ -2242,6 +2243,23 @@
     }
 
     /* ============================================================
+       Pipeline card scroll reveal
+       ============================================================ */
+    function pipelineReveal() {
+      var cards = document.querySelectorAll('.pipeline-card');
+      if (!cards.length) return;
+      var obs = new IntersectionObserver(function(entries) {
+        var visible = entries.filter(function(e) { return e.isIntersecting; });
+        visible.forEach(function(entry, idx) {
+          var card = entry.target;
+          obs.unobserve(card);
+          setTimeout(function() { card.classList.add('revealed'); }, idx * 80);
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+      cards.forEach(function(card) { obs.observe(card); });
+    }
+
+    /* ============================================================
        Pipeline filter
        ============================================================ */
     function pipelineFilter() {
@@ -2257,7 +2275,8 @@
                      (filter === 'ivan' && type === 'ivan') ||
                      (filter === 'ey'   && type === 'ey'   && rfp !== 'true') ||
                      (filter === 'rfp'  && rfp === 'true');
-          card.style.display = show ? '' : 'none';
+          if (show) { card.style.display = ''; card.classList.add('revealed'); }
+          else { card.style.display = 'none'; }
         });
       }
       btns.forEach(function(btn) {
@@ -2281,6 +2300,7 @@
       mobileMenu();
       cardTabs();
       initPipelineOverlay();
+      pipelineReveal();
       pipelineFilter();
     });
 
