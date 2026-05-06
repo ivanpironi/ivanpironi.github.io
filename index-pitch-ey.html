@@ -57,7 +57,7 @@
   .team-card { display:flex; flex-direction:column; }
   /* ── Pipeline filters ── */
   /* ── Filter labels (decorative, no JS) ── */
-  .pipeline-btn { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); background:transparent; border:1px solid rgba(255,255,255,0.12); border-radius:2px; padding:0.4rem 0.9rem; cursor:default; user-select:none; display:inline-block; }
+  .pipeline-btn { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); background:transparent; border:1px solid rgba(255,255,255,0.12); border-radius:2px; padding:0.4rem 0.9rem; cursor:pointer; display:inline-block; }
   .pipeline-btn.active { color:var(--accent); border-color:var(--accent); background:rgba(232,200,74,0.06); }
   /* ── Pipeline grid ── */
   .pipeline-grid { display:flex; flex-wrap:wrap; gap:1.25rem; margin:1rem 0 2.5rem; }
@@ -1269,15 +1269,15 @@
 
       </div><!-- /.phase-grid -->
 
-      <!-- Filter labels — decorative only, no JS -->
-      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin:1.5rem 0;">
-        <span class="pipeline-btn active">All accounts</span>
-        <span class="pipeline-btn">KSA</span>
-        <span class="pipeline-btn">UAE</span>
+      <!-- Filter bar -->
+      <div class="pipeline-filters">
+        <button class="pipeline-btn active" data-filter="all">All accounts</button>
+        <button class="pipeline-btn" data-filter="ksa">KSA</button>
+        <button class="pipeline-btn" data-filter="uae">UAE</button>
         <span style="width:1px;height:20px;background:rgba(255,255,255,0.12);display:inline-block;margin:0 0.25rem;vertical-align:middle;"></span>
-        <span class="pipeline-btn">Ivan's network</span>
-        <span class="pipeline-btn">EY + Partnership</span>
-        <span class="pipeline-btn">RFP · Active</span>
+        <button class="pipeline-btn" data-filter="ivan">Ivan's network</button>
+        <button class="pipeline-btn" data-filter="ey">EY + Partnership</button>
+        <button class="pipeline-btn" data-filter="rfp">RFP · Active</button>
       </div>
 
       <!-- Pipeline card grid -->
@@ -2242,6 +2242,34 @@
     }
 
     /* ============================================================
+       Pipeline filter
+       ============================================================ */
+    function pipelineFilter() {
+      var btns = document.querySelectorAll('.pipeline-btn');
+      if (!btns.length) return;
+      function applyFilter(filter) {
+        document.querySelectorAll('.pipeline-card').forEach(function(card) {
+          var geo  = card.dataset.geo  || '';
+          var type = card.dataset.type || '';
+          var rfp  = card.dataset.rfp  || '';
+          var show = filter === 'all' ||
+                     ((filter === 'ksa' || filter === 'uae') && geo === filter) ||
+                     (filter === 'ivan' && type === 'ivan') ||
+                     (filter === 'ey'   && type === 'ey'   && rfp !== 'true') ||
+                     (filter === 'rfp'  && rfp === 'true');
+          card.style.display = show ? '' : 'none';
+        });
+      }
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          btns.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          applyFilter(btn.dataset.filter);
+        });
+      });
+    }
+
+    /* ============================================================
        Init — DOMContentLoaded
        ============================================================ */
     document.addEventListener('DOMContentLoaded', function() {
@@ -2253,6 +2281,7 @@
       mobileMenu();
       cardTabs();
       initPipelineOverlay();
+      pipelineFilter();
     });
 
   </script>
