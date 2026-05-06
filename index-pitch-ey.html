@@ -56,9 +56,12 @@
   @media (max-width:768px) { .team-grid { grid-template-columns:1fr; } }
   .team-card { display:flex; flex-direction:column; }
   /* ── Pipeline filters ── */
-  /* ── Pipeline grid — flexbox instead of grid (avoids Chrome Android paint deferral) ── */
+  /* ── Filter labels (decorative, no JS) ── */
+  .pipeline-btn { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); background:transparent; border:1px solid rgba(255,255,255,0.12); border-radius:2px; padding:0.4rem 0.9rem; cursor:default; user-select:none; display:inline-block; }
+  .pipeline-btn.active { color:var(--accent); border-color:var(--accent); background:rgba(232,200,74,0.06); }
+  /* ── Pipeline grid ── */
   .pipeline-grid { display:flex; flex-wrap:wrap; gap:1.25rem; margin:1rem 0 2.5rem; }
-  .pipeline-card { flex:0 0 calc(50% - 0.625rem); box-sizing:border-box; background:#2a2826; border:1px solid rgba(255,255,255,0.18); border-radius:4px; padding:1.5rem; opacity:1; visibility:visible; min-height:80px; }
+  .pipeline-card { flex:0 0 calc(50% - 0.625rem); box-sizing:border-box; background:#2a2826; border:1px solid rgba(255,255,255,0.18); border-radius:4px; padding:1.5rem; min-height:80px; }
   @media (max-width:768px) { .pipeline-card { flex:0 0 100%; } }
   .pipeline-card:hover { border-color:rgba(255,255,255,0.30); }
   .pipeline-card--incumbent { border:2px solid #E8C84A; }
@@ -1266,6 +1269,17 @@
         </div>
 
       </div><!-- /.phase-grid -->
+
+      <!-- Filter labels — decorative only, no JS -->
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin:1.5rem 0;">
+        <span class="pipeline-btn active">All accounts</span>
+        <span class="pipeline-btn">KSA</span>
+        <span class="pipeline-btn">UAE</span>
+        <span style="width:1px;height:20px;background:rgba(255,255,255,0.12);display:inline-block;margin:0 0.25rem;vertical-align:middle;"></span>
+        <span class="pipeline-btn">Ivan's network</span>
+        <span class="pipeline-btn">EY + Partnership</span>
+        <span class="pipeline-btn">RFP · Active</span>
+      </div>
 
       <!-- Pipeline card grid -->
       <div class="pipeline-grid" id="pipeline-grid">
