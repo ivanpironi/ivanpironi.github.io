@@ -61,7 +61,7 @@
   .pipeline-btn:hover { color:var(--text); border-color:rgba(255,255,255,0.3); }
   .pipeline-btn.active { color:var(--accent); border-color:var(--accent); background:rgba(232,200,74,0.06); }
   /* ── Pipeline grid ── */
-  .pipeline-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1rem 0 2.5rem; position:relative; z-index:1; }
+  .pipeline-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1rem 0 2.5rem; }
   @media (max-width:768px) { .pipeline-grid { grid-template-columns:1fr; } }
   .pipeline-card { background:#1a1a18; border:1px solid rgba(255,255,255,0.14); border-radius:4px; padding:1.5rem; display:block; min-height:80px; transition:border-color 0.2s ease; }
   .pipeline-card:hover { border-color:rgba(255,255,255,0.25); }
@@ -2030,20 +2030,42 @@
         });
       }
 
-      /* Chrome Android deferred-paint fix: trigger hide→reflow→show the moment
-         the grid enters the viewport (not at page load, which is off-screen) */
+      /* Chrome Android deferred-paint fix.
+         offsetHeight forces layout but NOT a paint; the browser can still batch
+         the none→block back to a net no-op. requestAnimationFrame crosses a real
+         frame boundary so the browser must paint the display:none state before
+         the next callback runs and shows the cards. */
       var grid = document.getElementById('pipeline-grid');
-      if (grid && 'IntersectionObserver' in window) {
-        var repaintOnce = new IntersectionObserver(function(entries, obs) {
-          if (!entries[0].isIntersecting) return;
-          obs.disconnect();
-          document.querySelectorAll('.pipeline-card').forEach(function(c) { c.style.display = 'none'; });
-          void grid.offsetHeight; /* synchronous reflow */
+      var painted = false;
+
+      function forceRepaint() {
+        if (painted) return;
+        painted = true;
+        document.querySelectorAll('.pipeline-card').forEach(function(c) { c.style.display = 'none'; });
+        requestAnimationFrame(function() {
           var active = document.querySelector('.pipeline-btn.active');
           applyFilter(active ? active.dataset.filter : 'all');
-        }, { threshold: 0.01 });
-        repaintOnce.observe(grid);
+        });
       }
+
+      if (grid && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function(entries, obs) {
+          if (!entries[0].isIntersecting) return;
+          obs.disconnect();
+          forceRepaint();
+        }, { threshold: 0 }).observe(grid);
+      }
+
+      /* Scroll fallback: fires on every scroll tick while section is in view */
+      window.addEventListener('scroll', function scrollFallback() {
+        if (painted) { window.removeEventListener('scroll', scrollFallback); return; }
+        if (!grid) return;
+        var r = grid.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) {
+          window.removeEventListener('scroll', scrollFallback);
+          forceRepaint();
+        }
+      }, { passive: true });
 
       btns.forEach(function(btn) {
         btn.addEventListener('click', function() {
