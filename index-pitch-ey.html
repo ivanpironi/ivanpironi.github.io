@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
-  <link rel="stylesheet" href="assets/css/style.css?v=11">
+  <link rel="stylesheet" href="assets/css/style.css?v=12">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMLNJW4GDE"></script>
   <script>
@@ -2243,6 +2243,22 @@
     }
 
     /* ============================================================
+       Generic scroll reveal (.reveal elements)
+       ============================================================ */
+    function scrollReveal() {
+      var els = document.querySelectorAll('.reveal');
+      if (!els.length) return;
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('revealed');
+          obs.unobserve(entry.target);
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+      els.forEach(function(el) { obs.observe(el); });
+    }
+
+    /* ============================================================
        Pipeline card scroll reveal
        ============================================================ */
     function pipelineReveal() {
@@ -2294,6 +2310,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       headerTransition();
       navActiveState();
+      scrollReveal();
       timelineItemsAnimate();
       accordionInit();
       scrollCueHide();

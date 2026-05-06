@@ -146,10 +146,10 @@
     }
 
     /* ============================================================
-       SCROLL REVEAL — disabled, elements always visible
+       SCROLL REVEAL
        ============================================================ */
-    .reveal { opacity: 1; transform: none; }
-    .reveal.revealed { opacity: 1; transform: none; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
 
     /* ============================================================
        HEADER
