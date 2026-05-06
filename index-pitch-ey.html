@@ -232,9 +232,9 @@
   .gantt-scroll-hint { display:none; }
   @media (max-width:768px) {
     .gantt-fade-edge { display:block; position:absolute; top:0; right:0; bottom:0; width:56px; background:linear-gradient(to left, #0A0A0A 0%, transparent 100%); pointer-events:none; transition:opacity 0.4s ease; z-index:1; }
-    .gantt-scroll-hint { display:flex; align-items:center; gap:5px; position:absolute; top:50%; right:10px; transform:translateY(-50%); background:rgba(232,200,74,0.15); border:1px solid rgba(232,200,74,0.5); border-radius:20px; padding:6px 13px; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#E8C84A; pointer-events:none; transition:opacity 0.4s ease; z-index:2; }
-    .gantt-scroll-wrap.scrolled .gantt-fade-edge,
-    .gantt-scroll-wrap.scrolled .gantt-scroll-hint { opacity:0; pointer-events:none; }
+    .gantt-scroll-wrap.scrolled .gantt-fade-edge { opacity:0; }
+    .gantt-scroll-hint { display:flex; align-items:center; gap:5px; position:fixed; bottom:20px; right:16px; background:rgba(232,200,74,0.15); border:1px solid rgba(232,200,74,0.5); border-radius:20px; padding:6px 13px; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#E8C84A; pointer-events:none; opacity:0; transition:opacity 0.35s ease; z-index:200; }
+    .gantt-scroll-hint.visible { opacity:1; }
   }
   </style>
 <!--
@@ -2259,9 +2259,20 @@
     function ganttScrollHint() {
       var wrap  = document.querySelector('.gantt-scroll-wrap');
       var inner = document.querySelector('.gantt-scroll-inner');
-      if (!wrap || !inner) return;
+      var hint  = document.querySelector('.gantt-scroll-hint');
+      if (!wrap || !inner || !hint) return;
+      var used = false;
+      var obs = new IntersectionObserver(function(entries) {
+        if (used) return;
+        hint.classList.toggle('visible', entries[0].isIntersecting);
+      }, { threshold: 0.2 });
+      obs.observe(wrap);
       inner.addEventListener('scroll', function() {
-        if (inner.scrollLeft > 10) wrap.classList.add('scrolled');
+        if (inner.scrollLeft > 10) {
+          used = true;
+          hint.classList.remove('visible');
+          wrap.classList.add('scrolled');
+        }
       }, { passive: true });
     }
 
