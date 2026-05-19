@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/assets/css/common.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
   <script src="/assets/js/pipeline-data.js" defer></script>
+  <script src="/assets/js/pipeline-calc.js" defer></script>
   <script src="/assets/js/pipeline-render.js" defer></script>
   <style>
     body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text); margin: 0; }
@@ -46,11 +47,28 @@
     .footnote { background: var(--color-bg-subtle); padding: var(--space-md); border-radius: var(--radius-md); font-size: 0.85rem; color: var(--color-muted); line-height: 1.6; }
     .footnote p { margin: 0; }
 
+    .kpi-card .value { transition: opacity 0.2s; }
+
+    .drill-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 300; }
+    .drill-backdrop.open { display: block; }
+    .drill-panel { position: fixed; top: 0; right: -520px; width: 480px; max-width: 100vw; height: 100%; background: white; border-left: 1px solid var(--color-border); box-shadow: -4px 0 24px rgba(0,0,0,0.08); z-index: 301; transition: right 0.3s ease; overflow-y: auto; padding: var(--space-lg); box-sizing: border-box; }
+    .drill-panel.open { right: 0; }
+    .drill-panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-lg); }
+    .drill-panel-header h2 { margin: 0; font-size: 1.1rem; }
+    .drill-close { background: none; border: none; cursor: pointer; font-size: 1.4rem; line-height: 1; color: var(--color-muted); padding: 0; }
+    .drill-close:hover { color: var(--color-text); }
+    .drill-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    .drill-table th { text-align: left; font-weight: 500; color: var(--color-muted); padding: var(--space-sm) var(--space-sm) var(--space-sm) 0; border-bottom: 1px solid var(--color-border); }
+    .drill-table td { padding: var(--space-sm) var(--space-sm) var(--space-sm) 0; border-bottom: 1px solid var(--color-bg-subtle); }
+    .drill-summary { margin-bottom: var(--space-lg); display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+    .drill-summary .kpi-card { padding: var(--space-md); }
+
     @media (max-width: 768px) {
       .kpi-row { grid-template-columns: 1fr; }
       .sliders { grid-template-columns: 1fr; }
       .filter-chips { gap: var(--space-md); }
       .chart-row.two-col, .chart-row.three-col { grid-template-columns: 1fr; }
+      .drill-panel { width: 100vw; }
     }
   </style>
 </head>
@@ -100,14 +118,14 @@
     <details class="assumptions-panel">
       <summary>▾ Adjust assumptions</summary>
       <div class="sliders">
-        <label>Qiddiya probability <input type="range" disabled value="50"> <span>50%</span></label>
-        <label>Retainer conversion <input type="range" disabled value="50"> <span>50%</span></label>
-        <label>Y3 origination probability <input type="range" disabled value="30"> <span>30%</span></label>
-        <label>NRF haircut <input type="range" disabled value="25"> <span>25%</span></label>
+        <label>Qiddiya probability <input type="range" id="slider-qiddiya" min="25" max="75" step="5" value="50"> <span id="val-qiddiya">50%</span></label>
+        <label>Retainer conversion <input type="range" id="slider-retainer" min="25" max="75" step="5" value="50"> <span id="val-retainer">50%</span></label>
+        <label>Y3 origination probability <input type="range" id="slider-y3orig" min="0" max="50" step="5" value="30"> <span id="val-y3orig">30%</span></label>
+        <label>NRF haircut <input type="range" id="slider-nrf" min="15" max="35" step="1" value="25"> <span id="val-nrf">25%</span></label>
       </div>
       <div class="actions">
-        <button disabled>Reset defaults</button>
-        <button disabled>Copy share link</button>
+        <button id="btn-reset">Reset defaults</button>
+        <button id="btn-copy">Copy share link</button>
       </div>
     </details>
   </section>
@@ -117,18 +135,18 @@
 
     <div class="filter-chips">
       <span class="chip-group">Year:
-        <button class="chip active">All</button>
-        <button class="chip">Y1</button>
-        <button class="chip">Y2</button>
-        <button class="chip">Y3</button>
+        <button class="chip active" data-filter="year" data-value="all">All</button>
+        <button class="chip" data-filter="year" data-value="1">Y1</button>
+        <button class="chip" data-filter="year" data-value="2">Y2</button>
+        <button class="chip" data-filter="year" data-value="3">Y3</button>
       </span>
       <span class="chip-group">Type:
-        <button class="chip active">All</button>
-        <button class="chip">Anchor</button>
-        <button class="chip">Secondary</button>
-        <button class="chip">Retainer</button>
-        <button class="chip">Renewal</button>
-        <button class="chip">CP</button>
+        <button class="chip active" data-filter="type" data-value="all">All</button>
+        <button class="chip" data-filter="type" data-value="A">Anchor</button>
+        <button class="chip" data-filter="type" data-value="S">Secondary</button>
+        <button class="chip" data-filter="type" data-value="R">Retainer</button>
+        <button class="chip" data-filter="type" data-value="RR">Renewal</button>
+        <button class="chip" data-filter="type" data-value="CP">CP</button>
       </span>
     </div>
 
@@ -191,6 +209,29 @@
 <footer class="site-footer">
   <p>Last updated: <span data-pipeline="lastUpdated">2026-05-19</span> · Confidential — prepared for EY Capital Projects Leadership</p>
 </footer>
+
+
+<div class="drill-backdrop" id="drill-backdrop"></div>
+<aside class="drill-panel" id="drill-panel" aria-hidden="true">
+  <div class="drill-panel-header">
+    <h2 id="drill-title">Account detail</h2>
+    <button class="drill-close" id="drill-close" aria-label="Close">&#215;</button>
+  </div>
+  <div class="drill-summary" id="drill-summary"></div>
+  <table class="drill-table">
+    <thead>
+      <tr>
+        <th>Engagement</th>
+        <th>Type</th>
+        <th>Month</th>
+        <th>Gross K</th>
+        <th>Prob</th>
+        <th>Wtd K</th>
+      </tr>
+    </thead>
+    <tbody id="drill-tbody"></tbody>
+  </table>
+</aside>
 
 </body>
 </html>
