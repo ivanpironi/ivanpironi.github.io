@@ -116,7 +116,7 @@
   }
 
   /* ── Chart shared config ─────────────────────────────────────── */
-  var GRID='#F3F4F6', MUTED='#6B7280';
+  var GRID='rgba(245,244,240,0.08)', MUTED='rgba(245,244,240,0.55)';
   var REGION_COLOR={KSA:'#3B82F6',UAE:'#14B8A6',Qatar:'#F59E0B'};
   var TIP={backgroundColor:'#111827',titleColor:'#F9FAFB',bodyColor:'#D1D5DB',padding:10,cornerRadius:4};
   function mCb(v){return '$'+v+'M';}
@@ -190,7 +190,7 @@
     var CLR=['#3B82F6','#10B981','#F59E0B','#8B5CF6','#6B7280'];
     _charts[id]=new Chart(ctx,{type:'doughnut',
       data:{labels:LBL,datasets:[{data:KEYS.map(function(k){return toM(types[k]||0);}),
-        backgroundColor:CLR,borderWidth:1,borderColor:'#FFFFFF'}]},
+        backgroundColor:CLR,borderWidth:1,borderColor:'#111110'}]},
       options:{responsive:true,maintainAspectRatio:false,plugins:{
         legend:{display:true,position:'bottom',labels:{color:MUTED,boxWidth:12,font:{size:11}}},
         tooltip:Object.assign({},TIP,{callbacks:{label:function(c){return c.label+': $'+c.raw+'M';}}})}}});
