@@ -45,7 +45,13 @@
   justify-content: space-between;
   gap: var(--space-md);
   font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+  box-sizing: border-box;
 }
+
+.site-nav * { box-sizing: border-box; }
 
 .site-nav .brand {
   font-weight: 700;
