@@ -74,6 +74,12 @@
   font-size: 14px;
 }
 
+.site-nav ul a {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
 .site-nav a:hover {
   color: var(--color-text);
 }
@@ -82,6 +88,7 @@
   color: var(--color-accent);
   border-bottom: 2px solid var(--color-accent);
   padding-bottom: 2px;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -91,7 +98,8 @@
     padding: var(--space-sm) var(--space-md);
   }
   .site-nav ul { gap: var(--space-sm); }
-  .site-nav a  { font-size: 13px; }
+  .site-nav a     { font-size: 13px; }
+  .site-nav ul a  { font-size: 11px; }
 }
 
 /* ── Site footer ────────────────────────────────────────────── */
