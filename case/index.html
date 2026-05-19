@@ -21,6 +21,59 @@
   </script>
   <link rel="stylesheet" href="/assets/css/common.css">
   <script src="/assets/js/pipeline-data.js" defer></script>
+  <style>
+    .doc-header {
+      padding: 5.5rem 6rem 3.5rem;
+      background: #0A0A0A;
+      border-bottom: 1px solid rgba(245,244,240,0.07);
+    }
+    .doc-author {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      margin-bottom: 2.5rem;
+    }
+    .doc-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 12%;
+      filter: grayscale(15%) contrast(1.05);
+      border: 2px solid rgba(232,200,74,0.4);
+      flex-shrink: 0;
+    }
+    .doc-author-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      color: #F5F4F0;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+    .doc-author-role {
+      font-size: 0.8rem;
+      color: rgba(245,244,240,0.45);
+      margin-top: 2px;
+    }
+    .doc-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.93;
+      color: #F5F4F0;
+      margin: 0 0 1.25rem;
+      letter-spacing: 0.01em;
+    }
+    .doc-sub {
+      font-size: 0.9rem;
+      color: rgba(245,244,240,0.4);
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+    @media (max-width: 768px) {
+      .doc-header { padding: 3rem 1.5rem 2rem; }
+      .doc-title { font-size: 3rem; }
+    }
+  </style>
 </head>
 <body>
 <nav class="site-nav">
@@ -96,46 +149,17 @@
   <!-- ============================================================
        HERO — Section 0
        ============================================================ -->
-  <section class="hero" id="hero" aria-label="Hero">
-    <!-- Eyebrow pinned to top independently of name block -->
-    <span class="hero-eyebrow">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</span>
-
-    <div class="hero-text">
-      <span class="hero-name">Ivan</span>
-      <span class="hero-name">Pironi</span>
-
-      <div class="hero-rule" aria-hidden="true"></div>
-
-      <p class="hero-statement">
-        Sovereign programmes don't fail on ambition.<br>
-        They fail on governance.<br>
-        I fix governance.
-      </p>
-
-      <div class="hero-tags">
-        <span class="hero-tag">24 Years GCC Experience</span>
-        <span class="hero-tag">Sovereign Capital Advisory</span>
-        <span class="hero-tag">PMO Governance</span>
-        <span class="hero-tag">Digital Twin</span>
-        <span class="hero-tag">Oracle PMIS</span>
-        <span class="hero-tag">ISO 19650</span>
-        <span class="hero-tag">Sovereign Cloud</span>
-        <span class="hero-tag">PMP®</span>
-        <span class="hero-tag">PRINCE2®</span>
-        <span class="hero-tag">AWS</span>
-        <span class="hero-tag">Azure</span>
-        <span class="hero-tag">GCP</span>
-        <span class="hero-tag">OCI</span>
+  <header class="doc-header">
+    <div class="doc-author">
+      <img class="doc-avatar" src="/assets/ivan-pironi.png" alt="Ivan Pironi">
+      <div>
+        <div class="doc-author-name">Ivan Pironi</div>
+        <div class="doc-author-role">Capital Programme Advisory &nbsp;·&nbsp; EY MENA</div>
       </div>
     </div>
-
-    <!-- Scroll cue -->
-    <div class="scroll-cue" aria-hidden="true">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 9L12 15L18 9" stroke="#E8C84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </section>
+    <h1 class="doc-title">Full Business<br>Case</h1>
+    <p class="doc-sub">15-minute read &nbsp;·&nbsp; Partner-level commercial case for EY Capital Projects Leadership</p>
+  </header>
 
   <!-- ============================================================
        SECTION 0b — THE JOURNEY
