@@ -2060,3 +2060,9 @@
       }
     }
 
+/* ── site-nav + dark #site-header coexistence ──────────────────
+   On pages that have both (overview, case, pitch), keep the dark
+   header below the sticky white nav so it never blocks nav links. */
+.site-nav ~ #site-header { top: var(--site-nav-h, 44px); }
+.site-nav ~ #site-header:not(.scrolled) { pointer-events: none; }
+
