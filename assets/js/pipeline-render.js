@@ -435,6 +435,8 @@
   }
 
   /* ── Drill-down panel ────────────────────────────────────────── */
+  var TYPE_LABELS = { A:'Anchor', S:'Secondary', R:'Retainer', RR:'Renewal', CP:'CP Advisory' };
+
   function openDrillPanel(accountName) {
     var state = window.appState;
     var eng = (state.currentEngagements || state.originalEngagements || [])
@@ -445,46 +447,44 @@
 
     var region  = eng[0].region || eng[0].geo || '';
     var totalWk = eng.reduce(function (s, e) { return s + safeNum(e.weightedK); }, 0);
-    var rows = eng.map(function (e) {
-      var p = safeNum(e.prob); if(p>1) p=p/100;
-      var gk = safeNum(e._grossK || (p>0 ? safeNum(e.weightedK)/p : safeNum(e.weightedK)));
-      return '<tr style="border-bottom:1px solid #F3F4F6">' +
-        '<td style="padding:5px 6px">'+(e.type||'—')+'</td>' +
-        '<td style="padding:5px 6px;text-align:right">'+fmtM(gk)+'</td>' +
-        '<td style="padding:5px 6px;text-align:right">'+Math.round(p*100)+'%</td>' +
-        '<td style="padding:5px 6px;text-align:right">M'+(e.saleMonth||'—')+'</td>' +
-        '<td style="padding:5px 6px;text-align:right">'+fmtM(safeNum(e.weightedK))+'</td>' +
-        '<td style="padding:5px 6px;text-align:right">'+(e.duration||'—')+'mo</td>' +
+
+    var titleEl   = document.getElementById('drill-title');
+    var summaryEl = document.getElementById('drill-summary');
+    var tbodyEl   = document.getElementById('drill-tbody');
+
+    if (titleEl) titleEl.textContent = accountName;
+
+    if (summaryEl) summaryEl.innerHTML =
+      '<div class="kpi-card"><div class="label">Total weighted</div>' +
+        '<div class="value" style="font-size:1.5rem">'+fmtM(totalWk)+'</div></div>' +
+      '<div class="kpi-card"><div class="label">Engagements</div>' +
+        '<div class="value" style="font-size:1.5rem">'+eng.length+'</div>' +
+        '<div class="breakdown">'+region+'</div></div>';
+
+    if (tbodyEl) tbodyEl.innerHTML = eng.map(function (e) {
+      var p  = safeNum(e.prob); if (p > 1) p = p / 100;
+      var gk = safeNum(e._grossK || (p > 0 ? safeNum(e.weightedK) / p : safeNum(e.weightedK)));
+      return '<tr>' +
+        '<td>'+(TYPE_LABELS[e.type] || e.type || '—')+'</td>' +
+        '<td>'+(e.type||'—')+'</td>' +
+        '<td>M'+(e.saleMonth||'—')+'</td>' +
+        '<td>'+fmtM(gk)+'</td>' +
+        '<td>'+Math.round(p*100)+'%</td>' +
+        '<td>'+fmtM(safeNum(e.weightedK))+'</td>' +
         '</tr>';
     }).join('');
 
-    var hdr = '<tr style="border-bottom:2px solid #E5E7EB;color:#6B7280;font-size:0.78rem">' +
-      '<th style="padding:5px 6px;text-align:left;font-weight:500">Type</th>' +
-      '<th style="padding:5px 6px;text-align:right;font-weight:500">Gross</th>' +
-      '<th style="padding:5px 6px;text-align:right;font-weight:500">Prob</th>' +
-      '<th style="padding:5px 6px;text-align:right;font-weight:500">Sale Mo</th>' +
-      '<th style="padding:5px 6px;text-align:right;font-weight:500">Weighted</th>' +
-      '<th style="padding:5px 6px;text-align:right;font-weight:500">Dur</th></tr>';
-
-    var el = document.getElementById('drill-content');
-    if (el) el.innerHTML =
-      '<h2 style="margin:0 0 8px;font-size:1.2rem">'+accountName+'</h2>' +
-      '<span class="badge">'+region+'</span>' +
-      '<p style="margin:12px 0;font-size:0.9rem">Total weighted: <strong>'+fmtM(totalWk)+'</strong></p>' +
-      '<h3 style="margin:16px 0 8px;font-size:0.85rem;color:#6B7280;font-weight:500;text-transform:uppercase;letter-spacing:0.05em">Engagements</h3>' +
-      '<table style="width:100%;border-collapse:collapse;font-size:0.82rem"><thead>'+hdr+'</thead><tbody>'+rows+'</tbody></table>';
-
     var panel    = document.getElementById('drill-panel');
     var backdrop = document.getElementById('drill-backdrop');
-    if (panel)    panel.setAttribute('aria-hidden', 'false');
-    if (backdrop) backdrop.classList.add('active');
+    if (panel)    { panel.classList.add('open'); panel.setAttribute('aria-hidden','false'); }
+    if (backdrop) backdrop.classList.add('open');
   }
 
   function closeDrillPanel() {
     var panel    = document.getElementById('drill-panel');
     var backdrop = document.getElementById('drill-backdrop');
-    if (panel)    panel.setAttribute('aria-hidden', 'true');
-    if (backdrop) backdrop.classList.remove('active');
+    if (panel)    { panel.classList.remove('open'); panel.setAttribute('aria-hidden','true'); }
+    if (backdrop) backdrop.classList.remove('open');
   }
 
   function wireDrillPanel() {
