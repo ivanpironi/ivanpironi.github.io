@@ -6,6 +6,9 @@
   <meta name="description" content="Ivan Pironi — Capital Programme Advisory. Partner-level value proposition for EY Middle East Capital Projects.">
   <meta name="robots" content="noindex, nofollow">
   <title>Ivan Pironi · Capital Programme Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600&family=Barlow:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/common.css">
   <script src="/assets/js/pipeline-data.js" defer></script>
   <style>
@@ -107,6 +110,97 @@
       .paths { grid-template-columns: 1fr; }
       .stats span { display: block; margin: var(--space-xs) 0; }
     }
+
+    /* ── Portrait hero ─────────────────────────────────────── */
+    .home-hero {
+      position: relative;
+      height: 92vh;
+      min-height: 540px;
+      background: #0A0A0A;
+      overflow: hidden;
+    }
+    .home-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 0 42%;
+      background-image: url('/assets/ivan-pironi.png');
+      background-size: cover;
+      background-position: center 18%;
+      filter: grayscale(15%) contrast(1.05);
+      z-index: 0;
+    }
+    .home-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #0A0A0A 38%, rgba(10,10,10,0.55) 54%, transparent 70%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .home-hero-content {
+      position: absolute;
+      top: 5rem;
+      left: 4rem;
+      z-index: 3;
+      max-width: 560px;
+    }
+    .home-hero-eyebrow {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #E8C84A;
+      margin-bottom: 1.75rem;
+    }
+    .home-hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 9vw, 9rem);
+      line-height: 0.88;
+      color: #F5F4F0;
+      margin: 0 0 1.75rem;
+    }
+    .home-hero-name span { display: block; }
+    .home-hero-rule {
+      width: 56px;
+      height: 2px;
+      background: #E8C84A;
+      margin-bottom: 1.5rem;
+    }
+    .home-hero-statement {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(245,244,240,0.8);
+      margin: 0 0 2.5rem;
+    }
+    .home-hero-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .home-hero-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #E8C84A;
+      text-decoration: none;
+      padding-bottom: 3px;
+      border-bottom: 1px solid rgba(232,200,74,0.35);
+      transition: border-color 0.15s;
+    }
+    .home-hero-links a:hover { border-color: #E8C84A; }
+
+    @media (max-width: 768px) {
+      .home-hero { height: auto; min-height: 100svh; }
+      .home-hero::before { inset: 0; opacity: 0.25; }
+      .home-hero::after { background: linear-gradient(to bottom, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.85) 100%); }
+      .home-hero-content { position: relative; top: auto; left: auto; padding: 3.5rem 1.5rem 4rem; max-width: 100%; }
+      .home-hero-name { font-size: 4.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -121,6 +215,27 @@
     <li><a href="/pitch/">Pitch</a></li>
   </ul>
 </nav>
+
+<div class="home-hero">
+  <div class="home-hero-content">
+    <span class="home-hero-eyebrow">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</span>
+    <div class="home-hero-name">
+      <span>Ivan</span>
+      <span>Pironi</span>
+    </div>
+    <div class="home-hero-rule"></div>
+    <p class="home-hero-statement">
+      Sovereign programmes don't fail on ambition.<br>
+      They fail on governance.<br>
+      I fix governance.
+    </p>
+    <div class="home-hero-links">
+      <a href="/overview/">5-min overview →</a>
+      <a href="/case/">15-min case →</a>
+      <a href="/pipeline/">Live pipeline →</a>
+    </div>
+  </div>
+</div>
 
 <main>
 
