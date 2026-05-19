@@ -1,0 +1,833 @@
+{
+  "$schema": "https://ivanpironi.github.io/data/pipeline-schema-v1.json",
+  "version": "1.0.0",
+  "generated": "2026-05-19",
+  "modelVersion": "consolidated-v5-with-NRF",
+  "confidentiality": "Confidential \u2014 for EY Capital Projects Leadership",
+  "headline": {
+    "yearOne": {
+      "model": {
+        "sales": 1.84,
+        "revenue": 0.98,
+        "nrf": 0.73
+      },
+      "publicRange": {
+        "sales": [
+          1.5,
+          2.5
+        ],
+        "revenue": [
+          0.8,
+          1.4
+        ],
+        "nrf": [
+          0.6,
+          1.0
+        ]
+      }
+    },
+    "yearTwo": {
+      "model": {
+        "sales": 5.08,
+        "revenue": 4.22,
+        "nrf": 3.16
+      },
+      "publicRange": {
+        "sales": [
+          4.5,
+          5.5
+        ],
+        "revenue": [
+          3.8,
+          4.6
+        ],
+        "nrf": [
+          2.8,
+          3.5
+        ]
+      }
+    },
+    "yearThree": {
+      "model": {
+        "sales": 5.53,
+        "revenue": 5.42,
+        "nrf": 4.07
+      },
+      "publicRange": {
+        "sales": [
+          5.0,
+          7.0
+        ],
+        "revenue": [
+          4.5,
+          6.0
+        ],
+        "nrf": [
+          3.5,
+          4.5
+        ]
+      }
+    },
+    "threeYear": {
+      "model": {
+        "sales": 12.44,
+        "revenue": 10.62,
+        "nrf": 7.97
+      },
+      "publicRange": {
+        "sales": [
+          11,
+          14
+        ],
+        "revenue": [
+          9,
+          12
+        ],
+        "nrf": [
+          7,
+          10
+        ]
+      }
+    }
+  },
+  "assumptions": {
+    "qiddiyaProbability": 0.5,
+    "retainerConversionRate": 0.7,
+    "retainerMultiplier": 1,
+    "renewalY2Rate": 12,
+    "y3OriginationMandates": 6,
+    "y3OriginationProbability": 0.3,
+    "y3OriginationValueK": 700,
+    "nrfRatio": 0.75,
+    "nrfHaircut": {
+      "subcontractor": 0.05,
+      "regionalOverhead": 0.11,
+      "crossServiceLine": 0.04,
+      "qualityRisk": 0.03,
+      "partnerColeader": 0.02,
+      "total": 0.25
+    }
+  },
+  "engagementCount": {
+    "A": 15,
+    "S": 15,
+    "R": 13,
+    "RR": 13,
+    "CP": 10,
+    "originationY2": 6,
+    "originationY3": 6,
+    "namedTotal": 66,
+    "grandTotal": 78
+  },
+  "geography": {
+    "ksa": {
+      "valueK": 8565.6375,
+      "accountCount": 11
+    },
+    "uae": {
+      "valueK": 1499.4875,
+      "accountCount": 3
+    },
+    "qatar": {
+      "valueK": 680.15,
+      "accountCount": 1
+    }
+  },
+  "team": {
+    "yearOne": {
+      "totalFte": 5,
+      "partner": 1,
+      "managers": 1,
+      "seniorConsultants": 2,
+      "consultants": 1
+    },
+    "yearTwo": {
+      "totalFte": 11,
+      "partner": 1,
+      "managers": 3,
+      "seniorConsultants": 5,
+      "consultants": 2
+    },
+    "yearThree": {
+      "totalFte": 16,
+      "partner": 1,
+      "managers": 5,
+      "seniorConsultants": 7,
+      "consultants": 3
+    }
+  },
+  "topAccounts": [
+    {
+      "rank": 1,
+      "name": "Expo 2030",
+      "region": "KSA",
+      "weightedK": 1431.8,
+      "pctOfNamed": 13.3
+    },
+    {
+      "rank": 2,
+      "name": "FIFA 2034",
+      "region": "KSA",
+      "weightedK": 1242.8,
+      "pctOfNamed": 11.6
+    },
+    {
+      "rank": 3,
+      "name": "Qiddiya",
+      "region": "KSA",
+      "weightedK": 1115.2,
+      "pctOfNamed": 10.4
+    },
+    {
+      "rank": 4,
+      "name": "KSIA",
+      "region": "KSA",
+      "weightedK": 978.5,
+      "pctOfNamed": 9.1
+    },
+    {
+      "rank": 5,
+      "name": "KSPF",
+      "region": "KSA",
+      "weightedK": 935.2,
+      "pctOfNamed": 8.7
+    },
+    {
+      "rank": 6,
+      "name": "Red Sea Global",
+      "region": "KSA",
+      "weightedK": 697.3,
+      "pctOfNamed": 6.5
+    },
+    {
+      "rank": 7,
+      "name": "ROSHN",
+      "region": "KSA",
+      "weightedK": 680.1,
+      "pctOfNamed": 6.3
+    },
+    {
+      "rank": 8,
+      "name": "TAQA",
+      "region": "UAE",
+      "weightedK": 680.1,
+      "pctOfNamed": 6.3
+    },
+    {
+      "rank": 9,
+      "name": "Qatar Airways",
+      "region": "Qatar",
+      "weightedK": 680.1,
+      "pctOfNamed": 6.3
+    },
+    {
+      "rank": 10,
+      "name": "Saudi Aramco",
+      "region": "KSA",
+      "weightedK": 484.5,
+      "pctOfNamed": 4.5
+    }
+  ],
+  "marketContext": {
+    "gccConsultingMarket2025": "$8.3B",
+    "saudiPipeline": "$1.65T",
+    "premiumSubSegment": "$400-700M",
+    "ksa2030Deadline": "2030 Expo \u00b7 2034 FIFA World Cup"
+  },
+  "engagements": [
+    {
+      "account": "Qiddiya",
+      "type": "A",
+      "grossK": 700,
+      "probability": 0.5,
+      "weightedK": 350,
+      "saleMonth": 3,
+      "durationMonths": 6
+    },
+    {
+      "account": "Qiddiya",
+      "type": "S",
+      "grossK": 550,
+      "probability": 0.3,
+      "weightedK": 165,
+      "saleMonth": 9,
+      "durationMonths": 5
+    },
+    {
+      "account": "Qiddiya",
+      "type": "R",
+      "grossK": 1050,
+      "probability": 0.25,
+      "weightedK": 262.5,
+      "saleMonth": 10,
+      "durationMonths": 12
+    },
+    {
+      "account": "Qiddiya",
+      "type": "RR",
+      "grossK": 1050,
+      "probability": 0.175,
+      "weightedK": 183.8,
+      "saleMonth": 22,
+      "durationMonths": 12
+    },
+    {
+      "account": "Qiddiya",
+      "type": "CP",
+      "grossK": 560,
+      "probability": 0.275,
+      "weightedK": 154,
+      "saleMonth": 21,
+      "durationMonths": 6
+    },
+    {
+      "account": "SAR",
+      "type": "A",
+      "grossK": 275,
+      "probability": 0.4,
+      "weightedK": 110,
+      "saleMonth": 11,
+      "durationMonths": 4
+    },
+    {
+      "account": "SAR",
+      "type": "S",
+      "grossK": 550,
+      "probability": 0.25,
+      "weightedK": 137.5,
+      "saleMonth": 18,
+      "durationMonths": 6
+    },
+    {
+      "account": "SAR",
+      "type": "R",
+      "grossK": 412,
+      "probability": 0.2,
+      "weightedK": 82.5,
+      "saleMonth": 18,
+      "durationMonths": 12
+    },
+    {
+      "account": "SAR",
+      "type": "RR",
+      "grossK": 412,
+      "probability": 0.14,
+      "weightedK": 57.8,
+      "saleMonth": 30,
+      "durationMonths": 12
+    },
+    {
+      "account": "Expo 2030",
+      "type": "A",
+      "grossK": 900,
+      "probability": 0.5,
+      "weightedK": 450,
+      "saleMonth": 9,
+      "durationMonths": 9
+    },
+    {
+      "account": "Expo 2030",
+      "type": "S",
+      "grossK": 700,
+      "probability": 0.3,
+      "weightedK": 210,
+      "saleMonth": 21,
+      "durationMonths": 6
+    },
+    {
+      "account": "Expo 2030",
+      "type": "R",
+      "grossK": 1350,
+      "probability": 0.25,
+      "weightedK": 337.5,
+      "saleMonth": 16,
+      "durationMonths": 12
+    },
+    {
+      "account": "Expo 2030",
+      "type": "RR",
+      "grossK": 1350,
+      "probability": 0.175,
+      "weightedK": 236.2,
+      "saleMonth": 28,
+      "durationMonths": 12
+    },
+    {
+      "account": "Expo 2030",
+      "type": "CP",
+      "grossK": 720,
+      "probability": 0.275,
+      "weightedK": 198,
+      "saleMonth": 27,
+      "durationMonths": 6
+    },
+    {
+      "account": "FIFA 2034",
+      "type": "A",
+      "grossK": 1150,
+      "probability": 0.35,
+      "weightedK": 402.5,
+      "saleMonth": 14,
+      "durationMonths": 9
+    },
+    {
+      "account": "FIFA 2034",
+      "type": "S",
+      "grossK": 750,
+      "probability": 0.2,
+      "weightedK": 150,
+      "saleMonth": 25,
+      "durationMonths": 6
+    },
+    {
+      "account": "FIFA 2034",
+      "type": "R",
+      "grossK": 1725,
+      "probability": 0.175,
+      "weightedK": 301.9,
+      "saleMonth": 21,
+      "durationMonths": 12
+    },
+    {
+      "account": "FIFA 2034",
+      "type": "RR",
+      "grossK": 1725,
+      "probability": 0.1225,
+      "weightedK": 211.3,
+      "saleMonth": 33,
+      "durationMonths": 12
+    },
+    {
+      "account": "FIFA 2034",
+      "type": "CP",
+      "grossK": 920,
+      "probability": 0.1925,
+      "weightedK": 177.1,
+      "saleMonth": 32,
+      "durationMonths": 6
+    },
+    {
+      "account": "ROSHN",
+      "type": "A",
+      "grossK": 700,
+      "probability": 0.3,
+      "weightedK": 210,
+      "saleMonth": 17,
+      "durationMonths": 6
+    },
+    {
+      "account": "ROSHN",
+      "type": "S",
+      "grossK": 550,
+      "probability": 0.2,
+      "weightedK": 110,
+      "saleMonth": 26,
+      "durationMonths": 6
+    },
+    {
+      "account": "ROSHN",
+      "type": "R",
+      "grossK": 1050,
+      "probability": 0.15,
+      "weightedK": 157.5,
+      "saleMonth": 24,
+      "durationMonths": 12
+    },
+    {
+      "account": "ROSHN",
+      "type": "RR",
+      "grossK": 1050,
+      "probability": 0.105,
+      "weightedK": 110.2,
+      "saleMonth": 36,
+      "durationMonths": 12
+    },
+    {
+      "account": "ROSHN",
+      "type": "CP",
+      "grossK": 560,
+      "probability": 0.165,
+      "weightedK": 92.4,
+      "saleMonth": 35,
+      "durationMonths": 6
+    },
+    {
+      "account": "KSPF",
+      "type": "A",
+      "grossK": 700,
+      "probability": 0.4,
+      "weightedK": 280,
+      "saleMonth": 10,
+      "durationMonths": 6
+    },
+    {
+      "account": "KSPF",
+      "type": "S",
+      "grossK": 700,
+      "probability": 0.25,
+      "weightedK": 175,
+      "saleMonth": 19,
+      "durationMonths": 6
+    },
+    {
+      "account": "KSPF",
+      "type": "R",
+      "grossK": 1050,
+      "probability": 0.2,
+      "weightedK": 210,
+      "saleMonth": 17,
+      "durationMonths": 12
+    },
+    {
+      "account": "KSPF",
+      "type": "RR",
+      "grossK": 1050,
+      "probability": 0.14,
+      "weightedK": 147,
+      "saleMonth": 29,
+      "durationMonths": 12
+    },
+    {
+      "account": "KSPF",
+      "type": "CP",
+      "grossK": 560,
+      "probability": 0.22,
+      "weightedK": 123.2,
+      "saleMonth": 28,
+      "durationMonths": 6
+    },
+    {
+      "account": "Diriyah",
+      "type": "A",
+      "grossK": 700,
+      "probability": 0.35,
+      "weightedK": 245,
+      "saleMonth": 16,
+      "durationMonths": 6
+    },
+    {
+      "account": "Diriyah",
+      "type": "S",
+      "grossK": 550,
+      "probability": 0.2,
+      "weightedK": 110,
+      "saleMonth": 24,
+      "durationMonths": 5
+    },
+    {
+      "account": "KSIA",
+      "type": "A",
+      "grossK": 1100,
+      "probability": 0.3,
+      "weightedK": 330,
+      "saleMonth": 26,
+      "durationMonths": 9
+    },
+    {
+      "account": "KSIA",
+      "type": "S",
+      "grossK": 550,
+      "probability": 0.15,
+      "weightedK": 82.5,
+      "saleMonth": 32,
+      "durationMonths": 6
+    },
+    {
+      "account": "KSIA",
+      "type": "R",
+      "grossK": 1650,
+      "probability": 0.15,
+      "weightedK": 247.5,
+      "saleMonth": 33,
+      "durationMonths": 12
+    },
+    {
+      "account": "KSIA",
+      "type": "RR",
+      "grossK": 1650,
+      "probability": 0.105,
+      "weightedK": 173.2,
+      "saleMonth": 45,
+      "durationMonths": 12
+    },
+    {
+      "account": "KSIA",
+      "type": "CP",
+      "grossK": 880,
+      "probability": 0.165,
+      "weightedK": 145.2,
+      "saleMonth": 44,
+      "durationMonths": 6
+    },
+    {
+      "account": "TAQA",
+      "type": "A",
+      "grossK": 700,
+      "probability": 0.3,
+      "weightedK": 210,
+      "saleMonth": 14,
+      "durationMonths": 6
+    },
+    {
+      "account": "TAQA",
+      "type": "S",
+      "grossK": 550,
+      "probability": 0.2,
+      "weightedK": 110,
+      "saleMonth": 22,
+      "durationMonths": 6
+    },
+    {
+      "account": "TAQA",
+      "type": "R",
+      "grossK": 1050,
+      "probability": 0.15,
+      "weightedK": 157.5,
+      "saleMonth": 21,
+      "durationMonths": 12
+    },
+    {
+      "account": "TAQA",
+      "type": "RR",
+      "grossK": 1050,
+      "probability": 0.105,
+      "weightedK": 110.2,
+      "saleMonth": 33,
+      "durationMonths": 12
+    },
+    {
+      "account": "TAQA",
+      "type": "CP",
+      "grossK": 560,
+      "probability": 0.165,
+      "weightedK": 92.4,
+      "saleMonth": 32,
+      "durationMonths": 6
+    },
+    {
+      "account": "Qatar Airways",
+      "type": "A",
+      "grossK": 700,
+      "probability": 0.3,
+      "weightedK": 210,
+      "saleMonth": 17,
+      "durationMonths": 6
+    },
+    {
+      "account": "Qatar Airways",
+      "type": "S",
+      "grossK": 550,
+      "probability": 0.2,
+      "weightedK": 110,
+      "saleMonth": 25,
+      "durationMonths": 6
+    },
+    {
+      "account": "Qatar Airways",
+      "type": "R",
+      "grossK": 1050,
+      "probability": 0.15,
+      "weightedK": 157.5,
+      "saleMonth": 24,
+      "durationMonths": 12
+    },
+    {
+      "account": "Qatar Airways",
+      "type": "RR",
+      "grossK": 1050,
+      "probability": 0.105,
+      "weightedK": 110.2,
+      "saleMonth": 36,
+      "durationMonths": 12
+    },
+    {
+      "account": "Qatar Airways",
+      "type": "CP",
+      "grossK": 560,
+      "probability": 0.165,
+      "weightedK": 92.4,
+      "saleMonth": 35,
+      "durationMonths": 6
+    },
+    {
+      "account": "New Murabba",
+      "type": "A",
+      "grossK": 700,
+      "probability": 0.25,
+      "weightedK": 175,
+      "saleMonth": 28,
+      "durationMonths": 6
+    },
+    {
+      "account": "New Murabba",
+      "type": "S",
+      "grossK": 550,
+      "probability": 0.15,
+      "weightedK": 82.5,
+      "saleMonth": 34,
+      "durationMonths": 5
+    },
+    {
+      "account": "Khazna",
+      "type": "A",
+      "grossK": 450,
+      "probability": 0.3,
+      "weightedK": 135,
+      "saleMonth": 28,
+      "durationMonths": 5
+    },
+    {
+      "account": "Khazna",
+      "type": "S",
+      "grossK": 400,
+      "probability": 0.2,
+      "weightedK": 80,
+      "saleMonth": 34,
+      "durationMonths": 6
+    },
+    {
+      "account": "Khazna",
+      "type": "R",
+      "grossK": 675,
+      "probability": 0.15,
+      "weightedK": 101.2,
+      "saleMonth": 35,
+      "durationMonths": 12
+    },
+    {
+      "account": "Khazna",
+      "type": "RR",
+      "grossK": 675,
+      "probability": 0.105,
+      "weightedK": 70.9,
+      "saleMonth": 47,
+      "durationMonths": 12
+    },
+    {
+      "account": "Khazna",
+      "type": "CP",
+      "grossK": 360,
+      "probability": 0.165,
+      "weightedK": 59.4,
+      "saleMonth": 46,
+      "durationMonths": 6
+    },
+    {
+      "account": "Red Sea Global",
+      "type": "A",
+      "grossK": 550,
+      "probability": 0.4,
+      "weightedK": 220,
+      "saleMonth": 12,
+      "durationMonths": 6
+    },
+    {
+      "account": "Red Sea Global",
+      "type": "S",
+      "grossK": 400,
+      "probability": 0.25,
+      "weightedK": 100,
+      "saleMonth": 20,
+      "durationMonths": 5
+    },
+    {
+      "account": "Red Sea Global",
+      "type": "R",
+      "grossK": 825,
+      "probability": 0.2,
+      "weightedK": 165,
+      "saleMonth": 19,
+      "durationMonths": 12
+    },
+    {
+      "account": "Red Sea Global",
+      "type": "RR",
+      "grossK": 825,
+      "probability": 0.14,
+      "weightedK": 115.5,
+      "saleMonth": 31,
+      "durationMonths": 12
+    },
+    {
+      "account": "Red Sea Global",
+      "type": "CP",
+      "grossK": 440,
+      "probability": 0.22,
+      "weightedK": 96.8,
+      "saleMonth": 30,
+      "durationMonths": 6
+    },
+    {
+      "account": "DAMAC",
+      "type": "A",
+      "grossK": 550,
+      "probability": 0.25,
+      "weightedK": 137.5,
+      "saleMonth": 28,
+      "durationMonths": 6
+    },
+    {
+      "account": "DAMAC",
+      "type": "S",
+      "grossK": 400,
+      "probability": 0.15,
+      "weightedK": 60,
+      "saleMonth": 34,
+      "durationMonths": 5
+    },
+    {
+      "account": "DAMAC",
+      "type": "R",
+      "grossK": 825,
+      "probability": 0.125,
+      "weightedK": 103.1,
+      "saleMonth": 35,
+      "durationMonths": 12
+    },
+    {
+      "account": "DAMAC",
+      "type": "RR",
+      "grossK": 825,
+      "probability": 0.0875,
+      "weightedK": 72.2,
+      "saleMonth": 47,
+      "durationMonths": 12
+    },
+    {
+      "account": "Saudi Aramco",
+      "type": "A",
+      "grossK": 900,
+      "probability": 0.2,
+      "weightedK": 180,
+      "saleMonth": 25,
+      "durationMonths": 9
+    },
+    {
+      "account": "Saudi Aramco",
+      "type": "S",
+      "grossK": 750,
+      "probability": 0.1,
+      "weightedK": 75,
+      "saleMonth": 33,
+      "durationMonths": 6
+    },
+    {
+      "account": "Saudi Aramco",
+      "type": "R",
+      "grossK": 1350,
+      "probability": 0.1,
+      "weightedK": 135,
+      "saleMonth": 32,
+      "durationMonths": 12
+    },
+    {
+      "account": "Saudi Aramco",
+      "type": "RR",
+      "grossK": 1350,
+      "probability": 0.07,
+      "weightedK": 94.5,
+      "saleMonth": 44,
+      "durationMonths": 12
+    }
+  ]
+}
