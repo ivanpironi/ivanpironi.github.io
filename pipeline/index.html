@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Live pipeline model — 36-month forecast for Ivan Pironi Capital Programme Advisory.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Pipeline Model · Ivan Pironi</title>
+  <link rel="stylesheet" href="/assets/css/common.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+  <script src="/assets/js/pipeline-data.js" defer></script>
+  <script src="/assets/js/pipeline-render.js" defer></script>
+  <style>
+    body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text); margin: 0; }
+
+    .page-hero { padding: var(--space-xl) var(--space-md); text-align: center; }
+    .page-hero h1 { font-size: clamp(1.5rem, 3vw, 2.5rem); margin: 0 0 var(--space-sm); }
+    .page-hero p { color: var(--color-muted); max-width: 700px; margin: 0 auto; }
+
+    main > section { max-width: 1200px; margin: 0 auto var(--space-lg); padding: 0 var(--space-md); }
+
+    .kpi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+
+    .assumptions-panel { background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-md); }
+    .assumptions-panel summary { cursor: pointer; font-weight: 500; user-select: none; }
+    .sliders { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); margin-top: var(--space-md); }
+    .sliders label { display: flex; align-items: center; gap: var(--space-sm); font-size: 0.9rem; color: var(--color-muted); }
+    .sliders input[type="range"] { flex: 1; }
+    .actions { display: flex; gap: var(--space-sm); margin-top: var(--space-md); }
+    .actions button { padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); background: white; border-radius: var(--radius-sm); cursor: pointer; font-size: 0.875rem; }
+    .actions button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .filter-chips { display: flex; gap: var(--space-lg); flex-wrap: wrap; margin-bottom: var(--space-md); font-size: 0.9rem; }
+    .chip-group { display: flex; align-items: center; gap: var(--space-xs); color: var(--color-muted); flex-wrap: wrap; }
+    .chip { padding: 4px 12px; border-radius: 999px; border: 1px solid var(--color-border); background: white; cursor: pointer; font-size: 0.85rem; color: var(--color-muted); }
+    .chip.active { background: var(--color-text); color: white; border-color: var(--color-text); }
+
+    .chart-row { display: grid; gap: var(--space-md); margin-bottom: var(--space-md); }
+    .chart-row.two-col   { grid-template-columns: 1fr 1fr; }
+    .chart-row.three-col { grid-template-columns: 1fr 1fr 1fr; }
+    .chart-card { background: white; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-md); }
+    .chart-card h3 { font-size: 0.95rem; margin: 0 0 var(--space-md); color: var(--color-muted); font-weight: 500; }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+    .chart-canvas-wrap.tall { height: 340px; }
+
+    .footnote { background: var(--color-bg-subtle); padding: var(--space-md); border-radius: var(--radius-md); font-size: 0.85rem; color: var(--color-muted); line-height: 1.6; }
+    .footnote p { margin: 0; }
+
+    @media (max-width: 768px) {
+      .kpi-row { grid-template-columns: 1fr; }
+      .sliders { grid-template-columns: 1fr; }
+      .filter-chips { gap: var(--space-md); }
+      .chart-row.two-col, .chart-row.three-col { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/" class="brand">Ivan Pironi · Capital Programme Advisory</a>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/overview/">Overview</a></li>
+    <li><a href="/case/">Case</a></li>
+    <li><a href="/pipeline/" class="active">Pipeline</a></li>
+    <li><a href="/pitch/">Pitch</a></li>
+  </ul>
+</nav>
+
+<header class="page-hero">
+  <h1>Live pipeline model</h1>
+  <p>36-month forecast · three lenses on the same pipeline · adjust assumptions, see live impact</p>
+</header>
+
+<main>
+
+  <!-- KPI cards -->
+  <section>
+    <div class="kpi-row">
+      <div class="kpi-card" id="kpi-sales">
+        <div class="label">Sales · committed</div>
+        <div class="value">—</div>
+        <div class="breakdown">Loading…</div>
+      </div>
+      <div class="kpi-card" id="kpi-revenue">
+        <div class="label">Revenue · recognised</div>
+        <div class="value">—</div>
+        <div class="breakdown">Loading…</div>
+      </div>
+      <div class="kpi-card highlight" id="kpi-nrf">
+        <div class="label">Net Realisable Fees · EY P&amp;L</div>
+        <div class="value">—</div>
+        <div class="breakdown">Loading…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assumptions -->
+  <section>
+    <details class="assumptions-panel">
+      <summary>▾ Adjust assumptions</summary>
+      <div class="sliders">
+        <label>Qiddiya probability <input type="range" disabled value="50"> <span>50%</span></label>
+        <label>Retainer conversion <input type="range" disabled value="50"> <span>50%</span></label>
+        <label>Y3 origination probability <input type="range" disabled value="30"> <span>30%</span></label>
+        <label>NRF haircut <input type="range" disabled value="25"> <span>25%</span></label>
+      </div>
+      <div class="actions">
+        <button disabled>Reset defaults</button>
+        <button disabled>Copy share link</button>
+      </div>
+    </details>
+  </section>
+
+  <!-- Charts -->
+  <section>
+
+    <div class="filter-chips">
+      <span class="chip-group">Year:
+        <button class="chip active">All</button>
+        <button class="chip">Y1</button>
+        <button class="chip">Y2</button>
+        <button class="chip">Y3</button>
+      </span>
+      <span class="chip-group">Type:
+        <button class="chip active">All</button>
+        <button class="chip">Anchor</button>
+        <button class="chip">Secondary</button>
+        <button class="chip">Retainer</button>
+        <button class="chip">Renewal</button>
+        <button class="chip">CP</button>
+      </span>
+    </div>
+
+    <!-- Row 1: two-col -->
+    <div class="chart-row two-col">
+      <div class="chart-card">
+        <h3>By year — three lenses</h3>
+        <div class="chart-canvas-wrap">
+          <canvas id="chart-by-year"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>36-month cumulative</h3>
+        <div class="chart-canvas-wrap">
+          <canvas id="chart-trajectory"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: full width -->
+    <div class="chart-row">
+      <div class="chart-card">
+        <h3>Revenue by account · ranked</h3>
+        <div class="chart-canvas-wrap tall">
+          <canvas id="chart-accounts"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: three-col -->
+    <div class="chart-row three-col">
+      <div class="chart-card">
+        <h3>Engagement type mix</h3>
+        <div class="chart-canvas-wrap">
+          <canvas id="chart-types"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>By probability band</h3>
+        <div class="chart-canvas-wrap">
+          <canvas id="chart-prob"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>Gross → NRF funnel</h3>
+        <div class="chart-canvas-wrap">
+          <canvas id="chart-funnel"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <aside class="footnote">
+      <p>15 named accounts across UAE/KSA/Qatar · 78 engagements over 36 months · NRF = Revenue × 75% (EY MENA overhead structure) · Y3 includes 6 origination mandates at 30% probability</p>
+    </aside>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Last updated: <span data-pipeline="lastUpdated">2026-05-19</span> · Confidential — prepared for EY Capital Projects Leadership</p>
+</footer>
+
+</body>
+</html>
