@@ -6,200 +6,175 @@
   <meta name="description" content="Ivan Pironi — Capital Programme Advisory. Partner-level value proposition for EY Middle East Capital Projects.">
   <meta name="robots" content="noindex, nofollow">
   <title>Ivan Pironi · Capital Programme Advisory</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a1a1a'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='700' fill='%23ffffff' letter-spacing='-0.5'>IP</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600&family=Barlow:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/common.css">
   <script src="/assets/js/pipeline-data.js" defer></script>
   <style>
-    body {
-      font-family: var(--font-sans);
-      background: #0A0A0A;
-      color: #F5F4F0;
-      margin: 0;
+    /* ── Commercial track band ──────────────────────────────── */
+    .track-band {
+      background: #111110;
+      border-bottom: 1px solid rgba(245,244,240,0.07);
     }
-
-    /* Dark overrides for common.css components */
-    .kpi-card { background: #111110; border-color: rgba(245,244,240,0.08); }
-    .kpi-card .label { color: rgba(245,244,240,0.5); }
-    .kpi-card .value { color: #F5F4F0; }
-    .kpi-card.highlight { background: rgba(232,200,74,0.12); border-color: rgba(232,200,74,0.4); }
-    .kpi-card.highlight .value { color: #E8C84A; }
-    .kpi-card.highlight .label { color: rgba(232,200,74,0.7); }
-    .badge.interactive { background: #E8C84A; color: #0A0A0A; }
-    .site-footer { border-color: rgba(245,244,240,0.07); color: rgba(245,244,240,0.35); }
-
-    .hero {
-      text-align: center;
-      padding: var(--space-xl) var(--space-md);
-      max-width: 900px;
+    .track-band-inner {
+      max-width: 1100px;
       margin: 0 auto;
+      padding: 2.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
     }
-    .hero h1 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      line-height: 1.2;
-      margin-bottom: var(--space-md);
-      color: #F5F4F0;
+    .track-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245,244,240,0.35);
+      width: 100%;
+      margin-bottom: 1.25rem;
     }
-    .hero .sub {
-      font-size: 1.25rem;
-      color: rgba(245,244,240,0.6);
-      max-width: 600px;
-      margin: 0 auto;
+    .track-years {
+      display: flex;
+      flex: 1;
+      gap: 0;
+      flex-wrap: wrap;
     }
+    .track-year {
+      flex: 1;
+      min-width: 150px;
+      padding: 0 2rem 0 1.25rem;
+      border-left: 2px solid rgba(232,200,74,0.2);
+    }
+    .track-fy {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(245,244,240,0.35);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+    .track-rev {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      line-height: 1;
+      color: #E8C84A;
+      margin-bottom: 0.2rem;
+    }
+    .track-rev em {
+      font-family: 'Barlow', sans-serif;
+      font-style: normal;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: rgba(245,244,240,0.4);
+      letter-spacing: 0.02em;
+      margin-left: 0.3rem;
+      vertical-align: middle;
+    }
+    .track-tcv {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(245,244,240,0.4);
+    }
+    .track-cta {
+      padding-left: 2rem;
+      flex-shrink: 0;
+    }
+    .track-cta a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: rgba(245,244,240,0.4);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245,244,240,0.15);
+      padding-bottom: 2px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .track-cta a:hover { color: #E8C84A; border-color: rgba(232,200,74,0.5); }
 
+    /* ── Reading path cards ─────────────────────────────────── */
     .paths {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-md);
+      gap: 1.25rem;
       max-width: 1100px;
-      margin: var(--space-xl) auto;
-      padding: 0 var(--space-md);
+      margin: 4rem auto;
+      padding: 0 2rem;
     }
     .path-card {
-      display: block;
-      padding: var(--space-lg);
-      border: 1px solid rgba(245,244,240,0.08);
-      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      padding: 1.75rem;
+      border: 1px solid rgba(245,244,240,0.07);
+      border-radius: 12px;
       text-decoration: none;
       color: #F5F4F0;
       background: #111110;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .path-card:hover {
-      border-color: #E8C84A;
-      transform: translateY(-2px);
+    .path-card:hover { border-color: #E8C84A; transform: translateY(-3px); }
+    .path-time {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: rgba(245,244,240,0.3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
     }
     .path-card h3 {
-      margin: 0 0 var(--space-sm);
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.7rem;
+      line-height: 1;
+      color: #F5F4F0;
+      margin: 0 0 0.85rem;
+      letter-spacing: 0.02em;
     }
     .path-card p {
-      color: rgba(245,244,240,0.6);
-      margin: 0 0 var(--space-md);
-    }
-    .path-card .cta {
-      color: #E8C84A;
-      font-weight: 600;
-    }
-
-    .stats {
-      text-align: center;
-      padding: var(--space-lg) var(--space-md);
-      color: rgba(245,244,240,0.5);
-      font-size: 0.95rem;
-      border-top: 1px solid rgba(245,244,240,0.07);
-      border-bottom: 1px solid rgba(245,244,240,0.07);
-      margin: var(--space-xl) 0;
-    }
-    .stats span {
-      display: inline-block;
-      margin: 0 var(--space-sm);
-    }
-
-    .contact {
-      text-align: center;
-      padding: var(--space-lg) var(--space-md);
-    }
-    .contact a { color: rgba(245,244,240,0.7); }
-    .contact a:hover { color: #E8C84A; }
-
-    @media (max-width: 768px) {
-      .paths { grid-template-columns: 1fr; }
-      .stats span { display: block; margin: var(--space-xs) 0; }
-    }
-
-    /* ── Portrait hero ─────────────────────────────────────── */
-    .home-hero {
-      position: relative;
-      height: 92vh;
-      min-height: 540px;
-      background: #0A0A0A;
-      overflow: hidden;
-    }
-    .home-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0 0 0 42%;
-      background-image: url('/assets/ivan-pironi.png');
-      background-size: cover;
-      background-position: center 18%;
-      filter: grayscale(15%) contrast(1.05);
-      z-index: 0;
-    }
-    .home-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, #0A0A0A 38%, rgba(10,10,10,0.55) 54%, transparent 70%);
-      z-index: 1;
-      pointer-events: none;
-    }
-    .home-hero-content {
-      position: absolute;
-      top: 5rem;
-      left: 4rem;
-      z-index: 3;
-      max-width: 560px;
-    }
-    .home-hero-eyebrow {
-      display: block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #E8C84A;
-      margin-bottom: 1.75rem;
-    }
-    .home-hero-name {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(5rem, 9vw, 9rem);
-      line-height: 0.88;
-      color: #F5F4F0;
-      margin: 0 0 1.75rem;
-    }
-    .home-hero-name span { display: block; }
-    .home-hero-rule {
-      width: 56px;
-      height: 2px;
-      background: #E8C84A;
-      margin-bottom: 1.5rem;
-    }
-    .home-hero-statement {
       font-family: 'Barlow', sans-serif;
-      font-size: 1.05rem;
       font-weight: 300;
-      line-height: 1.75;
-      color: rgba(245,244,240,0.8);
-      margin: 0 0 2.5rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: rgba(245,244,240,0.5);
+      margin: 0 0 1.5rem;
+      flex: 1;
     }
-    .home-hero-links {
-      display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-    }
-    .home-hero-links a {
+    .path-cta {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.78rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: #E8C84A;
-      text-decoration: none;
-      padding-bottom: 3px;
-      border-bottom: 1px solid rgba(232,200,74,0.35);
-      transition: border-color 0.15s;
+      font-weight: 600;
     }
-    .home-hero-links a:hover { border-color: #E8C84A; }
 
+    /* ── Contact ────────────────────────────────────────────── */
+    .home-contact {
+      max-width: 1100px;
+      margin: 0 auto 5rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+    .home-contact p {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: rgba(245,244,240,0.35);
+    }
+    .home-contact a { color: rgba(245,244,240,0.5); text-decoration: none; transition: color 0.15s; }
+    .home-contact a:hover { color: #E8C84A; }
+
+    /* ── Common.css overrides for dark context ──────────────── */
+    .site-footer { border-color: rgba(245,244,240,0.07); color: rgba(245,244,240,0.3); }
+
+    /* ── Responsive ─────────────────────────────────────────── */
     @media (max-width: 768px) {
-      .home-hero { height: auto; min-height: 100svh; }
-      .home-hero::before { inset: 0; opacity: 0.25; }
-      .home-hero::after { background: linear-gradient(to bottom, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.85) 100%); }
-      .home-hero-content { position: relative; top: auto; left: auto; padding: 3.5rem 1.5rem 4rem; max-width: 100%; }
-      .home-hero-name { font-size: 4.5rem; }
+      .track-years { gap: 1rem; }
+      .track-year { min-width: 130px; padding: 0 1rem 0 1rem; }
+      .track-cta { width: 100%; padding-left: 1.25rem; margin-top: 1rem; }
+      .paths { grid-template-columns: 1fr; margin: 3rem auto; }
     }
   </style>
 </head>
@@ -216,76 +191,149 @@
   </ul>
 </nav>
 
-<div class="home-hero">
-  <div class="home-hero-content">
-    <span class="home-hero-eyebrow">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</span>
-    <div class="home-hero-name">
-      <span>Ivan</span>
-      <span>Pironi</span>
-    </div>
-    <div class="home-hero-rule"></div>
-    <p class="home-hero-statement">
+<!-- ============================================================
+     SCROLL-SPY HEADER — identical pattern to overview/case/pitch
+     ============================================================ -->
+<header id="site-header">
+  <div class="h-state1">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</div>
+  <div class="h-state2">
+    <a class="header-identity" href="#" aria-label="Back to top">
+      <div class="header-avatar" aria-hidden="true"></div>
+      <div class="identity-text">
+        <span class="identity-name">Ivan Pironi</span>
+        <span class="identity-role">Capital Projects Advisory · EY MENA</span>
+      </div>
+    </a>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO — identical markup + CSS to overview (style.css drives it)
+     ============================================================ -->
+<section class="hero" id="hero" aria-label="Hero">
+  <span class="hero-eyebrow">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</span>
+
+  <div class="hero-text">
+    <span class="hero-name">Ivan</span>
+    <span class="hero-name">Pironi</span>
+
+    <div class="hero-rule" aria-hidden="true"></div>
+
+    <p class="hero-statement">
       Sovereign programmes don't fail on ambition.<br>
       They fail on governance.<br>
       I fix governance.
     </p>
-    <div class="home-hero-links">
-      <a href="/overview/">5-min overview →</a>
-      <a href="/case/">15-min case →</a>
-      <a href="/pipeline/">Live pipeline →</a>
+
+    <div class="hero-tags">
+      <span class="hero-tag">24 Years GCC Experience</span>
+      <span class="hero-tag">Sovereign Capital Advisory</span>
+      <span class="hero-tag">PMO Governance</span>
+      <span class="hero-tag">Digital Twin</span>
+      <span class="hero-tag">Oracle PMIS</span>
+      <span class="hero-tag">ISO 19650</span>
+      <span class="hero-tag">Sovereign Cloud</span>
+      <span class="hero-tag">PMP®</span>
+      <span class="hero-tag">PRINCE2®</span>
+      <span class="hero-tag">AWS</span>
+      <span class="hero-tag">Azure</span>
+      <span class="hero-tag">GCP</span>
+      <span class="hero-tag">OCI</span>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 9L12 15L18 9" stroke="#E8C84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============================================================
+     COMMERCIAL TRACK RECORD — first thing visible after hero scroll
+     ============================================================ -->
+<div class="track-band">
+  <div class="track-band-inner">
+    <div class="track-label">Commercial track record — revenue led &amp; TCV originated</div>
+    <div class="track-years">
+      <div class="track-year">
+        <div class="track-fy">FY24</div>
+        <div class="track-rev">$4.2M <em>revenue</em></div>
+        <div class="track-tcv">$6.4M TCV originated</div>
+      </div>
+      <div class="track-year">
+        <div class="track-fy">FY25</div>
+        <div class="track-rev">$5.1M <em>revenue</em></div>
+        <div class="track-tcv">$19.2M TCV originated</div>
+      </div>
+      <div class="track-year">
+        <div class="track-fy">FY26</div>
+        <div class="track-rev">$6.3M <em>revenue</em></div>
+        <div class="track-tcv">$8.9M TCV originated</div>
+      </div>
+    </div>
+    <div class="track-cta">
+      <a href="/case/#commercial">Full commercial model →</a>
     </div>
   </div>
 </div>
 
-<main>
+<!-- ============================================================
+     READING PATHS — outcome-labelled, not document-type labelled
+     ============================================================ -->
+<div class="paths">
+  <a class="path-card" href="/overview/">
+    <div class="path-time">5 min read</div>
+    <h3>Executive Summary</h3>
+    <p>Journey, market opportunity, differentiation, activation roadmap. The partner case in one sitting.</p>
+    <span class="path-cta">Read the summary →</span>
+  </a>
+  <a class="path-card" href="/pitch/">
+    <div class="path-time">10 min read</div>
+    <h3>Team &amp; Account Plan</h3>
+    <p>Named accounts. Active team. Mace + Worley partnerships. The commercial machine already in motion.</p>
+    <span class="path-cta">See the team →</span>
+  </a>
+  <a class="path-card" href="/case/">
+    <div class="path-time">15 min read</div>
+    <h3>Full Business Case</h3>
+    <p>Technical stack, activation paths, Year 1–3 P&L, priority mandates, decision Q&amp;A.</p>
+    <span class="path-cta">Read the case →</span>
+  </a>
+</div>
 
-  <header class="hero">
-    <h1>Sovereign programmes don't fail on ambition. They fail on governance.</h1>
-    <p class="sub">I fix governance. Capital programme advisory across UAE, KSA, Qatar.</p>
-    <div class="kpi-card highlight" style="max-width: 480px; margin: var(--space-xl) auto 0;">
-      <div class="label">3-Year Net Realised Fees to EY MENA P&amp;L</div>
-      <div class="value"><span data-pipeline="range:threeYear:nrf">$7–10M</span></div>
-    </div>
-  </header>
-
-  <section class="paths">
-    <a class="path-card" href="/overview/">
-      <h3>5-minute overview</h3>
-      <p>Journey, market, differentiation, roadmap. The case in one sitting.</p>
-      <span class="cta">Read overview →</span>
-    </a>
-    <a class="path-card" href="/case/">
-      <h3>15-minute business case</h3>
-      <p>Full detail. Market sizing. Proof points. Commercial model. References.</p>
-      <span class="cta">Read the case →</span>
-    </a>
-    <a class="path-card" href="/pipeline/">
-      <h3>Live pipeline model <span class="badge interactive">interactive</span></h3>
-      <p>Interactive 36-month forecast. Adjust assumptions. See live impact.</p>
-      <span class="cta">Open pipeline →</span>
-    </a>
-  </section>
-
-  <section class="stats">
-    <span>24+ years GCC capital advisory</span>
-    <span>15 named accounts across UAE/KSA/Qatar</span>
-    <span><span data-pipeline="totalEngagements">78</span> engagements over 36 months</span>
-    <span>Single source of truth · updated <span data-pipeline="lastUpdated">2026-05-19</span></span>
-  </section>
-
-  <section class="contact">
-    <p>
-      <a href="mailto:ivan.pironi@gmail.com">ivan.pironi@gmail.com</a> ·
-      <a href="tel:+971545831119">+971 54 583 1119</a> ·
-      <a href="https://linkedin.com/in/ivanpironi" target="_blank" rel="noopener">linkedin.com/in/ivanpironi</a>
-    </p>
-  </section>
-
-</main>
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<div class="home-contact">
+  <p>
+    <a href="mailto:ivan.pironi@gmail.com">ivan.pironi@gmail.com</a>
+    &nbsp;·&nbsp;
+    <a href="tel:+971545831119">+971 54 583 1119</a>
+    &nbsp;·&nbsp;
+    <a href="https://linkedin.com/in/ivanpironi" target="_blank" rel="noopener">linkedin.com/in/ivanpironi</a>
+  </p>
+</div>
 
 <footer class="site-footer">
-  <p>Last updated: <span data-pipeline="lastUpdated">2026-05-19</span> · Confidential — prepared for EY Capital Projects Leadership</p>
+  <p>Confidential — prepared for EY Capital Projects Leadership</p>
 </footer>
+
+<!-- Scroll-spy: minimal version for home (no section anchors) -->
+<script>
+  (function () {
+    var header = document.getElementById('site-header');
+    if (!header) return;
+    function onScroll() {
+      if (window.scrollY > 60) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>
 
 </body>
 </html>
