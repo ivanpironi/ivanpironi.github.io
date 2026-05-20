@@ -2070,4 +2070,5 @@
    Avatar + name now live in the white site-nav brand; the dark
    bar is section-navigation only. */
 .site-nav ~ #site-header .header-identity { display: none; }
+.site-nav ~ #site-header .h-state2 { justify-content: flex-end; }
 
