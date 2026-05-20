@@ -2066,3 +2066,8 @@
 .site-nav ~ #site-header { top: var(--site-nav-h, 44px); }
 .site-nav ~ #site-header:not(.scrolled) { pointer-events: none; }
 
+/* ── Identity removed from dark scrolled header ─────────────────
+   Avatar + name now live in the white site-nav brand; the dark
+   bar is section-navigation only. */
+.site-nav ~ #site-header .header-identity { display: none; }
+

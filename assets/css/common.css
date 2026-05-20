@@ -57,6 +57,19 @@
   font-weight: 700;
   color: var(--color-text);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-nav-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 10%;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(17,24,39,0.15);
 }
 
 .site-nav ul {
