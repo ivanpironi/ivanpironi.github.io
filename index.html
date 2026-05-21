@@ -81,8 +81,25 @@
         <span class="identity-role">Capital Projects Advisory · EY MENA</span>
       </div>
     </a>
+    <nav class="header-nav" aria-label="Page navigation">
+      <a href="#market"          data-nav="market">The Market</a>
+      <a href="#pipelines"       data-nav="pipelines">Two Pipelines</a>
+      <a href="#differentiation" data-nav="differentiation">Differentiation</a>
+    </nav>
+    <button class="hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<div class="mobile-overlay" id="mobile-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
+  <button class="overlay-close" id="overlay-close" aria-label="Close navigation">×</button>
+  <nav class="overlay-nav">
+    <a href="#market"          data-nav="market">The Market</a>
+    <a href="#pipelines"       data-nav="pipelines">Two Pipelines</a>
+    <a href="#differentiation" data-nav="differentiation">Differentiation</a>
+  </nav>
+</div>
 
 <section class="hero" id="hero" aria-label="Hero">
   <span class="hero-eyebrow">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</span>
@@ -142,7 +159,7 @@
   </div>
 </div>
 
-<section id="market">
+<section id="market" data-section="market">
   <div class="container">
     <span class="section-eyebrow reveal">The Market &amp; The Opportunity</span>
     <h2 class="section-headline reveal">Two pipelines. <em>One practice.</em></h2>
@@ -177,7 +194,7 @@
   </div>
 </section>
 
-<section id="pipelines">
+<section id="pipelines" data-section="pipelines">
   <div class="container">
     <span class="section-eyebrow reveal">Why EY · The Multiplier</span>
     <div class="pipeline-pair reveal">
@@ -199,7 +216,7 @@
   </div>
 </section>
 
-<section id="differentiation">
+<section id="differentiation" data-section="differentiation">
   <div class="container">
     <span class="section-eyebrow reveal">The Differentiation</span>
     <h2 class="section-headline reveal">
@@ -312,33 +329,63 @@
 
   <div class="footer-bottom">
     <span>Confidential — prepared for EY Capital Projects Leadership</span>
-    <div style="display:flex;align-items:center;gap:0;">
-      <a href="/pitch/" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;">The Team →</a>
-      <span style="color:var(--muted);margin:0 0.75rem;">·</span>
-      <a href="/case/" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;">The Case →</a>
-      <span style="color:var(--muted);margin:0 0.75rem;">·</span>
-      <a href="/pipeline/" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;">The Numbers →</a>
-    </div>
   </div>
 </footer>
 
 <script>
-  (function () {
+  document.addEventListener('DOMContentLoaded', function () {
+
+    // Header scroll state
     var header = document.getElementById('site-header');
     if (header) {
       function onScroll() { header.classList.toggle('scrolled', window.scrollY > 60); }
       window.addEventListener('scroll', onScroll, { passive: true });
     }
+
+    // Scroll reveal
     var items = document.querySelectorAll('.reveal');
     if (items.length) {
-      var obs = new IntersectionObserver(function (entries) {
+      var revObs = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) { entry.target.classList.add('revealed'); obs.unobserve(entry.target); }
+          if (entry.isIntersecting) { entry.target.classList.add('revealed'); revObs.unobserve(entry.target); }
         });
       }, { threshold: 0.12 });
-      items.forEach(function (el) { obs.observe(el); });
+      items.forEach(function (el) { revObs.observe(el); });
     }
-  })();
+
+    // Sub-nav scrollspy
+    var sections = document.querySelectorAll('section[data-section]');
+    var allLinks = document.querySelectorAll('[data-nav]');
+    if (sections.length && allLinks.length) {
+      var navObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            allLinks.forEach(function (link) {
+              link.classList.toggle('active', link.dataset.nav === entry.target.dataset.section);
+            });
+          }
+        });
+      }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+      sections.forEach(function (s) { navObs.observe(s); });
+    }
+
+    // Mobile menu
+    var hamburger = document.getElementById('hamburger-btn');
+    var overlay   = document.getElementById('mobile-overlay');
+    var closeBtn  = document.getElementById('overlay-close');
+    if (hamburger && overlay) {
+      function openMenu()  { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; hamburger.setAttribute('aria-expanded', 'true'); }
+      function closeMenu() { overlay.classList.remove('open'); document.body.style.overflow = ''; hamburger.setAttribute('aria-expanded', 'false'); hamburger.focus(); }
+      hamburger.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      overlay.querySelectorAll('a[data-nav]').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) closeMenu(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && overlay.classList.contains('open')) closeMenu(); });
+    }
+
+  });
 </script>
 
 </body>
