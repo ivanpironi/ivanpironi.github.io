@@ -21,59 +21,7 @@
   </script>
   <link rel="stylesheet" href="/assets/css/common.css">
   <script src="/assets/js/pipeline-data.js" defer></script>
-  <style>
-    .doc-header {
-      padding: 5.5rem 6rem 3.5rem;
-      background: #0A0A0A;
-      border-bottom: 1px solid rgba(245,244,240,0.07);
-    }
-    .doc-author {
-      display: flex;
-      align-items: center;
-      gap: 0.875rem;
-      margin-bottom: 2.5rem;
-    }
-    .doc-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center 12%;
-      filter: grayscale(15%) contrast(1.05);
-      border: 2px solid rgba(232,200,74,0.4);
-      flex-shrink: 0;
-    }
-    .doc-author-name {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600;
-      color: #F5F4F0;
-      font-size: 1rem;
-      letter-spacing: 0.02em;
-    }
-    .doc-author-role {
-      font-size: 0.8rem;
-      color: rgba(245,244,240,0.45);
-      margin-top: 2px;
-    }
-    .doc-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      line-height: 0.93;
-      color: #F5F4F0;
-      margin: 0 0 1.25rem;
-      letter-spacing: 0.01em;
-    }
-    .doc-sub {
-      font-size: 0.9rem;
-      color: rgba(245,244,240,0.4);
-      margin: 0;
-      letter-spacing: 0.01em;
-    }
-    @media (max-width: 768px) {
-      .doc-header { padding: 3rem 1.5rem 2rem; }
-      .doc-title { font-size: 3rem; }
-    }
-  </style>
+
 </head>
 <body>
 <nav class="site-nav">
@@ -134,18 +82,43 @@
   </div>
 
   <!-- ============================================================
-       HERO — Section 0
+       CHAPTER OPENER 03 — CASE
        ============================================================ -->
-  <header class="doc-header">
-    <div class="doc-author">
-      <img class="doc-avatar" src="/assets/ivan-pironi.png" alt="Ivan Pironi">
-      <div>
-        <div class="doc-author-name">Ivan Pironi</div>
-        <div class="doc-author-role">Capital Programme Advisory &nbsp;·&nbsp; EY MENA</div>
+  <header class="chapter-opener">
+    <span class="co-numeral" aria-hidden="true">03</span>
+    <span class="co-eyebrow">Full Business Case &nbsp;·&nbsp; 15-minute read</span>
+    <!-- Option B: <h1 class="co-headline">Two pipelines. One practice. The complete argument.</h1> -->
+    <!-- Option C: <h1 class="co-headline">The full case — market, proof, and the commercial model.</h1> -->
+    <h1 class="co-headline">Full Business Case</h1>
+    <p class="co-sub-thesis">The market has strategists. It has implementers. <em>It does not have both.</em></p>
+    <p class="co-orientation">Market, proof point, why EY, why rare, the commercial model, and the decision.</p>
+    <div class="co-stats">
+      <div class="co-stat">
+        <span class="co-stat-value">$8.3B</span>
+        <span class="co-stat-label">GCC consulting market 2025</span>
+      </div>
+      <div class="co-stat">
+        <span class="co-stat-value">$1.65T</span>
+        <span class="co-stat-label">KSA sovereign pipeline</span>
+      </div>
+      <div class="co-stat">
+        <span class="co-stat-value">$400–700M</span>
+        <span class="co-stat-label">Premium sub-segment p.a.</span>
+      </div>
+      <div class="co-stat">
+        <span class="co-stat-value">&lt;1%</span>
+        <span class="co-stat-label">Year-1 target vs addressable</span>
       </div>
     </div>
-    <h1 class="doc-title">Full Business<br>Case</h1>
-    <p class="doc-sub">15-minute read &nbsp;·&nbsp; Partner-level commercial case for EY Capital Projects Leadership</p>
+    <nav class="co-jumplinks" aria-label="Contents">
+      <a href="#journey">Journey</a>
+      <a href="#market">Market</a>
+      <a href="#proof">Proof</a>
+      <a href="#whyey">Why EY</a>
+      <a href="#rare">Why Rare</a>
+      <a href="#build">Commercial</a>
+      <a href="#decision">Decision</a>
+    </nav>
   </header>
 
   <!-- ============================================================
