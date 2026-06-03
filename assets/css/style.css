@@ -2083,9 +2083,15 @@
 .chapter-opener {
   position: relative;
   background: var(--black);
-  padding: 5rem 6rem 3.75rem;
   border-bottom: 1px solid var(--rule);
   overflow: hidden;
+}
+
+/* Inner container mirrors .container — centres content, numeral stays full-width */
+.co-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 4rem 3.75rem;
 }
 
 /* Large watermark numeral — barely-there, sets "structured case" signal */
@@ -2114,7 +2120,7 @@
 
 .co-headline {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-size: clamp(3rem, 6.5vw, 5.5rem);
   line-height: 0.95;
   color: var(--white);
   margin: 0 0 0.6rem;
@@ -2226,7 +2232,7 @@
 }
 
 @media (max-width: 768px) {
-  .chapter-opener {
+  .co-inner {
     padding: 3.5rem 1.5rem 3rem;
   }
   .co-numeral {
