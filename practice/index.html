@@ -321,14 +321,14 @@
       <!-- Option B: <h1 class="co-headline">A delivery-proven team. Twelve named accounts. One practice.</h1> -->
       <!-- Option C: <h1 class="co-headline">Not a team being built — a team that has already delivered.</h1> -->
       <h1 class="co-headline">The practice is already built.<br>The pipeline is already named.</h1>
-      <p class="co-orientation">A delivery-proven team and twelve named sovereign accounts, phased across 24 months.</p>
+      <p class="co-orientation">A delivery-proven team and fifteen named sovereign accounts, phased across 36 months.</p>
       <div class="co-stats">
         <div class="co-stat">
           <span class="co-stat-value">6</span>
           <span class="co-stat-label">Delivery-proven leaders</span>
         </div>
         <div class="co-stat">
-          <span class="co-stat-value">12</span>
+          <span class="co-stat-value">15</span>
           <span class="co-stat-label">Named accounts<br>UAE · KSA · Qatar</span>
         </div>
         <div class="co-stat">
@@ -618,7 +618,7 @@
       </h2>
 
       <p class="section-sub">
-        Twelve client organisations across KSA, UAE, and Qatar.
+        Fifteen client organisations across KSA, UAE, and Qatar.
         Named contacts at Director level and above. Three phases
         of activation — each unlocking the next. Two pipelines
         running simultaneously: Ivan's network and EY's platform.
@@ -715,6 +715,10 @@
               <th class="qh" colspan="3">Q6</th>
               <th class="qh" colspan="3">Q7</th>
               <th class="qh" colspan="3">Q8</th>
+              <th class="qh" colspan="3" style="color:rgba(255,255,255,0.45);">Q9</th>
+              <th class="qh" colspan="3" style="color:rgba(255,255,255,0.45);">Q10</th>
+              <th class="qh" colspan="3" style="color:rgba(255,255,255,0.45);">Q11</th>
+              <th class="qh" colspan="3" style="color:rgba(255,255,255,0.45);">Q12</th>
               <th class="fh qh">Sale $</th>
             </tr>
             <tr>
@@ -727,6 +731,10 @@
               <th>16</th><th>17</th><th>18</th>
               <th>19</th><th>20</th><th>21</th>
               <th>22</th><th>23</th><th>24</th>
+              <th style="color:rgba(255,255,255,0.4);">25</th><th style="color:rgba(255,255,255,0.4);">26</th><th style="color:rgba(255,255,255,0.4);">27</th>
+              <th style="color:rgba(255,255,255,0.4);">28</th><th style="color:rgba(255,255,255,0.4);">29</th><th style="color:rgba(255,255,255,0.4);">30</th>
+              <th style="color:rgba(255,255,255,0.4);">31</th><th style="color:rgba(255,255,255,0.4);">32</th><th style="color:rgba(255,255,255,0.4);">33</th>
+              <th style="color:rgba(255,255,255,0.4);">34</th><th style="color:rgba(255,255,255,0.4);">35</th><th style="color:rgba(255,255,255,0.4);">36</th>
               <th class="fh"></th>
             </tr>
           </thead>
@@ -762,7 +770,7 @@
          Retainer run-rate = sum of all signed retainer annual values ($430K/mo × 12).
          ────────────────────────────────────────────────────────────────────── */
 
-      var M=24;
+      var M=36;
 
       /* Color tokens */
       var CC='#5B8DEF';               /* Consulting — blue              */
@@ -817,14 +825,26 @@
          sale:16,saleAmt:700, consPct:55,techPct:45,consAmt:385,techAmt:315,
          delStart:18,delEnd:24, dur:7,
          tip:'$38B \xb7 3 PMCs (Bechtel/Turner/AECOM). Contains FIFA 2034 stadium. Naver Cloud MoU.'},
-        {key:'khazna',    name:'Khazna Data Centers',     phase:'Phase 3',type:'ivan',
+        {key:'khazna',    name:'Khazna Data Centers',     phase:'Phase 2',type:'ivan',
          sale:18,saleAmt:500, consPct:50,techPct:50,consAmt:250,techAmt:250,
          delStart:19,delEnd:24, dur:6,
          tip:'30+ facilities. $26.2B financing. Stargate UAE partner. NexOps/Presight AI launched Feb 2026.'},
         {key:'rsg',       name:'Red Sea Global',          phase:'Phase 3',type:'ivan',
          sale:20,saleAmt:600, consPct:70,techPct:30,consAmt:420,techAmt:180,
          delStart:22,delEnd:26, dur:5,
-         tip:'IOC Operating Model delivered — warm relationships. PIF spending cuts heaviest here. Phase 1 resorts operational.'}
+         tip:'IOC Operating Model delivered — warm relationships. PIF spending cuts heaviest here. Phase 1 resorts operational.'},
+        {key:'taqa',      name:'TAQA',                    phase:'Phase 3',type:'ivan',
+         sale:25,saleAmt:700, consPct:40,techPct:60,consAmt:280,techAmt:420,
+         delStart:27,delEnd:33, dur:7,
+         tip:'Abu Dhabi integrated utilities. AED 75B investment pipeline to 2030. ~27GW new capacity. Multi-segment capital portfolio across generation, water, T&D.'},
+        {key:'admd',      name:'Abu Dhabi Master Developers',phase:'Phase 3',type:'ey',
+         sale:26,saleAmt:800, consPct:55,techPct:45,consAmt:440,techAmt:360,
+         delStart:28,delEnd:36, dur:9,
+         tip:'Aldar · Miral · MODON. EY audit relationships across UAE master developer ecosystem. Multi-asset Oracle PMIS governance.'},
+        {key:'tasmu',     name:'TASMU',                   phase:'Phase 3',type:'ivan',
+         sale:27,saleAmt:600, consPct:50,techPct:50,consAmt:300,techAmt:300,
+         delStart:29,delEnd:36, dur:8,
+         tip:'Qatar Smart City Programme. Incumbent delivery context — post-deployment expansion and iCCC advisory re-engagement.'}
       ];
 
       /* Monthly revenue vectors (index 1…24) — initial engagements */
@@ -1258,6 +1278,7 @@
           <div class="phase-item">Expo 2030 — ERC launched June 2025, Bechtel appointed as PMC, advisory RFP expected imminently. Budget protected from PIF cuts.</div>
           <div class="phase-item">FIFA 2034 — stadium costs being reassessed December 2025. The governance crisis that creates the advisory mandate is live now.</div>
           <div class="phase-label-text" style="margin-top:1rem;">Four accounts. First proposals in the market from day one.</div>
+          <!-- Phase 1 count: 4 — Qiddiya, SAR, Expo 2030, FIFA 2034 -->
         </div>
 
         <div class="phase-cell">
@@ -1267,7 +1288,7 @@
           <div class="phase-item">King Salman Park — seven named contacts from a delivered Smart City Strategy engagement. Parsons holds PMO. EY advises above.</div>
           <div class="phase-item">Diriyah — Mace Consult sitewide PMC. Christopher Seymour (MD MEA, personal relationship) is the direct entry. No cold approach.</div>
           <div class="phase-item">King Salman Airport — Mace Consult Delivery Partner. Same entry path. $30B, Expo 2030 and FIFA 2034 hard deadlines.</div>
-          <div class="phase-label-text" style="margin-top:1rem;">Four accounts. EY platform and network converting together.</div>
+          <div class="phase-label-text" style="margin-top:1rem;">Five accounts. EY platform and network converting together.</div>
         </div>
 
         <div class="phase-cell">
@@ -1277,7 +1298,7 @@
           <div class="phase-item">New Murabba — three PMC firms, no owner-side PMIS layer. FIFA 2034 stadium on site. Smart city mandate above Naver Cloud.</div>
           <div class="phase-item">Khazna — NexOps launched Feb 2026. Construction-to-operations handover governance gap open. 30+ facilities.</div>
           <div class="phase-item">Red Sea Global — IOC Operating Model delivered. Warm operational leadership relationships. PIF ROI pressure creates immediate advisory urgency.</div>
-          <div class="phase-label-text" style="margin-top:1rem;">Four accounts. Practice compounding through retainers and partnerships.</div>
+          <div class="phase-label-text" style="margin-top:1rem;">Six accounts. Practice compounding through retainers and partnerships.</div>
         </div>
 
       </div><!-- /.phase-grid -->
@@ -1571,8 +1592,8 @@
           <div class="card-click-hint">Click to expand →</div>
         </div>
 
-        <!-- Card 8: Khazna — Phase 3, UAE, Ivan -->
-        <div class="pipeline-card" data-geo="uae" data-phase="phase3" data-type="ivan" data-key="khazna">
+        <!-- Card 8: Khazna — Phase 2, UAE, Ivan -->
+        <div class="pipeline-card" data-geo="uae" data-phase="phase2" data-type="ivan" data-key="khazna">
           <div class="pipeline-card-header">
             <img class="client-logo" src="/assets/img/logos/khazna.png" alt="Khazna Data Centers">
           </div>
@@ -1656,6 +1677,90 @@
           <div class="pipeline-meta">
             <span class="pipeline-entry">Worley Partnership</span>
             <span class="pipeline-fee">$1M–$2M</span>
+          </div>
+          <div class="card-click-hint">Click to expand →</div>
+        </div>
+
+        <!-- Card 11: TAQA — Phase 3, UAE, Ivan's network -->
+        <div class="pipeline-card" data-geo="uae" data-phase="phase3" data-type="ivan" data-key="taqa">
+          <div class="pipeline-card-header">
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-ivan">Ivan's network</span>
+            <span class="card-tag tag-geo">UAE</span>
+          </div>
+          <span class="pipeline-mandate-type">Utility Capital Programme Governance &amp; Digital Twin</span>
+
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">Abu Dhabi's integrated utilities champion and one of EMEA's largest listed utilities (~AED 200bn total assets). Committed to an AED 75bn investment pipeline to 2030, including ~AED 40bn on UAE transmission &amp; distribution networks, plus major generation and water capital — Taweelah (world's largest RO desalination), Mirfa 2, Shuweihat 4 — and ~27GW of new capacity. Capex is accelerating sharply. A multi-segment regulated capital portfolio (generation · water · T&amp;D) of exactly the scale where owner-side PMIS governance, capital controls, and energy/water asset-performance intelligence are in demand — with no single owner-side programme-controls layer across the segment portfolio.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Owner-side capital programme controls + PMIS governance across generation, water and T&amp;D portfolio <span class="pipeline-opp-fee">$500K–1M</span></div>
+            <div class="pipeline-opp-item">Energy &amp; water asset-performance intelligence + Digital Twin / ISO 19650 information management <span class="pipeline-opp-fee">$400–700K</span></div>
+          </div>
+          <div class="pipeline-contacts">
+            Entry via: Ivan's network — internal relationships from time in TAQA's Customer Centre business unit. Warm organisational entry; bridge toward T&amp;D and generation capital-programme leadership.<br>
+            Programme-side contacts — to be confirmed
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">Direct · Network</span>
+            <span class="pipeline-fee">$400K–$1M</span>
+          </div>
+          <div class="card-click-hint">Click to expand →</div>
+        </div>
+
+        <!-- Card 12: Abu Dhabi Master Developers — Phase 3, UAE, EY platform -->
+        <div class="pipeline-card" data-geo="uae" data-phase="phase3" data-type="ey" data-key="admd">
+          <div class="pipeline-card-header">
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-ey">EY Platform</span>
+            <span class="card-tag tag-geo">UAE</span>
+          </div>
+          <span class="pipeline-mandate-type">Oracle PMIS Governance &amp; Digital Twin Lifecycle Advisory</span>
+
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">Three of Abu Dhabi's largest master developers — Aldar Properties, Miral, and MODON — each operating large-scale capital programmes across residential, tourism, and industrial sectors. EY holds existing audit and advisory relationships across the UAE developer ecosystem. Multi-asset portfolio scale creates exactly the class of PMIS governance, capital controls, and Digital Twin lifecycle challenges this practice is built to address. Combined capital deployment creates programme oversight complexity that no single developer has yet resolved at portfolio level.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Oracle PMIS governance + capital controls across multi-asset portfolio <span class="pipeline-opp-fee">$500–900K</span></div>
+            <div class="pipeline-opp-item">Digital Twin lifecycle advisory + multi-asset portfolio controls <span class="pipeline-opp-fee">$400–700K</span></div>
+          </div>
+          <div class="pipeline-contacts">
+            Entry via: EY existing audit and advisory relationships · UAE<br>
+            Programme-side contacts — to be confirmed
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">EY Platform</span>
+            <span class="pipeline-fee">$500K–$1M</span>
+          </div>
+          <div class="card-click-hint">Click to expand →</div>
+        </div>
+
+        <!-- Card 13: TASMU — Phase 3, Qatar, Ivan's network -->
+        <div class="pipeline-card" data-geo="qatar" data-phase="phase3" data-type="ivan" data-key="tasmu">
+          <div class="pipeline-card-header">
+          </div>
+          <div class="card-tags">
+            <span class="card-tag tag-ivan">Ivan's network</span>
+            <span class="card-tag tag-geo">Qatar</span>
+          </div>
+          <span class="pipeline-mandate-type">Smart City Platform Evolution &amp; iCCC Governance</span>
+
+          <div class="card-section-label">Overview</div>
+          <div class="pipeline-overview">Qatar's national smart city programme — the integrated command and control platform built for the FIFA 2022 World Cup and now transitioning to long-term smart city operations. Ivan led the iCCC design and delivery. The advisory opportunity lies in post-deployment platform evolution: extending the iCCC into new operational domains, integrating with ongoing capital delivery programmes, and building the digital twin operational intelligence layer that the original build mandate did not include. Incumbent delivery context — the relationship exists; this is re-engagement, not cold outreach.</div>
+          <div class="card-section-label" style="margin-top:10px;">Advisory opportunities</div>
+          <div class="pipeline-opps">
+            <div class="pipeline-opp-item">Smart city platform evolution + iCCC governance continuity post-World Cup <span class="pipeline-opp-fee">$400–700K</span></div>
+            <div class="pipeline-opp-item">Digital Twin operational intelligence + post-deployment asset performance advisory <span class="pipeline-opp-fee">$300–500K</span></div>
+          </div>
+          <div class="pipeline-contacts">
+            Entry via: Incumbent delivery context · direct programme relationship · no introduction required<br>
+            Programme-side contacts — to be confirmed
+          </div>
+          <div class="pipeline-meta">
+            <span class="pipeline-entry">Direct · Network</span>
+            <span class="pipeline-fee">$400K–$800K</span>
           </div>
           <div class="card-click-hint">Click to expand →</div>
         </div>
@@ -1785,13 +1890,14 @@
       </div>
 
       <p class="section-pull reveal">
-        Five accounts activate in the first 90 days.
-        Five more open in Months 7–18 — each unlocked by
+        Four accounts activate in the first 90 days.
+        Five more open in Months 7–24 — each unlocked by
         a team member joining, a partnership formalising,
-        or a retainer converting. The practice doubles
-        in pipeline depth every six months. That is the
-        architecture of a practice — not the velocity
-        of a sprint.
+        or a retainer converting. Six further accounts
+        open in Year 3, as retainers compound and partnerships
+        unlock the largest mandates in the market.
+        That is the architecture of a practice — not the
+        velocity of a sprint.
       </p>
 
     </div>
