@@ -2112,6 +2112,7 @@
   display: block;
   font-family: 'DM Mono', monospace;
   font-size: 14px;
+  line-height: 1.8;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: var(--accent);
