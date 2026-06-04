@@ -148,7 +148,7 @@
   function renderChartByYear(id, agg) {
     var ctx=document.getElementById(id); if(!ctx) return;
     _charts[id]=new Chart(ctx,{type:'bar',data:{labels:['Year 1','Year 2','Year 3'],datasets:[
-      {label:'Sales',  data:['y1','y2','y3'].map(function(y){return toM(agg[y].sales);}),  backgroundColor:'#3B82F6'},
+      {label:'TCV',    data:['y1','y2','y3'].map(function(y){return toM(agg[y].sales);}),  backgroundColor:'#3B82F6'},
       {label:'Revenue',data:['y1','y2','y3'].map(function(y){return toM(agg[y].revenue);}),backgroundColor:'#10B981'},
       {label:'NRF',    data:['y1','y2','y3'].map(function(y){return toM(agg[y].nrf);}),    backgroundColor:'#059669'}
     ]},options:{responsive:true,maintainAspectRatio:false,
@@ -160,7 +160,7 @@
     var ctx=document.getElementById(id); if(!ctx) return;
     var labels=mo.map(function(m){return m.month%6===0?'M'+m.month:'';});
     _charts[id]=new Chart(ctx,{type:'line',data:{labels:labels,datasets:[
-      {label:'Cum. Sales',  data:mo.map(function(m){return toM(m.cumSales);}),  borderColor:'#3B82F6',backgroundColor:'transparent',pointRadius:0,tension:0.3},
+      {label:'Cum. TCV',    data:mo.map(function(m){return toM(m.cumSales);}),  borderColor:'#3B82F6',backgroundColor:'transparent',pointRadius:0,tension:0.3},
       {label:'Cum. Revenue',data:mo.map(function(m){return toM(m.cumRevenue);}),borderColor:'#10B981',backgroundColor:'transparent',pointRadius:0,tension:0.3},
       {label:'Cum. NRF',   data:mo.map(function(m){return toM(m.cumNrf);}),    borderColor:'#059669',backgroundColor:'transparent',pointRadius:0,tension:0.3,borderDash:[4,3]}
     ]},options:{responsive:true,maintainAspectRatio:false,
@@ -210,7 +210,7 @@
   function renderChartFunnel(id, cascade) {
     var ctx=document.getElementById(id); if(!ctx) return;
     _charts[id]=new Chart(ctx,{type:'bar',data:{
-      labels:['Gross pipeline','Weighted sales','Revenue','NRF to EY'],
+      labels:['Gross pipeline','Weighted TCV','Revenue','NRF to EY'],
       datasets:[{label:'$M',
         data:[toM(cascade.gross),toM(cascade.weighted),toM(cascade.revenue),toM(cascade.nrf)],
         backgroundColor:['#BFDBFE','#3B82F6','#10B981','#059669']}]},
