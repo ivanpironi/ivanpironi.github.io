@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ivan Pironi — Capital Programme Advisory. Partner-level value proposition for EY Middle East Capital Projects.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ivan Pironi · Capital Programme Advisory</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a1a1a'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='700' fill='%23ffffff' letter-spacing='-0.5'>IP</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/common.css">
+  <style>
+    .track-band { background:#111110; border-bottom:1px solid rgba(245,244,240,0.07); }
+    .track-band-inner { max-width:1100px; margin:0 auto; padding:2.5rem 2rem; display:flex; align-items:center; gap:0; flex-wrap:wrap; }
+    .track-label { font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(245,244,240,0.35); width:100%; margin-bottom:1.25rem; }
+    .track-years { display:flex; flex:1; gap:0; flex-wrap:wrap; }
+    .track-year { flex:1; min-width:150px; padding:0 2rem 0 1.25rem; border-left:2px solid rgba(232,200,74,0.2); }
+    .track-fy { font-family:'DM Mono',monospace; font-size:0.7rem; color:rgba(245,244,240,0.35); letter-spacing:0.08em; margin-bottom:0.3rem; }
+    .track-rev { font-family:'Bebas Neue',sans-serif; font-size:2.2rem; line-height:1; color:#E8C84A; margin-bottom:0.2rem; }
+    .track-rev em { font-family:'Barlow',sans-serif; font-style:normal; font-size:0.72rem; font-weight:300; color:rgba(245,244,240,0.4); letter-spacing:0.02em; margin-left:0.3rem; vertical-align:middle; }
+    .track-tcv { font-family:'Barlow Condensed',sans-serif; font-size:0.82rem; color:rgba(245,244,240,0.4); }
+    .track-cta { padding-left:2rem; flex-shrink:0; }
+    .track-cta a { font-family:'Barlow Condensed',sans-serif; font-size:0.78rem; letter-spacing:0.09em; text-transform:uppercase; color:rgba(245,244,240,0.4); text-decoration:none; border-bottom:1px solid rgba(245,244,240,0.15); padding-bottom:2px; transition:color 0.15s,border-color 0.15s; }
+    .track-cta a:hover { color:#E8C84A; border-color:rgba(232,200,74,0.5); }
+    .market-numbers .stat-strip { grid-template-columns:repeat(3,1fr); }
+    .proof-band { background:#111110; border:1px solid rgba(232,200,74,0.18); border-radius:12px; padding:2rem 2.5rem; margin-top:3rem; }
+    .proof-band-eyebrow { font-family:'DM Mono',monospace; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.12em; color:#E8C84A; display:block; margin-bottom:0.8rem; }
+    .proof-band-body { font-family:'Barlow',sans-serif; font-weight:300; font-size:15px; color:rgba(245,244,240,0.7); line-height:1.7; margin:0 0 1.2rem; }
+    .proof-band-link { font-family:'Barlow Condensed',sans-serif; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,244,240,0.4); text-decoration:none; border-bottom:1px solid rgba(245,244,240,0.15); padding-bottom:2px; transition:color 0.15s,border-color 0.15s; }
+    .proof-band-link:hover { color:#E8C84A; border-color:rgba(232,200,74,0.5); }
+    .pipeline-pair { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(245,244,240,0.07); margin:2rem 0 3rem; }
+    .pipeline-card { background:#111110; padding:2rem; }
+    .pipeline-num { font-family:'Bebas Neue',sans-serif; font-size:2.5rem; color:#E8C84A; line-height:1; display:block; margin-bottom:0.5rem; }
+    .pipeline-title { font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:1.05rem; text-transform:uppercase; letter-spacing:0.05em; color:#F5F4F0; margin-bottom:0.75rem; }
+    .pipeline-body { font-family:'Barlow',sans-serif; font-weight:300; font-size:15px; color:rgba(245,244,240,0.6); line-height:1.6; margin:0; }
+    .paths { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; max-width:1100px; margin:4rem auto; padding:0 2rem; }
+    .path-card { display:flex; flex-direction:column; padding:1.75rem; border:1px solid rgba(245,244,240,0.07); border-radius:12px; text-decoration:none; color:#F5F4F0; background:#111110; transition:border-color 0.2s,transform 0.2s; }
+    .path-card:hover { border-color:#E8C84A; transform:translateY(-3px); }
+    .path-time { font-family:'DM Mono',monospace; font-size:0.68rem; color:rgba(245,244,240,0.3); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.9rem; }
+    .path-card h3 { font-family:'Bebas Neue',sans-serif; font-size:1.7rem; line-height:1; color:#F5F4F0; margin:0 0 0.85rem; letter-spacing:0.02em; }
+    .path-card p { font-family:'Barlow',sans-serif; font-weight:300; font-size:0.9rem; line-height:1.7; color:rgba(245,244,240,0.5); margin:0 0 1.5rem; flex:1; }
+    .path-cta { font-family:'Barlow Condensed',sans-serif; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:#E8C84A; font-weight:600; }
+    .home-contact { max-width:1100px; margin:0 auto 5rem; padding:0 2rem; text-align:center; }
+    .home-contact p { font-family:'Barlow',sans-serif; font-weight:300; font-size:0.9rem; color:rgba(245,244,240,0.35); }
+    .home-contact a { color:rgba(245,244,240,0.5); text-decoration:none; transition:color 0.15s; }
+    .home-contact a:hover { color:#E8C84A; }
+    .site-footer { border-color:rgba(245,244,240,0.07); color:rgba(245,244,240,0.3); }
+    @media (max-width:900px) {
+      .paths { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:768px) {
+      .track-years { gap:1rem; }
+      .track-year { min-width:130px; padding:0 1rem; }
+      .track-cta { width:100%; padding-left:1.25rem; margin-top:1rem; }
+      .market-numbers .stat-strip { grid-template-columns:1fr; }
+      .pipeline-pair { grid-template-columns:1fr; }
+      .paths { grid-template-columns:1fr; margin:3rem auto; }
+      .proof-band { padding:1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/EY/" class="brand"><img class="site-nav-avatar" src="/assets/img/team/ivan-pironi.jpg" alt="Ivan Pironi">Ivan Pironi · Capital Programme Advisory</a>
+  <ul>
+    <li><a href="/EY/" class="active">Home</a></li>
+    <li><a href="/EY/practice/">The Practice</a></li>
+    <li><a href="/EY/case/">The Case</a></li>
+    <li><a href="/EY/numbers/">The Numbers</a></li>
+  </ul>
+</nav>
+
+<header id="site-header">
+  <div class="h-state1">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</div>
+  <div class="h-state2">
+    <a class="header-identity" href="#" aria-label="Back to top">
+      <div class="header-avatar" aria-hidden="true"></div>
+      <div class="identity-text">
+        <span class="identity-name">Ivan Pironi</span>
+        <span class="identity-role">Capital Projects Advisory · EY MENA</span>
+      </div>
+    </a>
+    <nav class="header-nav" aria-label="Page navigation">
+      <a href="#market"          data-nav="market">Market</a>
+      <a href="#pipelines"       data-nav="pipelines">Two Pipelines</a>
+      <a href="#differentiation" data-nav="differentiation">Differentiation</a>
+    </nav>
+    <button class="hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobile-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
+  <button class="overlay-close" id="overlay-close" aria-label="Close navigation">×</button>
+  <nav class="overlay-nav">
+    <a href="#market"          data-nav="market">Market</a>
+    <a href="#pipelines"       data-nav="pipelines">Two Pipelines</a>
+    <a href="#differentiation" data-nav="differentiation">Differentiation</a>
+  </nav>
+</div>
+
+<section class="hero" id="hero" aria-label="Hero">
+  <span class="hero-eyebrow">Capital Programme Advisory &nbsp;·&nbsp; UAE &nbsp;·&nbsp; KSA &nbsp;·&nbsp; Qatar</span>
+  <div class="hero-text">
+    <span class="hero-name">Ivan</span>
+    <span class="hero-name">Pironi</span>
+    <div class="hero-rule" aria-hidden="true"></div>
+    <p class="hero-statement">
+      Sovereign programmes don't fail on ambition.<br>
+      They fail on governance.<br>
+      I fix governance.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">24 Years GCC Experience</span>
+      <span class="hero-tag">Sovereign Capital Advisory</span>
+      <span class="hero-tag">PMO Governance</span>
+      <span class="hero-tag">Digital Twin</span>
+      <span class="hero-tag">Oracle PMIS</span>
+      <span class="hero-tag">ISO 19650</span>
+      <span class="hero-tag">Sovereign Cloud</span>
+      <span class="hero-tag">PMP®</span>
+      <span class="hero-tag">PRINCE2®</span>
+      <span class="hero-tag">AWS</span>
+      <span class="hero-tag">Azure</span>
+      <span class="hero-tag">GCP</span>
+      <span class="hero-tag">OCI</span>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 9L12 15L18 9" stroke="#E8C84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</section>
+
+<div class="track-band">
+  <div class="track-band-inner">
+    <div class="track-label">Commercial track record — revenue led &amp; TCV originated · Accenture 2023–2026<br><span style="font-size:0.62rem;letter-spacing:0.08em;color:rgba(245,244,240,0.22);">TCV = total contract value originated &nbsp;·&nbsp; revenue = billed and recognised</span></div>
+    <div class="track-years">
+      <div class="track-year">
+        <div class="track-fy">FY24</div>
+        <div class="track-rev">$4.2M <em>revenue</em></div>
+        <div class="track-tcv">$6.4M TCV originated</div>
+      </div>
+      <div class="track-year">
+        <div class="track-fy">FY25</div>
+        <div class="track-rev">$5.1M <em>revenue</em></div>
+        <div class="track-tcv">$19.2M TCV originated</div>
+      </div>
+      <div class="track-year">
+        <div class="track-fy">FY26</div>
+        <div class="track-rev">$6.3M <em>revenue</em></div>
+        <div class="track-tcv">$8.9M TCV originated</div>
+      </div>
+    </div>
+    <div class="track-cta"><a href="/EY/case/#commercial">The Commercial Case →</a></div>
+  </div>
+</div>
+
+<section id="market" data-section="market">
+  <div class="container">
+    <span class="section-eyebrow reveal">The Market &amp; The Opportunity</span>
+    <!-- Option B: <h2 class="section-headline reveal">$8.3 billion — growing at twice the rate of North America.</h2> -->
+    <!-- Option C: <h2 class="section-headline reveal">A $400–700M premium segment <em>no Big Four firm owns.</em></h2> -->
+    <h2 class="section-headline reveal">The fastest-growing advisory market <em>in the world.</em></h2>
+    <p class="section-sub reveal">
+      The GCC is the fastest-growing advisory market in the world. Capital projects sits at its centre.
+      The premium advisory sub-segment is underserved at exactly the intersection I occupy.
+    </p>
+    <div class="market-numbers">
+      <div class="stat-strip reveal">
+        <div class="stat-cell">
+          <div class="stat-num">$1.65T</div>
+          <div class="stat-label">Saudi Sovereign Programme Pipeline</div>
+          <div class="stat-sub">2030 Expo. 2034 FIFA World Cup. Non-negotiable political delivery deadlines that make governance advisory non-deferrable spend.</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">$8.3B</div>
+          <div class="stat-label">GCC Consulting Market 2025</div>
+          <div class="stat-sub">12% growth per annum — twice the rate of North America. Saudi Arabia alone represents $4.9B at 13% growth.</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">$400–700M</div>
+          <div class="stat-label">Addressable Premium Sub-Segment</div>
+          <div class="stat-sub">Programme governance, PMIS strategy, Digital Twin readiness. No Big Four firm owns this intersection. Year 1 target is less than 1% of this market.</div>
+        </div>
+      </div>
+    </div>
+    <div class="proof-band reveal">
+      <span class="proof-band-eyebrow">The Proof · Qiddiya · KSA Giga-Programme</span>
+      <p class="proof-band-body">Led the full advisory chain on a live sovereign giga-programme — digital needs assessment, platform-agnostic evaluation, RFP authorship with deliberate budget exclusion to preserve advisory integrity, competitive award, scope extension into BIM governance, and Nvidia Omniverse Digital Twin POC. One client. Five stages. Every question EY leadership will ask, already answered.</p>
+      <a href="/EY/case/#proof" class="proof-band-link">Full proof — extended case →</a>
+    </div>
+  </div>
+</section>
+
+<section id="pipelines" data-section="pipelines">
+  <div class="container">
+    <span class="section-eyebrow reveal">Two Activation Paths</span>
+    <h2 class="section-headline reveal">Two pipelines. <em>One practice.</em></h2>
+    <div class="pipeline-pair reveal">
+      <div class="pipeline-card">
+        <div class="pipeline-title">Direct Programme Credibility</div>
+        <p class="pipeline-body">Client-facing delivery on Qiddiya, TASMU, Khazna, and others. Programme-level visibility and a starting point independent of firm introduction. Not sequentially — simultaneously.</p>
+      </div>
+      <div class="pipeline-card">
+        <div class="pipeline-title">EY's Platform</div>
+        <p class="pipeline-body">Audit and risk relationships with UAE sovereign developers, KSA Royal Commissions, and Qatar national authorities. Institutional trust already in the room — advisory entry without a cold start.</p>
+      </div>
+    </div>
+    <p class="section-pull reveal">
+      Year 1 is built on both pipelines running simultaneously — not sequentially. Neither alone is sufficient.
+      Together, they de-risk the activation path from day one.
+    </p>
+  </div>
+</section>
+
+<section id="differentiation" data-section="differentiation">
+  <div class="container">
+    <span class="section-eyebrow reveal">The Differentiation</span>
+    <h2 class="section-headline reveal">
+      The market has strategists. It has implementers.<br>
+      <em>It does not have both.</em>
+    </h2>
+    <div class="multiplier reveal">
+      <span class="multiplier-label">The Three-Level Test</span>
+      <div class="force">
+        <div>
+          <div class="callout-label">Strategy Level</div>
+          <div class="force-title">What to do and why</div>
+          <p class="force-body">Business case development, governance model design, ROI frameworks. Can lead the sovereign executive conversation without technical dependency.</p>
+        </div>
+      </div>
+      <hr class="rule">
+      <div class="force">
+        <div>
+          <div class="callout-label">Architecture Level</div>
+          <div class="force-title">How to structure governance, data, and controls</div>
+          <p class="force-body">Oracle PMIS ecosystem architecture. ISO 19650 information management. SAP/ERP integration. The layer where data trust is won or lost — and where most advisors cannot operate.</p>
+        </div>
+      </div>
+      <hr class="rule">
+      <div class="force">
+        <div>
+          <div class="callout-label">Delivery Oversight Level</div>
+          <div class="force-title">Ensuring implementation delivers the strategy</div>
+          <p class="force-body">Credible oversight without becoming the implementer. PMO governance. Schedule and cost integrity. The authority to hold delivery teams accountable — because I have personally operated the full stack.</p>
+        </div>
+      </div>
+    </div>
+    <p class="section-pull reveal">
+      This is not a combination of credentials. It is a decade of GCC sovereign delivery that has produced exactly the capability the Capital Projects advisory market is now paying premium rates for.
+    </p>
+  </div>
+</section>
+
+<div class="paths">
+  <a class="path-card" href="/EY/practice/">
+    <div class="path-time">10 min read</div>
+    <h3>The Practice</h3>
+    <p>Named accounts. Active team. Mace + Worley partnerships. The commercial machine already in motion.</p>
+    <span class="path-cta">See the practice →</span>
+  </a>
+  <a class="path-card" href="/EY/case/">
+    <div class="path-time">15 min read</div>
+    <h3>The Case</h3>
+    <p>Full Business Case — technical stack, activation paths, Year 1–3 P&amp;L, priority mandates, decision Q&amp;A.</p>
+    <span class="path-cta">Read the case →</span>
+  </a>
+  <a class="path-card" href="/EY/numbers/">
+    <div class="path-time">5 min read</div>
+    <h3>The Numbers</h3>
+    <p>Interactive 36-month pipeline model. 15 accounts, 78 engagements. Adjust win rates and fees — the P&amp;L updates live.</p>
+    <span class="path-cta">See the numbers →</span>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+
+    <!-- Identity -->
+    <div>
+      <span class="footer-name">Ivan Pironi</span>
+      <span class="footer-role">Capital Projects Advisory</span>
+    </div>
+
+    <!-- Contact details -->
+    <div class="footer-contacts">
+
+      <a class="footer-contact" href="mailto:ivan.pironi@gmail.com">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M22 7l-10 7L2 7"/>
+        </svg>
+        ivan.pironi@gmail.com
+      </a>
+
+      <a class="footer-contact" href="tel:+971545831119">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        +971 54 583 1119
+      </a>
+
+      <a class="footer-contact" href="https://linkedin.com/in/ivanpironi" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+        linkedin.com/in/ivanpironi
+      </a>
+
+      <span class="footer-contact">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2"/>
+        </svg>
+        Dubai &nbsp;·&nbsp; UAE &nbsp;·&nbsp; April 2026
+      </span>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>Confidential — prepared for EY Capital Projects Leadership</span>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    // Header scroll state
+    var header = document.getElementById('site-header');
+    if (header) {
+      function onScroll() { header.classList.toggle('scrolled', window.scrollY > 60); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    // Scroll reveal
+    var items = document.querySelectorAll('.reveal');
+    if (items.length) {
+      var revObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('revealed'); revObs.unobserve(entry.target); }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function (el) { revObs.observe(el); });
+    }
+
+    // Sub-nav scrollspy
+    var sections = document.querySelectorAll('section[data-section]');
+    var allLinks = document.querySelectorAll('[data-nav]');
+    if (sections.length && allLinks.length) {
+      var navObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            allLinks.forEach(function (link) {
+              link.classList.toggle('active', link.dataset.nav === entry.target.dataset.section);
+            });
+          }
+        });
+      }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+      sections.forEach(function (s) { navObs.observe(s); });
+    }
+
+    // Mobile menu
+    var hamburger = document.getElementById('hamburger-btn');
+    var overlay   = document.getElementById('mobile-overlay');
+    var closeBtn  = document.getElementById('overlay-close');
+    if (hamburger && overlay) {
+      function openMenu()  { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; hamburger.setAttribute('aria-expanded', 'true'); }
+      function closeMenu() { overlay.classList.remove('open'); document.body.style.overflow = ''; hamburger.setAttribute('aria-expanded', 'false'); hamburger.focus(); }
+      hamburger.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      overlay.querySelectorAll('a[data-nav]').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) closeMenu(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && overlay.classList.contains('open')) closeMenu(); });
+    }
+
+  });
+</script>
+
+</body>
+</html>
