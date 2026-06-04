@@ -1,7 +1,15 @@
 {
   "meta": {
     "lastUpdated": "2026-06-04",
-    "accounts": 15
+    "accounts": 15,
+    "assumptions": {
+      "retainerConvPct": 50,
+      "retainerTcvPct": 60,
+      "retainerLagMonths": 3,
+      "retainerInitMonths": 12,
+      "y3OrigProbPct": 30,
+      "nrfHaircutPct": 25
+    }
   },
   "accounts": [
     {
@@ -15,7 +23,7 @@
         "sale": 1, "saleAmt": 700,
         "consPct": 60, "techPct": 40, "consAmt": 420, "techAmt": 280,
         "delStart": 2, "delEnd": 7, "dur": 6,
-        "ret": { "signed": 8, "rate": 80, "visStart": 9, "visEnd": 20, "consPct": 75, "techPct": 25, "cpm": 60, "tpm": 20, "saleAmt": 960, "consSale": 720, "techSale": 240 }
+        "ret": { "signed": 9, "rate": 35, "visStart": 10, "visEnd": 33, "consPct": 60, "techPct": 40, "cpm": 21, "tpm": 14, "saleAmt": 840, "consSale": 504, "techSale": 336 }
       },
       "engagements": [
         { "type": "A",  "saleMonth": 3,  "duration": 18, "grossK": 1400, "prob": 0.50 },
@@ -56,7 +64,7 @@
         "sale": 5, "saleAmt": 900,
         "consPct": 75, "techPct": 25, "consAmt": 675, "techAmt": 225,
         "delStart": 7, "delEnd": 15, "dur": 9,
-        "ret": { "signed": 16, "rate": 100, "visStart": 17, "visEnd": 24, "consPct": 80, "techPct": 20, "cpm": 80, "tpm": 20, "saleAmt": 1200, "consSale": 960, "techSale": 240 }
+        "ret": { "signed": 17, "rate": 45, "visStart": 18, "visEnd": 36, "consPct": 75, "techPct": 25, "cpm": 34, "tpm": 11, "saleAmt": 855, "consSale": 646, "techSale": 209 }
       },
       "engagements": [
         { "type": "CP", "saleMonth": 5,  "duration": 6,  "grossK": 80,  "prob": 0.80 },
@@ -97,7 +105,7 @@
         "sale": 8, "saleAmt": 700,
         "consPct": 55, "techPct": 45, "consAmt": 385, "techAmt": 315,
         "delStart": 10, "delEnd": 15, "dur": 6,
-        "ret": { "signed": 16, "rate": 70, "visStart": 17, "visEnd": 24, "consPct": 70, "techPct": 30, "cpm": 49, "tpm": 21, "saleAmt": 840, "consSale": 588, "techSale": 252 }
+        "ret": { "signed": 17, "rate": 35, "visStart": 18, "visEnd": 36, "consPct": 55, "techPct": 45, "cpm": 19, "tpm": 16, "saleAmt": 665, "consSale": 361, "techSale": 304 }
       },
       "engagements": [
         { "type": "CP", "saleMonth": 17, "duration": 6,  "grossK": 50,  "prob": 0.80 },
@@ -117,7 +125,7 @@
         "sale": 9, "saleAmt": 700,
         "consPct": 50, "techPct": 50, "consAmt": 350, "techAmt": 350,
         "delStart": 11, "delEnd": 18, "dur": 8,
-        "ret": { "signed": 19, "rate": 100, "visStart": 20, "visEnd": 24, "consPct": 70, "techPct": 30, "cpm": 70, "tpm": 30, "saleAmt": 1200, "consSale": 840, "techSale": 360 }
+        "ret": { "signed": 20, "rate": 35, "visStart": 21, "visEnd": 36, "consPct": 50, "techPct": 50, "cpm": 18, "tpm": 17, "saleAmt": 560, "consSale": 288, "techSale": 272 }
       },
       "engagements": [
         { "type": "CP", "saleMonth": 13, "duration": 6,  "grossK": 71,  "prob": 0.75 },
@@ -138,7 +146,7 @@
         "sale": 12, "saleAmt": 700,
         "consPct": 70, "techPct": 30, "consAmt": 490, "techAmt": 210,
         "delStart": 14, "delEnd": 21, "dur": 8,
-        "ret": { "signed": 22, "rate": 80, "visStart": 23, "visEnd": 24, "consPct": 75, "techPct": 25, "cpm": 60, "tpm": 20, "saleAmt": 960, "consSale": 720, "techSale": 240 }
+        "ret": { "signed": 23, "rate": 35, "visStart": 24, "visEnd": 36, "consPct": 70, "techPct": 30, "cpm": 25, "tpm": 10, "saleAmt": 455, "consSale": 325, "techSale": 130 }
       },
       "engagements": [
         { "type": "A",  "saleMonth": 12, "duration": 12, "grossK": 1000, "prob": 0.40 },

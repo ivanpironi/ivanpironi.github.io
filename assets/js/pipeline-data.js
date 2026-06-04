@@ -33,16 +33,26 @@
               }));
             });
           });
+          var assumptions = (json.meta || {}).assumptions || {};
           var meta = {
             lastUpdated:      (json.meta || {}).lastUpdated || '',
             accounts:         (json.meta || {}).accounts    || 0,
-            totalEngagements: engagements.length
+            totalEngagements: engagements.length,
+            assumptions:      assumptions
           };
           window.PipelineData.data = { engagements: engagements, meta: meta };
           if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function () { populateSpans(meta); });
+            document.addEventListener('DOMContentLoaded', function () {
+              populateSpans(meta);
+              if (typeof renderModelAssumptions === 'function') {
+                renderModelAssumptions(assumptions, 'model-assumptions-note');
+              }
+            });
           } else {
             populateSpans(meta);
+            if (typeof renderModelAssumptions === 'function') {
+              renderModelAssumptions(assumptions, 'model-assumptions-note');
+            }
           }
         });
     }

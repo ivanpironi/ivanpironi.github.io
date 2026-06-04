@@ -802,7 +802,7 @@
       /* Quarterly cumulative totals — include retainer sale bookings */
       var qtots=[];
       var cSC=0,cST=0,cRC=0,cRT=0;
-      for(var qi=1;qi<=8;qi++){
+      for(var qi=1;qi<=12;qi++){
         var qm1=(qi-1)*3+1, qm3=qi*3;
         ENG.forEach(function(e){
           if(e.sale>=qm1&&e.sale<=qm3){cSC+=e.consAmt;cST+=e.techAmt;}
@@ -812,29 +812,36 @@
         qtots.push({sc:Math.round(cSC),st:Math.round(cST),rc:Math.round(cRC),rt:Math.round(cRT)});
       }
 
-      /* Year 1 / Year 2 financials — initial + retainer sales */
+      /* Year 1 / Year 2 / Year 3 financials — initial + retainer sales */
       var y1S=0,y1SC=0,y1ST=0,y1RC=0,y1RT=0;
       var y2S=0,y2SC=0,y2ST=0;
+      var y3S=0,y3SC=0,y3ST=0;
       ENG.forEach(function(e){
         if(e.sale<=12){y1S+=e.saleAmt;y1SC+=e.consAmt;y1ST+=e.techAmt;}
-        else{y2S+=e.saleAmt;y2SC+=e.consAmt;y2ST+=e.techAmt;}
+        else if(e.sale<=24){y2S+=e.saleAmt;y2SC+=e.consAmt;y2ST+=e.techAmt;}
+        else{y3S+=e.saleAmt;y3SC+=e.consAmt;y3ST+=e.techAmt;}
         if(e.ret){
           if(e.ret.signed<=12){y1S+=e.ret.saleAmt;y1SC+=e.ret.consSale;y1ST+=e.ret.techSale;}
-          else{y2S+=e.ret.saleAmt;y2SC+=e.ret.consSale;y2ST+=e.ret.techSale;}
+          else if(e.ret.signed<=24){y2S+=e.ret.saleAmt;y2SC+=e.ret.consSale;y2ST+=e.ret.techSale;}
+          else{y3S+=e.ret.saleAmt;y3SC+=e.ret.consSale;y3ST+=e.ret.techSale;}
         }
       });
       for(var ym=1;ym<=12;ym++){y1RC+=mRC[ym];y1RT+=mRT[ym];}
       var y2RC=0,y2RT=0;
-      for(var ym=13;ym<=M;ym++){y2RC+=mRC[ym];y2RT+=mRT[ym];}
-      var y1R=y1RC+y1RT, y1Def=y1S-y1R, y2R=y2RC+y2RT;
+      for(var ym=13;ym<=24;ym++){y2RC+=mRC[ym];y2RT+=mRT[ym];}
+      var y3RC=0,y3RT=0;
+      for(var ym=25;ym<=M;ym++){y3RC+=mRC[ym];y3RT+=mRT[ym];}
+      var y1R=y1RC+y1RT, y1Def=y1S-y1R, y2R=y2RC+y2RT, y3R=y3RC+y3RT;
 
       /* Retainer-specific metrics for summary band */
-      var y1RetR=0,y2RetR=0,retRunRate=0;
+      var y1RetR=0,y2RetR=0,y3RetR=0,retRunRate=0;
       ENG.forEach(function(e){
         if(!e.ret)return;
         var r=e.ret;
         for(var m=r.visStart;m<=Math.min(r.visEnd,M);m++){
-          if(m<=12)y1RetR+=(r.cpm+r.tpm); else y2RetR+=(r.cpm+r.tpm);
+          if(m<=12)y1RetR+=(r.cpm+r.tpm);
+          else if(m<=24)y2RetR+=(r.cpm+r.tpm);
+          else y3RetR+=(r.cpm+r.tpm);
         }
         retRunRate+=r.rate*12; /* annualised value of all signed retainers */
       });
@@ -901,12 +908,12 @@
           });
 
           /* Same quarter divider lines as engagement bar rows + outer boundaries */
-          [1,4,7,10,13,16,19,22,'end'].forEach(function(qm){
+          [1,4,7,10,13,16,19,22,25,28,31,'end'].forEach(function(qm){
             var vl=document.createElement('div');
             vl.style.cssText=
               'position:absolute;top:0;bottom:0;width:1px;pointer-events:none;'+
               (qm==='end'?'right:0;':'left:'+pL(qm)+';')+
-              (qm===13?'background:rgba(255,255,255,0.30);':'background:rgba(255,255,255,0.20);');
+              (qm===13||qm===25?'background:rgba(255,255,255,0.30);':'background:rgba(255,255,255,0.20);');
             cell.appendChild(vl);
           });
 
@@ -1035,13 +1042,13 @@
         }
 
         /* Quarter divider lines + outer boundary lines */
-        [1,4,7,10,13,16,19,22,'end'].forEach(function(qm){
+        [1,4,7,10,13,16,19,22,25,28,31,'end'].forEach(function(qm){
           var vl=document.createElement('div');
           vl.style.cssText=
             'position:absolute;top:0;bottom:0;width:1px;pointer-events:none;'+
             (qm==='end'?'right:0;':'left:'+pL(qm)+';')+
-            (qm===13
-              ? 'background:rgba(255,255,255,0.25);'   /* Y1/Y2 boundary — slightly brighter */
+            (qm===13||qm===25
+              ? 'background:rgba(255,255,255,0.25);'
               : 'background:rgba(255,255,255,0.14);');
           btd.appendChild(vl);
         });
@@ -1093,8 +1100,9 @@
         td.style.cssText='padding:14px 0 6px;';
 
         var carry=fK(y1Def,1);
-        var y2fromY1=fK(Math.min(y1Def,y2R),1);
         var y2newDel=fK(Math.max(y2R-y1Def,0),1);
+        var y2Def=y2S-y2R;
+        var y3newDel=fK(Math.max(y3R-y2Def,0),1);
 
         td.innerHTML=
           '<div style="display:flex;gap:24px;flex-wrap:wrap;">'+
@@ -1140,13 +1148,41 @@
               '&nbsp;&middot;&nbsp;'+
               '<span style="color:'+CT+'">'+fK(Math.round(y2RT))+' Tech</span>'+
             '</div>'+
+            '<div class="yr-row" style="color:rgba(255,255,255,0.55);font-size:9px;">'+
+              'Recurring retainer revenue'+
+              '<span style="color:rgba(255,255,255,0.7);">'+fK(Math.round(y2RetR))+
+              ' <span style="color:rgba(255,255,255,0.35);font-size:8px;">('+ fP(y2RetR,y2R)+' of rev)</span></span>'+
+            '</div>'+
             '<div class="yr-carry">Includes '+carry+' Year 1 carry &plus; '+y2newDel+' Year 2 deliveries</div>'+
+          '</div>'+
+
+          /* Year 3 */
+          '<div class="yr-blk">'+
+            '<div class="yr-title">Year 3 <span class="yr-sub">Months 25–36</span></div>'+
+            '<div class="yr-row">Total TCV<span>'+fK(y3S,1)+'</span></div>'+
+            '<div class="yr-mix">'+
+              '<span style="color:'+CC+'">'+fK(y3SC)+' Cons</span>'+
+              '&nbsp;&middot;&nbsp;'+
+              '<span style="color:'+CT+'">'+fK(y3ST)+' Tech</span>'+
+            '</div>'+
+            '<div class="yr-row">Recognised Revenue<span>'+fK(y3R,1)+'</span></div>'+
+            '<div class="yr-mix">'+
+              '<span style="color:'+CC+'">'+fK(Math.round(y3RC))+' Cons</span>'+
+              '&nbsp;&middot;&nbsp;'+
+              '<span style="color:'+CT+'">'+fK(Math.round(y3RT))+' Tech</span>'+
+            '</div>'+
+            '<div class="yr-row" style="color:rgba(255,255,255,0.55);font-size:9px;">'+
+              'Recurring retainer revenue'+
+              '<span style="color:rgba(255,255,255,0.7);">'+fK(Math.round(y3RetR))+
+              ' <span style="color:rgba(255,255,255,0.35);font-size:8px;">('+ fP(y3RetR,y3R)+' of rev)</span></span>'+
+            '</div>'+
+            '<div class="yr-carry">Includes '+fK(Math.min(y2Def,y3R),1)+' Year 2 carry &plus; '+y3newDel+' Year 3 deliveries</div>'+
           '</div>'+
 
           /* Retainer run-rate panel */
           '<div style="flex-basis:100%;margin-top:10px;">'+
             '<div class="yr-def" style="flex-direction:column;align-items:flex-start;gap:4px;">'+
-              '<span class="yr-def-lbl">Annualised retainer run-rate at end of Year 2</span>'+
+              '<span class="yr-def-lbl">Annualised retainer run-rate at end of Year 3</span>'+
               '<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">'+
                 '<span class="yr-def-val">'+fK(retRunRate,1)+'</span>'+
                 '<span style="font-size:10px;color:rgba(255,255,255,0.45);">This number + deferred revenue proves the practice compounds</span>'+
@@ -1202,10 +1238,15 @@
         });
       });
 
+      if(typeof renderModelAssumptions==='function'&&json.meta&&json.meta.assumptions){
+        renderModelAssumptions(json.meta.assumptions,'gantt-assumptions');
+      }
+
         }).catch(function(err){console.error('[gantt] Data load failed:',err);});
       })();
       </script>
 
+      <div id="gantt-assumptions" style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:0.04em;line-height:1.6;padding:8px 0 0;border-top:1px solid rgba(255,255,255,0.07);margin-top:12px;"></div>
 
       <!-- Three phase summary cards -->
       <div class="phase-grid">
