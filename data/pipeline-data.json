@@ -143,13 +143,13 @@
       "region": "KSA",
       "tip": "$63B UNESCO heritage programme. Mace Consult sitewide PMC. $1.5B Arena Block awarded June 2025.",
       "gantt": {
-        "sale": 12, "saleAmt": 700,
+        "sale": 13, "saleAmt": 700,
         "consPct": 70, "techPct": 30, "consAmt": 490, "techAmt": 210,
         "delStart": 14, "delEnd": 21, "dur": 8,
         "ret": { "signed": 23, "rate": 35, "visStart": 24, "visEnd": 36, "consPct": 70, "techPct": 30, "cpm": 25, "tpm": 10, "saleAmt": 455, "consSale": 325, "techSale": 130 }
       },
       "engagements": [
-        { "type": "A",  "saleMonth": 12, "duration": 12, "grossK": 1000, "prob": 0.40 },
+        { "type": "A",  "saleMonth": 13, "duration": 12, "grossK": 1000, "prob": 0.40 },
         { "type": "A",  "saleMonth": 26, "duration": 12, "grossK": 550,  "prob": 0.35 },
         { "type": "S",  "saleMonth": 16, "duration": 9,  "grossK": 400,  "prob": 0.30 },
         { "type": "S",  "saleMonth": 28, "duration": 6,  "grossK": 200,  "prob": 0.25 },
