@@ -150,7 +150,7 @@
       },
       "engagements": [
         { "type": "A",  "saleMonth": 13, "duration": 12, "grossK": 1000, "prob": 0.40 },
-        { "type": "A",  "saleMonth": 26, "duration": 12, "grossK": 550,  "prob": 0.35 },
+        { "type": "A",  "saleMonth": 26, "duration": 12, "grossK": 550,  "prob": 0.35, "isY3Origination": true },
         { "type": "S",  "saleMonth": 16, "duration": 9,  "grossK": 400,  "prob": 0.30 },
         { "type": "S",  "saleMonth": 28, "duration": 6,  "grossK": 200,  "prob": 0.25 },
         { "type": "R",  "saleMonth": 20, "duration": 24, "grossK": 140,  "prob": 0.50 }
@@ -173,7 +173,7 @@
         { "type": "A",  "saleMonth": 17, "duration": 12, "grossK": 1000, "prob": 0.35 },
         { "type": "R",  "saleMonth": 21, "duration": 24, "grossK": 160,  "prob": 0.50 },
         { "type": "S",  "saleMonth": 22, "duration": 9,  "grossK": 400,  "prob": 0.25 },
-        { "type": "A",  "saleMonth": 30, "duration": 15, "grossK": 700,  "prob": 0.30 },
+        { "type": "A",  "saleMonth": 30, "duration": 15, "grossK": 700,  "prob": 0.30, "isY3Origination": true },
         { "type": "RR", "saleMonth": 33, "duration": 12, "grossK": 120,  "prob": 0.50 }
       ]
     },
@@ -191,7 +191,7 @@
       },
       "engagements": [
         { "type": "CP", "saleMonth": 26, "duration": 6,  "grossK": 100,  "prob": 0.60 },
-        { "type": "A",  "saleMonth": 25, "duration": 12, "grossK": 1200, "prob": 0.30 },
+        { "type": "A",  "saleMonth": 25, "duration": 12, "grossK": 1200, "prob": 0.30, "isY3Origination": true },
         { "type": "R",  "saleMonth": 28, "duration": 24, "grossK": 160,  "prob": 0.30 },
         { "type": "S",  "saleMonth": 29, "duration": 9,  "grossK": 500,  "prob": 0.20 }
       ]
@@ -210,9 +210,9 @@
       },
       "engagements": [
         { "type": "CP", "saleMonth": 25, "duration": 6,  "grossK": 100, "prob": 0.70 },
-        { "type": "A",  "saleMonth": 27, "duration": 12, "grossK": 700, "prob": 0.40 },
+        { "type": "A",  "saleMonth": 27, "duration": 12, "grossK": 700, "prob": 0.40, "isY3Origination": true },
         { "type": "S",  "saleMonth": 29, "duration": 9,  "grossK": 200, "prob": 0.25 },
-        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 550, "prob": 0.35 }
+        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 550, "prob": 0.35, "isY3Origination": true }
       ]
     },
     {
@@ -249,7 +249,7 @@
       },
       "engagements": [
         { "type": "CP", "saleMonth": 27, "duration": 6,  "grossK": 71,  "prob": 0.60 },
-        { "type": "A",  "saleMonth": 26, "duration": 12, "grossK": 700, "prob": 0.35 },
+        { "type": "A",  "saleMonth": 26, "duration": 12, "grossK": 700, "prob": 0.35, "isY3Origination": true },
         { "type": "R",  "saleMonth": 29, "duration": 24, "grossK": 120, "prob": 0.35 },
         { "type": "S",  "saleMonth": 30, "duration": 9,  "grossK": 300, "prob": 0.25 }
       ]
@@ -268,10 +268,10 @@
       },
       "engagements": [
         { "type": "CP", "saleMonth": 26, "duration": 6,  "grossK": 71,  "prob": 0.65 },
-        { "type": "A",  "saleMonth": 27, "duration": 18, "grossK": 800, "prob": 0.40 },
+        { "type": "A",  "saleMonth": 27, "duration": 18, "grossK": 800, "prob": 0.40, "isY3Origination": true },
         { "type": "R",  "saleMonth": 28, "duration": 24, "grossK": 100, "prob": 0.45 },
         { "type": "S",  "saleMonth": 29, "duration": 12, "grossK": 350, "prob": 0.30 },
-        { "type": "A",  "saleMonth": 33, "duration": 12, "grossK": 500, "prob": 0.35 },
+        { "type": "A",  "saleMonth": 33, "duration": 12, "grossK": 500, "prob": 0.35, "isY3Origination": true },
         { "type": "RR", "saleMonth": 34, "duration": 12, "grossK": 80,  "prob": 0.40 }
       ]
     },
@@ -290,10 +290,10 @@
       "engagements": [
         { "type": "CP", "saleMonth": 27, "duration": 6,  "grossK": 71,   "prob": 0.70 },
         { "type": "CP", "saleMonth": 30, "duration": 6,  "grossK": 57,   "prob": 0.70 },
-        { "type": "A",  "saleMonth": 26, "duration": 15, "grossK": 1000, "prob": 0.40 },
+        { "type": "A",  "saleMonth": 26, "duration": 15, "grossK": 1000, "prob": 0.40, "isY3Origination": true },
         { "type": "S",  "saleMonth": 28, "duration": 9,  "grossK": 400,  "prob": 0.30 },
         { "type": "R",  "saleMonth": 27, "duration": 24, "grossK": 160,  "prob": 0.50 },
-        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 700,  "prob": 0.35 },
+        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 700,  "prob": 0.35, "isY3Origination": true },
         { "type": "S",  "saleMonth": 33, "duration": 9,  "grossK": 300,  "prob": 0.25 },
         { "type": "RR", "saleMonth": 34, "duration": 24, "grossK": 140,  "prob": 0.45 }
       ]
@@ -312,10 +312,10 @@
       },
       "engagements": [
         { "type": "CP", "saleMonth": 26, "duration": 6,  "grossK": 57,  "prob": 0.65 },
-        { "type": "A",  "saleMonth": 25, "duration": 18, "grossK": 700, "prob": 0.45 },
+        { "type": "A",  "saleMonth": 25, "duration": 18, "grossK": 700, "prob": 0.45, "isY3Origination": true },
         { "type": "R",  "saleMonth": 28, "duration": 24, "grossK": 120, "prob": 0.45 },
         { "type": "S",  "saleMonth": 27, "duration": 12, "grossK": 350, "prob": 0.30 },
-        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 500, "prob": 0.40 },
+        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 500, "prob": 0.40, "isY3Origination": true },
         { "type": "S",  "saleMonth": 33, "duration": 9,  "grossK": 250, "prob": 0.25 },
         { "type": "RR", "saleMonth": 34, "duration": 12, "grossK": 80,  "prob": 0.40 }
       ]

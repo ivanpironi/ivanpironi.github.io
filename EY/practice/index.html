@@ -756,20 +756,9 @@
       (function(){
       'use strict';
 
-      /* ── COMPUTATION NOTE ─────────────────────────────────────────────────────
-         Computed vs addendum targets (initial + retainer):
-         Y1 Sales (incl. Qiddiya ret M8):  Target ~$6.4M  → ~$6.36M  ✓
-         Y1 Recognised Rev (incl. ret):    Target ~$2.7M  → ~$3.18M  ⚠ higher
-         Y2 Sales (incl. 4 ret sigs):      Target ~$8.0M  → ~$8.5M   ⚠ higher
-         Y2 Recognised Rev:                Target ~$5.8M  → ~$8.9M   ⚠ higher
-         Retainer annualised run-rate:      Target ~$5.2M  → $5.16M   ✓
-
-         Revenue is systematically higher than targets because straight-line
-         recognition from delStart (no mobilisation lag) means engagements
-         start earning immediately. The addendum's targets appear to assume a
-         1–2 month lag before first recognition — consistent with the original
-         brief discrepancy. All computations reflect exact supplied data.
-         Retainer run-rate = sum of all signed retainer annual values ($430K/mo × 12).
+      /* ── Year summary uses probability-weighted engagements[] matching The Numbers page.
+         Default sliders: qiddiyaProb=50%, retainerConvRate=50%.
+         Gantt visual bars remain gross (unweighted) — they show anchor-deal size.
          ────────────────────────────────────────────────────────────────────── */
 
       var M=36;
@@ -814,39 +803,50 @@
         qtots.push({sc:Math.round(cSC),st:Math.round(cST),rc:Math.round(cRC),rt:Math.round(cRT)});
       }
 
-      /* Year 1 / Year 2 / Year 3 financials — initial + retainer sales */
+      /* Year 1 / Year 2 / Year 3 financials — probability-weighted engagements */
       var y1S=0,y1SC=0,y1ST=0,y1RC=0,y1RT=0;
       var y2S=0,y2SC=0,y2ST=0;
       var y3S=0,y3SC=0,y3ST=0;
-      ENG.forEach(function(e){
-        if(e.sale<=12){y1S+=e.saleAmt;y1SC+=e.consAmt;y1ST+=e.techAmt;}
-        else if(e.sale<=24){y2S+=e.saleAmt;y2SC+=e.consAmt;y2ST+=e.techAmt;}
-        else{y3S+=e.saleAmt;y3SC+=e.consAmt;y3ST+=e.techAmt;}
-        if(e.ret){
-          if(e.ret.signed<=12){y1S+=e.ret.saleAmt;y1SC+=e.ret.consSale;y1ST+=e.ret.techSale;}
-          else if(e.ret.signed<=24){y2S+=e.ret.saleAmt;y2SC+=e.ret.consSale;y2ST+=e.ret.techSale;}
-          else{y3S+=e.ret.saleAmt;y3SC+=e.ret.consSale;y3ST+=e.ret.techSale;}
-        }
-      });
-      for(var ym=1;ym<=12;ym++){y1RC+=mRC[ym];y1RT+=mRT[ym];}
-      var y2RC=0,y2RT=0;
-      for(var ym=13;ym<=24;ym++){y2RC+=mRC[ym];y2RT+=mRT[ym];}
-      var y3RC=0,y3RT=0;
-      for(var ym=25;ym<=M;ym++){y3RC+=mRC[ym];y3RT+=mRT[ym];}
-      var y1R=y1RC+y1RT, y1Def=y1S-y1R, y2R=y2RC+y2RT, y3R=y3RC+y3RT;
-
-      /* Retainer-specific metrics for summary band */
+      var wmRC=new Array(60).fill(0),wmRT=new Array(60).fill(0); /* 60 months; no M-cap — matches pipeline-render yearOf() */
       var y1RetR=0,y2RetR=0,y3RetR=0,retRunRate=0;
-      ENG.forEach(function(e){
-        if(!e.ret)return;
-        var r=e.ret;
-        for(var m=r.visStart;m<=Math.min(r.visEnd,M);m++){
-          if(m<=12)y1RetR+=(r.cpm+r.tpm);
-          else if(m<=24)y2RetR+=(r.cpm+r.tpm);
-          else y3RetR+=(r.cpm+r.tpm);
-        }
-        retRunRate+=r.rate*12; /* annualised value of all signed retainers */
+
+      json.accounts.forEach(function(a){
+        var cp=a.gantt.consPct||60, tp=a.gantt.techPct||40;
+        (a.engagements||[]).forEach(function(eng){
+          var prob=eng.prob;
+          if(a.key==='qiddiya'){
+            if(eng.type==='A')prob=0.50;
+            else if(eng.type==='S')prob=0.30;
+          } else if(eng.isY3Origination===true){
+            prob=0.30; /* mirrors y3OrigProb default slider */
+          }
+          var wk=Math.round(eng.grossK*prob*10)/10;
+          var yr=eng.saleMonth<=12?1:eng.saleMonth<=24?2:3;
+          var wc=wk*(cp/100),wt=wk*(tp/100);
+          if(yr===1){y1S+=wk;y1SC+=wc;y1ST+=wt;}
+          else if(yr===2){y2S+=wk;y2SC+=wc;y2ST+=wt;}
+          else{y3S+=wk;y3SC+=wc;y3ST+=wt;}
+          var pm=wk/eng.duration,pmc=pm*(cp/100),pmt=pm*(tp/100);
+          for(var wm=eng.saleMonth;wm<eng.saleMonth+eng.duration;wm++){
+            if(wm<60){wmRC[wm]+=pmc;wmRT[wm]+=pmt;}
+          }
+          if(eng.type==='R'||eng.type==='RR'){
+            for(var rm=eng.saleMonth;rm<eng.saleMonth+eng.duration;rm++){
+              if(rm<=12)y1RetR+=pm;
+              else if(rm<=24)y2RetR+=pm;
+              else y3RetR+=pm;
+            }
+            if(eng.saleMonth+eng.duration-1>=25)retRunRate+=pm*12;
+          }
+        });
       });
+
+      for(var ym=1;ym<=12;ym++){y1RC+=wmRC[ym];y1RT+=wmRT[ym];}
+      var y2RC=0,y2RT=0;
+      for(var ym=13;ym<=24;ym++){y2RC+=wmRC[ym];y2RT+=wmRT[ym];}
+      var y3RC=0,y3RT=0;
+      for(var ym=25;ym<60;ym++){y3RC+=wmRC[ym];y3RT+=wmRT[ym];}
+      var y1R=y1RC+y1RT, y1Def=y1S-y1R, y2R=y2RC+y2RT, y3R=y3RC+y3RT;
 
       /* Formatting helpers */
       function fK(k,d){
@@ -1184,15 +1184,10 @@
           /* Retainer run-rate panel */
           '<div style="flex-basis:100%;margin-top:10px;">'+
             '<div class="yr-def" style="flex-direction:column;align-items:flex-start;gap:4px;">'+
-              '<span class="yr-def-lbl">Annualised retainer run-rate at end of Year 3</span>'+
+              '<span class="yr-def-lbl">Weighted retainer run-rate at end of Year 3</span>'+
               '<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">'+
                 '<span class="yr-def-val">'+fK(retRunRate,1)+'</span>'+
-                '<span style="font-size:10px;color:rgba(255,255,255,0.45);">This number + deferred revenue proves the practice compounds</span>'+
-              '</div>'+
-              '<div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:2px;">'+
-                ENG.filter(function(e){return e.ret;}).map(function(e){
-                  return e.name+' $'+e.ret.rate+'K/mo';
-                }).join(' \xb7 ')+
+                '<span style="font-size:10px;color:rgba(255,255,255,0.45);">Probability-weighted annualised retainer revenue · matches The Numbers at default sliders</span>'+
               '</div>'+
             '</div>'+
           '</div>'+
