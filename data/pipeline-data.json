@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-06-04",
+    "lastUpdated": "2026-06-09",
     "accounts": 15,
     "assumptions": {
       "retainerConvPct": 50,
@@ -19,73 +19,39 @@
       "type": "ivan",
       "region": "KSA",
       "tip": "Incumbent PMIS advisor. PIF entertainment giga-programme $40B+. Oracle/SAP/P6/Aconex deployed. Programme Governance & Digital Twin Phase 2.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
-        "sale": 1,
+        "sale": 3,
         "saleAmt": 700,
         "consPct": 60,
         "techPct": 40,
         "consAmt": 420,
         "techAmt": 280,
-        "delStart": 2,
-        "delEnd": 7,
-        "dur": 6,
+        "delStart": 4,
+        "delEnd": 21,
+        "dur": 18,
         "ret": {
-          "signed": 9,
-          "rate": 35,
-          "visStart": 10,
-          "visEnd": 33,
+          "signed": 13,
+          "rate": 10,
+          "visStart": 14,
+          "visEnd": 37,
           "consPct": 60,
           "techPct": 40,
-          "cpm": 21,
-          "tpm": 14,
-          "saleAmt": 840,
-          "consSale": 504,
-          "techSale": 336
+          "cpm": 6,
+          "tpm": 4,
+          "saleAmt": 250,
+          "consSale": 144,
+          "techSale": 96
         }
       },
       "engagements": [
-        {
-          "type": "A",
-          "saleMonth": 3,
-          "duration": 18,
-          "grossK": 2000,
-          "prob": 0.5
-        },
-        {
-          "type": "A",
-          "saleMonth": 16,
-          "duration": 12,
-          "grossK": 700,
-          "prob": 0.5
-        },
-        {
-          "type": "S",
-          "saleMonth": 6,
-          "duration": 12,
-          "grossK": 500,
-          "prob": 0.3
-        },
-        {
-          "type": "S",
-          "saleMonth": 20,
-          "duration": 9,
-          "grossK": 333,
-          "prob": 0.3
-        },
-        {
-          "type": "R",
-          "saleMonth": 13,
-          "duration": 24,
-          "grossK": 500,
-          "prob": 0.5
-        },
-        {
-          "type": "RR",
-          "saleMonth": 25,
-          "duration": 12,
-          "grossK": 100,
-          "prob": 0.5
-        }
+        { "type": "A",  "saleMonth": 3,  "duration": 18, "grossK": 1400, "prob": 0.5,  "isAnchor": true },
+        { "type": "A",  "saleMonth": 16, "duration": 12, "grossK": 700,  "prob": 0.5  },
+        { "type": "S",  "saleMonth": 6,  "duration": 12, "grossK": 500,  "prob": 0.3  },
+        { "type": "S",  "saleMonth": 20, "duration": 9,  "grossK": 333,  "prob": 0.3  },
+        { "type": "R",  "saleMonth": 13, "duration": 24, "grossK": 500,  "prob": 0.5  },
+        { "type": "RR", "saleMonth": 25, "duration": 12, "grossK": 100,  "prob": 0.5  }
       ]
     },
     {
@@ -95,46 +61,37 @@
       "type": "ey",
       "region": "KSA",
       "tip": "Saudi Arabia Railways. Schedule Health & EPMO design. 18-month bid familiarity. Landbridge $7B PPP.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
-        "sale": 2,
-        "saleAmt": 275,
+        "sale": 6,
+        "saleAmt": 158,
         "consPct": 65,
         "techPct": 35,
-        "consAmt": 179,
-        "techAmt": 96,
-        "delStart": 3,
-        "delEnd": 6,
-        "dur": 4
+        "consAmt": 103,
+        "techAmt": 55,
+        "delStart": 7,
+        "delEnd": 15,
+        "dur": 9,
+        "ret": {
+          "signed": 13,
+          "rate": 2,
+          "visStart": 14,
+          "visEnd": 37,
+          "consPct": 65,
+          "techPct": 35,
+          "cpm": 1,
+          "tpm": 1,
+          "saleAmt": 50,
+          "consSale": 24,
+          "techSale": 24
+        }
       },
       "engagements": [
-        {
-          "type": "CP",
-          "saleMonth": 4,
-          "duration": 4,
-          "grossK": 60,
-          "prob": 0.75
-        },
-        {
-          "type": "A",
-          "saleMonth": 6,
-          "duration": 9,
-          "grossK": 350,
-          "prob": 0.45
-        },
-        {
-          "type": "S",
-          "saleMonth": 10,
-          "duration": 6,
-          "grossK": 200,
-          "prob": 0.3
-        },
-        {
-          "type": "R",
-          "saleMonth": 13,
-          "duration": 24,
-          "grossK": 100,
-          "prob": 0.5
-        }
+        { "type": "CP", "saleMonth": 4,  "duration": 4,  "grossK": 60,  "prob": 0.75 },
+        { "type": "A",  "saleMonth": 6,  "duration": 9,  "grossK": 350, "prob": 0.45, "isAnchor": true },
+        { "type": "S",  "saleMonth": 10, "duration": 6,  "grossK": 200, "prob": 0.3  },
+        { "type": "R",  "saleMonth": 13, "duration": 24, "grossK": 100, "prob": 0.5  }
       ]
     },
     {
@@ -143,123 +100,80 @@
       "phase": "Phase 1",
       "type": "ey",
       "region": "KSA",
-      "tip": "RFP active. Bechtel PMC. Owner-side assurance above Bechtel. 6km\u00b2, 42M visitors, Oct 2030 hard deadline. Budget protected from PIF cuts.",
+      "tip": "RFP active. Bechtel PMC. Owner-side assurance above Bechtel. 6km², 42M visitors, Oct 2030 hard deadline. Budget protected from PIF cuts.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
-        "sale": 5,
-        "saleAmt": 900,
+        "sale": 8,
+        "saleAmt": 450,
         "consPct": 75,
         "techPct": 25,
-        "consAmt": 675,
-        "techAmt": 225,
-        "delStart": 7,
-        "delEnd": 15,
-        "dur": 9,
+        "consAmt": 338,
+        "techAmt": 112,
+        "delStart": 9,
+        "delEnd": 20,
+        "dur": 12,
         "ret": {
-          "signed": 17,
-          "rate": 45,
-          "visStart": 18,
-          "visEnd": 36,
+          "signed": 15,
+          "rate": 3,
+          "visStart": 16,
+          "visEnd": 39,
           "consPct": 75,
           "techPct": 25,
-          "cpm": 34,
-          "tpm": 11,
-          "saleAmt": 855,
-          "consSale": 646,
-          "techSale": 209
+          "cpm": 2,
+          "tpm": 1,
+          "saleAmt": 80,
+          "consSale": 48,
+          "techSale": 24
         }
       },
       "engagements": [
-        {
-          "type": "CP",
-          "saleMonth": 5,
-          "duration": 6,
-          "grossK": 80,
-          "prob": 0.8
-        },
-        {
-          "type": "A",
-          "saleMonth": 8,
-          "duration": 12,
-          "grossK": 900,
-          "prob": 0.5
-        },
-        {
-          "type": "S",
-          "saleMonth": 12,
-          "duration": 9,
-          "grossK": 400,
-          "prob": 0.3
-        },
-        {
-          "type": "R",
-          "saleMonth": 15,
-          "duration": 24,
-          "grossK": 160,
-          "prob": 0.5
-        },
-        {
-          "type": "RR",
-          "saleMonth": 27,
-          "duration": 12,
-          "grossK": 120,
-          "prob": 0.5
-        }
+        { "type": "CP", "saleMonth": 5,  "duration": 6,  "grossK": 80,  "prob": 0.8  },
+        { "type": "A",  "saleMonth": 8,  "duration": 12, "grossK": 900, "prob": 0.5,  "isAnchor": true },
+        { "type": "S",  "saleMonth": 12, "duration": 9,  "grossK": 400, "prob": 0.3  },
+        { "type": "R",  "saleMonth": 15, "duration": 24, "grossK": 160, "prob": 0.5  },
+        { "type": "RR", "saleMonth": 27, "duration": 12, "grossK": 120, "prob": 0.5  }
       ]
     },
     {
       "key": "fifa",
-      "name": "FIFA 2034 \u00b7 WCA34",
+      "name": "FIFA 2034 · WCA34",
       "phase": "Phase 1",
       "type": "ey",
       "region": "KSA",
       "tip": "RFP active. 15 stadiums, 5 cities, chaired by Crown Prince MBS. Governance crisis live. Qiddiya & New Murabba contain FIFA 2034 stadiums.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
-        "sale": 5,
-        "saleAmt": 1150,
+        "sale": 10,
+        "saleAmt": 600,
         "consPct": 80,
         "techPct": 20,
-        "consAmt": 920,
-        "techAmt": 230,
-        "delStart": 7,
-        "delEnd": 15,
-        "dur": 9
+        "consAmt": 480,
+        "techAmt": 120,
+        "delStart": 11,
+        "delEnd": 22,
+        "dur": 12,
+        "ret": {
+          "signed": 18,
+          "rate": 7,
+          "visStart": 19,
+          "visEnd": 30,
+          "consPct": 80,
+          "techPct": 20,
+          "cpm": 6,
+          "tpm": 1,
+          "saleAmt": 80,
+          "consSale": 72,
+          "techSale": 12
+        }
       },
       "engagements": [
-        {
-          "type": "A",
-          "saleMonth": 10,
-          "duration": 12,
-          "grossK": 1200,
-          "prob": 0.5
-        },
-        {
-          "type": "A",
-          "saleMonth": 23,
-          "duration": 15,
-          "grossK": 900,
-          "prob": 0.4
-        },
-        {
-          "type": "S",
-          "saleMonth": 14,
-          "duration": 9,
-          "grossK": 400,
-          "prob": 0.3
-        },
-        {
-          "type": "CP",
-          "saleMonth": 8,
-          "duration": 6,
-          "grossK": 100,
-          "prob": 0.8
-        },
-        {
-          "type": "R",
-          "saleMonth": 18,
-          "duration": 12,
-          "grossK": 160,
-          "prob": 0.5
-        }
+        { "type": "CP", "saleMonth": 8,  "duration": 6,  "grossK": 100,  "prob": 0.8  },
+        { "type": "A",  "saleMonth": 10, "duration": 12, "grossK": 1200, "prob": 0.5,  "isAnchor": true },
+        { "type": "S",  "saleMonth": 14, "duration": 9,  "grossK": 400,  "prob": 0.3  },
+        { "type": "R",  "saleMonth": 18, "duration": 12, "grossK": 160,  "prob": 0.5  },
+        { "type": "A",  "saleMonth": 23, "duration": 15, "grossK": 900,  "prob": 0.4  }
       ]
     },
     {
@@ -269,59 +183,37 @@
       "type": "ivan",
       "region": "KSA",
       "tip": "PIF housing developer. $120B+ portfolio. PMWeb award-winning but ERP integration gap structural at multi-region scale.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
-        "sale": 8,
-        "saleAmt": 700,
+        "sale": 19,
+        "saleAmt": 245,
         "consPct": 55,
         "techPct": 45,
-        "consAmt": 385,
-        "techAmt": 315,
-        "delStart": 10,
-        "delEnd": 15,
-        "dur": 6,
+        "consAmt": 135,
+        "techAmt": 110,
+        "delStart": 20,
+        "delEnd": 31,
+        "dur": 12,
         "ret": {
-          "signed": 17,
-          "rate": 35,
-          "visStart": 18,
-          "visEnd": 36,
+          "signed": 22,
+          "rate": 2,
+          "visStart": 23,
+          "visEnd": 46,
           "consPct": 55,
           "techPct": 45,
-          "cpm": 19,
-          "tpm": 16,
-          "saleAmt": 665,
-          "consSale": 361,
-          "techSale": 304
+          "cpm": 1,
+          "tpm": 1,
+          "saleAmt": 40,
+          "consSale": 24,
+          "techSale": 24
         }
       },
       "engagements": [
-        {
-          "type": "CP",
-          "saleMonth": 17,
-          "duration": 6,
-          "grossK": 50,
-          "prob": 0.8
-        },
-        {
-          "type": "A",
-          "saleMonth": 19,
-          "duration": 12,
-          "grossK": 700,
-          "prob": 0.35
-        },
-        {
-          "type": "R",
-          "saleMonth": 22,
-          "duration": 24,
-          "grossK": 100,
-          "prob": 0.4
-        },
-        {
-          "type": "S",
-          "saleMonth": 23,
-          "duration": 9,
-          "grossK": 300,
-          "prob": 0.25
-        }
+        { "type": "CP", "saleMonth": 17, "duration": 6,  "grossK": 50,  "prob": 0.8  },
+        { "type": "A",  "saleMonth": 19, "duration": 12, "grossK": 700, "prob": 0.35, "isAnchor": true },
+        { "type": "R",  "saleMonth": 22, "duration": 24, "grossK": 100, "prob": 0.4  },
+        { "type": "S",  "saleMonth": 23, "duration": 9,  "grossK": 300, "prob": 0.25 }
       ]
     },
     {
@@ -330,67 +222,39 @@
       "phase": "Phase 2",
       "type": "ivan",
       "region": "KSA",
-      "tip": "$38B \u00b7 17.2km\u00b2 \u00b7 2027 opening. Seven warm contacts. Parsons PMO. Digital Twin & iCCC mandates open.",
+      "tip": "$38B · 17.2km² · 2027 opening. Seven warm contacts. Parsons PMO. Digital Twin & iCCC mandates open.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
-        "sale": 9,
-        "saleAmt": 700,
+        "sale": 15,
+        "saleAmt": 360,
         "consPct": 50,
         "techPct": 50,
-        "consAmt": 350,
-        "techAmt": 350,
-        "delStart": 11,
-        "delEnd": 18,
-        "dur": 8,
+        "consAmt": 180,
+        "techAmt": 180,
+        "delStart": 16,
+        "delEnd": 27,
+        "dur": 12,
         "ret": {
-          "signed": 20,
-          "rate": 35,
-          "visStart": 21,
-          "visEnd": 36,
+          "signed": 19,
+          "rate": 3,
+          "visStart": 20,
+          "visEnd": 43,
           "consPct": 50,
           "techPct": 50,
-          "cpm": 18,
-          "tpm": 17,
-          "saleAmt": 560,
-          "consSale": 288,
-          "techSale": 272
+          "cpm": 2,
+          "tpm": 1,
+          "saleAmt": 70,
+          "consSale": 48,
+          "techSale": 24
         }
       },
       "engagements": [
-        {
-          "type": "CP",
-          "saleMonth": 13,
-          "duration": 6,
-          "grossK": 71,
-          "prob": 0.75
-        },
-        {
-          "type": "A",
-          "saleMonth": 15,
-          "duration": 12,
-          "grossK": 900,
-          "prob": 0.4
-        },
-        {
-          "type": "S",
-          "saleMonth": 20,
-          "duration": 9,
-          "grossK": 400,
-          "prob": 0.25
-        },
-        {
-          "type": "R",
-          "saleMonth": 19,
-          "duration": 24,
-          "grossK": 140,
-          "prob": 0.5
-        },
-        {
-          "type": "RR",
-          "saleMonth": 31,
-          "duration": 12,
-          "grossK": 100,
-          "prob": 0.5
-        }
+        { "type": "CP", "saleMonth": 13, "duration": 6,  "grossK": 71,  "prob": 0.75 },
+        { "type": "A",  "saleMonth": 15, "duration": 12, "grossK": 900, "prob": 0.4,  "isAnchor": true },
+        { "type": "R",  "saleMonth": 19, "duration": 24, "grossK": 140, "prob": 0.5  },
+        { "type": "S",  "saleMonth": 20, "duration": 9,  "grossK": 400, "prob": 0.25 },
+        { "type": "RR", "saleMonth": 31, "duration": 12, "grossK": 100, "prob": 0.5  }
       ]
     },
     {
@@ -400,67 +264,38 @@
       "type": "ey",
       "region": "KSA",
       "tip": "$63B UNESCO heritage programme. Mace Consult sitewide PMC. $1.5B Arena Block awarded June 2025.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
         "sale": 13,
-        "saleAmt": 700,
+        "saleAmt": 400,
         "consPct": 70,
         "techPct": 30,
-        "consAmt": 490,
-        "techAmt": 210,
+        "consAmt": 280,
+        "techAmt": 120,
         "delStart": 14,
-        "delEnd": 21,
-        "dur": 8,
+        "delEnd": 25,
+        "dur": 12,
         "ret": {
-          "signed": 23,
-          "rate": 35,
-          "visStart": 24,
-          "visEnd": 36,
+          "signed": 20,
+          "rate": 3,
+          "visStart": 21,
+          "visEnd": 44,
           "consPct": 70,
           "techPct": 30,
-          "cpm": 25,
-          "tpm": 10,
-          "saleAmt": 455,
-          "consSale": 325,
-          "techSale": 130
+          "cpm": 2,
+          "tpm": 1,
+          "saleAmt": 70,
+          "consSale": 48,
+          "techSale": 24
         }
       },
       "engagements": [
-        {
-          "type": "A",
-          "saleMonth": 13,
-          "duration": 12,
-          "grossK": 1000,
-          "prob": 0.4
-        },
-        {
-          "type": "A",
-          "saleMonth": 26,
-          "duration": 12,
-          "grossK": 550,
-          "prob": 0.35,
-          "isY3Origination": true
-        },
-        {
-          "type": "S",
-          "saleMonth": 16,
-          "duration": 9,
-          "grossK": 400,
-          "prob": 0.3
-        },
-        {
-          "type": "S",
-          "saleMonth": 28,
-          "duration": 6,
-          "grossK": 200,
-          "prob": 0.25
-        },
-        {
-          "type": "R",
-          "saleMonth": 20,
-          "duration": 24,
-          "grossK": 140,
-          "prob": 0.5
-        }
+        { "type": "A",  "saleMonth": 13, "duration": 12, "grossK": 1000, "prob": 0.4,  "isAnchor": true },
+        { "type": "S",  "saleMonth": 16, "duration": 9,  "grossK": 400,  "prob": 0.3  },
+        { "type": "R",  "saleMonth": 20, "duration": 24, "grossK": 140,  "prob": 0.5  },
+        { "type": "A",  "saleMonth": 26, "duration": 12, "grossK": 550,  "prob": 0.35, "isY3Origination": true },
+        { "type": "S",  "saleMonth": 28, "duration": 6,  "grossK": 200,  "prob": 0.25, "isY3Origination": true }
       ]
     },
     {
@@ -469,62 +304,40 @@
       "phase": "Phase 2",
       "type": "ey",
       "region": "KSA",
-      "tip": "$30B \u00b7 57km\u00b2 \u00b7 3 PMCs simultaneously: Mace, Bechtel, Parsons. Hard deadlines: Expo 2030 + FIFA 2034.",
+      "tip": "$30B · 57km² · 3 PMCs simultaneously: Mace, Bechtel, Parsons. Hard deadlines: Expo 2030 + FIFA 2034.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
-        "sale": 13,
-        "saleAmt": 1100,
+        "sale": 17,
+        "saleAmt": 350,
         "consPct": 55,
         "techPct": 45,
-        "consAmt": 605,
-        "techAmt": 495,
-        "delStart": 15,
-        "delEnd": 24,
-        "dur": 10
+        "consAmt": 193,
+        "techAmt": 157,
+        "delStart": 18,
+        "delEnd": 29,
+        "dur": 12,
+        "ret": {
+          "signed": 21,
+          "rate": 3,
+          "visStart": 22,
+          "visEnd": 45,
+          "consPct": 55,
+          "techPct": 45,
+          "cpm": 2,
+          "tpm": 1,
+          "saleAmt": 80,
+          "consSale": 48,
+          "techSale": 24
+        }
       },
       "engagements": [
-        {
-          "type": "CP",
-          "saleMonth": 15,
-          "duration": 6,
-          "grossK": 71,
-          "prob": 0.7
-        },
-        {
-          "type": "A",
-          "saleMonth": 17,
-          "duration": 12,
-          "grossK": 1000,
-          "prob": 0.35
-        },
-        {
-          "type": "R",
-          "saleMonth": 21,
-          "duration": 24,
-          "grossK": 160,
-          "prob": 0.5
-        },
-        {
-          "type": "S",
-          "saleMonth": 22,
-          "duration": 9,
-          "grossK": 400,
-          "prob": 0.25
-        },
-        {
-          "type": "A",
-          "saleMonth": 30,
-          "duration": 15,
-          "grossK": 700,
-          "prob": 0.3,
-          "isY3Origination": true
-        },
-        {
-          "type": "RR",
-          "saleMonth": 33,
-          "duration": 12,
-          "grossK": 120,
-          "prob": 0.5
-        }
+        { "type": "CP", "saleMonth": 15, "duration": 6,  "grossK": 71,  "prob": 0.7  },
+        { "type": "A",  "saleMonth": 17, "duration": 12, "grossK": 1000, "prob": 0.35, "isAnchor": true },
+        { "type": "R",  "saleMonth": 21, "duration": 24, "grossK": 160,  "prob": 0.5  },
+        { "type": "S",  "saleMonth": 22, "duration": 9,  "grossK": 400,  "prob": 0.25 },
+        { "type": "A",  "saleMonth": 30, "duration": 15, "grossK": 700,  "prob": 0.3,  "isY3Origination": true },
+        { "type": "RR", "saleMonth": 33, "duration": 12, "grossK": 120,  "prob": 0.5  }
       ]
     },
     {
@@ -533,48 +346,38 @@
       "phase": "Phase 3",
       "type": "ey",
       "region": "KSA",
-      "tip": "$40B+ annual capex. Worley GES+ contract. SAP\u2194PMIS cost reconciliation structural problem. Highest single fee in portfolio.",
+      "tip": "$40B+ annual capex. Worley GES+ contract. SAP↔PMIS cost reconciliation structural problem. Highest single fee in portfolio.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
-        "sale": 15,
-        "saleAmt": 900,
+        "sale": 25,
+        "saleAmt": 360,
         "consPct": 35,
         "techPct": 65,
-        "consAmt": 315,
-        "techAmt": 585,
-        "delStart": 18,
-        "delEnd": 26,
-        "dur": 9
+        "consAmt": 126,
+        "techAmt": 234,
+        "delStart": 26,
+        "delEnd": 37,
+        "dur": 12,
+        "ret": {
+          "signed": 28,
+          "rate": 2,
+          "visStart": 29,
+          "visEnd": 52,
+          "consPct": 35,
+          "techPct": 65,
+          "cpm": 1,
+          "tpm": 1,
+          "saleAmt": 48,
+          "consSale": 24,
+          "techSale": 24
+        }
       },
       "engagements": [
-        {
-          "type": "CP",
-          "saleMonth": 26,
-          "duration": 6,
-          "grossK": 100,
-          "prob": 0.6
-        },
-        {
-          "type": "A",
-          "saleMonth": 25,
-          "duration": 12,
-          "grossK": 1200,
-          "prob": 0.3,
-          "isY3Origination": true
-        },
-        {
-          "type": "R",
-          "saleMonth": 28,
-          "duration": 24,
-          "grossK": 160,
-          "prob": 0.3
-        },
-        {
-          "type": "S",
-          "saleMonth": 29,
-          "duration": 9,
-          "grossK": 500,
-          "prob": 0.2
-        }
+        { "type": "A",  "saleMonth": 25, "duration": 12, "grossK": 1200, "prob": 0.3,  "isY3Origination": true, "isAnchor": true },
+        { "type": "CP", "saleMonth": 26, "duration": 6,  "grossK": 100,  "prob": 0.6  },
+        { "type": "R",  "saleMonth": 28, "duration": 24, "grossK": 160,  "prob": 0.3  },
+        { "type": "S",  "saleMonth": 29, "duration": 9,  "grossK": 500,  "prob": 0.2  }
       ]
     },
     {
@@ -583,49 +386,25 @@
       "phase": "Phase 3",
       "type": "ivan",
       "region": "KSA",
-      "tip": "$38B \u00b7 3 PMCs (Bechtel/Turner/AECOM). Contains FIFA 2034 stadium. Naver Cloud MoU.",
+      "tip": "$38B · 3 PMCs (Bechtel/Turner/AECOM). Contains FIFA 2034 stadium. Naver Cloud MoU.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
-        "sale": 16,
-        "saleAmt": 700,
+        "sale": 27,
+        "saleAmt": 280,
         "consPct": 55,
         "techPct": 45,
-        "consAmt": 385,
-        "techAmt": 315,
-        "delStart": 18,
-        "delEnd": 24,
-        "dur": 7
+        "consAmt": 154,
+        "techAmt": 126,
+        "delStart": 28,
+        "delEnd": 39,
+        "dur": 12
       },
       "engagements": [
-        {
-          "type": "CP",
-          "saleMonth": 25,
-          "duration": 6,
-          "grossK": 100,
-          "prob": 0.7
-        },
-        {
-          "type": "A",
-          "saleMonth": 27,
-          "duration": 12,
-          "grossK": 700,
-          "prob": 0.4,
-          "isY3Origination": true
-        },
-        {
-          "type": "S",
-          "saleMonth": 29,
-          "duration": 9,
-          "grossK": 200,
-          "prob": 0.25
-        },
-        {
-          "type": "A",
-          "saleMonth": 32,
-          "duration": 12,
-          "grossK": 550,
-          "prob": 0.35,
-          "isY3Origination": true
-        }
+        { "type": "CP", "saleMonth": 25, "duration": 6,  "grossK": 100, "prob": 0.7  },
+        { "type": "A",  "saleMonth": 27, "duration": 12, "grossK": 700, "prob": 0.4,  "isY3Origination": true, "isAnchor": true },
+        { "type": "S",  "saleMonth": 29, "duration": 9,  "grossK": 200, "prob": 0.25 },
+        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 550, "prob": 0.35, "isY3Origination": true }
       ]
     },
     {
@@ -635,53 +414,38 @@
       "type": "ivan",
       "region": "UAE",
       "tip": "30+ facilities. $26.2B financing. Stargate UAE partner. NexOps/Presight AI launched Feb 2026.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
-        "sale": 18,
-        "saleAmt": 450,
+        "sale": 14,
+        "saleAmt": 270,
         "consPct": 50,
         "techPct": 50,
-        "consAmt": 225,
-        "techAmt": 225,
-        "delStart": 19,
-        "delEnd": 24,
-        "dur": 6
+        "consAmt": 135,
+        "techAmt": 135,
+        "delStart": 15,
+        "delEnd": 26,
+        "dur": 12,
+        "ret": {
+          "signed": 16,
+          "rate": 2,
+          "visStart": 17,
+          "visEnd": 40,
+          "consPct": 50,
+          "techPct": 50,
+          "cpm": 1,
+          "tpm": 1,
+          "saleAmt": 50,
+          "consSale": 24,
+          "techSale": 24
+        }
       },
       "engagements": [
-        {
-          "type": "CP",
-          "saleMonth": 13,
-          "duration": 6,
-          "grossK": 71,
-          "prob": 0.7
-        },
-        {
-          "type": "A",
-          "saleMonth": 14,
-          "duration": 12,
-          "grossK": 600,
-          "prob": 0.45
-        },
-        {
-          "type": "R",
-          "saleMonth": 16,
-          "duration": 24,
-          "grossK": 100,
-          "prob": 0.5
-        },
-        {
-          "type": "S",
-          "saleMonth": 18,
-          "duration": 9,
-          "grossK": 280,
-          "prob": 0.25
-        },
-        {
-          "type": "A",
-          "saleMonth": 22,
-          "duration": 12,
-          "grossK": 400,
-          "prob": 0.35
-        }
+        { "type": "CP", "saleMonth": 13, "duration": 6,  "grossK": 71,  "prob": 0.7  },
+        { "type": "A",  "saleMonth": 14, "duration": 12, "grossK": 600, "prob": 0.45, "isAnchor": true },
+        { "type": "R",  "saleMonth": 16, "duration": 24, "grossK": 100, "prob": 0.5  },
+        { "type": "S",  "saleMonth": 18, "duration": 9,  "grossK": 280, "prob": 0.25 },
+        { "type": "A",  "saleMonth": 22, "duration": 12, "grossK": 400, "prob": 0.35 }
       ]
     },
     {
@@ -690,48 +454,38 @@
       "phase": "Phase 3",
       "type": "ivan",
       "region": "KSA",
-      "tip": "IOC Operating Model delivered \u2014 warm relationships. PIF spending cuts heaviest here. Phase 1 resorts operational.",
+      "tip": "IOC Operating Model delivered — warm relationships. PIF spending cuts heaviest here. Phase 1 resorts operational.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
-        "sale": 20,
-        "saleAmt": 550,
+        "sale": 26,
+        "saleAmt": 245,
         "consPct": 70,
         "techPct": 30,
-        "consAmt": 385,
-        "techAmt": 165,
-        "delStart": 22,
-        "delEnd": 26,
-        "dur": 5
+        "consAmt": 172,
+        "techAmt": 73,
+        "delStart": 27,
+        "delEnd": 38,
+        "dur": 12,
+        "ret": {
+          "signed": 29,
+          "rate": 2,
+          "visStart": 30,
+          "visEnd": 53,
+          "consPct": 70,
+          "techPct": 30,
+          "cpm": 1,
+          "tpm": 1,
+          "saleAmt": 42,
+          "consSale": 24,
+          "techSale": 24
+        }
       },
       "engagements": [
-        {
-          "type": "CP",
-          "saleMonth": 27,
-          "duration": 6,
-          "grossK": 71,
-          "prob": 0.6
-        },
-        {
-          "type": "A",
-          "saleMonth": 26,
-          "duration": 12,
-          "grossK": 700,
-          "prob": 0.35,
-          "isY3Origination": true
-        },
-        {
-          "type": "R",
-          "saleMonth": 29,
-          "duration": 24,
-          "grossK": 120,
-          "prob": 0.35
-        },
-        {
-          "type": "S",
-          "saleMonth": 30,
-          "duration": 9,
-          "grossK": 300,
-          "prob": 0.25
-        }
+        { "type": "CP", "saleMonth": 27, "duration": 6,  "grossK": 71,  "prob": 0.6  },
+        { "type": "A",  "saleMonth": 26, "duration": 12, "grossK": 700, "prob": 0.35, "isY3Origination": true, "isAnchor": true },
+        { "type": "R",  "saleMonth": 29, "duration": 24, "grossK": 120, "prob": 0.35 },
+        { "type": "S",  "saleMonth": 30, "duration": 9,  "grossK": 300, "prob": 0.25 }
       ]
     },
     {
@@ -741,62 +495,39 @@
       "type": "ivan",
       "region": "UAE",
       "tip": "Abu Dhabi integrated utilities. AED 75B investment pipeline to 2030. ~27GW new capacity. Multi-segment capital portfolio across generation, water, T&D.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
-        "sale": 25,
-        "saleAmt": 750,
+        "sale": 27,
+        "saleAmt": 320,
         "consPct": 40,
         "techPct": 60,
-        "consAmt": 300,
-        "techAmt": 450,
-        "delStart": 27,
-        "delEnd": 33,
-        "dur": 7
+        "consAmt": 128,
+        "techAmt": 192,
+        "delStart": 28,
+        "delEnd": 45,
+        "dur": 18,
+        "ret": {
+          "signed": 28,
+          "rate": 2,
+          "visStart": 29,
+          "visEnd": 52,
+          "consPct": 40,
+          "techPct": 60,
+          "cpm": 1,
+          "tpm": 1,
+          "saleAmt": 45,
+          "consSale": 24,
+          "techSale": 24
+        }
       },
       "engagements": [
-        {
-          "type": "CP",
-          "saleMonth": 26,
-          "duration": 6,
-          "grossK": 71,
-          "prob": 0.65
-        },
-        {
-          "type": "A",
-          "saleMonth": 27,
-          "duration": 18,
-          "grossK": 800,
-          "prob": 0.4,
-          "isY3Origination": true
-        },
-        {
-          "type": "R",
-          "saleMonth": 28,
-          "duration": 24,
-          "grossK": 100,
-          "prob": 0.45
-        },
-        {
-          "type": "S",
-          "saleMonth": 29,
-          "duration": 12,
-          "grossK": 350,
-          "prob": 0.3
-        },
-        {
-          "type": "A",
-          "saleMonth": 33,
-          "duration": 12,
-          "grossK": 500,
-          "prob": 0.35,
-          "isY3Origination": true
-        },
-        {
-          "type": "RR",
-          "saleMonth": 34,
-          "duration": 12,
-          "grossK": 80,
-          "prob": 0.4
-        }
+        { "type": "CP", "saleMonth": 26, "duration": 6,  "grossK": 71,  "prob": 0.65 },
+        { "type": "A",  "saleMonth": 27, "duration": 18, "grossK": 800, "prob": 0.4,  "isY3Origination": true, "isAnchor": true },
+        { "type": "R",  "saleMonth": 28, "duration": 24, "grossK": 100, "prob": 0.45 },
+        { "type": "S",  "saleMonth": 29, "duration": 12, "grossK": 350, "prob": 0.3  },
+        { "type": "A",  "saleMonth": 33, "duration": 12, "grossK": 500, "prob": 0.35, "isY3Origination": true },
+        { "type": "RR", "saleMonth": 34, "duration": 12, "grossK": 80,  "prob": 0.4  }
       ]
     },
     {
@@ -805,77 +536,42 @@
       "phase": "Phase 3",
       "type": "ey",
       "region": "UAE",
-      "tip": "Aldar \u00b7 Miral \u00b7 MODON. EY audit relationships across UAE master developer ecosystem. Multi-asset Oracle PMIS governance.",
+      "tip": "Aldar · Miral · MODON. EY audit relationships across UAE master developer ecosystem. Multi-asset Oracle PMIS governance.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
         "sale": 26,
-        "saleAmt": 700,
+        "saleAmt": 400,
         "consPct": 55,
         "techPct": 45,
-        "consAmt": 385,
-        "techAmt": 315,
-        "delStart": 28,
-        "delEnd": 36,
-        "dur": 9
+        "consAmt": 220,
+        "techAmt": 180,
+        "delStart": 27,
+        "delEnd": 41,
+        "dur": 15,
+        "ret": {
+          "signed": 27,
+          "rate": 3,
+          "visStart": 28,
+          "visEnd": 51,
+          "consPct": 55,
+          "techPct": 45,
+          "cpm": 2,
+          "tpm": 1,
+          "saleAmt": 80,
+          "consSale": 48,
+          "techSale": 24
+        }
       },
       "engagements": [
-        {
-          "type": "CP",
-          "saleMonth": 27,
-          "duration": 6,
-          "grossK": 71,
-          "prob": 0.7
-        },
-        {
-          "type": "CP",
-          "saleMonth": 30,
-          "duration": 6,
-          "grossK": 57,
-          "prob": 0.7
-        },
-        {
-          "type": "A",
-          "saleMonth": 26,
-          "duration": 15,
-          "grossK": 1000,
-          "prob": 0.4,
-          "isY3Origination": true
-        },
-        {
-          "type": "S",
-          "saleMonth": 28,
-          "duration": 9,
-          "grossK": 400,
-          "prob": 0.3
-        },
-        {
-          "type": "R",
-          "saleMonth": 27,
-          "duration": 24,
-          "grossK": 160,
-          "prob": 0.5
-        },
-        {
-          "type": "A",
-          "saleMonth": 32,
-          "duration": 12,
-          "grossK": 700,
-          "prob": 0.35,
-          "isY3Origination": true
-        },
-        {
-          "type": "S",
-          "saleMonth": 33,
-          "duration": 9,
-          "grossK": 300,
-          "prob": 0.25
-        },
-        {
-          "type": "RR",
-          "saleMonth": 34,
-          "duration": 24,
-          "grossK": 140,
-          "prob": 0.45
-        }
+        { "type": "CP", "saleMonth": 27, "duration": 6,  "grossK": 71,  "prob": 0.7  },
+        { "type": "CP", "saleMonth": 30, "duration": 6,  "grossK": 57,  "prob": 0.7  },
+        { "type": "A",  "saleMonth": 26, "duration": 15, "grossK": 1000, "prob": 0.4, "isY3Origination": true, "isAnchor": true },
+        { "type": "S",  "saleMonth": 28, "duration": 9,  "grossK": 400, "prob": 0.3  },
+        { "type": "R",  "saleMonth": 27, "duration": 24, "grossK": 160, "prob": 0.5  },
+        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 700, "prob": 0.35, "isY3Origination": true },
+        { "type": "S",  "saleMonth": 33, "duration": 9,  "grossK": 300, "prob": 0.25 },
+        { "type": "RR", "saleMonth": 34, "duration": 24, "grossK": 140, "prob": 0.45 }
       ]
     },
     {
@@ -884,70 +580,41 @@
       "phase": "Phase 3",
       "type": "ivan",
       "region": "Qatar",
-      "tip": "Qatar Smart City Programme. Incumbent delivery context \u2014 post-deployment expansion and iCCC advisory re-engagement.",
+      "tip": "Qatar Smart City Programme. Incumbent delivery context — post-deployment expansion and iCCC advisory re-engagement.",
+      "overview": "",
+      "contacts": "",
       "gantt": {
-        "sale": 27,
-        "saleAmt": 550,
+        "sale": 25,
+        "saleAmt": 315,
         "consPct": 50,
         "techPct": 50,
-        "consAmt": 275,
-        "techAmt": 275,
-        "delStart": 29,
-        "delEnd": 36,
-        "dur": 8
+        "consAmt": 158,
+        "techAmt": 157,
+        "delStart": 26,
+        "delEnd": 43,
+        "dur": 18,
+        "ret": {
+          "signed": 28,
+          "rate": 2,
+          "visStart": 29,
+          "visEnd": 52,
+          "consPct": 50,
+          "techPct": 50,
+          "cpm": 1,
+          "tpm": 1,
+          "saleAmt": 54,
+          "consSale": 24,
+          "techSale": 24
+        }
       },
       "engagements": [
-        {
-          "type": "CP",
-          "saleMonth": 26,
-          "duration": 6,
-          "grossK": 57,
-          "prob": 0.65
-        },
-        {
-          "type": "A",
-          "saleMonth": 25,
-          "duration": 18,
-          "grossK": 700,
-          "prob": 0.45,
-          "isY3Origination": true
-        },
-        {
-          "type": "R",
-          "saleMonth": 28,
-          "duration": 24,
-          "grossK": 120,
-          "prob": 0.45
-        },
-        {
-          "type": "S",
-          "saleMonth": 27,
-          "duration": 12,
-          "grossK": 350,
-          "prob": 0.3
-        },
-        {
-          "type": "A",
-          "saleMonth": 32,
-          "duration": 12,
-          "grossK": 500,
-          "prob": 0.4,
-          "isY3Origination": true
-        },
-        {
-          "type": "S",
-          "saleMonth": 33,
-          "duration": 9,
-          "grossK": 250,
-          "prob": 0.25
-        },
-        {
-          "type": "RR",
-          "saleMonth": 34,
-          "duration": 12,
-          "grossK": 80,
-          "prob": 0.4
-        }
+        { "type": "CP", "saleMonth": 26, "duration": 6,  "grossK": 57,  "prob": 0.65 },
+        { "type": "A",  "saleMonth": 25, "duration": 18, "grossK": 700, "prob": 0.45, "isY3Origination": true, "isAnchor": true },
+        { "type": "R",  "saleMonth": 28, "duration": 24, "grossK": 120, "prob": 0.45 },
+        { "type": "S",  "saleMonth": 27, "duration": 12, "grossK": 350, "prob": 0.3  },
+        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 500, "prob": 0.4,  "isY3Origination": true },
+        { "type": "S",  "saleMonth": 33, "duration": 9,  "grossK": 250, "prob": 0.25 },
+        { "type": "RR", "saleMonth": 34, "duration": 12, "grossK": 80,  "prob": 0.4  }
       ]
     }
   ]
