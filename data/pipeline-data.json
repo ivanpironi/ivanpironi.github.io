@@ -46,12 +46,12 @@
         }
       },
       "engagements": [
-        { "type": "A",  "saleMonth": 3,  "duration": 18, "grossK": 1400, "prob": 0.5,  "isAnchor": true, "title": "Phase 3 Programme Governance Reset", "description": "Multi-contractor portfolio governance redesign as Qiddiya transitions to city-scale delivery. EPS baseline reset, schedule integrity framework for the 2030 Expo deadline." },
-        { "type": "A",  "saleMonth": 16, "duration": 12, "grossK": 700,  "prob": 0.5,  "title": "Digital Twin Operationalisation", "description": "Move from Omniverse POC to live operational twin — use case definition, IoT data governance, asset information requirements for FM handover. Ivan is the only advisor with live Omniverse deployment on this programme." },
-        { "type": "S",  "saleMonth": 6,  "duration": 12, "grossK": 500,  "prob": 0.3,  "title": "", "description": "" },
-        { "type": "S",  "saleMonth": 20, "duration": 9,  "grossK": 333,  "prob": 0.3,  "title": "", "description": "" },
-        { "type": "R",  "saleMonth": 13, "duration": 24, "grossK": 500,  "prob": 0.5,  "title": "PIF ROI Reporting & Assurance", "description": "With PIF mandating 20% spending cuts, QIC leadership needs independent validation of EPC-reported delivery data for PIF board reporting. EY's independence from all EPCs is the structural credential." },
-        { "type": "RR", "saleMonth": 25, "duration": 12, "grossK": 100,  "prob": 0.5,  "title": "", "description": "" }
+        { "type": "A",  "saleMonth": 3,  "duration": 18, "grossK": 1400, "prob": 0.5,  "isAnchor": true, "oppTitle": "Phase 3 Programme Governance Reset", "oppDescription": "Multi-contractor portfolio governance redesign as Qiddiya transitions to city-scale delivery. EPS baseline reset, schedule integrity framework for the 2030 Expo deadline." },
+        { "type": "A",  "saleMonth": 16, "duration": 12, "grossK": 700,  "prob": 0.5,  "oppTitle": "Digital Twin Operationalisation", "oppDescription": "Move from Omniverse POC to live operational twin — use case definition, IoT data governance, asset information requirements for FM handover. Ivan is the only advisor with live Omniverse deployment on this programme." },
+        { "type": "S",  "saleMonth": 6,  "duration": 12, "grossK": 500,  "prob": 0.3,  "oppTitle": "", "oppDescription": "" },
+        { "type": "S",  "saleMonth": 20, "duration": 9,  "grossK": 333,  "prob": 0.3,  "oppTitle": "", "oppDescription": "" },
+        { "type": "R",  "saleMonth": 13, "duration": 24, "grossK": 500,  "prob": 0.5,  "oppTitle": "PIF ROI Reporting & Assurance", "oppDescription": "With PIF mandating 20% spending cuts, QIC leadership needs independent validation of EPC-reported delivery data for PIF board reporting. EY's independence from all EPCs is the structural credential." },
+        { "type": "RR", "saleMonth": 25, "duration": 12, "grossK": 100,  "prob": 0.5,  "oppTitle": "", "oppDescription": "" }
       ]
     },
     {
@@ -88,10 +88,10 @@
         }
       },
       "engagements": [
-        { "type": "CP", "saleMonth": 4,  "duration": 4,  "grossK": 60,  "prob": 0.75, "title": "Owner-Side Schedule Health Assessment", "description": "SAR relies on EPC-submitted P6 schedules with no confirmed owner-side baseline governance. Independent health assessment across Landbridge, Qiddiya link, and network expansion." },
-        { "type": "A",  "saleMonth": 6,  "duration": 9,  "grossK": 350, "prob": 0.45, "isAnchor": true, "title": "EPMO Design & Programme Controls Framework", "description": "SAR is managing multiple concurrent capital programmes with no unified owner-side EPMO producing portfolio intelligence. Design the EPMO operating model, controls framework, and reporting architecture." },
-        { "type": "S",  "saleMonth": 10, "duration": 6,  "grossK": 200, "prob": 0.3,  "title": "Oracle OAC Capital Delivery Integration", "description": "OAC deployed for finance — capital project delivery data not integrated. The gap between financial reporting and programme delivery means SAR cannot present a coherent ROI picture to PIF." },
-        { "type": "R",  "saleMonth": 13, "duration": 24, "grossK": 100, "prob": 0.5,  "title": "Smart Rail Digital Twin Strategy", "description": "SAR has publicly confirmed Digital Twin and 5G monitoring ambitions for track infrastructure. Long-life rail assets create the strongest Digital Twin business case of any infrastructure class." }
+        { "type": "CP", "saleMonth": 4,  "duration": 4,  "grossK": 60,  "prob": 0.75, "oppTitle": "Owner-Side Schedule Health Assessment", "oppDescription": "SAR relies on EPC-submitted P6 schedules with no confirmed owner-side baseline governance. Independent health assessment across Landbridge, Qiddiya link, and network expansion." },
+        { "type": "A",  "saleMonth": 6,  "duration": 9,  "grossK": 350, "prob": 0.45, "isAnchor": true, "oppTitle": "EPMO Design & Programme Controls Framework", "oppDescription": "SAR is managing multiple concurrent capital programmes with no unified owner-side EPMO producing portfolio intelligence. Design the EPMO operating model, controls framework, and reporting architecture." },
+        { "type": "S",  "saleMonth": 10, "duration": 6,  "grossK": 200, "prob": 0.3,  "oppTitle": "Oracle OAC Capital Delivery Integration", "oppDescription": "OAC deployed for finance — capital project delivery data not integrated. The gap between financial reporting and programme delivery means SAR cannot present a coherent ROI picture to PIF." },
+        { "type": "R",  "saleMonth": 13, "duration": 24, "grossK": 100, "prob": 0.5,  "oppTitle": "Smart Rail Digital Twin Strategy", "oppDescription": "SAR has publicly confirmed Digital Twin and 5G monitoring ambitions for track infrastructure. Long-life rail assets create the strongest Digital Twin business case of any infrastructure class." }
       ]
     },
     {
@@ -128,11 +128,11 @@
         }
       },
       "engagements": [
-        { "type": "CP", "saleMonth": 5,  "duration": 6,  "grossK": 80,  "prob": 0.8,  "title": "Owner-Side Programme Assurance — Entry Brief", "description": "Concept proposal scoping EY's role as independent programme adviser above Bechtel PMC for Expo 2030 Riyadh." },
-        { "type": "A",  "saleMonth": 8,  "duration": 12, "grossK": 900, "prob": 0.5,  "isAnchor": true, "title": "Owner-Side Programme Assurance Above Bechtel", "description": "ERC receives all construction intelligence through Bechtel. Independent advisory: is the delivery trajectory credible for Oct 2030? Are 226 pavilion packages converging on schedule?" },
-        { "type": "S",  "saleMonth": 12, "duration": 9,  "grossK": 400, "prob": 0.3,  "title": "PMIS Strategy — 246-Entity Programme", "description": "PMIS architecture managing owner-delivered infrastructure and 246 participant-delivered pavilions in a single programme intelligence framework." },
-        { "type": "R",  "saleMonth": 15, "duration": 24, "grossK": 160, "prob": 0.5,  "title": "iCCC & Smart Expo Strategy", "description": "Integrated Command & Control for 42M visitors across 6km². Ivan's TASMU and KSPF iCCC experience is the direct credential." },
-        { "type": "RR", "saleMonth": 27, "duration": 12, "grossK": 120, "prob": 0.5,  "title": "Legacy Transition — Global Village Governance", "description": "Post-Expo, 6km² becomes Global Village permanent district. Full-lifecycle advisory: asset information management, FM data governance, Digital Twin continuity." }
+        { "type": "CP", "saleMonth": 5,  "duration": 6,  "grossK": 80,  "prob": 0.8,  "oppTitle": "Owner-Side Programme Assurance — Entry Brief", "oppDescription": "Concept proposal scoping EY's role as independent programme adviser above Bechtel PMC for Expo 2030 Riyadh." },
+        { "type": "A",  "saleMonth": 8,  "duration": 12, "grossK": 900, "prob": 0.5,  "isAnchor": true, "oppTitle": "Owner-Side Programme Assurance Above Bechtel", "oppDescription": "ERC receives all construction intelligence through Bechtel. Independent advisory: is the delivery trajectory credible for Oct 2030? Are 226 pavilion packages converging on schedule?" },
+        { "type": "S",  "saleMonth": 12, "duration": 9,  "grossK": 400, "prob": 0.3,  "oppTitle": "PMIS Strategy — 246-Entity Programme", "oppDescription": "PMIS architecture managing owner-delivered infrastructure and 246 participant-delivered pavilions in a single programme intelligence framework." },
+        { "type": "R",  "saleMonth": 15, "duration": 24, "grossK": 160, "prob": 0.5,  "oppTitle": "iCCC & Smart Expo Strategy", "oppDescription": "Integrated Command & Control for 42M visitors across 6km². Ivan's TASMU and KSPF iCCC experience is the direct credential." },
+        { "type": "RR", "saleMonth": 27, "duration": 12, "grossK": 120, "prob": 0.5,  "oppTitle": "Legacy Transition — Global Village Governance", "oppDescription": "Post-Expo, 6km² becomes Global Village permanent district. Full-lifecycle advisory: asset information management, FM data governance, Digital Twin continuity." }
       ]
     },
     {
@@ -169,11 +169,11 @@
         }
       },
       "engagements": [
-        { "type": "CP", "saleMonth": 8,  "duration": 6,  "grossK": 100,  "prob": 0.8,  "title": "Multi-City Stadium Governance — Entry Brief", "description": "Concept proposal scoping owner-side programme governance across 15 FIFA 2034 stadium sites in 5 cities." },
-        { "type": "A",  "saleMonth": 10, "duration": 12, "grossK": 1200, "prob": 0.5,  "isAnchor": true, "title": "Multi-City Stadium Programme Governance", "description": "15 stadiums across 5 cities, each with a separate PMC or EPC — WCA34 needs a unified owner-side programme intelligence framework." },
-        { "type": "S",  "saleMonth": 14, "duration": 9,  "grossK": 400,  "prob": 0.3,  "title": "Smart Stadium & Digital Twin Strategy", "description": "WCA34 has committed to technology redefining how fans interact at matches. Smart stadium strategy, Digital Twin for venue operations, iCCC for tournament operations." },
-        { "type": "R",  "saleMonth": 18, "duration": 12, "grossK": 160,  "prob": 0.5,  "title": "FIFA Delivery Milestone Assurance", "description": "FIFA imposes formal delivery milestones and stadium certification requirements. Independent advisory: are 15 programmes on credible trajectories for the June 2034 tournament?" },
-        { "type": "A",  "saleMonth": 23, "duration": 15, "grossK": 900,  "prob": 0.4,  "title": "ISO 19650 Information Management — Portfolio", "description": "15 stadiums, 50+ organisations producing BIM models in different formats. Without ISO 19650 at portfolio level, WCA34 will receive disconnected asset data." }
+        { "type": "CP", "saleMonth": 8,  "duration": 6,  "grossK": 100,  "prob": 0.8,  "oppTitle": "Multi-City Stadium Governance — Entry Brief", "oppDescription": "Concept proposal scoping owner-side programme governance across 15 FIFA 2034 stadium sites in 5 cities." },
+        { "type": "A",  "saleMonth": 10, "duration": 12, "grossK": 1200, "prob": 0.5,  "isAnchor": true, "oppTitle": "Multi-City Stadium Programme Governance", "oppDescription": "15 stadiums across 5 cities, each with a separate PMC or EPC — WCA34 needs a unified owner-side programme intelligence framework." },
+        { "type": "S",  "saleMonth": 14, "duration": 9,  "grossK": 400,  "prob": 0.3,  "oppTitle": "Smart Stadium & Digital Twin Strategy", "oppDescription": "WCA34 has committed to technology redefining how fans interact at matches. Smart stadium strategy, Digital Twin for venue operations, iCCC for tournament operations." },
+        { "type": "R",  "saleMonth": 18, "duration": 12, "grossK": 160,  "prob": 0.5,  "oppTitle": "FIFA Delivery Milestone Assurance", "oppDescription": "FIFA imposes formal delivery milestones and stadium certification requirements. Independent advisory: are 15 programmes on credible trajectories for the June 2034 tournament?" },
+        { "type": "A",  "saleMonth": 23, "duration": 15, "grossK": 900,  "prob": 0.4,  "oppTitle": "ISO 19650 Information Management — Portfolio", "oppDescription": "15 stadiums, 50+ organisations producing BIM models in different formats. Without ISO 19650 at portfolio level, WCA34 will receive disconnected asset data." }
       ]
     },
     {
@@ -210,10 +210,10 @@
         }
       },
       "engagements": [
-        { "type": "CP", "saleMonth": 17, "duration": 6,  "grossK": 50,  "prob": 0.8,  "title": "EPMO Governance Redesign — Entry Brief", "description": "Concept proposal scoping EPMO governance redesign as ROSHN scales to 7+ active regions simultaneously." },
-        { "type": "A",  "saleMonth": 19, "duration": 12, "grossK": 700, "prob": 0.35, "isAnchor": true, "title": "Multi-Region EPMO Governance Architecture", "description": "As ROSHN scales to 7+ regions, the EPMO governance model needs redesign — decision rights, cost consolidation architecture, and contractor management." },
-        { "type": "R",  "saleMonth": 22, "duration": 24, "grossK": 100, "prob": 0.4,  "title": "PIF Delivery Assurance Retainer", "description": "With 20% PIF spending cuts mandated, ROSHN leadership needs ongoing independent programme assurance across 7+ regions." },
-        { "type": "S",  "saleMonth": 23, "duration": 9,  "grossK": 300, "prob": 0.25, "title": "SAP — PMWeb Integration Diagnostic", "description": "The ERP to PMWeb cost reconciliation gap is structural at portfolio scale. Ivan has solved this on Oracle at Qiddiya — the advisory is transferable." }
+        { "type": "CP", "saleMonth": 17, "duration": 6,  "grossK": 50,  "prob": 0.8,  "oppTitle": "EPMO Governance Redesign — Entry Brief", "oppDescription": "Concept proposal scoping EPMO governance redesign as ROSHN scales to 7+ active regions simultaneously." },
+        { "type": "A",  "saleMonth": 19, "duration": 12, "grossK": 700, "prob": 0.35, "isAnchor": true, "oppTitle": "Multi-Region EPMO Governance Architecture", "oppDescription": "As ROSHN scales to 7+ regions, the EPMO governance model needs redesign — decision rights, cost consolidation architecture, and contractor management." },
+        { "type": "R",  "saleMonth": 22, "duration": 24, "grossK": 100, "prob": 0.4,  "oppTitle": "PIF Delivery Assurance Retainer", "oppDescription": "With 20% PIF spending cuts mandated, ROSHN leadership needs ongoing independent programme assurance across 7+ regions." },
+        { "type": "S",  "saleMonth": 23, "duration": 9,  "grossK": 300, "prob": 0.25, "oppTitle": "SAP — PMWeb Integration Diagnostic", "oppDescription": "The ERP to PMWeb cost reconciliation gap is structural at portfolio scale. Ivan has solved this on Oracle at Qiddiya — the advisory is transferable." }
       ]
     },
     {
@@ -250,11 +250,11 @@
         }
       },
       "engagements": [
-        { "type": "CP", "saleMonth": 13, "duration": 6,  "grossK": 71,  "prob": 0.75, "title": "Programme Intelligence — Entry Brief", "description": "Concept proposal scoping owner-side programme intelligence mandate above Parsons PMO at King Salman Park Foundation." },
-        { "type": "A",  "saleMonth": 15, "duration": 12, "grossK": 900, "prob": 0.4,  "isAnchor": true, "title": "Owner-Side Programme Intelligence", "description": "Independent review of programme performance above Parsons' delivery reporting. Is the schedule data accurate? Are cost-to-complete figures defensible?" },
-        { "type": "R",  "saleMonth": 19, "duration": 24, "grossK": 140, "prob": 0.5,  "title": "iCCC Design & Smart City Integration", "description": "70,000 daily visitors projected. An Integrated Command & Control Centre is a mandatory operational requirement at this scale. Ivan's TASMU iCCC experience is the direct advisory credential." },
-        { "type": "S",  "saleMonth": 20, "duration": 9,  "grossK": 400, "prob": 0.25, "title": "Digital Twin Governance", "description": "CEO confirmed Digital Twin in active development. The governance layer — data architecture, CDE design, asset information requirements — is open. Ivan's Omniverse POC is the direct credential." },
-        { "type": "RR", "saleMonth": 31, "duration": 12, "grossK": 100, "prob": 0.5,  "title": "Construction-to-Operations Handover", "description": "With 2027 opening target, KSPF is approaching the handover phase. ISO 19650 asset information requirements, BIM-to-FM data governance, operational readiness advisory." }
+        { "type": "CP", "saleMonth": 13, "duration": 6,  "grossK": 71,  "prob": 0.75, "oppTitle": "Programme Intelligence — Entry Brief", "oppDescription": "Concept proposal scoping owner-side programme intelligence mandate above Parsons PMO at King Salman Park Foundation." },
+        { "type": "A",  "saleMonth": 15, "duration": 12, "grossK": 900, "prob": 0.4,  "isAnchor": true, "oppTitle": "Owner-Side Programme Intelligence", "oppDescription": "Independent review of programme performance above Parsons' delivery reporting. Is the schedule data accurate? Are cost-to-complete figures defensible?" },
+        { "type": "R",  "saleMonth": 19, "duration": 24, "grossK": 140, "prob": 0.5,  "oppTitle": "iCCC Design & Smart City Integration", "oppDescription": "70,000 daily visitors projected. An Integrated Command & Control Centre is a mandatory operational requirement at this scale. Ivan's TASMU iCCC experience is the direct advisory credential." },
+        { "type": "S",  "saleMonth": 20, "duration": 9,  "grossK": 400, "prob": 0.25, "oppTitle": "Digital Twin Governance", "oppDescription": "CEO confirmed Digital Twin in active development. The governance layer — data architecture, CDE design, asset information requirements — is open. Ivan's Omniverse POC is the direct credential." },
+        { "type": "RR", "saleMonth": 31, "duration": 12, "grossK": 100, "prob": 0.5,  "oppTitle": "Construction-to-Operations Handover", "oppDescription": "With 2027 opening target, KSPF is approaching the handover phase. ISO 19650 asset information requirements, BIM-to-FM data governance, operational readiness advisory." }
       ]
     },
     {
@@ -291,11 +291,11 @@
         }
       },
       "engagements": [
-        { "type": "A",  "saleMonth": 13, "duration": 12, "grossK": 1000, "prob": 0.4,  "isAnchor": true, "title": "Owner-Side Programme Intelligence", "description": "DGDA receives all programme data through Mace. Independent advisory layer: is Mace's schedule and cost reporting accurate? Are packages converging on the 2027 Arena Block target?" },
-        { "type": "S",  "saleMonth": 16, "duration": 9,  "grossK": 400,  "prob": 0.3,  "title": "Heritage Asset Information Management", "description": "A UNESCO World Heritage Site has asset information requirements beyond standard BIM governance — heritage documentation, conservation records, regulatory compliance." },
-        { "type": "R",  "saleMonth": 20, "duration": 24, "grossK": 140,  "prob": 0.5,  "title": "Multi-Contractor Cost Control Governance", "description": "As Diriyah accelerates with multiple packages, an owner-side cost control framework above Mace is the governance gap." },
-        { "type": "A",  "saleMonth": 26, "duration": 12, "grossK": 550,  "prob": 0.35, "isY3Origination": true, "title": "Digital Twin for Heritage Environment", "description": "Active construction + UNESCO conservation creates a unique Digital Twin mandate. Ivan's Omniverse experience is the credential." },
-        { "type": "S",  "saleMonth": 28, "duration": 6,  "grossK": 200,  "prob": 0.25, "isY3Origination": true, "title": "", "description": "" }
+        { "type": "A",  "saleMonth": 13, "duration": 12, "grossK": 1000, "prob": 0.4,  "isAnchor": true, "oppTitle": "Owner-Side Programme Intelligence", "oppDescription": "DGDA receives all programme data through Mace. Independent advisory layer: is Mace's schedule and cost reporting accurate? Are packages converging on the 2027 Arena Block target?" },
+        { "type": "S",  "saleMonth": 16, "duration": 9,  "grossK": 400,  "prob": 0.3,  "oppTitle": "Heritage Asset Information Management", "oppDescription": "A UNESCO World Heritage Site has asset information requirements beyond standard BIM governance — heritage documentation, conservation records, regulatory compliance." },
+        { "type": "R",  "saleMonth": 20, "duration": 24, "grossK": 140,  "prob": 0.5,  "oppTitle": "Multi-Contractor Cost Control Governance", "oppDescription": "As Diriyah accelerates with multiple packages, an owner-side cost control framework above Mace is the governance gap." },
+        { "type": "A",  "saleMonth": 26, "duration": 12, "grossK": 550,  "prob": 0.35, "isY3Origination": true, "oppTitle": "Digital Twin for Heritage Environment", "oppDescription": "Active construction + UNESCO conservation creates a unique Digital Twin mandate. Ivan's Omniverse experience is the credential." },
+        { "type": "S",  "saleMonth": 28, "duration": 6,  "grossK": 200,  "prob": 0.25, "isY3Origination": true, "oppTitle": "", "oppDescription": "" }
       ]
     },
     {
@@ -332,12 +332,12 @@
         }
       },
       "engagements": [
-        { "type": "CP", "saleMonth": 15, "duration": 6,  "grossK": 71,  "prob": 0.7,  "title": "Multi-Firm Governance — Entry Brief", "description": "Concept proposal scoping owner-side programme governance above Mace, Bechtel, and Parsons delivery chains at KSIA." },
-        { "type": "A",  "saleMonth": 17, "duration": 12, "grossK": 1000, "prob": 0.35, "isAnchor": true, "title": "Owner-Side Multi-Firm Programme Governance", "description": "Three firms each managing separate scopes across 57km². KSIADC needs owner-side intelligence above all three firms simultaneously." },
-        { "type": "R",  "saleMonth": 21, "duration": 24, "grossK": 160,  "prob": 0.5,  "title": "Expo 2030 Delivery Assurance", "description": "Airport must be operational for Expo 2030. Independent assurance: is the current delivery trajectory credible for a 2030 operational opening?" },
-        { "type": "S",  "saleMonth": 22, "duration": 9,  "grossK": 400,  "prob": 0.25, "title": "ISO 19650 Information Management", "description": "Designed by Jacobs and Foster+Partners, delivered by Mace, Bechtel, and Parsons — five organisations producing disconnected asset data without ISO 19650 governance." },
-        { "type": "A",  "saleMonth": 30, "duration": 15, "grossK": 700,  "prob": 0.3,  "isY3Origination": true, "title": "Aviation Digital Twin Strategy", "description": "KSIA designed as an aerotropolis — 9 terminals, 6 runways, 57km² of airside and landside operations." },
-        { "type": "RR", "saleMonth": 33, "duration": 12, "grossK": 120,  "prob": 0.5,  "title": "", "description": "" }
+        { "type": "CP", "saleMonth": 15, "duration": 6,  "grossK": 71,  "prob": 0.7,  "oppTitle": "Multi-Firm Governance — Entry Brief", "oppDescription": "Concept proposal scoping owner-side programme governance above Mace, Bechtel, and Parsons delivery chains at KSIA." },
+        { "type": "A",  "saleMonth": 17, "duration": 12, "grossK": 1000, "prob": 0.35, "isAnchor": true, "oppTitle": "Owner-Side Multi-Firm Programme Governance", "oppDescription": "Three firms each managing separate scopes across 57km². KSIADC needs owner-side intelligence above all three firms simultaneously." },
+        { "type": "R",  "saleMonth": 21, "duration": 24, "grossK": 160,  "prob": 0.5,  "oppTitle": "Expo 2030 Delivery Assurance", "oppDescription": "Airport must be operational for Expo 2030. Independent assurance: is the current delivery trajectory credible for a 2030 operational opening?" },
+        { "type": "S",  "saleMonth": 22, "duration": 9,  "grossK": 400,  "prob": 0.25, "oppTitle": "ISO 19650 Information Management", "oppDescription": "Designed by Jacobs and Foster+Partners, delivered by Mace, Bechtel, and Parsons — five organisations producing disconnected asset data without ISO 19650 governance." },
+        { "type": "A",  "saleMonth": 30, "duration": 15, "grossK": 700,  "prob": 0.3,  "isY3Origination": true, "oppTitle": "Aviation Digital Twin Strategy", "oppDescription": "KSIA designed as an aerotropolis — 9 terminals, 6 runways, 57km² of airside and landside operations." },
+        { "type": "RR", "saleMonth": 33, "duration": 12, "grossK": 120,  "prob": 0.5,  "oppTitle": "", "oppDescription": "" }
       ]
     },
     {
@@ -374,10 +374,10 @@
         }
       },
       "engagements": [
-        { "type": "A",  "saleMonth": 25, "duration": 12, "grossK": 1200, "prob": 0.3,  "isY3Origination": true, "isAnchor": true, "title": "SAP — PMIS Cost Reconciliation Advisory", "description": "Structural mismatch between SAP PS/MM/FI actuals and PMIS committed/forecast data across Aramco's capital portfolio. Ivan resolved this at sovereign scale." },
-        { "type": "CP", "saleMonth": 26, "duration": 6,  "grossK": 100,  "prob": 0.6,  "title": "Capital Programme Controls — Entry Brief", "description": "Initial assessment of capital programme controls maturity across Aramco's $40B+ annual capex portfolio." },
-        { "type": "R",  "saleMonth": 28, "duration": 24, "grossK": 160,  "prob": 0.3,  "title": "Capital Programme Controls Maturity", "description": "With $40B annual capex and dividend cuts creating pressure, Aramco needs independent assessment: are schedules trustworthy? Are cost-to-complete figures defensible?" },
-        { "type": "S",  "saleMonth": 29, "duration": 9,  "grossK": 500,  "prob": 0.2,  "title": "PMIS Strategy & Business Case", "description": "An owner-side PMIS strategy advisory: is the current architecture fit for purpose at Aramco's scale?" }
+        { "type": "A",  "saleMonth": 25, "duration": 12, "grossK": 1200, "prob": 0.3,  "isY3Origination": true, "isAnchor": true, "oppTitle": "SAP — PMIS Cost Reconciliation Advisory", "oppDescription": "Structural mismatch between SAP PS/MM/FI actuals and PMIS committed/forecast data across Aramco's capital portfolio. Ivan resolved this at sovereign scale." },
+        { "type": "CP", "saleMonth": 26, "duration": 6,  "grossK": 100,  "prob": 0.6,  "oppTitle": "Capital Programme Controls — Entry Brief", "oppDescription": "Initial assessment of capital programme controls maturity across Aramco's $40B+ annual capex portfolio." },
+        { "type": "R",  "saleMonth": 28, "duration": 24, "grossK": 160,  "prob": 0.3,  "oppTitle": "Capital Programme Controls Maturity", "oppDescription": "With $40B annual capex and dividend cuts creating pressure, Aramco needs independent assessment: are schedules trustworthy? Are cost-to-complete figures defensible?" },
+        { "type": "S",  "saleMonth": 29, "duration": 9,  "grossK": 500,  "prob": 0.2,  "oppTitle": "PMIS Strategy & Business Case", "oppDescription": "An owner-side PMIS strategy advisory: is the current architecture fit for purpose at Aramco's scale?" }
       ]
     },
     {
@@ -401,10 +401,10 @@
         "dur": 12
       },
       "engagements": [
-        { "type": "CP", "saleMonth": 25, "duration": 6,  "grossK": 100, "prob": 0.7,  "title": "PMIS Strategy — Entry Brief", "description": "Concept proposal scoping owner-side PMIS strategy to consolidate data from Bechtel, Turner Arabia, and AECOM reporting chains." },
-        { "type": "A",  "saleMonth": 27, "duration": 12, "grossK": 700, "prob": 0.4,  "isY3Origination": true, "isAnchor": true, "title": "Owner-Side PMIS Strategy Above Three PMCs", "description": "Three PMCs producing three report formats — NMDC cannot see the programme as a whole. Define the owner-side PMIS architecture consolidating all three PMC chains." },
-        { "type": "S",  "saleMonth": 29, "duration": 9,  "grossK": 200, "prob": 0.25, "title": "Multi-PMC Schedule Governance", "description": "Three PMCs submitting P6 schedules in different EPS structures with no owner-side baseline governance." },
-        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 550, "prob": 0.35, "isY3Origination": true, "title": "FIFA 2034 Delivery Certainty", "description": "New Murabba's programme interface with FIFA 2034 stadium delivery creates a hard deadline governance requirement." }
+        { "type": "CP", "saleMonth": 25, "duration": 6,  "grossK": 100, "prob": 0.7,  "oppTitle": "PMIS Strategy — Entry Brief", "oppDescription": "Concept proposal scoping owner-side PMIS strategy to consolidate data from Bechtel, Turner Arabia, and AECOM reporting chains." },
+        { "type": "A",  "saleMonth": 27, "duration": 12, "grossK": 700, "prob": 0.4,  "isY3Origination": true, "isAnchor": true, "oppTitle": "Owner-Side PMIS Strategy Above Three PMCs", "oppDescription": "Three PMCs producing three report formats — NMDC cannot see the programme as a whole. Define the owner-side PMIS architecture consolidating all three PMC chains." },
+        { "type": "S",  "saleMonth": 29, "duration": 9,  "grossK": 200, "prob": 0.25, "oppTitle": "Multi-PMC Schedule Governance", "oppDescription": "Three PMCs submitting P6 schedules in different EPS structures with no owner-side baseline governance." },
+        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 550, "prob": 0.35, "isY3Origination": true, "oppTitle": "FIFA 2034 Delivery Certainty", "oppDescription": "New Murabba's programme interface with FIFA 2034 stadium delivery creates a hard deadline governance requirement." }
       ]
     },
     {
@@ -441,11 +441,11 @@
         }
       },
       "engagements": [
-        { "type": "CP", "saleMonth": 13, "duration": 6,  "grossK": 71,  "prob": 0.7,  "title": "Handover Intelligence — Entry Brief", "description": "Concept proposal scoping handover intelligence architecture connecting Turner & Townsend construction delivery to NexOps operational systems." },
-        { "type": "A",  "saleMonth": 14, "duration": 12, "grossK": 600, "prob": 0.45, "isAnchor": true, "title": "Construction-to-Operations Handover Intelligence", "description": "NexOps has 5,000 operational documents but the data architecture connecting T&T construction delivery to NexOps operational systems is open. ISO 19650, BIM-to-FM, commissioning data integration." },
-        { "type": "R",  "saleMonth": 16, "duration": 24, "grossK": 100, "prob": 0.5,  "title": "NexOps Governance Framework", "description": "Presight AI provides the platform. The governance framework above it — data quality standards, integration architecture — is open." },
-        { "type": "S",  "saleMonth": 18, "duration": 9,  "grossK": 280, "prob": 0.25, "title": "Portfolio PMIS Strategy — 30+ Facilities", "description": "T&T manages construction delivery but Khazna leadership needs owner-side portfolio visibility across 30+ simultaneous construction and expansion phases." },
-        { "type": "A",  "saleMonth": 22, "duration": 12, "grossK": 400, "prob": 0.35, "title": "International Expansion Governance", "description": "With $26.2B financing and active international expansion, Khazna's programme governance model needs to scale globally." }
+        { "type": "CP", "saleMonth": 13, "duration": 6,  "grossK": 71,  "prob": 0.7,  "oppTitle": "Handover Intelligence — Entry Brief", "oppDescription": "Concept proposal scoping handover intelligence architecture connecting Turner & Townsend construction delivery to NexOps operational systems." },
+        { "type": "A",  "saleMonth": 14, "duration": 12, "grossK": 600, "prob": 0.45, "isAnchor": true, "oppTitle": "Construction-to-Operations Handover Intelligence", "oppDescription": "NexOps has 5,000 operational documents but the data architecture connecting T&T construction delivery to NexOps operational systems is open. ISO 19650, BIM-to-FM, commissioning data integration." },
+        { "type": "R",  "saleMonth": 16, "duration": 24, "grossK": 100, "prob": 0.5,  "oppTitle": "NexOps Governance Framework", "oppDescription": "Presight AI provides the platform. The governance framework above it — data quality standards, integration architecture — is open." },
+        { "type": "S",  "saleMonth": 18, "duration": 9,  "grossK": 280, "prob": 0.25, "oppTitle": "Portfolio PMIS Strategy — 30+ Facilities", "oppDescription": "T&T manages construction delivery but Khazna leadership needs owner-side portfolio visibility across 30+ simultaneous construction and expansion phases." },
+        { "type": "A",  "saleMonth": 22, "duration": 12, "grossK": 400, "prob": 0.35, "oppTitle": "International Expansion Governance", "oppDescription": "With $26.2B financing and active international expansion, Khazna's programme governance model needs to scale globally." }
       ]
     },
     {
@@ -482,10 +482,10 @@
         }
       },
       "engagements": [
-        { "type": "CP", "saleMonth": 27, "duration": 6,  "grossK": 71,  "prob": 0.6,  "title": "IOC Maturity Assessment", "description": "IOC Operating Model is in place. The maturity question: is the IOC producing the operational intelligence RSG leadership needs? This is the next advisory mandate." },
-        { "type": "A",  "saleMonth": 26, "duration": 12, "grossK": 700, "prob": 0.35, "isY3Origination": true, "isAnchor": true, "title": "Construction-Operations Concurrent Governance", "description": "Phase 1 operational + Phase 2+ construction active simultaneously across a Belgium-scale footprint. Governing a programme that is simultaneously building and operating requires a governance architecture most advisors have never designed." },
-        { "type": "R",  "saleMonth": 29, "duration": 24, "grossK": 120, "prob": 0.35, "title": "PIF ROI Validation Retainer", "description": "RSG under heaviest spending pressure of any PIF giga-project. Leadership needs ongoing independent ROI validation to present a credible case to PIF leadership." },
-        { "type": "S",  "saleMonth": 30, "duration": 9,  "grossK": 300, "prob": 0.25, "title": "Asset Handover & FM Integration", "description": "As Phase 1 assets hand over from construction to operations, data quality of what PMCs deliver to RSG FM teams becomes a live operational risk." }
+        { "type": "CP", "saleMonth": 27, "duration": 6,  "grossK": 71,  "prob": 0.6,  "oppTitle": "IOC Maturity Assessment", "oppDescription": "IOC Operating Model is in place. The maturity question: is the IOC producing the operational intelligence RSG leadership needs? This is the next advisory mandate." },
+        { "type": "A",  "saleMonth": 26, "duration": 12, "grossK": 700, "prob": 0.35, "isY3Origination": true, "isAnchor": true, "oppTitle": "Construction-Operations Concurrent Governance", "oppDescription": "Phase 1 operational + Phase 2+ construction active simultaneously across a Belgium-scale footprint. Governing a programme that is simultaneously building and operating requires a governance architecture most advisors have never designed." },
+        { "type": "R",  "saleMonth": 29, "duration": 24, "grossK": 120, "prob": 0.35, "oppTitle": "PIF ROI Validation Retainer", "oppDescription": "RSG under heaviest spending pressure of any PIF giga-project. Leadership needs ongoing independent ROI validation to present a credible case to PIF leadership." },
+        { "type": "S",  "saleMonth": 30, "duration": 9,  "grossK": 300, "prob": 0.25, "oppTitle": "Asset Handover & FM Integration", "oppDescription": "As Phase 1 assets hand over from construction to operations, data quality of what PMCs deliver to RSG FM teams becomes a live operational risk." }
       ]
     },
     {
@@ -522,12 +522,12 @@
         }
       },
       "engagements": [
-        { "type": "CP", "saleMonth": 26, "duration": 6,  "grossK": 71,  "prob": 0.65, "title": "Capital Controls — Entry Brief", "description": "Concept proposal scoping owner-side programme controls and PMIS governance across TAQA's multi-segment capital portfolio." },
-        { "type": "A",  "saleMonth": 27, "duration": 18, "grossK": 800, "prob": 0.4,  "isY3Origination": true, "isAnchor": true, "title": "Owner-Side Capital Programme Controls", "description": "Owner-side capital programme controls and PMIS governance across generation, water and T&D portfolio — exactly the scale where no single owner-side controls layer currently exists." },
-        { "type": "R",  "saleMonth": 28, "duration": 24, "grossK": 100, "prob": 0.45, "title": "Energy & Water Asset-Performance Intelligence", "description": "Digital Twin operational intelligence and ISO 19650 information management across TAQA's generation, water, and T&D asset portfolio." },
-        { "type": "S",  "saleMonth": 29, "duration": 12, "grossK": 350, "prob": 0.3,  "title": "", "description": "" },
-        { "type": "A",  "saleMonth": 33, "duration": 12, "grossK": 500, "prob": 0.35, "isY3Origination": true, "title": "", "description": "" },
-        { "type": "RR", "saleMonth": 34, "duration": 12, "grossK": 80,  "prob": 0.4,  "title": "", "description": "" }
+        { "type": "CP", "saleMonth": 26, "duration": 6,  "grossK": 71,  "prob": 0.65, "oppTitle": "Capital Controls — Entry Brief", "oppDescription": "Concept proposal scoping owner-side programme controls and PMIS governance across TAQA's multi-segment capital portfolio." },
+        { "type": "A",  "saleMonth": 27, "duration": 18, "grossK": 800, "prob": 0.4,  "isY3Origination": true, "isAnchor": true, "oppTitle": "Owner-Side Capital Programme Controls", "oppDescription": "Owner-side capital programme controls and PMIS governance across generation, water and T&D portfolio — exactly the scale where no single owner-side controls layer currently exists." },
+        { "type": "R",  "saleMonth": 28, "duration": 24, "grossK": 100, "prob": 0.45, "oppTitle": "Energy & Water Asset-Performance Intelligence", "oppDescription": "Digital Twin operational intelligence and ISO 19650 information management across TAQA's generation, water, and T&D asset portfolio." },
+        { "type": "S",  "saleMonth": 29, "duration": 12, "grossK": 350, "prob": 0.3,  "oppTitle": "", "oppDescription": "" },
+        { "type": "A",  "saleMonth": 33, "duration": 12, "grossK": 500, "prob": 0.35, "isY3Origination": true, "oppTitle": "", "oppDescription": "" },
+        { "type": "RR", "saleMonth": 34, "duration": 12, "grossK": 80,  "prob": 0.4,  "oppTitle": "", "oppDescription": "" }
       ]
     },
     {
@@ -564,14 +564,14 @@
         }
       },
       "engagements": [
-        { "type": "CP", "saleMonth": 27, "duration": 6,  "grossK": 71,  "prob": 0.7,  "title": "Oracle PMIS Governance — Entry Brief (Aldar)", "description": "Concept proposal scoping Oracle PMIS governance for Aldar Properties capital programme." },
-        { "type": "CP", "saleMonth": 30, "duration": 6,  "grossK": 57,  "prob": 0.7,  "title": "Oracle PMIS Governance — Entry Brief (Miral)", "description": "Concept proposal scoping Oracle PMIS governance for Miral capital programme." },
-        { "type": "A",  "saleMonth": 26, "duration": 15, "grossK": 1000, "prob": 0.4, "isY3Origination": true, "isAnchor": true, "title": "Oracle PMIS Governance — Multi-Asset Portfolio", "description": "Oracle PMIS governance and capital controls across Aldar Properties, Miral, and MODON — combined capital deployment creating programme oversight complexity no single developer has resolved at portfolio level." },
-        { "type": "S",  "saleMonth": 28, "duration": 9,  "grossK": 400, "prob": 0.3,  "title": "", "description": "" },
-        { "type": "R",  "saleMonth": 27, "duration": 24, "grossK": 160, "prob": 0.5,  "title": "Digital Twin Lifecycle Advisory", "description": "Digital Twin lifecycle advisory and multi-asset portfolio controls across the combined master developer capital portfolio." },
-        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 700, "prob": 0.35, "isY3Origination": true, "title": "", "description": "" },
-        { "type": "S",  "saleMonth": 33, "duration": 9,  "grossK": 300, "prob": 0.25, "title": "", "description": "" },
-        { "type": "RR", "saleMonth": 34, "duration": 24, "grossK": 140, "prob": 0.45, "title": "", "description": "" }
+        { "type": "CP", "saleMonth": 27, "duration": 6,  "grossK": 71,  "prob": 0.7,  "oppTitle": "Oracle PMIS Governance — Entry Brief (Aldar)", "oppDescription": "Concept proposal scoping Oracle PMIS governance for Aldar Properties capital programme." },
+        { "type": "CP", "saleMonth": 30, "duration": 6,  "grossK": 57,  "prob": 0.7,  "oppTitle": "Oracle PMIS Governance — Entry Brief (Miral)", "oppDescription": "Concept proposal scoping Oracle PMIS governance for Miral capital programme." },
+        { "type": "A",  "saleMonth": 26, "duration": 15, "grossK": 1000, "prob": 0.4, "isY3Origination": true, "isAnchor": true, "oppTitle": "Oracle PMIS Governance — Multi-Asset Portfolio", "oppDescription": "Oracle PMIS governance and capital controls across Aldar Properties, Miral, and MODON — combined capital deployment creating programme oversight complexity no single developer has resolved at portfolio level." },
+        { "type": "S",  "saleMonth": 28, "duration": 9,  "grossK": 400, "prob": 0.3,  "oppTitle": "", "oppDescription": "" },
+        { "type": "R",  "saleMonth": 27, "duration": 24, "grossK": 160, "prob": 0.5,  "oppTitle": "Digital Twin Lifecycle Advisory", "oppDescription": "Digital Twin lifecycle advisory and multi-asset portfolio controls across the combined master developer capital portfolio." },
+        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 700, "prob": 0.35, "isY3Origination": true, "oppTitle": "", "oppDescription": "" },
+        { "type": "S",  "saleMonth": 33, "duration": 9,  "grossK": 300, "prob": 0.25, "oppTitle": "", "oppDescription": "" },
+        { "type": "RR", "saleMonth": 34, "duration": 24, "grossK": 140, "prob": 0.45, "oppTitle": "", "oppDescription": "" }
       ]
     },
     {
@@ -608,13 +608,13 @@
         }
       },
       "engagements": [
-        { "type": "CP", "saleMonth": 26, "duration": 6,  "grossK": 57,  "prob": 0.65, "title": "iCCC Re-engagement — Concept Proposal", "description": "Initial re-engagement scoping with TASMU programme leadership on iCCC governance continuity and platform evolution." },
-        { "type": "A",  "saleMonth": 25, "duration": 18, "grossK": 700, "prob": 0.45, "isY3Origination": true, "isAnchor": true, "title": "Smart City Platform Evolution & iCCC Governance", "description": "Post-deployment platform evolution: extending the iCCC into new operational domains, integrating with ongoing capital delivery programmes, and building the digital twin operational intelligence layer." },
-        { "type": "R",  "saleMonth": 28, "duration": 24, "grossK": 120, "prob": 0.45, "title": "Digital Twin Operational Intelligence", "description": "Digital Twin operational intelligence and post-deployment asset performance advisory — the layer not included in the original build mandate." },
-        { "type": "S",  "saleMonth": 27, "duration": 12, "grossK": 350, "prob": 0.3,  "title": "", "description": "" },
-        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 500, "prob": 0.4,  "isY3Origination": true, "title": "", "description": "" },
-        { "type": "S",  "saleMonth": 33, "duration": 9,  "grossK": 250, "prob": 0.25, "title": "", "description": "" },
-        { "type": "RR", "saleMonth": 34, "duration": 12, "grossK": 80,  "prob": 0.4,  "title": "", "description": "" }
+        { "type": "CP", "saleMonth": 26, "duration": 6,  "grossK": 57,  "prob": 0.65, "oppTitle": "iCCC Re-engagement — Concept Proposal", "oppDescription": "Initial re-engagement scoping with TASMU programme leadership on iCCC governance continuity and platform evolution." },
+        { "type": "A",  "saleMonth": 25, "duration": 18, "grossK": 700, "prob": 0.45, "isY3Origination": true, "isAnchor": true, "oppTitle": "Smart City Platform Evolution & iCCC Governance", "oppDescription": "Post-deployment platform evolution: extending the iCCC into new operational domains, integrating with ongoing capital delivery programmes, and building the digital twin operational intelligence layer." },
+        { "type": "R",  "saleMonth": 28, "duration": 24, "grossK": 120, "prob": 0.45, "oppTitle": "Digital Twin Operational Intelligence", "oppDescription": "Digital Twin operational intelligence and post-deployment asset performance advisory — the layer not included in the original build mandate." },
+        { "type": "S",  "saleMonth": 27, "duration": 12, "grossK": 350, "prob": 0.3,  "oppTitle": "", "oppDescription": "" },
+        { "type": "A",  "saleMonth": 32, "duration": 12, "grossK": 500, "prob": 0.4,  "isY3Origination": true, "oppTitle": "", "oppDescription": "" },
+        { "type": "S",  "saleMonth": 33, "duration": 9,  "grossK": 250, "prob": 0.25, "oppTitle": "", "oppDescription": "" },
+        { "type": "RR", "saleMonth": 34, "duration": 12, "grossK": 80,  "prob": 0.4,  "oppTitle": "", "oppDescription": "" }
       ]
     }
   ]
