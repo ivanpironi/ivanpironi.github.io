@@ -214,6 +214,7 @@ function _tab(ss, name, data) {
   sh.clearContents();
   sh.getRange(1, 1, data.length, data[0].length).setValues(data);
   sh.getRange(1, 1, 1, data[0].length).setFontWeight('bold').setBackground('#1a1a1a').setFontColor('#ffffff');
+  sh.getRange(2, 1, 1, data[0].length).setBackground('#fffde7').setFontColor('#5d5d00').setFontStyle('italic');
 }
 
 
