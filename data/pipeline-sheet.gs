@@ -396,7 +396,7 @@ function _buildJSON(ss) {
 
     var gantt = {};
     if (anchor) {
-      var saleAmt = anchor.grossK;
+      var saleAmt = Math.round(anchor.grossK * anchor.prob);  // probability-weighted fee
       var consAmt = Math.round(saleAmt * consPct / 100);
       gantt = {
         sale:     anchor.saleMonth,
@@ -412,7 +412,7 @@ function _buildJSON(ss) {
     }
 
     if (retainer) {
-      var rRate  = Math.round(retainer.grossK / retainer.duration);
+      var rRate  = Math.round(retainer.grossK * retainer.prob / retainer.duration);  // weighted monthly rate
       var rVisS  = retainer.saleMonth + 1;
       var rVisE  = retainer.saleMonth + retainer.duration;
       var months = rVisE - rVisS + 1;
@@ -427,7 +427,7 @@ function _buildJSON(ss) {
         techPct:  techPct,
         cpm:      cpm,
         tpm:      tpm,
-        saleAmt:  retainer.grossK,
+        saleAmt:  Math.round(retainer.grossK * retainer.prob),
         consSale: cpm * months,
         techSale: tpm * months
       };
