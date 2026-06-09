@@ -14,14 +14,24 @@
     });
   }
 
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbzMPK8VXZ0nMSJWSP6_dMSabXrgksCNH4eP5RfopdARJXcMvrDriFQKOrckXwSuUZP4/exec';
+  var FALLBACK_URL = '/data/pipeline-data.json';
+
+  function fetchData() {
+    return fetch(SHEET_URL)
+      .then(function (r) {
+        if (!r.ok) throw new Error('Sheet HTTP ' + r.status);
+        return r.json();
+      })
+      .catch(function () {
+        return fetch(FALLBACK_URL).then(function (r) { return r.json(); });
+      });
+  }
+
   window.PipelineData = {
     data: null,
     load: function () {
-      return fetch('/data/pipeline-data.json')
-        .then(function (r) {
-          if (!r.ok) throw new Error('HTTP ' + r.status);
-          return r.json();
-        })
+      return fetchData()
         .then(function (json) {
           var engagements = [];
           (json.accounts || []).forEach(function (acc) {
