@@ -33,6 +33,7 @@ function setupSheet() {
   /* Meta */
   _tab(ss, 'Meta', [
     ['lastUpdated','retainerConvPct','retainerTcvPct','retainerLagMonths','retainerInitMonths','y3OrigProbPct','nrfHaircutPct'],
+    ['Date this sheet was last refreshed','% of advisory accounts that convert to a retainer','Retainer TCV as % of the advisory fee','Months after advisory sale before retainer starts','Initial retainer duration in months','Probability applied to Year 3+ origination engagements','Non-recurring fee haircut % applied to NRF calculation'],
     ["2026-06-09", 50, 60, 3, 12, 30, 25]
   ]);
 
@@ -40,6 +41,7 @@ function setupSheet() {
      consPct: % of each engagement fee that is consulting (techPct = 100 - consPct) */
   _tab(ss, 'Accounts', [
     ['key','name','phase','type','region','tip','overview','contacts','consPct'],
+    ['Unique short ID — links to Engagements.account_key','Display name of the account','Pipeline phase: Phase 1=active pursuit · Phase 2=developing · Phase 3=horizon','Entry route: ivan=Ivan\'s network · ey=EY platform','Geography: KSA / UAE / Qatar','One-line description shown in the Gantt tooltip on hover','Full narrative shown in the account card overlay on the website','Key contacts and entry routes — pipe-separated ( | )','Consulting % of each engagement fee (techPct = 100 − consPct) — used for Gantt bar gradient and fee splits'],
     ["qiddiya", "Qiddiya", "Phase 1", "ivan", "KSA",
      "Incumbent PMIS advisor. PIF entertainment giga-programme $40B+. Oracle/SAP/P6/Aconex deployed. Programme Governance & Digital Twin Phase 2.",
      "PIF-owned entertainment and tourism giga-programme. Phase 3 city establishment now mobilising — 11,000 housing units, full entertainment city. Oracle Unifier + SAP + P6 + Aconex deployed. September 2025: Yardi adopted for real estate operations — creating a three-way integration challenge between Yardi, Oracle Unifier, and SAP that no current advisor can address without a conflict of interest. Ivan designed the Oracle layer. Ivan is the incumbent PMIS advisor.",
@@ -122,6 +124,7 @@ function setupSheet() {
      type key: CP=Concept Proposal  A=Advisory  S=Strategy  R=Retainer  RR=Retainer Renewal */
   _tab(ss, 'Engagements', [
     ['account_key','type','saleMonth','duration','grossK','prob','isY3Origination','isAnchor'],
+    ['Links to Accounts.key','Engagement type: CP=Concept Proposal · A=Advisory · S=Strategy · R=Retainer · RR=Retainer Renewal','Month number when the engagement is expected to be sold (1 = Jan 2026)','Engagement duration in months','Total fee in $K (gross, before haircuts)','Win probability 0.0–1.0 — edit this to update the weighted pipeline','TRUE if this is a Year 3+ origination engagement (applies lower default probability)','TRUE on exactly one row per account — this engagement drives the Gantt bar position and size'],
     ["qiddiya", "A",   3, 18, 1400, 0.5,  false, true],
     ["qiddiya", "A",  16, 12,  700, 0.5,  false, false],
     ["qiddiya", "S",   6, 12,  500, 0.3,  false, false],
@@ -275,7 +278,7 @@ function _handleWrite(ss, body) {
   if (action === 'setRow') {
     var vals = sh.getDataRange().getValues();
     var hdrs = vals[0];
-    for (var i = 1; i < vals.length; i++) {
+    for (var i = 2; i < vals.length; i++) {  // skip header (0) and definitions (1) rows
       var matched = Object.keys(body.match).every(function(k) {
         var ci = hdrs.indexOf(k);
         return ci >= 0 && String(vals[i][ci]) === String(body.match[k]);
@@ -303,7 +306,7 @@ function _handleWrite(ss, body) {
   if (action === 'deleteRow') {
     var vals = sh.getDataRange().getValues();
     var hdrs = vals[0];
-    for (var i = vals.length - 1; i >= 1; i--) {
+    for (var i = vals.length - 1; i >= 2; i--) {  // skip header (0) and definitions (1) rows
       var matched = Object.keys(body.match).every(function(k) {
         var ci = hdrs.indexOf(k);
         return ci >= 0 && String(vals[i][ci]) === String(body.match[k]);
@@ -334,7 +337,7 @@ function _buildJSON(ss) {
     var sh = ss.getSheetByName(sheetName);
     var vals = sh.getRange(1, 1, sh.getLastRow(), sh.getLastColumn()).getValues();
     var hdrs = vals[0];
-    return vals.slice(1).map(function(r) {
+    return vals.slice(2).map(function(r) {  // row 1=headers, row 2=definitions, row 3+ = data
       var o = {};
       hdrs.forEach(function(h, i) { o[h] = r[i]; });
       return o;
